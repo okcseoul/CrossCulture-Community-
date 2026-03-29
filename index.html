@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>CrossCulture Community Foundation</title>
+<title>About Us — CrossCulture Community Foundation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -19,22 +19,334 @@
   body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
   body.ko { font-family: 'Noto Sans KR', sans-serif; }
 
-  /* LANGUAGE TOGGLE */
-  .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(139,111,71,0.15); border-radius: 20px; padding: 4px; border: 1px solid rgba(139,111,71,0.25); position: relative; z-index: 200; }
-  .lang-btn { padding: 6px 14px; border-radius: 16px; border: none; background: transparent; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; cursor: pointer; transition: all 0.2s; color: var(--charcoal-soft); font-family: inherit; position: relative; z-index: 200; -webkit-appearance: none; }
-  .lang-btn.active { background: var(--earth-dark); color: var(--cream); }
-  .lang-btn:hover { background: rgba(139,111,71,0.2); }
-
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; background: rgba(253,250,245,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); transition: box-shadow 0.3s; gap: 16px; }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--earth-dark); text-decoration: none; flex-shrink: 0; }
-  .nav-logo span { color: var(--gold); }
-  nav ul { display: flex; gap: 18px; list-style: none; flex-wrap: nowrap; }
-  nav ul a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(253,250,245,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); gap: 16px; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { height: 44px; width: auto; }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; transition: color 0.2s; }
   nav ul a:hover { color: var(--earth); }
   .nav-give { background: var(--earth-dark) !important; color: var(--cream) !important; padding: 10px 20px; border-radius: 2px; }
-  .nav-give:hover { background: var(--gold) !important; color: var(--ink) !important; }
-  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(139,111,71,0.15); border-radius: 20px; padding: 4px; border: 1px solid rgba(139,111,71,0.25); }
+  .lang-btn { padding: 6px 14px; border-radius: 16px; border: none; background: transparent; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.2s; color: var(--charcoal-soft); font-family: inherit; -webkit-appearance: none; }
+  .lang-btn.active { background: var(--earth-dark); color: var(--cream); }
 
+  .hero-about { min-height: 40vh; background: var(--cream); display: flex; align-items: center; padding: 120px 80px 80px; position: relative; overflow: hidden; }
+  .hero-about::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 80%, rgba(139,111,71,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(201,148,58,0.06) 0%, transparent 50%); }
+  .hero-about-inner { position: relative; z-index: 2; max-width: 800px; }
+  .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; color: var(--earth-dark); line-height: 1.1; margin-bottom: 20px; }
+  body.ko .page-title { font-family: 'Noto Sans KR', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); }
+  .page-tagline { font-size: 1.1rem; font-style: italic; color: var(--charcoal-soft); border-left: 3px solid var(--gold-light); padding-left: 20px; font-family: 'Cormorant Garamond', serif; }
+  body.ko .page-tagline { font-family: 'Noto Sans KR', sans-serif; font-style: normal; }
+
+  .about-body { max-width: 860px; margin: 0 auto; padding: 80px 40px; }
+  .about-body p { font-size: 1rem; color: var(--charcoal-soft); line-height: 1.9; margin-bottom: 28px; }
+  .about-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--earth-dark); margin: 48px 0 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gold-light); }
+  body.ko .about-body h2 { font-family: 'Noto Sans KR', sans-serif; font-size: 1.4rem; }
+  .pillar-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin: 32px 0 48px; }
+  .pillar-card { background: var(--cream); border: 1px solid rgba(139,111,71,0.15); border-radius: 4px; padding: 32px 24px; text-align: center; }
+  .pillar-icon { font-size: 2rem; margin-bottom: 12px; }
+  .pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--earth-dark); margin-bottom: 8px; }
+  body.ko .pillar-title { font-family: 'Noto Sans KR', sans-serif; font-size: 1rem; }
+  .pillar-text { font-size: 0.85rem; color: var(--charcoal-soft); line-height: 1.7; }
+
+  .bill-card { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start; background: var(--earth-dark); border-radius: 4px; padding: 40px; margin: 48px 0; color: var(--cream); }
+  .bill-card img { width: 100%; border-radius: 4px; }
+  .bill-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold-light); margin-bottom: 8px; }
+  body.ko .bill-card h3 { font-family: 'Noto Sans KR', sans-serif; font-size: 1.3rem; }
+  .bill-card p { font-size: 0.9rem; color: rgba(247,243,236,0.75); line-height: 1.8; margin-bottom: 12px; }
+
+  .museum-box { background: var(--cream); border: 2px solid var(--gold); border-radius: 4px; padding: 40px; margin: 48px 0; text-align: center; }
+  .museum-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--earth-dark); margin-bottom: 16px; }
+  body.ko .museum-box h2 { font-family: 'Noto Sans KR', sans-serif; font-size: 1.5rem; }
+  .museum-box p { font-size: 0.95rem; color: var(--charcoal-soft); line-height: 1.85; max-width: 600px; margin: 0 auto 24px; }
+
+  .crosslink-box { background: var(--earth-dark); color: var(--cream); padding: 60px 40px; text-align: center; margin-top: 0; }
+  .crosslink-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold-light); margin-bottom: 12px; }
+  body.ko .crosslink-box h2 { font-family: 'Noto Sans KR', sans-serif; font-size: 1.5rem; }
+  .crosslink-box p { font-size: 0.95rem; color: rgba(247,243,236,0.7); max-width: 560px; margin: 0 auto 32px; line-height: 1.8; }
+  .btn-gold { display: inline-block; background: var(--gold); color: var(--ink); padding: 16px 40px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s; }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .glory { text-align: center; padding: 48px 40px; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--earth); border-top: 1px solid rgba(139,111,71,0.15); }
+
+  footer { background: var(--ink); color: rgba(247,243,236,0.5); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 20px; 
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    nav ul { display: none; }
+    .nav-give { display: none; }
+    * { max-width: 100%; box-sizing: border-box; }
+    img { max-width: 100%; height: auto; }
+    table { display: block; overflow-x: auto; }
+    .give-buttons { flex-direction: column; align-items: center; }
+    footer { flex-direction: column; text-align: center; padding: 28px 20px; gap: 12px; }
+  }
+  @media (max-width: 480px) {
+    section { padding-left: 16px !important; padding-right: 16px !important; }
+    nav { padding: 12px 16px; }
+  } nav ul { display: none; }
+    .hero-about { padding: 100px 24px 60px; }
+    .about-body { padding: 60px 24px; }
+    .pillar-grid { grid-template-columns: 1fr; }
+    .bill-card { grid-template-columns: 1fr; }
+    .crosslink-box { padding: 48px 24px; }
+    footer { flex-direction: column; text-align: center; padding: 24px; }
+  }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--earth-dark); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: rgba(253,250,245,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); z-index: 99; flex-direction: column; padding: 8px 0 16px; box-shadow: 0 8px 32px rgba(92,74,42,0.1); }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { padding: 14px 24px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; border-bottom: 1px solid rgba(139,111,71,0.08); transition: all 0.2s; }
+  .mobile-menu a:hover { color: var(--gold); background: rgba(201,148,58,0.05); }
+  .mobile-menu .mobile-give { color: var(--cream); background: var(--earth-dark); margin: 12px 24px 0; border-radius: 2px; text-align: center; border-bottom: none; }
+  .mobile-menu .mobile-give:hover { background: var(--gold); color: var(--ink); }
+  @media (max-width: 900px) { .hamburger { display: flex; } }
+
+  #about-what, #about-today, #about-museum, #about-bill {
+    scroll-margin-top: 90px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="/logo.png" alt="CrossCulture Community"></a>
+  <ul>
+    <li><a href="index.html" data-en="Home" data-ko="홈">Home</a></li>
+    <li><a href="#about-what" data-en="About CCF" data-ko="소개">About CCF</a></li>
+    <li><a href="#about-today" data-en="Today" data-ko="현재">Today</a></li>
+    <li><a href="#about-museum" data-en="Dream" data-ko="꿈">Dream</a></li>
+    <li><a href="#about-bill" data-en="Bill Majors" data-ko="빌 메이저스">Bill Majors</a></li>
+    <li><a href="index.html#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en">EN</button>
+      <button class="lang-btn" id="btn-ko">한국어</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu">
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="#about-what" onclick="closeMenu()">About CCF</a>
+  <a href="#about-today" onclick="closeMenu()">Today</a>
+  <a href="#about-museum" onclick="closeMenu()">Dream</a>
+  <a href="#about-bill" onclick="closeMenu()">Bill Majors</a>
+  <a href="index.html#give" onclick="closeMenu()" class="mobile-give">Give Now</a>
+</div>
+
+<div class="hero-about">
+  <div class="hero-about-inner">
+    <div class="section-label" data-en="Our Story" data-ko="우리의 이야기">Our Story</div>
+    <h1 class="page-title" data-en="About CrossCulture<br>Community Foundation" data-ko="크로스컬처<br>커뮤니티 파운데이션 소개">About CrossCulture<br>Community Foundation</h1>
+    <p class="page-tagline" data-en='"The Bible is not just literature — it shapes how we live and love in the world."' data-ko='"성경은 단순한 문학이 아닙니다 — 성경은 우리가 세상에서 살고 사랑하는 방식을 형성합니다."'>"The Bible is not just literature — it shapes how we live and love in the world."</p>
+  </div>
+</div>
+
+<div class="about-body">
+
+  <p data-en="Some organizations are built from strategy. CrossCulture Community was built from a life." data-ko="어떤 단체는 전략으로 세워집니다. 크로스컬처 커뮤니티는 한 사람의 삶으로 세워졌습니다.">Some organizations are built from strategy. CrossCulture Community was built from a life.</p>
+
+  <p data-en="In the summer of 1982, a 21-year-old from Oklahoma arrived at Gimpo International Airport in Seoul, South Korea with a one-way ticket — willing to live and die in Korea if that was God's will for him.
+
+The journey had been years in the making. During college Bill had been invited to Korea for a summer internship — but he could not go. He was delivering the Chattanooga Times every morning, 365 days a year, and Korea would have to wait until he was free. So he finished his degree, handed in his paper route, and within one extraordinary week — graduated on Monday, was ordained and sent out by his home church on Wednesday, guest spoke at a church in Pasadena, California, and boarded a plane out of Los Angeles on June 1st.
+
+He landed at Gimpo International Airport on June 2nd, 1982. He had no Korean language, no local contacts, and no map. He sat on his suitcase and waited.
+
+That young man was Bill Ray Majors — and what he was waiting for, without knowing it, was the rest of his life." data-ko="1982년 여름, 오클라호마 출신의 21세 청년이 대한민국 서울 김포국제공항에서 비행기에서 내렸습니다. 한국어도 몰랐고, 현지 연락처도 없었으며, 지도도 없었습니다. 그는 짐 가방 위에 앉아 기다렸습니다. 그 청년이 바로 빌 레이 메이저스였습니다 — 그리고 그가 기다리던 것은, 자신도 모르게, 그의 남은 삶 전체였습니다.">In the summer of 1982, a 21-year-old from Oklahoma arrived at Gimpo International Airport in Seoul, South Korea with a one-way ticket — willing to live and die in Korea if that was God's will for him.
+
+The journey had been years in the making. During college Bill had been invited to Korea for a summer internship — but he could not go. He was delivering the Chattanooga Times every morning, 365 days a year, and Korea would have to wait until he was free. So he finished his degree, handed in his paper route, and within one extraordinary week — graduated on Monday, was ordained and sent out by his home church on Wednesday, guest spoke at a church in Pasadena, California, and boarded a plane out of Los Angeles on June 1st.
+
+He landed at Gimpo International Airport on June 2nd, 1982. He had no Korean language, no local contacts, and no map. He sat on his suitcase and waited.
+
+That young man was Bill Ray Majors — and what he was waiting for, without knowing it, was the rest of his life.</p>
+
+  <p data-en="More than forty years later, Bill is still in Korea. He became fluent in the language and culture. He married a Korean woman named Ja-kyung — Niki — on a beautiful Saturday afternoon in October 1987 that happened to be Halloween in the West, though nobody in Korea noticed. He raised two daughters. He earned a doctorate. He received honorary citizenship from the city of Seoul. He became a Korean citizen. And somewhere in all of that living, he co-founded an association of international ministries in the greater Seoul area." data-ko="40년이 넘은 지금도 빌은 한국에 있습니다. 그는 언어와 문화에 능숙해졌습니다. 1987년 10월의 아름다운 토요일 오후에 자경(니키)이라는 한국 여성과 결혼했습니다 — 서구에서는 핼러윈이었지만 한국에서는 아무도 몰랐습니다. 두 딸을 키웠고, 박사 학위를 취득했으며, 서울시 명예시민증을 받았고, 한국 국적을 취득했습니다. 그리고 그 삶 속 어딘가에서 하나의 운동을 공동 창립했습니다.">More than forty years later, Bill is still in Korea. He became fluent in the language and culture. He married a Korean woman named Ja-kyung — Niki — on a beautiful Saturday afternoon in October 1987 that happened to be Halloween in the West, though nobody in Korea noticed. He raised two daughters. He earned a doctorate. He received honorary citizenship from the city of Seoul. He became a Korean citizen. And somewhere in all of that living, he co-founded an association of international ministries in the greater Seoul area.</p>
+
+  <h2 id="about-what" data-en="What is CrossCulture Community?" data-ko="크로스컬처 커뮤니티란 무엇인가?">What is CrossCulture Community?</h2>
+
+  <p data-en="It is not a program. It is not a building. It is not an institution — at least, not yet. CrossCulture Community is what happens when the Gospel of Jesus Christ meets real life across cultural boundaries." data-ko="그것은 프로그램이 아닙니다. 건물도 아닙니다. 기관도 아닙니다 — 적어도 아직은. 크로스컬처 커뮤니티는 예수 그리스도의 복음이 문화적 경계를 넘어 실제 삶과 만날 때 일어나는 것입니다.">It is not a program. It is not a building. It is not an institution — at least, not yet. CrossCulture Community is what happens when the Gospel of Jesus Christ meets real life across cultural boundaries.</p>
+
+  <div class="pillar-grid">
+    <div class="pillar-card">
+      <div class="pillar-icon">✝</div>
+      <div class="pillar-title" data-en="Cross" data-ko="십자가">Cross</div>
+      <p class="pillar-text" data-en="The Gospel of Jesus Christ is the foundation. His death, burial, resurrection, and the witness of His followers is the message we carry." data-ko="예수 그리스도의 복음이 기초입니다. 그분의 죽음, 장사, 부활, 그리고 그분의 증인들의 증언이 우리가 전하는 메시지입니다.">The Gospel of Jesus Christ is the foundation. His death, burial, resurrection, and the witness of His followers is the message we carry.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🌏</div>
+      <div class="pillar-title" data-en="Culture" data-ko="문화">Culture</div>
+      <p class="pillar-text" data-en="We do not retreat from culture. We enter it fully and faithfully as the Holy Spirit transforms us from within, launching the Kingdom of God." data-ko="우리는 문화에서 물러서지 않습니다. 성령께서 우리를 내면에서 변화시키시며 하나님 나라를 시작하시는 가운데 완전하고 신실하게 문화 속으로 들어갑니다.">We do not retreat from culture. We enter it fully and faithfully as the Holy Spirit transforms us from within, launching the Kingdom of God.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🤝</div>
+      <div class="pillar-title" data-en="Community" data-ko="공동체">Community</div>
+      <p class="pillar-text" data-en="Jesus did not say go and build organizations. He said go and make disciples. Disciples become communities — love and unity visible in the world." data-ko="예수님은 단체를 세우라고 하지 않으셨습니다. 가서 제자를 삼으라고 하셨습니다. 제자들은 공동체가 됩니다 — 세상 속에서 보이는 사랑과 연합.">Jesus did not say go and build organizations. He said go and make disciples. Disciples become communities — love and unity visible in the world.</p>
+    </div>
+  </div>
+
+  <h2 id="about-today" data-en="Where We Are Today" data-ko="현재 우리의 위치">Where We Are Today</h2>
+
+  <p data-en="CrossCulture Community Foundation is a 501(c)3 tax-exempt nonprofit registered in Texas, USA — providing the formal structure for tax-deductible giving that supports the on-the-ground work in Asia. EIN: 84-2974290." data-ko="크로스컬처 커뮤니티 파운데이션은 미국 텍사스주에 등록된 501(c)3 세금 면제 비영리 단체입니다 — 아시아 현지 사역을 지원하는 세금 공제 기부를 위한 공식 구조를 제공합니다. EIN: 84-2974290.">CrossCulture Community Foundation is a 501(c)3 tax-exempt nonprofit registered in Texas, USA — providing the formal structure for tax-deductible giving that supports the on-the-ground work in Asia. EIN: 84-2974290.</p>
+
+  <p data-en="In 2026, 크로스컬처 커뮤니티 (CrossCulture Community) was formally established in Seoul as an Unincorporated Non-Profit Association (UNA) — giving the Korea ministry its own legal standing for the first time." data-ko="2026년, 크로스컬처 커뮤니티(CrossCulture Community)가 서울에 비법인사단(UNA)으로 공식 설립되었습니다 — 한국 사역이 처음으로 자체적인 법적 지위를 갖추게 되었습니다.">In 2026, 크로스컬처 커뮤니티 (CrossCulture Community) was formally established in Seoul as an Unincorporated Non-Profit Association (UNA) — giving the Korea ministry its own legal standing for the first time.</p>
+
+  <div class="bill-card">
+    <img src="/logo.png" alt="Bill Majors">
+    <div>
+      <h3>Bill &amp; Niki</h3>
+      <p data-en="Bill Ray Majors, D.Min. has served as a missionary and pastor in Seoul, Korea since 1982. He holds a Doctor of Ministry from Biola University, a Master of Arts from Dallas Theological Seminary, and completed Clinical Pastoral Education at MD Anderson Cancer Center in Houston. He is a dual citizen of the United States and Republic of Korea, and was awarded Honorary Citizenship of Seoul by Mayor Lee Myung-bak in 2005." data-ko="빌 레이 메이저스 신학박사(D.Min.)는 1982년부터 서울에서 선교사이자 목사로 섬겨왔습니다. 바이올라대학교 신학박사, 댈러스 신학교 석사를 취득했으며, 휴스턴 MD 앤더슨 암센터에서 임상목회교육을 이수했습니다. 미국과 대한민국의 이중국적자이며, 2005년 이명박 서울시장으로부터 서울 명예시민증을 받았습니다.">Bill Ray Majors, D.Min. has served as a missionary and pastor in Seoul, Korea since 1982. He holds a Doctor of Ministry from Biola University, a Master of Arts from Dallas Theological Seminary, and completed Clinical Pastoral Education at MD Anderson Cancer Center in Houston. He is a dual citizen of the United States and Republic of Korea, and was awarded Honorary Citizenship of Seoul by Mayor Lee Myung-bak in 2005.</p>
+      <p data-en="Niki (Ja-kyung Lyu) serves alongside Bill as Treasurer of 크로스컬처 커뮤니티 (CrossCulture Community), the Unincorporated Non-Profit Association registered in Seoul, Korea." data-ko="니키(류자경) 메이저스는 크로스컬처 커뮤니티 파운데이션의 재무담당자이자 한국 비법인사단의 공동 임원으로 빌과 함께 섬기고 있습니다.">Niki (Ja-kyung Lyu) serves alongside Bill as Treasurer of 크로스컬처 커뮤니티 (CrossCulture Community), the Unincorporated Non-Profit Association registered in Seoul, Korea.</p>
+    </div>
+  </div>
+
+  <div class="museum-box">
+    <h2 id="about-museum" data-en="The Dream Ahead: Museum of the Bible in Seoul" data-ko="앞에 놓인 꿈: 서울 성경 박물관">The Dream Ahead: Museum of the Bible in Seoul</h2>
+    <p data-en="Every movement has a horizon it is walking toward. For CrossCulture Community, that horizon is the Museum of the Bible in Seoul — a landmark cultural institution that brings the living Word of God to the heart of Asia through education, art, exhibition, and community engagement." data-ko="모든 운동은 향해 걸어가는 지평선이 있습니다. 크로스컬처 커뮤니티에게 그 지평선은 서울 성경 박물관입니다 — 교육, 예술, 전시, 그리고 공동체 참여를 통해 살아있는 하나님의 말씀을 아시아의 심장부로 가져오는 획기적인 문화 기관입니다.">Every movement has a horizon it is walking toward. For CrossCulture Community, that horizon is the Museum of the Bible in Seoul — a landmark cultural institution that brings the living Word of God to the heart of Asia through education, art, exhibition, and community engagement.</p>
+    <p data-en="Korea stands at a remarkable crossroads — geographically, culturally, and spiritually. A Museum of the Bible in Seoul would serve not only Korea but all of Asia as a witness to the transforming power of Scripture." data-ko="한국은 지리적으로, 문화적으로, 영적으로 놀라운 교차로에 서 있습니다. 서울 성경 박물관은 한국뿐만 아니라 성경의 변화시키는 능력의 증인으로서 아시아 전체를 섬길 것입니다.">Korea stands at a remarkable crossroads — geographically, culturally, and spiritually. A Museum of the Bible in Seoul would serve not only Korea but all of Asia as a witness to the transforming power of Scripture.</p>
+    <p data-en="It is a long-term vision. But then again, so was a 21-year-old sitting on a suitcase at Gimpo Airport in 1982." data-ko="이것은 장기적인 비전입니다. 하지만 그것도 마찬가지였습니다 — 1982년 김포공항에서 짐 가방 위에 앉아있던 21세 청년처럼.">It is a long-term vision. But then again, so was a 21-year-old sitting on a suitcase at Gimpo Airport in 1982.</p>
+    <a href="https://www.crossculture-community.com/museum" target="_blank" class="btn-gold" data-en="Museum" data-ko="박물관">Museum</a>
+  </div>
+
+  <div class="glory" data-en='"To God be the glory, great things He has done." — Fanny Crosby, 1875' data-ko='"하나님께 영광을 돌립니다, 그분은 위대한 일을 행하셨습니다." — 패니 크로스비, 1875'>"To God be the glory, great things He has done." — Fanny Crosby, 1875</div>
+
+</div>
+
+<div class="crosslink-box">
+  <h2 id="about-bill" data-en="The Man Behind the Mission" data-ko="사역 뒤의 사람">The Man Behind the Mission</h2>
+  <p data-en="To read Bill's personal story — his calling at 13, his life in Korea, his autobiography in progress, and his YouTube archive of 40+ years of ministry — visit his personal website." data-ko="빌의 개인적인 이야기를 읽으시려면 — 13세의 소명, 한국에서의 삶, 집필 중인 자서전, 그리고 40년 이상의 사역 유튜브 아카이브 — 그의 개인 웹사이트를 방문하세요.">To read Bill's personal story — his calling at 13, his life in Korea, his autobiography in progress, and his YouTube archive of 40+ years of ministry — visit his personal website.</p>
+  <a href="https://www.billmajors.com" target="_blank" class="btn-gold" data-en="Visit billmajors.com" data-ko="billmajors.com 방문">Visit billmajors.com</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Cross<span>Culture</span> Community Foundation</div>
+  <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
+  <div>© 2026 CrossCulture Community Foundation</div>
+</footer>
+
+
+<script>
+(function() {
+  var lang = 'en';
+
+  function applyLang(l) {
+    lang = l;
+    sessionStorage.setItem('ccf_lang', l);
+    document.body.classList.remove('ko');
+    if (l === 'ko') document.body.classList.add('ko');
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn && btnKo) {
+      if (l === 'en') { btnEn.classList.add('active'); btnKo.classList.remove('active'); }
+      else { btnEn.classList.remove('active'); btnKo.classList.add('active'); }
+    }
+    var els = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var v = el.getAttribute('data-' + l);
+      if (!v) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = v;
+      else el.innerHTML = v;
+    }
+    // Update all internal nav links to carry language
+    var links = document.querySelectorAll('nav a[href]');
+    for (var j = 0; j < links.length; j++) {
+      var href = links[j].getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('#')) continue;
+      // Remove existing lang param
+      href = href.replace(/[?&]lang=[a-z]+/, '');
+      // Add new lang param if Korean
+      if (l === 'ko') {
+        href = href + (href.indexOf('?') >= 0 ? '&' : '?') + 'lang=ko';
+      }
+      links[j].setAttribute('href', href);
+    }
+  }
+
+  window.setLang = applyLang;
+
+  window.handleContact = function(e) {
+    e.preventDefault();
+    alert(lang === 'ko'
+      ? '메시지 감사합니다! 곧 연락드리겠습니다.\n\nbillmajors@crossculture-community.com'
+      : 'Thank you! We will be in touch soon.\n\nbillmajors@crossculture-community.com');
+    e.target.reset();
+  };
+
+  window.handleNotify = function() {
+    var email = document.getElementById('notify-email');
+    if (!email || !email.value || email.value.indexOf('@') === -1) {
+      alert(lang === 'ko' ? '유효한 이메일 주소를 입력해 주세요.' : 'Please enter a valid email address.');
+      return;
+    }
+    alert(lang === 'ko' ? '감사합니다! 알려드리겠습니다.' : 'Thank you! We will notify you.');
+    email.value = '';
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Read language from URL param or sessionStorage
+    var params = new URLSearchParams(window.location.search);
+    var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
+    applyLang(savedLang);
+
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn) btnEn.addEventListener('click', function() { applyLang('en'); });
+    if (btnKo) btnKo.addEventListener('click', function() { applyLang('ko'); });
+
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('main-nav') || document.querySelector('nav');
+      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.08)' : 'none';
+    });
+
+    // Smooth scroll for anchor links
+    var anchors = document.querySelectorAll('a[href^="#"]');
+    for (var i = 0; i < anchors.length; i++) {
+      anchors[i].addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  });
+})();
+
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
   #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding-top: 80px; background: var(--cream); position: relative; overflow: hidden; }
   .hero-texture { position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 80%, rgba(139,111,71,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(201,148,58,0.06) 0%, transparent 50%); pointer-events: none; }
   .hero-left { padding: 80px 60px 80px 80px; position: relative; z-index: 2; }
