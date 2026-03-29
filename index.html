@@ -597,3 +597,566 @@ document.addEventListener('click', function(e) {
 </script>
 </body>
 </html>
+
+  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding-top: 80px; background: var(--cream); position: relative; overflow: hidden; }
+  .hero-texture { position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 80%, rgba(139,111,71,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(201,148,58,0.06) 0%, transparent 50%); pointer-events: none; }
+  .hero-left { padding: 80px 60px 80px 80px; position: relative; z-index: 2; }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 600; line-height: 1.08; color: var(--earth-dark); margin-bottom: 28px; }
+  body.ko .hero-title { font-family: 'Noto Sans KR', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.3; }
+  .hero-title em { font-style: italic; color: var(--gold); }
+  body.ko .hero-title em { font-style: normal; }
+  .hero-tagline { font-size: 1.05rem; font-weight: 300; color: var(--charcoal-soft); line-height: 1.75; max-width: 440px; margin-bottom: 48px; border-left: 3px solid var(--gold-light); padding-left: 20px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; background: var(--earth-dark); color: var(--cream); padding: 16px 36px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s; cursor: pointer; border: none; font-family: inherit; }
+  .btn-primary:hover { background: var(--gold); color: var(--ink); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(139,111,71,0.25); }
+  .btn-outline { display: inline-block; border: 1.5px solid var(--earth); color: var(--earth-dark); padding: 16px 36px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s; }
+  .btn-outline:hover { background: var(--earth-dark); color: var(--cream); transform: translateY(-2px); }
+  .hero-right { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .hero-visual-bg { width: 100%; height: 100%; background: linear-gradient(135deg, #C4A882 0%, #8B6F47 40%, #5C4A2A 100%); display: flex; align-items: center; justify-content: center; position: relative; }
+  .hero-visual-overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--cream) 0%, transparent 30%); }
+  .hero-stat-card { position: absolute; bottom: 60px; left: -40px; background: var(--earth-dark); color: var(--cream); padding: 24px 32px; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); z-index: 3; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: var(--gold-light); line-height: 1; }
+  .stat-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; margin-top: 4px; }
+
+  section { padding: 100px 80px; }
+  .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; color: var(--earth-dark); line-height: 1.15; margin-bottom: 20px; }
+  body.ko .section-title { font-family: 'Noto Sans KR', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+
+  #vision { background: var(--warm-white); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .vision-statement { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--charcoal-soft); line-height: 1.8; margin-bottom: 32px; }
+  body.ko .vision-statement { font-family: 'Noto Sans KR', sans-serif; font-style: normal; font-size: 1.05rem; }
+  .vision-body { font-size: 0.95rem; color: var(--charcoal-soft); line-height: 1.85; }
+  .pillar { display: flex; gap: 20px; margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid rgba(139,111,71,0.15); align-items: flex-start; }
+  .pillar:last-child { border-bottom: none; margin-bottom: 0; }
+  .pillar-icon { width: 48px; height: 48px; background: var(--cream); border: 1px solid rgba(139,111,71,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.3rem; }
+  .pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--earth-dark); margin-bottom: 6px; }
+  body.ko .pillar-title { font-family: 'Noto Sans KR', sans-serif; font-size: 1rem; }
+  .pillar-text { font-size: 0.88rem; color: var(--charcoal-soft); line-height: 1.7; }
+
+  #story { background: var(--earth-dark); color: var(--cream); position: relative; overflow: hidden; }
+  #story::before { content: '"'; position: absolute; top: -40px; left: 60px; font-family: 'Cormorant Garamond', serif; font-size: 300px; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; }
+  .story-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+  .story-left .section-label { color: var(--gold-light); }
+  .story-left .section-label::before { background: var(--gold-light); }
+  .story-left .section-title { color: var(--cream); }
+  .timeline-item { display: grid; grid-template-columns: 80px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.08); align-items: start; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-year { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold-light); line-height: 1; padding-top: 3px; }
+  .timeline-content h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--cream); margin-bottom: 4px; }
+  body.ko .timeline-content h4 { font-family: 'Noto Sans KR', sans-serif; font-size: 0.95rem; }
+  .timeline-content p { font-size: 0.85rem; color: rgba(247,243,236,0.65); line-height: 1.65; }
+
+  #projects { background: var(--cream); text-align: center; }
+  .section-header { max-width: 600px; margin: 0 auto 60px; }
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px; }
+  .project-card { background: var(--warm-white); border: 1px solid rgba(139,111,71,0.15); border-radius: 4px; padding: 40px 32px; text-align: left; transition: all 0.3s; position: relative; overflow: hidden; }
+  .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(139,111,71,0.12); }
+  .project-card:hover::after { transform: scaleX(1); }
+  .project-icon { font-size: 2rem; margin-bottom: 20px; display: block; }
+  .project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--earth-dark); margin-bottom: 12px; }
+  body.ko .project-title { font-family: 'Noto Sans KR', sans-serif; font-size: 1.05rem; }
+  .project-desc { font-size: 0.88rem; color: var(--charcoal-soft); line-height: 1.75; margin-bottom: 20px; }
+  .project-give { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+  .project-give:hover { gap: 14px; }
+  .project-give::after { content: '→'; }
+  .projects-vision { background: var(--earth-dark); color: var(--cream); border-radius: 4px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; text-align: left; }
+  .projects-vision h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--gold-light); margin-bottom: 8px; }
+  body.ko .projects-vision h3 { font-family: 'Noto Sans KR', sans-serif; font-size: 1.2rem; }
+  .projects-vision p { font-size: 0.9rem; color: rgba(247,243,236,0.7); max-width: 500px; }
+
+  #give { background: var(--warm-white); }
+  #contact { background: var(--charcoal); color: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  #contact .section-label { color: var(--gold-light); }
+  #contact .section-label::before { background: var(--gold-light); }
+  #contact .section-title { color: var(--cream); }
+  .contact-desc { font-size: 0.95rem; color: rgba(247,243,236,0.65); line-height: 1.85; margin-bottom: 40px; }
+  .contact-details { display: flex; flex-direction: column; gap: 16px; }
+  .contact-item { display: flex; gap: 16px; align-items: center; font-size: 0.9rem; color: rgba(247,243,236,0.75); }
+  .contact-item a { color: var(--gold-light); text-decoration: none; }
+  .contact-item a:hover { text-decoration: underline; }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .contact-form input, .contact-form textarea { padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; color: var(--cream); font-family: inherit; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+  .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold-light); }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(247,243,236,0.35); }
+  .contact-form textarea { resize: vertical; min-height: 120px; }
+  .contact-form button { padding: 16px; background: var(--gold); color: var(--ink); border: none; border-radius: 2px; font-family: inherit; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+  .contact-form button:hover { background: var(--gold-light); }
+
+  footer { background: var(--ink); color: rgba(247,243,236,0.5); padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-left > * { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+  .hero-eyebrow { animation-delay: 0.1s; } .hero-title { animation-delay: 0.25s; } .hero-tagline { animation-delay: 0.4s; } .hero-ctas { animation-delay: 0.55s; }
+
+  @media (max-width: 900px) {
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    nav { padding: 14px 20px; }
+    nav ul { display: none; }
+    .nav-give { display: none; }
+    section { padding: 48px 20px; }
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 90px 20px 48px; }
+    .hero-right { display: none; }
+    .hero-title { font-size: clamp(2rem, 8vw, 3.5rem); }
+    .hero-tagline { font-size: 0.9rem; }
+    #vision { grid-template-columns: 1fr; gap: 32px; }
+    .vision-content { max-width: 100%; }
+    .story-inner { grid-template-columns: 1fr; gap: 32px; }
+    .story-text { padding: 32px 20px; }
+    .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+    .projects-vision { flex-direction: column; gap: 16px; }
+    .project-card { padding: 24px 20px; }
+    #give { padding: 48px 20px; }
+    #give h2 { font-size: 1.8rem; }
+    .give-inner { padding: 0; }
+    #contact { grid-template-columns: 1fr; gap: 32px; }
+    .contact-info { padding: 0; }
+    .contact-form-wrap { padding: 0; }
+    .subscribe-section, div[style*="background:var(--earth-dark)"] { padding: 48px 20px !important; }
+    .subscribe-form, form[action*="mailchimp"] { max-width: 100% !important; }
+    .subscribe-form input, form[action*="mailchimp"] input[type="email"],
+    form[action*="mailchimp"] input[type="text"] { width: 100% !important; border-right: 1.5px solid rgba(201,148,58,0.4) !important; border-bottom: none !important; border-radius: 2px 2px 0 0 !important; }
+    form[action*="mailchimp"] div[style*="display:flex"] { flex-direction: column !important; }
+    form[action*="mailchimp"] button[type="submit"] { border-radius: 0 0 2px 2px !important; width: 100% !important; }
+    footer { flex-direction: column; text-align: center; padding: 28px 20px; gap: 12px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    * { max-width: 100%; }
+    img { max-width: 100%; height: auto; }
+    #give { padding: 60px 20px !important; }
+    #give p, #give h2, #give .section-label { text-align: center !important; padding-left: 16px; padding-right: 16px; }
+    #give > * { max-width: 100% !important; }
+  }
+  @media (max-width: 480px) {
+    section { padding: 40px 16px; }
+    .hero-left { padding: 80px 16px 40px; }
+    nav { padding: 12px 16px; }
+    .section-label { font-size: 0.65rem; }
+    .section-title { font-size: clamp(1.6rem, 7vw, 2.5rem); }
+    .project-card { padding: 20px 16px; }
+    footer { padding: 24px 16px; }
+    #give { padding: 48px 16px !important; text-align: center; }
+    #give p { padding: 0 8px; }
+    #give div[style*="max-width:560px"],
+    #give div[style*="max-width: 560px"] { padding: 0 8px; }
+    form[action*="mailchimp"] { width: 100% !important; }
+    form[action*="mailchimp"] > div { max-width: 100% !important; width: 100% !important; padding: 0 !important; }
+    form[action*="mailchimp"] input { width: 100% !important; border-radius: 2px !important; border-right: 1.5px solid rgba(201,148,58,0.4) !important; }
+    form[action*="mailchimp"] div[style*="display:flex"],
+    form[action*="mailchimp"] div[style*="display: flex"] { flex-direction: column !important; }
+    form[action*="mailchimp"] button[type="submit"] {
+      width: 100% !important;
+      border-radius: 0 0 2px 2px !important;
+      padding: 14px !important;
+    }
+    div[style*="background:var(--earth-dark)"][style*="padding:60px"],
+    div[style*="background:var(--earth-dark)"][style*="padding: 60px"] { padding: 48px 16px !important; }
+    #give p { color: #F7F3EC !important; opacity: 1 !important; visibility: visible !important; display: block !important; text-align: center !important; width: 100% !important; padding: 0 16px !important; box-sizing: border-box !important; }
+    #give p span { color: #F7F3EC !important; opacity: 0.85 !important; visibility: visible !important; }
+    #give { padding: 48px 16px !important; overflow: visible !important; }
+  }
+
+  /* HAMBURGER */
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--earth-dark); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* MOBILE MENU */
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: rgba(253,250,245,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); z-index: 99; flex-direction: column; padding: 8px 0 16px; box-shadow: 0 8px 32px rgba(92,74,42,0.1); }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { padding: 14px 24px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; border-bottom: 1px solid rgba(139,111,71,0.08); transition: all 0.2s; }
+  .mobile-menu a:hover { color: var(--gold); background: rgba(201,148,58,0.05); }
+  .mobile-menu .mobile-give { color: var(--cream); background: var(--earth-dark); margin: 12px 24px 0; border-radius: 2px; text-align: center; border-bottom: none; }
+  .mobile-menu .mobile-give:hover { background: var(--gold); color: var(--ink); }
+
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+  }
+
+  .zeffy-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  @media (max-width: 600px) {
+    .zeffy-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 20px !important;
+      padding: 24px 16px !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo"><img src="/logo.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
+  <ul id="nav-links">
+    <li><a href="#vision" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="#story" data-en="Our Story" data-ko="우리의 이야기">Our Story</a></li>
+    <li><a href="#projects" data-en="Projects" data-ko="프로젝트">Projects</a></li>
+    <li><a href="about.html" data-en="About" data-ko="소개">About</a></li>
+    <li><a href="museum.html" data-en="Museum" data-ko="박물관">Museum</a></li>
+    <li><a href="blog.html" data-en="Stories" data-ko="이야기">Stories</a></li>
+    <li><a href="#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
+    <li><a href="membership.html" data-en="Join" data-ko="회원 가입">Join</a></li>
+    <li><a href="#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en" data-lang="en">EN</button>
+      <button class="lang-btn" id="btn-ko" data-lang="ko">한국어</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu">
+  <a href="#vision" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="#story" onclick="closeMenu()" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
+  <a href="#projects" onclick="closeMenu()" data-en="Projects" data-ko="프로젝트">Projects</a>
+  <a href="about.html" onclick="closeMenu()" data-en="About" data-ko="소개">About</a>
+  <a href="museum.html" onclick="closeMenu()" data-en="Museum" data-ko="박물관">Museum</a>
+  <a href="blog.html" onclick="closeMenu()" data-en="Stories" data-ko="이야기">Stories</a>
+  <a href="#contact" onclick="closeMenu()" data-en="Contact" data-ko="연락처">Contact</a>
+  <a href="membership.html" onclick="closeMenu()" data-en="Join" data-ko="회원 가입">Join</a>
+  <a href="#give" onclick="closeMenu()" class="mobile-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
+</div>
+
+<section id="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-left">
+    <div style="margin-bottom:24px;"><img src="/logo.png" alt="CrossCulture Community" style="height:80px;width:auto;"></div>
+    <div class="hero-eyebrow" data-en="Seoul, Korea · Since 1982" data-ko="서울, 한국 · 1982년부터">Seoul, Korea · Since 1982</div>
+    <h1 class="hero-title">
+      <span data-en="Building a<br><em>CrossCulture</em><br>Community in Asia" data-ko="아시아에서<br><em>크로스컬처</em><br>커뮤니티를 세우다">Building a<br><em>CrossCulture</em><br>Community in Asia</span>
+    </h1>
+    <p class="hero-tagline" data-en="The Bible is not just literature — it shapes how we live and love in the world." data-ko="성경은 단순한 문학이 아닙니다 — 성경은 우리가 세상에서 살고 사랑하는 방식을 형성합니다.">The Bible is not just literature — it shapes how we live and love in the world.</p>
+    <div class="hero-ctas">
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual-bg">
+      <svg viewBox="0 0 200 240" width="200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.18">
+        <rect x="80" y="0" width="40" height="240" fill="white"/>
+        <rect x="0" y="70" width="200" height="40" fill="white"/>
+      </svg>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(92,74,42,0.6),transparent);"></div>
+    </div>
+    <div class="hero-visual-overlay"></div>
+    <div class="hero-stat-card">
+      <div class="stat-number">40+</div>
+      <div class="stat-label" data-en="Years in Korea" data-ko="한국 사역 년수">Years in Korea</div>
+    </div>
+  </div>
+</section>
+
+<section id="vision">
+  <div>
+    <div class="section-label" data-en="Foundational Vision" data-ko="기초 비전">Foundational Vision</div>
+    <h2 class="section-title" data-en="A Movement, Not an Organization" data-ko="조직이 아닌 운동">A Movement, Not an Organization</h2>
+    <p class="vision-statement" data-en='"CrossCulture Community is a movement of people living as apprentices of Jesus Christ, formed by the Word of God and led by the Spirit of God."' data-ko='"크로스컬처 커뮤니티는 하나님의 말씀으로 형성되고 하나님의 성령으로 이끌림을 받아 예수 그리스도의 제자로 살아가는 사람들의 운동입니다."'>"CrossCulture Community is a movement of people living as apprentices of Jesus Christ, formed by the Word of God and led by the Spirit of God."</p>
+    <p class="vision-body" data-en="We are committed to lifelong transformation, giving our allegiance to Jesus Christ, and walking in obedience as His disciples. Through relationships, individuals and families form CrossCulture Communities — expressions of love and unity in the world, but not of the world.<br><br>Our hope is anchored in the promise of Jesus Christ. We live as faithful stewards, actively engaged in His mission, while eagerly awaiting His return and the fulfillment of His Kingdom." data-ko="우리는 평생의 변화에 헌신하며, 예수 그리스도께 충성을 다하고, 그분의 제자로서 순종하며 걸어갑니다. 관계를 통해 개인과 가정이 크로스컬처 커뮤니티를 형성합니다 — 세상 안에 있지만 세상에 속하지 않는 사랑과 연합의 표현입니다.<br><br>우리의 소망은 예수 그리스도의 약속에 닻을 내리고 있습니다. 우리는 그분의 사명에 적극적으로 참여하며 살아가면서, 그분의 재림과 그분의 나라의 완성을 간절히 기다립니다.">We are committed to lifelong transformation, giving our allegiance to Jesus Christ, and walking in obedience as His disciples. Through relationships, individuals and families form CrossCulture Communities — expressions of love and unity in the world, but not of the world.<br><br>Our hope is anchored in the promise of Jesus Christ. We live as faithful stewards, actively engaged in His mission, while eagerly awaiting His return and the fulfillment of His Kingdom.</p>
+  </div>
+  <div>
+    <div class="pillar"><div class="pillar-icon">✝</div><div>
+      <div class="pillar-title" data-en="Cross — The Gospel" data-ko="십자가 — 복음">Cross — The Gospel</div>
+      <p class="pillar-text" data-en="Carrying the Cross: Jesus' death, burial, resurrection, and His witnesses. The foundation of everything we do." data-ko="십자가를 지는 것: 예수님의 죽음, 장사, 부활, 그리고 그분의 증인들. 우리가 하는 모든 것의 기초입니다.">Carrying the Cross: Jesus' death, burial, resurrection, and His witnesses. The foundation of everything we do.</p>
+    </div></div>
+    <div class="pillar"><div class="pillar-icon">🌏</div><div>
+      <div class="pillar-title" data-en="Culture — The Kingdom" data-ko="문화 — 하나님 나라">Culture — The Kingdom</div>
+      <p class="pillar-text" data-en="Living in culture as the Holy Spirit dwells within us, transforming us and launching the Kingdom of God." data-ko="성령께서 우리 안에 거하시며 우리를 변화시키고 하나님 나라를 시작하시는 가운데 문화 속에서 살아가는 것.">Living in culture as the Holy Spirit dwells within us, transforming us and launching the Kingdom of God.</p>
+    </div></div>
+    <div class="pillar"><div class="pillar-icon">🤝</div><div>
+      <div class="pillar-title" data-en="Community — The Mandate" data-ko="공동체 — 사명">Community — The Mandate</div>
+      <p class="pillar-text" data-en='Jesus&apos; mandate: "Go and make disciples." Transformed lives expressed through services and mission-focused projects.' data-ko='예수님의 명령: "가서 제자를 삼으라." 변화된 삶은 섬김과 사명 중심의 프로젝트를 통해 표현됩니다.'>Jesus' mandate: "Go and make disciples." Transformed lives expressed through services and mission-focused projects.</p>
+    </div></div>
+    <div class="pillar"><div class="pillar-icon">📖</div><div>
+      <div class="pillar-title" data-en="Services &amp; Projects" data-ko="섬김 &amp; 프로젝트">Services &amp; Projects</div>
+      <p class="pillar-text" data-en="Teaching, care, generosity, counseling, and hospitality — alongside education, compassion ministries, and long-term vision projects in Asia." data-ko="가르침, 돌봄, 관대함, 상담, 환대 — 그리고 교육, 구제 사역, 아시아의 장기 비전 프로젝트.">Teaching, care, generosity, counseling, and hospitality — alongside education, compassion ministries, and long-term vision projects in Asia.</p>
+    </div></div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="story-inner">
+    <div class="story-left">
+      <div class="section-label" data-en="Bill &amp; Niki" data-ko="빌 &amp; 니키 메이저스">Bill &amp; Niki</div>
+      <h2 class="section-title" data-en="A Life Called to Korea" data-ko="한국으로 부르심 받은 삶">A Life Called to Korea</h2>
+    </div>
+    <div>
+      <div class="timeline-item"><div class="timeline-year">1973</div><div class="timeline-content">
+        <h4 data-en="The Calling" data-ko="소명">The Calling</h4>
+        <p data-en="At 13 years old, Bill Ray Majors surrendered his life to missions — a commitment that would shape every decade to follow." data-ko="13세에 빌 레이 메이저스는 선교에 자신의 삶을 헌신했습니다 — 이후 헌신된 삶을 살아왔습니다.">At 13 years old, Bill Ray Majors surrendered his life to missions — a commitment that would shape every decade to follow.</p>
+      </div></div>
+      <div class="timeline-item"><div class="timeline-year">1982</div><div class="timeline-content">
+        <h4 data-en="Arrival in Korea" data-ko="한국 도착">Arrival in Korea</h4>
+        <p data-en="Bill arrived in Korea at age 21, beginning what would become a 40+ year journey of ministry, community building, and cross-cultural service in Seoul." data-ko="빌은 21세에 한국에 도착하여 서울에서 40년 이상의 사역, 공동체 형성, 그리고 문화간 섬김의 여정을 시작했습니다.">Bill arrived in Korea at age 21, beginning what would become a 40+ year journey of ministry, community building, and cross-cultural service in Seoul.</p>
+      </div></div>
+      <div class="timeline-item"><div class="timeline-year">1998</div><div class="timeline-content">
+        <h4 data-en="CrossCulture Community Begins" data-ko="크로스컬처 커뮤니티 시작">CrossCulture Community Begins</h4>
+        <p data-en="Foreigners visiting, working, and studying in Korea began gathering as CrossCulture Community — a movement that continues to grow across Asia." data-ko="한국을 방문하고, 일하고, 공부하는 외국인들이 크로스컬처 커뮤니티로 모이기 시작했습니다 — 아시아 전역에서 계속 성장하는 운동입니다.">Foreigners visiting, working, and studying in Korea began gathering as CrossCulture Community — a movement that continues to grow across Asia.</p>
+      </div></div>
+      <div class="timeline-item"><div class="timeline-year">2019</div><div class="timeline-content">
+        <h4 data-en="Foundation Established" data-ko="재단 설립">Foundation Established</h4>
+        <p data-en="CrossCulture Community Foundation registered as a 501(c)3 non-profit in Texas — creating a formal structure for receiving tax-deductible donations." data-ko="크로스컬처 커뮤니티 파운데이션이 텍사스주 501(c)3 비영리 단체로 등록 — 세금 공제 기부를 받기 위한 공식 구조를 갖추었습니다.">CrossCulture Community Foundation registered as a 501(c)3 non-profit in Texas — creating a formal structure for receiving tax-deductible donations.</p>
+      </div></div>
+      <div class="timeline-item"><div class="timeline-year">2026</div><div class="timeline-content">
+        <h4 data-en="Korea UNA (Unincorporated Non-Profit Association) Formed" data-ko="한국 비법인사단 설립">Korea UNA (Unincorporated Non-Profit Association) Formed</h4>
+        <p data-en="크로스컬처 커뮤니티 (CrossCulture Community) established in Seoul, providing legal standing for on-the-ground ministry operations in Korea." data-ko="크로스컬처 커뮤니티 (CrossCulture Community)가 서울에 설립되어 한국 현지 사역 운영을 위한 법적 기반을 갖추었습니다.">크로스컬처 커뮤니티 (CrossCulture Community) established in Seoul, providing legal standing for on-the-ground ministry operations in Korea.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-header">
+    <div class="section-label" style="justify-content:center;" data-en="How We Work" data-ko="우리의 사역 방식">How We Work</div>
+    <h2 class="section-title" data-en="Current Projects" data-ko="현재 프로젝트">Current Projects</h2>
+    <p style="color:var(--charcoal-soft);font-size:0.95rem;line-height:1.75;" data-en="Click a project to direct your gift. Every donation is 100% tax-deductible through our IRS-recognized 501(c)3 foundation." data-ko="프로젝트를 클릭하여 후원을 지정하세요. 모든 후원은 IRS 인정 501(c)3 재단을 통해 100% 세금 공제됩니다.">Click a project to direct your gift. Every donation is 100% tax-deductible through our IRS-recognized 501(c)3 foundation.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <span class="project-icon">📖</span>
+      <div class="project-title" data-en="General Fund" data-ko="일반 후원">General Fund</div>
+      <p class="project-desc" data-en="Give where most needed. Support the overall mission of CrossCulture Community in Asia." data-ko="가장 필요한 곳에 드리세요. 아시아에서의 크로스컬처 커뮤니티 전체 사역을 지원합니다.">Give where most needed. Support the overall mission of CrossCulture Community in Asia.</p>
+      <a href="https://www.zeffy.com/en-US/donation-form/general-fund-99" target="_blank" class="project-give" data-en="Give to General Fund" data-ko="일반 후원">Give to General Fund</a>
+    </div>
+    <div class="project-card">
+      <span class="project-icon">🙏</span>
+      <div class="project-title" data-en="Missionary Fund" data-ko="선교사 후원">Missionary Fund</div>
+      <p class="project-desc" data-en="Supporting Bill &amp; Niki's daily living and ministry expenses as they serve full-time in Seoul, Korea." data-ko="서울에서 전임으로 섬기는 빌 &amp; 니키의 일상 생활비와 사역비를 지원합니다.">Supporting Bill &amp; Niki's daily living and ministry expenses as they serve full-time in Seoul, Korea.</p>
+      <a href="https://www.zeffy.com/en-US/donation-form/missionary-fund-living-expenses" target="_blank" class="project-give" data-en="Give to Missionary Fund" data-ko="선교사 후원">Give to Missionary Fund</a>
+    </div>
+    <div class="project-card">
+      <span class="project-icon">🏠</span>
+      <div class="project-title" data-en="Event &amp; Guest Facility" data-ko="행사 &amp; 게스트 시설">Event &amp; Guest Facility</div>
+      <p class="project-desc" data-en="Raising funds to lease a flexible space in Seoul for events, guest housing, and community project work." data-ko="행사, 숙소, 공동체 프로젝트를 위한 서울의 유연한 공간 임대 자금을 모금합니다.">Raising funds to lease a flexible space in Seoul for events, guest housing, and community project work.</p>
+      <a href="https://www.zeffy.com/en-US/donation-form/event-and-guest-facilities" target="_blank" class="project-give" data-en="Give to Facility Fund" data-ko="시설 후원">Give to Facility Fund</a>
+    </div>
+    <div class="project-card">
+      <span class="project-icon">✈️</span>
+      <div class="project-title" data-en="Mission Trips" data-ko="선교 여행">Mission Trips</div>
+      <p class="project-desc" data-en="Enabling Bill to travel throughout Asia to encourage CrossCulture Community members serving in other nations." data-ko="빌이 다른 나라에서 섬기는 크로스컬처 커뮤니티 멤버들을 격려하기 위해 아시아 전역을 여행할 수 있도록 지원합니다.">Enabling Bill to travel throughout Asia to encourage CrossCulture Community members serving in other nations.</p>
+      <a href="https://www.zeffy.com/en-US/donation-form/mission-trips-4" target="_blank" class="project-give" data-en="Give to Mission Trips" data-ko="선교 여행 후원">Give to Mission Trips</a>
+    </div>
+    <div class="project-card">
+      <span class="project-icon">🏛️</span>
+      <div class="project-title" data-en="Museum of the Bible" data-ko="서울 성경 박물관">Museum of the Bible</div>
+      <p class="project-desc" data-en="A landmark long-term vision project — bringing the living Word to Korea and Asia through education, art, and community." data-ko="교육, 예술, 공동체를 통해 살아있는 말씀을 한국과 아시아에 전하는 장기 비전 프로젝트.">A landmark long-term vision project — bringing the living Word to Korea and Asia through education, art, and community.</p>
+      <a href="https://www.zeffy.com/en-US/donation-form/museum-of-the-bible-in-seoul" target="_blank" class="project-give" data-en="Give to this Vision" data-ko="이 비전에 후원">Give to this Vision</a>
+    </div>
+    <div class="project-card" style="background:var(--earth-dark);border-color:var(--earth-dark);">
+      <span class="project-icon">✝</span>
+      <div class="project-title" style="color:var(--gold-light);" data-en="Why Give?" data-ko="왜 후원합니까?">Why Give?</div>
+      <p class="project-desc" style="color:rgba(247,243,236,0.75);" data-en='"To God be the glory, great things He has done." Every gift advances the Kingdom of God in Asia.' data-ko='"하나님께 영광을 돌립니다, 그분은 위대한 일을 행하셨습니다." 모든 후원은 아시아에서 하나님 나라를 전진시킵니다.'>"To God be the glory, great things He has done." Every gift advances the Kingdom of God in Asia.</p>
+      <div style="margin-top:16px;font-size:0.78rem;color:var(--gold-light);letter-spacing:0.08em;" data-en="100% TAX DEDUCTIBLE · ZERO FEES" data-ko="100% 세금 공제 · 수수료 없음">100% TAX DEDUCTIBLE · ZERO FEES</div>
+    </div>
+  </div>
+  <div class="zeffy-grid" style="background:var(--cream);border:1px solid rgba(139,111,71,0.15);border-radius:4px;padding:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;">
+    <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--earth-dark);">0%</div><div style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:4px;" data-en="Platform Fees" data-ko="플랫폼 수수료">Platform Fees</div></div>
+    <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--earth-dark);">100%</div><div style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:4px;" data-en="Goes to Mission" data-ko="사역에 전달">Goes to Mission</div></div>
+    <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--earth-dark);">501(c)3</div><div style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:4px;" data-en="Tax Exempt" data-ko="세금 면제">Tax Exempt</div></div>
+    <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--earth-dark);" data-en="Instant" data-ko="즉시">Instant</div><div style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:4px;" data-en="Email Receipt" data-ko="이메일 영수증">Email Receipt</div></div>
+  </div>
+</section>
+
+<section id="give" style="background:var(--earth-dark);text-align:center;padding:80px 40px;box-sizing:border-box;width:100%;">
+  <div class="section-label" style="justify-content:center;color:var(--gold-light);" data-en="Give Today" data-ko="오늘 후원하세요">Give Today</div>
+  <h2 class="section-title" style="color:var(--cream);text-align:center;" data-en="Ready to Give?" data-ko="후원 준비가 되셨나요?">Ready to Give?</h2>
+  <p style="color:#F7F3EC;max-width:520px;margin:0 auto 16px;font-size:0.95rem;line-height:1.8;text-align:center;padding:0;box-sizing:border-box;" data-en="Select a project above and give directly through Zeffy." data-ko="위에서 프로젝트를 선택하고 Zeffy를 통해 직접 후원하세요.">Select a project above and give directly through Zeffy.</p>
+  <p style="color:#F7F3EC;max-width:520px;margin:0 auto 40px;font-size:0.85rem;line-height:2;text-align:center;padding:0;box-sizing:border-box;">
+    <span style="display:inline-block;margin:0 8px;">✓ 100% Secure</span>
+    <span style="display:inline-block;margin:0 8px;">✓ Zero Platform Fees</span>
+    <span style="display:inline-block;margin:0 8px;">✓ Instant Tax Receipt</span>
+  </p>
+
+  <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(201,148,58,0.3);border-radius:4px;padding:20px 32px;max-width:560px;margin:0 auto 32px;text-align:left;">
+    <div style="font-size:0.75rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;" data-en="Korean Won Bank Transfer" data-ko="원화 계좌이체">Korean Won Bank Transfer</div>
+    <div style="font-size:0.88rem;color:rgba(247,243,236,0.75);line-height:1.8;" data-en="Museum donations in Korean Won or any designation of donations to CrossCulture Community through online banking can be sent to Shinhan Bank: 01036135896 — Any questions contact Bill Majors (010-3613-5896)." data-ko="서울 성경 박물관 후원금 또는 크로스컬처 커뮤니티에 대한 모든 지정 후원금을 원화로 온라인 이체하실 경우 신한은행 01036135896으로 보내주시면 됩니다 — 문의사항은 빌 목사에게 연락해 주세요 (010-3613-5896).">Museum donations in Korean Won or any designation of donations to CrossCulture Community through online banking can be sent to Shinhan Bank: 01036135896 — Any questions contact Bill Majors (010-3613-5896).</div>
+  </div>
+
+  <a href="#projects" style="display:inline-block;background:var(--gold);color:var(--ink);padding:16px 40px;font-size:0.85rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.25s;margin-bottom:24px;" data-en="Choose a Project to Support" data-ko="지원할 프로젝트 선택">Choose a Project to Support</a>
+
+  <p style="color:rgba(247,243,236,0.45);margin-top:0;font-size:0.8rem;"><span style="color:rgba(247,243,236,0.45);text-decoration:none;">EIN:&#8203;84&#8209;2974290 · CrossCulture Community Foundation · Dallas, TX · </span><span data-en="A 501(c)3 Tax-Exempt Organization" data-ko="501(c)3 세금 면제 단체">A 501(c)3 Tax-Exempt Organization</span></p>
+</section>
+
+
+<!-- MAILCHIMP SUBSCRIBE -->
+<div style="background:var(--earth-dark);padding:60px 80px;text-align:center;box-sizing:border-box;width:100%;">
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold-light);margin-bottom:16px;" data-en="Stay Connected" data-ko="소식을 받아보세요">Stay Connected</h2>
+  <p style="font-size:0.9rem;color:rgba(247,243,236,0.65);max-width:480px;margin:0 auto 32px;line-height:1.8;" data-en="Newsletters, updates, stories from Korea, and announcement of book completion — delivered to your inbox." data-ko="뉴스레터, 사역 소식, 한국에서의 이야기, 그리고 책 출판 소식 — 받은 편지함으로 전달됩니다.">Newsletters, updates, stories from Korea, and announcement of book completion — delivered to your inbox.</p>
+  <form action="https://crossculture-community.us11.list-manage.com/subscribe/post?u=4509eaf80f3c04aea5e8ef08b&id=2f61037e9c&f_id=002bd4e3f0" method="post" target="_blank" novalidate>
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:480px;margin:0 auto;">
+      <input type="text" name="FNAME" placeholder="First Name / 이름" style="padding:14px 16px;border:1.5px solid rgba(201,148,58,0.4);border-radius:2px;font-size:0.9rem;font-family:inherit;background:rgba(255,255,255,0.08);color:var(--cream);outline:none;width:100%;box-sizing:border-box;">
+      <div style="display:flex;flex-wrap:wrap;width:100%;">
+        <input type="email" name="EMAIL" placeholder="Email address / 이메일 주소" required style="flex:1;min-width:0;padding:14px 16px;border:1.5px solid rgba(201,148,58,0.4);border-right:none;border-radius:2px 0 0 2px;font-size:0.9rem;font-family:inherit;background:rgba(255,255,255,0.08);color:var(--cream);outline:none;box-sizing:border-box;">
+        <button type="submit" style="padding:14px 24px;background:var(--gold);color:var(--ink);border:none;border-radius:0 2px 2px 0;font-family:inherit;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
+      </div>
+      <div style="position:absolute;left:-5000px;" aria-hidden="true">
+        <input type="text" name="b_4509eaf80f3c04aea5e8ef08b_2f61037e9c" tabindex="-1" value="">
+      </div>
+    </div>
+  </form>
+</div>
+<section id="contact">
+  <div>
+    <div class="section-label" data-en="Get in Touch" data-ko="연락하기">Get in Touch</div>
+    <h2 class="section-title" data-en="Connect With Us" data-ko="우리와 연결하세요">Connect With Us</h2>
+    <p class="contact-desc" data-en="Whether you want to pray with us, partner in the mission, or simply learn more about what God is doing through CrossCulture Community in Asia — we would love to hear from you." data-ko="우리와 함께 기도하거나, 사역에 동참하거나, 아시아에서 하나님이 크로스컬처 커뮤니티를 통해 하시는 일에 대해 더 알고 싶으시다면 — 연락해 주세요.">Whether you want to pray with us, partner in the mission, or simply learn more about what God is doing through CrossCulture Community in Asia — we would love to hear from you.</p>
+    <div class="contact-details">
+      
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <form class="contact-form" onsubmit="handleContact(event)">
+      <input type="text" id="f-name" placeholder="Your Name / 이름" required>
+      <input type="email" id="f-email" placeholder="Your Email / 이메일" required>
+      <input type="text" id="f-subject" placeholder="Subject / 제목">
+      <textarea id="f-msg" placeholder="Your message / 메시지..."></textarea>
+      <button type="submit" data-en="Send Message" data-ko="메시지 보내기">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<section id="join" style="background:var(--earth-dark);color:var(--cream);text-align:center;padding:80px 80px;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div class="section-label" style="justify-content:center;color:var(--gold-light);" data-en="Membership · 회원 가입" data-ko="회원 가입 · Membership">Membership · 회원 가입</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:600;color:var(--cream);line-height:1.15;margin-bottom:20px;" data-en="Become Part of This Historic Mission" data-ko="이 역사적인 사명의 일원이 되십시오">Become Part of This Historic Mission</h2>
+    <p style="font-size:0.95rem;color:rgba(247,243,236,0.75);line-height:1.85;margin-bottom:12px;max-width:560px;margin-left:auto;margin-right:auto;" data-en="CrossCulture Community membership is free and open to all who share the vision. Your membership helps lay the foundation for the Museum of the Bible Korea (MOTB-Korea) and CrossCulture Community's public interest mission in Asia." data-ko="크로스컬처 커뮤니티 회원 가입은 무료이며, 이 비전을 공유하는 모든 분께 열려 있습니다. 여러분의 회원 가입은 Museum of the Bible Korea(MOTB-Korea)와 크로스컬처 커뮤니티의 아시아 공익 사명의 기초를 놓는 데 도움이 됩니다.">CrossCulture Community membership is free and open to all who share the vision. Your membership helps lay the foundation for the Museum of the Bible Korea (MOTB-Korea) and CrossCulture Community's public interest mission in Asia.</p>
+    <p style="font-size:0.85rem;color:rgba(247,243,236,0.5);margin-bottom:40px;font-style:italic;" data-en="No dues. No obligations. Voluntary donations welcome." data-ko="회비 없음. 의무 없음. 자발적 후원 환영.">No dues. No obligations. Voluntary donations welcome.</p>
+    <a href="membership.html" class="btn-primary" style="background:var(--gold);color:var(--ink);display:inline-block;" data-en="Join CrossCulture Community →" data-ko="크로스컬처 커뮤니티 가입하기 →">Join CrossCulture Community →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo" style="display:flex;align-items:center;gap:12px;"><img src="/logo.png" alt="CrossCulture Community" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:0.85;"><span>CrossCulture Community Foundation</span></div>
+  <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <a href="https://www.facebook.com/CrossCultureCommunity" target="_blank" style="color:rgba(247,243,236,0.5);text-decoration:none;font-size:0.8rem;transition:color 0.2s;" onmouseover="this.style.color='#E8C87A'" onmouseout="this.style.color='rgba(247,243,236,0.5)'">📘 Facebook</a>
+    <a href="https://www.youtube.com/@BillRMajors" target="_blank" style="color:rgba(247,243,236,0.5);text-decoration:none;font-size:0.8rem;transition:color 0.2s;" onmouseover="this.style.color='#E8C87A'" onmouseout="this.style.color='rgba(247,243,236,0.5)'">▶️ YouTube</a>
+    <a href="https://www.instagram.com/crossculturecf" target="_blank" style="color:rgba(247,243,236,0.5);text-decoration:none;font-size:0.8rem;transition:color 0.2s;" onmouseover="this.style.color='#E8C87A'" onmouseout="this.style.color='rgba(247,243,236,0.5)'">📸 Instagram</a>
+    <span>© 2026 CrossCulture Community Foundation</span>
+  </div>
+</footer>
+
+
+<script>
+(function() {
+  var lang = 'en';
+
+  function applyLang(l) {
+    lang = l;
+    sessionStorage.setItem('ccf_lang', l);
+    document.body.classList.remove('ko');
+    if (l === 'ko') document.body.classList.add('ko');
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn && btnKo) {
+      if (l === 'en') { btnEn.classList.add('active'); btnKo.classList.remove('active'); }
+      else { btnEn.classList.remove('active'); btnKo.classList.add('active'); }
+    }
+    var els = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var v = el.getAttribute('data-' + l);
+      if (!v) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = v;
+      else el.innerHTML = v;
+    }
+    // Update all internal nav links to carry language
+    var links = document.querySelectorAll('nav a[href]');
+    for (var j = 0; j < links.length; j++) {
+      var href = links[j].getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('#')) continue;
+      // Remove existing lang param
+      href = href.replace(/[?&]lang=[a-z]+/, '');
+      // Add new lang param if Korean
+      if (l === 'ko') {
+        href = href + (href.indexOf('?') >= 0 ? '&' : '?') + 'lang=ko';
+      }
+      links[j].setAttribute('href', href);
+    }
+  }
+
+  window.setLang = applyLang;
+
+  window.handleContact = function(e) {
+    e.preventDefault();
+    alert(lang === 'ko'
+      ? '메시지 감사합니다! 곧 연락드리겠습니다.\n\nbillmajors@crossculture-community.com'
+      : 'Thank you! We will be in touch soon.\n\nbillmajors@crossculture-community.com');
+    e.target.reset();
+  };
+
+  window.handleNotify = function() {
+    var email = document.getElementById('notify-email');
+    if (!email || !email.value || email.value.indexOf('@') === -1) {
+      alert(lang === 'ko' ? '유효한 이메일 주소를 입력해 주세요.' : 'Please enter a valid email address.');
+      return;
+    }
+    alert(lang === 'ko' ? '감사합니다! 알려드리겠습니다.' : 'Thank you! We will notify you.');
+    email.value = '';
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Read language from URL param or sessionStorage
+    var params = new URLSearchParams(window.location.search);
+    var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
+    applyLang(savedLang);
+
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn) btnEn.addEventListener('click', function() { applyLang('en'); });
+    if (btnKo) btnKo.addEventListener('click', function() { applyLang('ko'); });
+
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('main-nav') || document.querySelector('nav');
+      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.08)' : 'none';
+    });
+
+    // Smooth scroll for anchor links
+    var anchors = document.querySelectorAll('a[href^="#"]');
+    for (var i = 0; i < anchors.length; i++) {
+      anchors[i].addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  });
+})();
+
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+// Close menu when clicking outside
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
