@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join CrossCulture Community — 크로스컬처 커뮤니티 가입</title>
+<meta name="format-detection" content="telephone=no">
+<title>Stories from Korea — CrossCulture Community Foundation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -13,28 +14,396 @@
     --earth: #8B6F47; --earth-dark: #5C4A2A; --earth-light: #C4A882;
     --charcoal: #2C2C2A; --charcoal-soft: #4A4A46;
     --gold: #C9943A; --gold-light: #E8C87A; --ink: #1A1A18;
+    --blue-dark: #1A3A6B;
   }
   html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
-  body.ko { font-family: 'Noto Sans KR', sans-serif; }
+  body { font-family: "DM Sans", sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+  body.ko { font-family: "Noto Sans KR", sans-serif; }
 
-  /* LANGUAGE TOGGLE */
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(253,250,245,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); gap: 16px; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { height: 44px; width: auto; }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; transition: color 0.2s; }
+  nav ul a:hover, nav ul a.active { color: var(--gold); }
+  .nav-give { background: var(--earth-dark) !important; color: var(--cream) !important; padding: 10px 20px; border-radius: 2px; }
+  .nav-give:hover { background: var(--gold) !important; color: var(--ink) !important; }
   .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(139,111,71,0.15); border-radius: 20px; padding: 4px; border: 1px solid rgba(139,111,71,0.25); }
-  .lang-btn { padding: 6px 14px; border-radius: 16px; border: none; background: transparent; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; cursor: pointer; transition: all 0.2s; color: var(--charcoal-soft); font-family: inherit; -webkit-appearance: none; }
+  .lang-btn { padding: 6px 14px; border-radius: 16px; border: none; background: transparent; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.2s; color: var(--charcoal-soft); font-family: inherit; }
   .lang-btn.active { background: var(--earth-dark); color: var(--cream); }
-  .lang-btn:hover { background: rgba(139,111,71,0.2); }
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; background: rgba(253,250,245,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); gap: 16px; }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--earth-dark); text-decoration: none; flex-shrink: 0; }
-  .nav-logo span { color: var(--gold); }
-  nav ul { display: flex; gap: 18px; list-style: none; }
-  nav ul a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
-  nav ul a:hover, nav ul a.active { color: var(--earth); }
-  .nav-right { display: flex; align-items: center; gap: 16px; }
+  /* HERO */
+  .blog-hero { background: var(--cream); padding: 140px 80px 80px; position: relative; overflow: hidden; }
+  .blog-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 80% 50%, rgba(201,148,58,0.08) 0%, transparent 60%); }
+  .blog-hero-inner { position: relative; z-index: 2; max-width: 700px; }
+  .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .section-label::before { content: ""; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .page-title { font-family: "Cormorant Garamond", serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; color: var(--earth-dark); line-height: 1.1; margin-bottom: 20px; }
+  body.ko .page-title { font-family: "Noto Sans KR", sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); }
+  .page-desc { font-size: 1rem; color: var(--charcoal-soft); line-height: 1.85; max-width: 560px; border-left: 3px solid var(--gold-light); padding-left: 20px; }
 
-  /* PAGE HERO */
-  .page-hero { padding: 140px 80px 80px; background: var(--cream); border-bottom: 1px solid rgba(139,111,71,0.12); }
-  .page-hero-inner { max-width: 720px; }
+  /* BLOG LAYOUT */
+  .blog-body { max-width: 1100px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 2fr 1fr; gap: 60px; align-items: start; }
+
+  /* CATEGORIES */
+  .category-tabs { display: flex; gap: 8px; margin-bottom: 48px; flex-wrap: wrap; }
+  .cat-tab { padding: 8px 20px; border-radius: 2px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border: 1.5px solid rgba(139,111,71,0.25); color: var(--charcoal-soft); background: transparent; transition: all 0.2s; font-family: inherit; }
+  .cat-tab.active, .cat-tab:hover { background: var(--earth-dark); color: var(--cream); border-color: var(--earth-dark); }
+
+  /* STORY CARDS */
+  .story-card { background: var(--warm-white); border: 1px solid rgba(139,111,71,0.12); border-radius: 4px; margin-bottom: 32px; overflow: hidden; transition: box-shadow 0.2s; }
+  .story-card:hover { box-shadow: 0 8px 32px rgba(92,74,42,0.1); }
+  .story-card-header { background: var(--earth-dark); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .story-category { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); }
+  .story-date { font-size: 0.75rem; color: rgba(247,243,236,0.5); }
+  .story-card-body { padding: 32px; }
+  .story-title { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; font-weight: 600; color: var(--earth-dark); line-height: 1.25; margin-bottom: 16px; }
+  body.ko .story-title { font-family: "Noto Sans KR", sans-serif; font-size: 1.3rem; }
+  .story-excerpt { font-size: 0.92rem; color: var(--charcoal-soft); line-height: 1.9; margin-bottom: 24px; }
+  .story-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid rgba(139,111,71,0.1); }
+  .story-author { font-size: 0.78rem; color: var(--charcoal-soft); opacity: 0.7; }
+  .read-more { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+  .read-more::after { content: "→"; }
+
+  /* LETTERS SECTION */
+  .letters-card { background: var(--cream); border: 1px solid rgba(139,111,71,0.15); border-radius: 4px; margin-bottom: 32px; overflow: hidden; }
+  .letters-card-header { background: var(--blue-dark); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .letters-card-body { padding: 32px; }
+  .letter-quote { font-family: "Cormorant Garamond", serif; font-size: 1.05rem; font-style: italic; color: var(--charcoal-soft); line-height: 1.9; border-left: 3px solid var(--gold-light); padding-left: 20px; margin-bottom: 20px; }
+  body.ko .letter-quote { font-family: "Noto Sans KR", sans-serif; font-style: normal; }
+  .letter-pending { background: var(--earth-dark); border-radius: 4px; padding: 24px 32px; text-align: center; }
+  .letter-pending p { font-size: 0.85rem; color: rgba(247,243,236,0.65); line-height: 1.7; font-style: italic; }
+
+  /* SIDEBAR */
+  .sidebar { position: sticky; top: 100px; }
+  .sidebar-card { background: var(--cream); border: 1px solid rgba(139,111,71,0.15); border-radius: 4px; padding: 32px; margin-bottom: 24px; }
+  .sidebar-title { font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 600; color: var(--earth-dark); margin-bottom: 16px; }
+  body.ko .sidebar-title { font-family: "Noto Sans KR", sans-serif; font-size: 1rem; }
+  .sidebar-text { font-size: 0.85rem; color: var(--charcoal-soft); line-height: 1.75; margin-bottom: 16px; }
+  .sidebar-dark { background: var(--earth-dark); border-radius: 4px; padding: 32px; margin-bottom: 24px; }
+  .sidebar-dark .sidebar-title { color: var(--gold-light); }
+  .sidebar-dark .sidebar-text { color: rgba(247,243,236,0.65); }
+  .btn-gold { display: block; text-align: center; background: var(--gold); color: var(--ink); padding: 12px 20px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; margin-top: 16px; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .btn-cream { display: block; text-align: center; background: var(--cream); color: var(--earth-dark); padding: 12px 20px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; margin-top: 12px; }
+  .btn-cream:hover { background: var(--warm-white); }
+  .archive-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(139,111,71,0.1); font-size: 0.83rem; color: var(--charcoal-soft); }
+  .archive-item:last-child { border-bottom: none; }
+  .archive-count { background: var(--earth-dark); color: var(--cream); font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; }
+
+  /* SUBSCRIBE */
+  .subscribe-section { background: var(--earth-dark); padding: 80px; text-align: center; }
+  .subscribe-section h2 { font-family: "Cormorant Garamond", serif; font-size: 2rem; color: var(--gold-light); margin-bottom: 16px; }
+  body.ko .subscribe-section h2 { font-family: "Noto Sans KR", sans-serif; font-size: 1.5rem; }
+  .subscribe-section p { font-size: 0.9rem; color: rgba(247,243,236,0.65); max-width: 480px; margin: 0 auto 32px; line-height: 1.8; }
+  .subscribe-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 14px 16px; border: 1.5px solid rgba(201,148,58,0.4); border-right: none; border-radius: 2px 0 0 2px; font-size: 0.9rem; font-family: inherit; background: rgba(255,255,255,0.08); color: var(--cream); outline: none; }
+  .subscribe-form input::placeholder { color: rgba(247,243,236,0.35); }
+  .subscribe-form input:focus { border-color: var(--gold); }
+  .subscribe-form button { padding: 14px 24px; background: var(--gold); color: var(--ink); border: none; border-radius: 0 2px 2px 0; font-family: inherit; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .subscribe-form button:hover { background: var(--gold-light); }
+
+  footer { background: var(--ink); color: rgba(247,243,236,0.5); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: "Cormorant Garamond", serif; font-size: 1.1rem; font-weight: 600; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 20px; 
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    nav ul { display: none; }
+    .nav-give { display: none; }
+    * { max-width: 100%; box-sizing: border-box; }
+    img { max-width: 100%; height: auto; }
+    table { display: block; overflow-x: auto; }
+    .give-buttons { flex-direction: column; align-items: center; }
+    footer { flex-direction: column; text-align: center; padding: 28px 20px; gap: 12px; }
+  }
+  @media (max-width: 480px) {
+    section { padding-left: 16px !important; padding-right: 16px !important; }
+    nav { padding: 12px 16px; }
+  } nav ul { display: none; }
+    .blog-hero { padding: 100px 24px 60px; }
+    .blog-body { grid-template-columns: 1fr; padding: 48px 24px; gap: 40px; }
+    .sidebar { position: static; }
+    .subscribe-section { padding: 60px 24px; }
+    .subscribe-form { flex-direction: column; }
+    .subscribe-form input { border-right: 1.5px solid rgba(201,148,58,0.4); border-bottom: none; border-radius: 2px 2px 0 0; }
+    .subscribe-form button { border-radius: 0 0 2px 2px; }
+    footer { flex-direction: column; text-align: center; padding: 24px; }
+  }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--earth-dark); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: rgba(253,250,245,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); z-index: 99; flex-direction: column; padding: 8px 0 16px; box-shadow: 0 8px 32px rgba(92,74,42,0.1); }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { padding: 14px 24px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; border-bottom: 1px solid rgba(139,111,71,0.08); transition: all 0.2s; }
+  .mobile-menu a:hover { color: var(--gold); background: rgba(201,148,58,0.05); }
+  .mobile-menu .mobile-give { color: var(--cream); background: var(--earth-dark); margin: 12px 24px 0; border-radius: 2px; text-align: center; border-bottom: none; }
+  .mobile-menu .mobile-give:hover { background: var(--gold); color: var(--ink); }
+  @media (max-width: 900px) { .hamburger { display: flex; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="/logo.png" alt="CrossCulture Community"></a>
+  <ul>
+    <li><a href="index.html" data-en="Home" data-ko="홈">Home</a></li>
+    <li><a href="about.html" data-en="About" data-ko="소개">About</a></li>
+    <li><a href="museum.html" data-en="Museum" data-ko="박물관">Museum</a></li>
+    <li><a href="blog.html" class="active" data-en="Stories" data-ko="이야기">Stories</a></li>
+    <li><a href="index.html#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
+    <li><a href="index.html#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en">EN</button>
+      <button class="lang-btn" id="btn-ko">한국어</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu">
+  <a href="index.html" data-en="Home" data-ko="홈" onclick="closeMenu()" class="">Home</a>
+  <a href="about.html" data-en="About" data-ko="소개" onclick="closeMenu()" class="">About</a>
+  <a href="museum.html" data-en="Museum" data-ko="박물관" onclick="closeMenu()" class="">Museum</a>
+  <a href="blog.html" class="active" data-en="Stories" data-ko="이야기" onclick="closeMenu()" class="">Stories</a>
+  <a href="index.html#contact" data-en="Contact" data-ko="연락처" onclick="closeMenu()" class="">Contact</a>
+  <a href="index.html#give"  data-en="Give Now" data-ko="후원하기" onclick="closeMenu()" class="mobile-give">Give Now</a>
+</div>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <div class="section-label" data-en="From the Field" data-ko="현장에서">From the Field</div>
+    <h1 class="page-title" data-en="Stories from Korea" data-ko="한국에서의 이야기들">Stories from Korea</h1>
+    <p class="page-desc" data-en="Forty years of life and ministry in Korea means forty years of stories. Some will appear in the autobiography. Some come back from those whose lives were touched. All are true." data-ko="한국에서의 40년 삶과 사역은 40년의 이야기를 의미합니다. 일부는 자서전에 실릴 것입니다. 일부는 삶이 변화된 분들로부터 돌아옵니다. 모두 사실입니다.">Forty years of life and ministry in Korea means forty years of stories. Some will appear in the autobiography. Some come back from those whose lives were touched. All are true.</p>
+  </div>
+</div>
+
+<!-- BLOG BODY -->
+<div class="blog-body">
+  <div class="main-content">
+
+    <!-- CATEGORY TABS -->
+    <div class="category-tabs">
+      <button class="cat-tab active" data-en="All Stories" data-ko="모든 이야기">All Stories</button>
+      <button class="cat-tab" data-en="Stories from Bill" data-ko="빌의 이야기">Stories from Bill</button>
+      <button class="cat-tab" data-en="Letters from the Journey" data-ko="여정에서 온 편지들">Letters from the Journey</button>
+      <button class="cat-tab" data-en="From the Autobiography" data-ko="자서전에서">From the Autobiography</button>
+    </div>
+
+    <!-- STORY 1: GIMPO AIRPORT -->
+    <div class="story-card">
+      <div class="story-card-header">
+        <span class="story-category" data-en="Stories from Bill · From the Autobiography" data-ko="빌의 이야기 · 자서전에서">Stories from Bill · From the Autobiography</span>
+        <span class="story-date">June 2, 1982</span>
+      </div>
+      <div class="story-card-body">
+        <h2 class="story-title" data-en="The Man Called Hama and the Suitcase at Gimpo Airport" data-ko="김포공항 짐 위에 앉아서 — 하마라 불린 남자">The Man Called Hama and the Suitcase at Gimpo Airport</h2>
+        <p class="story-excerpt" data-en="I arrived at Gimpo International Airport late in the evening, June 2nd 1982. The man who had promised to meet me was not there yet. I came without any contact information in Seoul and I did not understand the culture engaged in &quot;Korea Time.&quot; Before the smartphone and subway system, Korean people were always late. Traffic problems was the common excuse. I was stranded and I could not speak Korean and it seemed that nobody at the airport could speak English. All I could do was sit on one of my suitcases and worry about my unbearable problems." data-ko="1982년 6월 2일 저녁 늦게 김포국제공항에 도착했습니다. 저를 만나기로 약속한 사람이 아직 없었습니다. 서울에서 연락할 수 있는 정보도 없이 왔고 '코리아 타임'이라는 문화도 이해하지 못했습니다. 스마트폰과 지하철 시스템이 생기기 전, 한국 사람들은 항상 늦었습니다. 교통 문제가 흔한 핑계였습니다. 저는 오도 가도 못하고 한국어도 못 했으며 공항에서 영어를 할 수 있는 사람이 아무도 없는 것 같았습니다. 제가 할 수 있는 것은 짐 가방 위에 앉아 감당하기 힘든 상황을 걱정하는 것뿐이었습니다.">I arrived at Gimpo International Airport late in the evening, June 2nd 1982. The man who had promised to meet me was not there yet. I came without any contact information in Seoul and I did not understand the culture engaged in "Korea Time." Before the smartphone and subway system, Korean people were always late. Traffic problems was the common excuse. I was stranded and I could not speak Korean and it seemed that nobody at the airport could speak English. All I could do was sit on one of my suitcases and worry about my unbearable problems.</p>
+        <p class="story-excerpt" data-en="That &quot;late&quot; man, nicknamed Hama (hippo), was one hour late. He must have been called Hama because for a Korean he had a rather large flat nose. He was supposed to take me to a simple motel for one night before putting me on a highway bus the next morning — south to Gwangju for my internship with Youth For Christ. It was scary because my mind was exploding. I thought I was going to have to teach English to 40 plus million Koreans — never realizing that common sense would tell me: Bill, you have to learn Korean." data-ko="그 '늦은' 남자, 하마라는 별명을 가진 사람은 한 시간 늦게 나타났습니다. 한국인치고는 꽤 넓적한 코를 가졌기 때문에 하마라고 불렸던 것 같습니다. 그는 저를 하룻밤 간단한 모텔에 데려다 주고 다음 날 아침 고속버스에 태워 광주로 보내기로 되어 있었습니다 — 유스 포 크라이스트 인턴십을 위해서요. 무서웠습니다. 머릿속이 터질 것 같았습니다. 4천만 명의 한국인에게 영어를 가르쳐야 할 것 같았습니다 — 상식적으로 생각하면 빌, 네가 한국어를 배워야 한다는 것을 전혀 깨닫지 못한 채로.">That "late" man, nicknamed Hama (hippo), was one hour late. He must have been called Hama because for a Korean he had a rather large flat nose. He was supposed to take me to a simple motel for one night before putting me on a highway bus the next morning — south to Gwangju for my internship with Youth For Christ. It was scary because my mind was exploding. I thought I was going to have to teach English to 40 plus million Koreans — never realizing that common sense would tell me: Bill, you have to learn Korean.</p>
+        <div class="story-footer">
+          <span class="story-author" data-en="Bill Ray Majors · First night in Korea · June 2, 1982" data-ko="빌 레이 메이저스 · 한국에서의 첫날 밤 · 1982년 6월 2일">Bill Ray Majors · First night in Korea · June 2, 1982</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LETTERS FROM THE JOURNEY SECTION HEADER -->
+    <div style="margin: 48px 0 24px;">
+      <div class="section-label" data-en="Letters from the Journey" data-ko="여정에서 온 편지들">Letters from the Journey</div>
+      <p style="font-size:0.88rem;color:var(--charcoal-soft);line-height:1.8;max-width:560px;" data-en="Sometimes the fruit of ministry comes back across years — a message from someone whose life was touched. These letters remind us that the Word never returns void." data-ko="때로는 사역의 열매가 수년을 건너 돌아옵니다 — 삶이 변화된 누군가로부터 온 메시지. 이 편지들은 말씀이 결코 헛되이 돌아오지 않음을 상기시켜 줍니다.">Sometimes the fruit of ministry comes back across years — a message from someone whose life was touched. These letters remind us that the Word never returns void.</p>
+    </div>
+
+    <!-- COMING SOON LETTER PLACEHOLDER -->
+    <div class="letter-pending">
+      <p data-en="A letter from someone who attended International Worship in English at Young Nak Church in 2007 is being prepared for publication with permission. She remembered a sermon on Mary and Martha — preached 18 years ago — that still speaks to her spiritual journey today. Watch this space." data-ko="2007년 영락교회 국제영어예배(IWE)에 참석했던 분의 편지가 허락을 받아 게재 준비 중입니다. 그분은 18년 전에 전해진 마리아와 마르다에 관한 설교를 기억하며 — 오늘도 그 설교가 자신의 영적 여정에 말씀하고 있다고 전했습니다. 곧 만나보실 수 있습니다.">A letter from someone who attended International Worship in English at Young Nak Church in 2007 is being prepared for publication with permission. She remembered a sermon on Mary and Martha — preached 18 years ago — that still speaks to her spiritual journey today. Watch this space.</p>
+    </div>
+
+    <!-- MORE STORIES COMING -->
+    <div style="background:var(--cream);border:1px solid rgba(139,111,71,0.15);border-radius:4px;padding:40px;margin-top:32px;text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--earth-dark);margin-bottom:12px;" data-en="More Stories Coming" data-ko="더 많은 이야기가 옵니다">More Stories Coming</div>
+      <p style="font-size:0.88rem;color:var(--charcoal-soft);line-height:1.8;max-width:480px;margin:0 auto 20px;" data-en="Forty years in Korea means forty years of stories. New posts are added regularly. Subscribe below to be notified when new stories are published." data-ko="한국에서의 40년은 40년의 이야기를 의미합니다. 새 게시물이 정기적으로 추가됩니다. 아래에서 구독하면 새 이야기가 게재될 때 알림을 받으실 수 있습니다.">Forty years in Korea means forty years of stories. New posts are added regularly. Subscribe below to be notified when new stories are published.</p>
+      <a href="#subscribe" class="btn-gold" style="display:inline-block;max-width:240px;" data-en="Subscribe for Updates" data-ko="업데이트 구독">Subscribe for Updates</a>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="sidebar-dark">
+      <div class="sidebar-title" data-en="About the Autobiography" data-ko="자서전 소개">About the Autobiography</div>
+      <div class="sidebar-text" data-en="&quot;Jesus Led Me All the Way&quot; — Bill's autobiography is written and currently seeking a professional editor. Book 1 covers his calling at 13, his arrival in Korea in 1982, and his early years of ministry." data-ko="&quot;예수님이 모든 길을 인도하셨습니다&quot; — 빌의 자서전은 완성되었으며 현재 전문 편집자를 찾고 있습니다. 제1권은 13세의 소명, 1982년 한국 도착, 초기 사역의 시간들을 다룹니다.">&#8220;Jesus Led Me All the Way&#8221; — Bill's autobiography is written and currently seeking a professional editor. Book 1 covers his calling at 13, his arrival in Korea in 1982, and his early years of ministry.</div>
+      <a href="https://www.billmajors.com#book" target="_blank" class="btn-gold" data-en="Notify Me When Published" data-ko="출판 알림 신청">Notify Me When Published</a>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title" data-en="Stories Archive" data-ko="이야기 아카이브">Stories Archive</div>
+      <div class="archive-item">
+        <span data-en="Stories from Bill" data-ko="빌의 이야기">Stories from Bill</span>
+        <span class="archive-count">1</span>
+      </div>
+      <div class="archive-item">
+        <span data-en="Letters from the Journey" data-ko="여정에서 온 편지들">Letters from the Journey</span>
+        <span class="archive-count">Coming</span>
+      </div>
+      <div class="archive-item">
+        <span data-en="From the Autobiography" data-ko="자서전에서">From the Autobiography</span>
+        <span class="archive-count">1</span>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title" data-en="Support the Mission" data-ko="사역 후원">Support the Mission</div>
+      <div class="sidebar-text" data-en="Every story shared here is the fruit of 40+ years of faithful ministry. Help continue the work in Korea and Asia." data-ko="여기서 나누는 모든 이야기는 40년 이상의 신실한 사역의 열매입니다. 한국과 아시아에서의 사역이 계속될 수 있도록 도와주세요.">Every story shared here is the fruit of 40+ years of faithful ministry. Help continue the work in Korea and Asia.</div>
+      <a href="index.html#give" class="btn-gold" data-en="Give Today" data-ko="오늘 후원하기">Give Today</a>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title" data-en="Visit Bill's Personal Site" data-ko="빌의 개인 사이트 방문">Visit Bill's Personal Site</div>
+      <div class="sidebar-text" data-en="More stories, YouTube videos from 40+ years of ministry, and the full timeline of Bill's life in Korea." data-ko="더 많은 이야기들, 40년 이상의 사역 유튜브 영상, 그리고 빌의 한국 생활 전체 타임라인.">More stories, YouTube videos from 40+ years of ministry, and the full timeline of Bill's life in Korea.</div>
+      <a href="https://www.billmajors.com" target="_blank" class="btn-gold" data-en="Visit billmajors.com" data-ko="billmajors.com 방문">Visit billmajors.com</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- SUBSCRIBE -->
+<div class="subscribe-section" id="subscribe">
+  <h2 data-en="Stay Connected" data-ko="소식을 받아보세요">Stay Connected</h2>
+  <p data-en="New stories, ministry updates, and news about the autobiography — delivered to your inbox. No spam. Just the stories worth telling." data-ko="새로운 이야기들, 사역 소식, 자서전 관련 뉴스 — 받은 편지함으로 전달됩니다. 스팸 없음. 전할 가치 있는 이야기만.">New stories, ministry updates, and news about the autobiography — delivered to your inbox. No spam. Just the stories worth telling.</p>
+  <form action="https://crossculture-community.us11.list-manage.com/subscribe/post?u=4509eaf80f3c04aea5e8ef08b&id=2f61037e9c&f_id=002bd4e3f0" method="post" target="_blank" style="display:flex;gap:0;max-width:480px;margin:0 auto;" onsubmit="return validateSubscribe()">
+    <input type="email" name="EMAIL" id="sub-email" placeholder="Your email address" required style="flex:1;padding:14px 16px;border:1.5px solid rgba(201,148,58,0.4);border-right:none;border-radius:2px 0 0 2px;font-size:0.9rem;font-family:inherit;background:rgba(255,255,255,0.08);color:var(--cream);outline:none;">
+    <input type="text" name="b_4509eaf80f3c04aea5e8ef08b_2f61037e9c" tabindex="-1" value="" style="position:absolute;left:-5000px;" aria-hidden="true">
+    <button type="submit" data-en="Subscribe" data-ko="구독" style="padding:14px 24px;background:var(--gold);color:var(--ink);border:none;border-radius:0 2px 2px 0;font-family:inherit;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;white-space:nowrap;">Subscribe</button>
+  </form>
+  <p style="font-size:0.75rem;color:rgba(247,243,236,0.4);margin-top:12px;" data-en="Powered by Mailchimp · Unsubscribe anytime" data-ko="Mailchimp 제공 · 언제든지 구독 취소 가능">Powered by Mailchimp · Unsubscribe anytime</p>
+</div>
+
+<footer>
+  <div class="footer-logo">Cross<span>Culture</span> Community Foundation</div>
+  <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
+  <div>© 2026 CrossCulture Community Foundation</div>
+</footer>
+
+
+<script>
+(function() {
+  var lang = 'en';
+
+  function applyLang(l) {
+    lang = l;
+    sessionStorage.setItem('ccf_lang', l);
+    document.body.classList.remove('ko');
+    if (l === 'ko') document.body.classList.add('ko');
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn && btnKo) {
+      if (l === 'en') { btnEn.classList.add('active'); btnKo.classList.remove('active'); }
+      else { btnEn.classList.remove('active'); btnKo.classList.add('active'); }
+    }
+    var els = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var v = el.getAttribute('data-' + l);
+      if (!v) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = v;
+      else el.innerHTML = v;
+    }
+    // Update all internal nav links to carry language
+    var links = document.querySelectorAll('nav a[href]');
+    for (var j = 0; j < links.length; j++) {
+      var href = links[j].getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('#')) continue;
+      // Remove existing lang param
+      href = href.replace(/[?&]lang=[a-z]+/, '');
+      // Add new lang param if Korean
+      if (l === 'ko') {
+        href = href + (href.indexOf('?') >= 0 ? '&' : '?') + 'lang=ko';
+      }
+      links[j].setAttribute('href', href);
+    }
+  }
+
+  window.setLang = applyLang;
+
+  window.handleContact = function(e) {
+    e.preventDefault();
+    alert(lang === 'ko'
+      ? '메시지 감사합니다! 곧 연락드리겠습니다.\n\nbillmajors@crossculture-community.com'
+      : 'Thank you! We will be in touch soon.\n\nbillmajors@crossculture-community.com');
+    e.target.reset();
+  };
+
+  window.handleNotify = function() {
+    var email = document.getElementById('notify-email');
+    if (!email || !email.value || email.value.indexOf('@') === -1) {
+      alert(lang === 'ko' ? '유효한 이메일 주소를 입력해 주세요.' : 'Please enter a valid email address.');
+      return;
+    }
+    alert(lang === 'ko' ? '감사합니다! 알려드리겠습니다.' : 'Thank you! We will notify you.');
+    email.value = '';
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Read language from URL param or sessionStorage
+    var params = new URLSearchParams(window.location.search);
+    var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
+    applyLang(savedLang);
+
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn) btnEn.addEventListener('click', function() { applyLang('en'); });
+    if (btnKo) btnKo.addEventListener('click', function() { applyLang('ko'); });
+
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('main-nav') || document.querySelector('nav');
+      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.08)' : 'none';
+    });
+
+    // Smooth scroll for anchor links
+    var anchors = document.querySelectorAll('a[href^="#"]');
+    for (var i = 0; i < anchors.length; i++) {
+      anchors[i].addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  });
+})();
+
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>  .page-hero-inner { max-width: 720px; }
   .page-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
   .page-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
   .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 600; line-height: 1.1; color: var(--earth-dark); margin-bottom: 20px; }
