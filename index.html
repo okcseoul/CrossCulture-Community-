@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SPTSXBF3T');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
@@ -231,13 +239,14 @@
 <body>
 
 <nav id="main-nav">
-  <a href="#hero" class="nav-logo"><img src="/logo.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
+  <a href="#hero" class="nav-logo"><img src="https://crossculture-ccf.pages.dev/logo.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
   <ul id="nav-links">
-    <li><a href="vision.html" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="#vision" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="#story" data-en="Our Story" data-ko="우리의 이야기">Our Story</a></li>
+    <li><a href="#projects" data-en="Projects" data-ko="프로젝트">Projects</a></li>
     <li><a href="about.html" data-en="About" data-ko="소개">About</a></li>
     <li><a href="museum.html" data-en="Museum" data-ko="박물관">Museum</a></li>
-    <li><a href="membership.html" data-en="Join" data-ko="회원 가입">Join</a></li>
-    <li><a href="news.html" data-en="News" data-ko="소식">News</a></li>
+    <li><a href="blog.html" data-en="Stories" data-ko="이야기">Stories</a></li>
     <li><a href="#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
     <li><a href="#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
   </ul>
@@ -254,11 +263,12 @@
 
 <!-- MOBILE MENU -->
 <div id="mobile-menu" class="mobile-menu">
-  <a href="vision.html" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="#vision" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="#story" onclick="closeMenu()" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
+  <a href="#projects" onclick="closeMenu()" data-en="Projects" data-ko="프로젝트">Projects</a>
   <a href="about.html" onclick="closeMenu()" data-en="About" data-ko="소개">About</a>
   <a href="museum.html" onclick="closeMenu()" data-en="Museum" data-ko="박물관">Museum</a>
-  <a href="membership.html" onclick="closeMenu()" data-en="Join" data-ko="회원 가입">Join</a>
-  <a href="news.html" onclick="closeMenu()" data-en="News" data-ko="소식">News</a>
+  <a href="blog.html" onclick="closeMenu()" data-en="Stories" data-ko="이야기">Stories</a>
   <a href="#contact" onclick="closeMenu()" data-en="Contact" data-ko="연락처">Contact</a>
   <a href="#give" onclick="closeMenu()" class="mobile-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
 </div>
@@ -266,7 +276,7 @@
 <section id="hero">
   <div class="hero-texture"></div>
   <div class="hero-left">
-    <div style="margin-bottom:24px;"><img src="/logo.png" alt="CrossCulture Community" style="height:80px;width:auto;"></div>
+    <div style="margin-bottom:24px;"><img src="https://crossculture-ccf.pages.dev/logo.png" alt="CrossCulture Community" style="height:80px;width:auto;"></div>
     <div class="hero-eyebrow" data-en="Seoul, Korea · Since 1982" data-ko="서울, 한국 · 1982년부터">Seoul, Korea · Since 1982</div>
     <h1 class="hero-title">
       <span data-en="Building a<br><em>CrossCulture</em><br>Community in Asia" data-ko="아시아에서<br><em>크로스컬처</em><br>커뮤니티를 세우다">Building a<br><em>CrossCulture</em><br>Community in Asia</span>
@@ -461,18 +471,8 @@
   </div>
 </section>
 
-<section id="join" style="background:var(--earth-dark);color:var(--cream);text-align:center;padding:80px 80px;">
-  <div style="max-width:700px;margin:0 auto;">
-    <div class="section-label" style="justify-content:center;color:var(--gold-light);" data-en="Membership · 회원 가입" data-ko="회원 가입 · Membership">Membership · 회원 가입</div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:600;color:var(--cream);line-height:1.15;margin-bottom:20px;" data-en="Become Part of This Historic Mission" data-ko="이 역사적인 사명의 일원이 되십시오">Become Part of This Historic Mission</h2>
-    <p style="font-size:0.95rem;color:rgba(247,243,236,0.75);line-height:1.85;margin-bottom:12px;max-width:560px;margin-left:auto;margin-right:auto;" data-en="CrossCulture Community membership is free and open to all who share the vision. Your membership helps lay the foundation for the Museum of the Bible Korea (MOTB-Korea) and CrossCulture Community's public interest mission in Asia." data-ko="크로스컬처 커뮤니티 회원 가입은 무료이며, 이 비전을 공유하는 모든 분께 열려 있습니다. 여러분의 회원 가입은 Museum of the Bible Korea(MOTB-Korea)와 크로스컬처 커뮤니티의 아시아 공익 사명의 기초를 놓는 데 도움이 됩니다.">CrossCulture Community membership is free and open to all who share the vision. Your membership helps lay the foundation for the Museum of the Bible Korea (MOTB-Korea) and CrossCulture Community's public interest mission in Asia.</p>
-    <p style="font-size:0.85rem;color:rgba(247,243,236,0.5);margin-bottom:40px;font-style:italic;" data-en="No dues. No obligations. Voluntary donations welcome." data-ko="회비 없음. 의무 없음. 자발적 후원 환영.">No dues. No obligations. Voluntary donations welcome.</p>
-    <a href="membership.html" class="btn-primary" style="background:var(--gold);color:var(--ink);display:inline-block;" data-en="Join CrossCulture Community →" data-ko="크로스컬처 커뮤니티 가입하기 →">Join CrossCulture Community →</a>
-  </div>
-</section>
-
 <footer>
-  <div class="footer-logo" style="display:flex;align-items:center;gap:12px;"><img src="/logo.png" alt="CrossCulture Community" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:0.85;"><span>CrossCulture Community Foundation</span></div>
+  <div class="footer-logo" style="display:flex;align-items:center;gap:12px;"><img src="https://crossculture-ccf.pages.dev/logo.png" alt="CrossCulture Community" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:0.85;"><span>CrossCulture Community Foundation</span></div>
   <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
   <div style="display:flex;align-items:center;gap:20px;">
     <a href="https://www.facebook.com/CrossCultureCommunity" target="_blank" style="color:rgba(247,243,236,0.5);text-decoration:none;font-size:0.8rem;transition:color 0.2s;" onmouseover="this.style.color='#E8C87A'" onmouseout="this.style.color='rgba(247,243,236,0.5)'">📘 Facebook</a>
