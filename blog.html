@@ -117,7 +117,7 @@
   .footer-logo span { color: var(--gold); }
 
   @media (max-width: 900px) {
-    nav { padding: 14px 20px; 
+    nav { padding: 14px 20px; }
     html, body { overflow-x: hidden; max-width: 100vw; }
     nav ul { display: none; }
     .nav-give { display: none; }
@@ -130,7 +130,7 @@
   @media (max-width: 480px) {
     section { padding-left: 16px !important; padding-right: 16px !important; }
     nav { padding: 12px 16px; }
-  } nav ul { display: none; }
+    nav ul { display: none; }
     .blog-hero { padding: 100px 24px 60px; }
     .blog-body { grid-template-columns: 1fr; padding: 48px 24px; gap: 40px; }
     .sidebar { position: static; }
@@ -172,6 +172,22 @@
 
   /* Contact & Give */
   .contact-item a:hover { text-decoration: underline; }
+
+  /* CONTACT SECTION */
+  .contact-section { background: var(--cream); padding: 80px 40px; }
+  .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contact-left { padding-top: 8px; }
+  .contact-desc { font-size: 0.95rem; color: var(--charcoal-soft); line-height: 1.85; margin-bottom: 32px; max-width: 420px; }
+  .contact-details { display: flex; flex-direction: column; gap: 16px; }
+  .contact-item { display: flex; flex-direction: column; gap: 4px; font-size: 0.88rem; }
+  .contact-item span:first-child { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+  .contact-item a, .contact-item span:last-child { color: var(--charcoal-soft); text-decoration: none; }
+  .contact-right { background: var(--earth-dark); border-radius: 4px; padding: 40px; }
+  @media (max-width: 860px) {
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .contact-section { padding: 60px 24px; }
+    .contact-right { padding: 28px; }
+  }
   .contact-form { display: flex; flex-direction: column; gap: 16px; }
   .contact-form input, .contact-form textarea { padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; color: var(--cream); font-family: inherit; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
   .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold-light); }
@@ -351,6 +367,7 @@
   </div>
 
   <div class="blog-sidebar">
+    <div class="sidebar-card">
     <div class="sidebar-title" data-en="About the Autobiography" data-ko="자서전 소개">About the Autobiography</div>
       <div class="sidebar-text" data-en="&quot;Jesus Led Me All the Way&quot; — Bill's autobiography is written and currently seeking a professional editor. Book 1 covers his calling at 13, his arrival in Korea in 1982, and his early years of ministry." data-ko="&quot;예수님이 모든 길을 인도하셨습니다&quot; — 빌의 자서전은 완성되었으며 현재 전문 편집자를 찾고 있습니다. 제1권은 13세의 소명, 1982년 한국 도착, 초기 사역의 시간들을 다룹니다.">&#8220;Jesus Led Me All the Way&#8221; — Bill's autobiography is written and currently seeking a professional editor. Book 1 covers his calling at 13, his arrival in Korea in 1982, and his early years of ministry.</div>
       <a href="https://www.billmajors.com#book" target="_blank" class="btn-gold" data-en="Notify Me When Published" data-ko="출판 알림 신청">Notify Me When Published</a>
@@ -417,7 +434,7 @@
       <div class="contact-details">
         <div class="contact-item">
           <span data-en="Email" data-ko="이메일">Email</span>
-          <a href="mailto:billmajors@crossculture-community.com">billmajors@crossculture-community.com</a>
+          <a href="/cdn-cgi/l/email-protection#d3b1babfbfbeb2b9bca1a093b0a1bca0a0b0a6bfa7a6a1b6feb0bcbebea6bdbaa7aafdb0bcbe"><span class="__cf_email__" data-cfemail="e88a818484858982879a9ba88b9a879b9b8b9d849c9d9a8dc58b8785859d86819c91c68b8785">[email&#160;protected]</span></a>
         </div>
         <div class="contact-item">
           <span data-en="Based in" data-ko="위치">Based in</span>
@@ -444,7 +461,7 @@
 </footer>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function() {
   var lang = 'en';
 
@@ -551,8 +568,7 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
-</body>
-</html>
+
 <script>
 var BLOG_STORIES = [
   {tag_en:"The Beginning \u00b7 Age 13",tag_ko:"\uc2dc\uc791 \u00b7 13\uc138",title_en:"I Tried Not to Raise My Hand",title_ko:"\uc190\uc744 \ub4e4\uc9c0 \uc54a\uc73c\ub824 \ud588\uc2b5\ub2c8\ub2e4",excerpt_en:"I was 13 years old at a youth camp when a missionary speaker asked three questions. \"How many want to be President?\" Hundreds of hands went up \u2014 including mine. \"How many want to be the richest businessman in the world?\" I raised mine even higher. Then came the third question. \"How many of you believe God wants you to be a missionary?\" I tried not to raise my hand. But I couldn't keep it down. Getting out of my chair to walk to that stage was harder than raising my hand. Seven or eight teenagers stood in a line while he prayed over us. I never looked back. 44 years later I'm still in Seoul, Korea \u2014 still telling people about Jesus.",excerpt_ko:"13\uc0b4 \ub54c \uccad\uc18c\ub144 \ucea0\ud504\uc5d0\uc11c \ud55c \uc120\uad50\uc0ac \uac15\uc0ac\uac00 \uc138 \uac00\uc9c0 \uc9c8\ubb38\uc744 \ud588\uc2b5\ub2c8\ub2e4. \"\ub300\ud1b5\ub839\uc774 \ub418\uace0 \uc2f6\uc740 \uc0ac\ub78c?\" \uc218\ubc31 \uba85\uc758 \uc190\uc774 \uc62c\ub77c\uac14\uc2b5\ub2c8\ub2e4 \u2014 \uc81c \uc190\ub3c4 \ud3ec\ud568\ud574\uc11c. \"\uc138\uacc4\uc5d0\uc11c \uac00\uc7a5 \ubd80\uc720\ud55c \uc0ac\uc5c5\uac00\uac00 \ub418\uace0 \uc2f6\uc740 \uc0ac\ub78c?\" \uc800\ub294 \ub354 \ub192\uc774 \uc190\uc744 \ub4e4\uc5c8\uc2b5\ub2c8\ub2e4. \uadf8\ub9ac\uace0 \uc138 \ubc88\uc9f8 \uc9c8\ubb38\uc774 \uc654\uc2b5\ub2c8\ub2e4. \"\ud558\ub098\ub2d8\uc774 \uc790\uc2e0\uc744 \uc120\uad50\uc0ac\ub85c \ubd80\ub974\uc2e0\ub2e4\uace0 \ubbff\ub294 \uc0ac\ub78c?\" \uc190\uc744 \ub4e4\uc9c0 \uc54a\uc73c\ub824 \ud588\uc2b5\ub2c8\ub2e4. \ud558\uc9c0\ub9cc \ub0b4\ub9b4 \uc218\uac00 \uc5c6\uc5c8\uc2b5\ub2c8\ub2e4. \uc758\uc790\uc5d0\uc11c \uc77c\uc5b4\ub098 \ubb34\ub300\ub85c \uac77\ub294 \uac83\uc740 \uc190\uc744 \ub4dc\ub294 \uac83\ubcf4\ub2e4 \ub354 \uc5b4\ub824\uc6e0\uc2b5\ub2c8\ub2e4. \uc77c\uacf1 \uc5ec\ub35f \uba85\uc758 \uc2ed\ub300\ub4e4\uc774 \uc904\uc744 \uc11c\uc11c \uae30\ub3c4\ub97c \ubc1b\uc558\uc2b5\ub2c8\ub2e4. \uadf8 \uc774\ud6c4\ub85c \ub3cc\uc544\ubcf8 \uc801\uc774 \uc5c6\uc2b5\ub2c8\ub2e4. 44\ub144\uc774 \uc9c0\ub09c \uc9c0\uae08\ub3c4 \uc11c\uc6b8\uc5d0\uc11c \u2014 \uc5ec\uc804\ud788 \uc608\uc218\ub2d8\uc744 \uc804\ud558\uace0 \uc788\uc2b5\ub2c8\ub2e4.",meta_en:"Bill Ray Majors \u00b7 The moment that changed everything \u00b7 \"Jesus Led Me All the Way\"",meta_ko:"\ube4c \ub808\uc774 \uba54\uc774\uc800\uc2a4 \u00b7 \ubaa8\ub4e0 \uac83\uc744 \ubc14\uafbc \uc21c\uac04 \u00b7 \"\uc608\uc218\ub2d8\uc774 \ud56d\uc0c1 \ub098\ub97c \uc774\ub044\uc168\uc2b5\ub2c8\ub2e4\""},
@@ -614,14 +630,17 @@ function nextVoice() {
   renderBlogVoice();
 }
 
-// Initialize
+// Initialize cards — script runs at end of body so DOM is ready
 nextStory();
 nextVoice();
 
-// Re-render on language switch
-document.addEventListener('click', function(e) {
-  if (e.target && (e.target.id === 'btn-en' || e.target.id === 'btn-ko')) {
-    setTimeout(function() { renderBlogStory(); renderBlogVoice(); }, 100);
-  }
+// Re-render cards when language buttons are clicked
+document.addEventListener('DOMContentLoaded', function() {
+  var btnEn = document.getElementById('btn-en');
+  var btnKo = document.getElementById('btn-ko');
+  if (btnEn) btnEn.addEventListener('click', function() { setTimeout(function(){ renderBlogStory(); renderBlogVoice(); }, 0); });
+  if (btnKo) btnKo.addEventListener('click', function() { setTimeout(function(){ renderBlogStory(); renderBlogVoice(); }, 0); });
 });
 </script>
+</body>
+</html>
