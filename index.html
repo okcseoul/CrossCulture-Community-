@@ -228,22 +228,9 @@
       padding: 24px 16px !important;
     }
   }
-
-  .about-section { padding: 80px 80px; max-width: 900px; margin: 0 auto; }
-  .who-what-section { padding: 80px 80px; background: var(--warm-white); }
-  .who-what-inner { max-width: 900px; margin: 0 auto; }
-  .when-section { padding: 80px 0; }
-  .section-fw { padding: 80px 80px; }
-  .section-fw-inner { max-width: 900px; margin: 0 auto; }
-  @media (max-width: 768px) {
-    .about-section { padding: 48px 24px; }
-    .who-what-section { padding: 48px 24px; }
-    .section-fw { padding: 48px 24px; }
-  }
 </style>
 </head>
 <body>
-
 <nav id="main-nav">
   <a href="#hero" class="nav-logo"><img src="logo.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
   <ul id="nav-links">
@@ -265,6 +252,7 @@
     </button>
   </div>
 </nav>
+
 <div id="mobile-menu" class="mobile-menu">
   <a href="#vision" onclick="closeMenu()" data-en="About" data-ko="소개">About</a>
   <a href="#projects" onclick="closeMenu()" data-en="Projects" data-ko="프로젝트">Projects</a>
@@ -303,17 +291,19 @@
   </div>
 </section>
 
-
-<!-- WHO — Our Story / Foundational Vision -->
-<section id="vision">
-  <div class="vision-inner">
-
+<!-- WHO / ABOUT — Foundational Vision -->
+<section id="vision" style="background:var(--cream);padding:80px 80px;">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-label" data-en="Who — Our Story" data-ko="누구 — 우리의 이야기">Who — Our Story</div>
+    
+  </div>
 </section>
 
 <!-- WHAT — What is CrossCulture Community -->
-<section style="background:var(--warm-white); padding:80px 80px;">
+<section style="background:var(--earth-dark);padding:80px 80px;">
   <div style="max-width:900px;margin:0 auto;">
-    <div class="section-label" data-en="What — CrossCulture Community" data-ko="무엇 — 크로스컬처 커뮤니티">What — CrossCulture Community</div>
+    <div class="section-label" style="color:var(--gold-light);" data-en="What — CrossCulture Community" data-ko="무엇 — 크로스컬처 커뮤니티">What — CrossCulture Community</div>
+    <div style="color:var(--cream);">
     <h2 id="about-what" data-en="What is CrossCulture Community?" data-ko="크로스컬처 커뮤니티란 무엇인가?">What is CrossCulture Community?</h2>
 
   <p data-en="It is not a program. It is not a building. It is not an institution — at least, not yet. CrossCulture Community is what happens when the Gospel of Jesus Christ meets real life across cultural boundaries." data-ko="그것은 프로그램이 아닙니다. 건물도 아닙니다. 기관도 아닙니다 — 적어도 아직은. 크로스컬처 커뮤니티는 예수 그리스도의 복음이 문화적 경계를 넘어 실제 삶과 만날 때 일어나는 것입니다.">It is not a program. It is not a building. It is not an institution — at least, not yet. CrossCulture Community is what happens when the Gospel of Jesus Christ meets real life across cultural boundaries.</p>
@@ -337,6 +327,7 @@
   </div>
 
   
+    </div>
   </div>
 </section>
 
@@ -376,10 +367,9 @@
   </div>
 </section>
 
-<!-- Bill & Niki card -->
-<section style="background:var(--warm-white); padding:60px 80px;">
+<!-- Bill & Niki — appears once, after the timeline -->
+<section style="background:var(--cream);padding:60px 80px;">
   <div style="max-width:900px;margin:0 auto;">
-    <div class="section-label" data-en="The People Behind the Mission" data-ko="사역 뒤의 사람들">The People Behind the Mission</div>
     <div class="bill-card">
     <img src="bill_niki_photo.jpg" alt="Bill & Niki Majors" style="border-radius:4px;object-fit:cover;width:100%;">
     <div>
@@ -392,7 +382,7 @@
 </section>
 
 <!-- WHERE — Where We Are Today -->
-<section style="padding:80px 80px;">
+<section style="background:var(--warm-white);padding:80px 80px;">
   <div style="max-width:900px;margin:0 auto;">
     <div class="section-label" data-en="Where — Where We Are Today" data-ko="어디 — 현재 우리의 위치">Where — Where We Are Today</div>
     <h2 id="about-today" data-en="Where We Are Today" data-ko="현재 우리의 위치">Where We Are Today</h2>
@@ -401,24 +391,15 @@
 
   <p data-en="In 2026, 크로스컬처 커뮤니티 (CrossCulture Community) was formally established in Seoul as an Unincorporated Non-Profit Association (UNA) — giving the Korea ministry its own legal standing for the first time." data-ko="2026년, 크로스컬처 커뮤니티(CrossCulture Community)가 서울에 비법인사단(UNA)으로 공식 설립되었습니다 — 한국 사역이 처음으로 자체적인 법적 지위를 갖추게 되었습니다.">In 2026, 크로스컬처 커뮤니티 (CrossCulture Community) was formally established in Seoul as an Unincorporated Non-Profit Association (UNA) — giving the Korea ministry its own legal standing for the first time.</p>
 
-  <div class="bill-card">
-    <img src="bill_niki_photo.jpg" alt="Bill & Niki Majors" style="border-radius:4px;object-fit:cover;width:100%;">
-    <div>
-      <h3>Bill &amp; Niki</h3>
-      <p data-en="Bill Ray Majors, D.Min. has served as a missionary and pastor in Seoul, Korea since 1982. He holds a Doctor of Ministry from Biola University, a Master of Arts from Dallas Theological Seminary, and completed Clinical Pastoral Education at MD Anderson Cancer Center in Houston. He is a dual citizen of the United States and Republic of Korea, and was awarded Honorary Citizenship of Seoul by Mayor Lee Myung-bak in 2005." data-ko="빌 레이 메이저스 신학박사(D.Min.)는 1982년부터 서울에서 선교사이자 목사로 섬겨왔습니다. 바이올라대학교 신학박사, 댈러스 신학교 석사를 취득했으며, 휴스턴 MD 앤더슨 암센터에서 임상목회교육을 이수했습니다. 미국과 대한민국의 이중국적자이며, 2005년 이명박 서울시장으로부터 서울 명예시민증을 받았습니다.">Bill Ray Majors, D.Min. has served as a missionary and pastor in Seoul, Korea since 1982. He holds a Doctor of Ministry from Biola University, a Master of Arts from Dallas Theological Seminary, and completed Clinical Pastoral Education at MD Anderson Cancer Center in Houston. He is a dual citizen of the United States and Republic of Korea, and was awarded Honorary Citizenship of Seoul by Mayor Lee Myung-bak in 2005.</p>
-      <p data-en="Niki (Ja-kyung Lyu) serves alongside Bill as Treasurer of 크로스컬처 커뮤니티 (CrossCulture Community), the Unincorporated Non-Profit Association registered in Seoul, Korea." data-ko="니키(유자경) 메이저스는 크로스컬처 커뮤니티 파운데이션의 재무담당자이자 한국 비법인사단의 공동 임원으로 빌과 함께 섬기고 있습니다.">Niki (Ja-kyung Lyu) serves alongside Bill as Treasurer of 크로스컬처 커뮤니티 (CrossCulture Community), the Unincorporated Non-Profit Association registered in Seoul, Korea.</p>
-    </div>
-  </div>
-
-  <div class="museum-box">
-    
+  
   </div>
 </section>
 
+<!-- HOW — Current Projects -->
 <section id="projects">
   <div class="section-header">
     <div class="section-label" style="justify-content:center;" data-en="How We Work" data-ko="우리의 사역 방식">How We Work</div>
-    <h2 class="section-title" data-en="How — How We Work · Current Projects" data-ko="현재 프로젝트">Current Projects</h2>
+    <h2 class="section-title" data-en="Current Projects" data-ko="현재 프로젝트">Current Projects</h2>
     <p style="color:var(--charcoal-soft);font-size:0.95rem;line-height:1.75;" data-en="Click a project to direct your gift. Every donation is 100% tax-deductible through our IRS-recognized 501(c)3 foundation." data-ko="프로젝트를 클릭하여 후원을 지정하세요. 모든 후원은 IRS 인정 501(c)3 재단을 통해 100% 세금 공제됩니다.">Click a project to direct your gift. Every donation is 100% tax-deductible through our IRS-recognized 501(c)3 foundation.</p>
   </div>
   <div class="projects-grid">
@@ -467,11 +448,11 @@
   </div>
 </section>
 
-
 <!-- WHY — The Dream Ahead -->
-<section style="background:var(--warm-white); padding:80px 80px;">
+<section style="background:var(--earth-dark);padding:80px 80px;">
   <div style="max-width:900px;margin:0 auto;">
-    <div class="section-label" data-en="Why — The Dream Ahead" data-ko="왜 — 앞에 놓인 꿈">Why — The Dream Ahead</div>
+    <div class="section-label" style="color:var(--gold-light);" data-en="Why — The Dream Ahead" data-ko="왜 — 앞에 놓인 꿈">Why — The Dream Ahead</div>
+    <div style="color:var(--cream);">
     <h2 id="about-museum" data-en="The Dream Ahead: Museum of the Bible in Seoul" data-ko="앞에 놓인 꿈: 서울 성경 박물관">The Dream Ahead: Museum of the Bible in Seoul</h2>
     <p data-en="Every movement has a horizon it is walking toward. For CrossCulture Community, that horizon is the Museum of the Bible in Seoul — a landmark cultural institution that brings the living Word of God to the heart of Asia through education, art, exhibition, and community engagement." data-ko="모든 운동은 향해 걸어가는 지평선이 있습니다. 크로스컬처 커뮤니티에게 그 지평선은 서울 성경 박물관입니다 — 교육, 예술, 전시, 그리고 공동체 참여를 통해 살아있는 하나님의 말씀을 아시아의 심장부로 가져오는 획기적인 문화 기관입니다.">Every movement has a horizon it is walking toward. For CrossCulture Community, that horizon is the Museum of the Bible in Seoul — a landmark cultural institution that brings the living Word of God to the heart of Asia through education, art, exhibition, and community engagement.</p>
     <p data-en="Korea stands at a remarkable crossroads — geographically, culturally, and spiritually. A Museum of the Bible in Seoul would serve not only Korea but all of Asia as a witness to the transforming power of Scripture." data-ko="한국은 지리적으로, 문화적으로, 영적으로 놀라운 교차로에 서 있습니다. 서울 성경 박물관은 한국뿐만 아니라 성경의 변화시키는 능력의 증인으로서 아시아 전체를 섬길 것입니다.">Korea stands at a remarkable crossroads — geographically, culturally, and spiritually. A Museum of the Bible in Seoul would serve not only Korea but all of Asia as a witness to the transforming power of Scripture.</p>
@@ -485,14 +466,15 @@
 
 <div class="crosslink-box">
   
+    </div>
     <div style="margin-top:32px;">
-      <a href="museum.html" class="btn-gold" data-en="Explore the Museum Vision" data-ko="박물관 비전 살펴보기">Explore the Museum Vision</a>
+      <a href="museum.html" style="display:inline-block;padding:14px 32px;background:var(--gold);color:var(--earth-dark);font-family:inherit;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;" data-en="Explore the Museum Vision" data-ko="박물관 비전 살펴보기">Explore the Museum Vision</a>
     </div>
   </div>
 </section>
 
 <!-- THE MAN BEHIND THE MISSION -->
-<section style="padding:80px 80px;">
+<section style="background:var(--cream);padding:80px 80px;">
   <div style="max-width:900px;margin:0 auto;">
     <div class="section-label" data-en="The Man Behind the Mission" data-ko="사역 뒤의 사람">The Man Behind the Mission</div>
     <h2 id="about-bill" data-en="The Man Behind the Mission" data-ko="사역 뒤의 사람">The Man Behind the Mission</h2>
@@ -744,7 +726,6 @@ document.addEventListener('click', function(e) {
 </body>
 </html>
 
-
 <script>
 (function() {
   var lang = 'en';
@@ -853,7 +834,6 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
-
 <script>
 function toggleMenu() {
   var m = document.getElementById('mobile-menu');
@@ -872,6 +852,5 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
-
 </body>
 </html>
