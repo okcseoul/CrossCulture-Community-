@@ -803,10 +803,20 @@ function nextVoice() {
   renderBlogVoice();
 }
 
-// Initialize
+// Initialize — small delay to let language script run first
 document.addEventListener('DOMContentLoaded', function() {
-  nextStory();
-  nextVoice();
+  setTimeout(function() {
+    nextStory();
+    nextVoice();
+  }, 500);
+});
+
+window.addEventListener('load', function() {
+  if (document.getElementById('blog-story-card') && 
+      document.getElementById('blog-story-card').innerHTML.trim() === '') {
+    nextStory();
+    nextVoice();
+  }
 });
 
 // Re-render on language switch
