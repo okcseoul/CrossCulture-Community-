@@ -804,8 +804,10 @@ function nextVoice() {
 }
 
 // Initialize
-nextStory();
-nextVoice();
+document.addEventListener('DOMContentLoaded', function() {
+  nextStory();
+  nextVoice();
+});
 
 // Re-render on language switch
 document.addEventListener('click', function(e) {
