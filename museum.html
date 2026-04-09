@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Museum of the Bible Korea — CrossCulture Community</title>
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1SPTSXBF3T');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="format-detection" content="telephone=no">
-<title>Museum of the Bible in Seoul — CrossCulture Community Foundation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --cream: #F7F3EC; --warm-white: #FDFAF5;
@@ -173,50 +167,38 @@
 </style>
 </head>
 <body>
-
-<nav>
-  <a href="index.html" class="nav-logo"><img src="https://crossculture-ccf.pages.dev/logo.png" alt="CrossCulture Community"></a>
-  <ul>
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
+  <ul id="nav-links">
     <li><a href="index.html" data-en="Home" data-ko="홈">Home</a></li>
-    <li><a href="about.html" data-en="About" data-ko="소개">About</a></li>
-    <li><a href="museum.html" class="active" data-en="Museum" data-ko="박물관">Museum</a></li>
-    <li><a href="index.html#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
-    <li><a href="https://www.zeffy.com/en-US/donation-form/museum-of-the-bible-in-seoul" target="_blank" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
+    <li><a href="museum.html" data-en="Museum" data-ko="박물관">Museum</a></li>
+    <li><a href="join.html" data-en="Join" data-ko="가입">Join</a></li>
+    <li><a href="stories.html" data-en="Stories" data-ko="이야기">Stories</a></li>
+    <li><a href="stories.html#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
+    <li><a href="stories.html#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:16px;">
+  <div class="nav-right">
     <div class="lang-toggle">
-      <button class="lang-btn active" id="btn-en">EN</button>
-      <button class="lang-btn" id="btn-ko">한국어</button>
+      <button class="lang-btn active" id="btn-en" data-lang="en">EN</button>
+      <button class="lang-btn" id="btn-ko" data-lang="ko">한국어</button>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
-<!-- MOBILE MENU -->
 <div id="mobile-menu" class="mobile-menu">
-  <a href="index.html" data-en="Home" data-ko="홈" onclick="closeMenu()" class="">Home</a>
-  <a href="about.html" data-en="About" data-ko="소개" onclick="closeMenu()" class="">About</a>
-  <a href="museum.html" class="active" data-en="Museum" data-ko="박물관" onclick="closeMenu()" class="">Museum</a>
-  <a href="index.html#contact" data-en="Contact" data-ko="연락처" onclick="closeMenu()" class="">Contact</a>
-  <a href="https://www.zeffy.com/en-US/donation-form/museum-of-the-bible-in-seoul" target="_blank"  data-en="Give Now" data-ko="후원하기" onclick="closeMenu()" class="mobile-give">Give Now</a>
+  <a href="index.html" onclick="closeMenu()" data-en="Home" data-ko="홈">Home</a>
+  <a href="museum.html" onclick="closeMenu()" data-en="Museum" data-ko="박물관">Museum</a>
+  <a href="join.html" onclick="closeMenu()" data-en="Join" data-ko="가입">Join</a>
+  <a href="stories.html" onclick="closeMenu()" data-en="Stories" data-ko="이야기">Stories</a>
+  <a href="stories.html#contact" onclick="closeMenu()" data-en="Contact" data-ko="연락처">Contact</a>
+  <a href="stories.html#give" onclick="closeMenu()" class="mobile-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
 </div>
-
-<!-- HERO -->
-<div class="motb-hero">
-  <div class="motb-hero-inner">
-    <div class="motb-eyebrow" data-en="A Long-Term Vision" data-ko="장기적인 비전">A Long-Term Vision</div>
-    <div class="motb-title-en" data-en="Museum of the Bible<br>in Seoul" data-ko="서울 성경 박물관">Museum of the Bible<br>in Seoul</div>
-    <div class="motb-title-ko">서울 성경 박물관</div>
-    <div class="motb-tagline" data-en='"The Bible is not just literature — it shapes how we live and love in the world."' data-ko='"말씀은 단순한 문학이 아닙니다 — 말씀은 우리가 세상에서 살고 사랑하는 방식을 형성합니다."'>"The Bible is not just literature — it shapes how we live and love in the world."</div>
-  </div>
-</div>
-
-<!-- DECLARATION -->
 <section id="declaration">
-  <div class="section-label" data-en="The Vision" data-ko="비전">The Vision</div>
+  <div class="section-label" style="color:var(--gold);" data-en="MOTB Korea · 대한민국 성경 박물관" data-ko="MOTB Korea · 대한민국 성경 박물관">MOTB Korea · 대한민국 성경 박물관</div>
   <div class="declaration-quote" data-en="Korea was changed by the Bible.<br>Now Korea can help change Asia." data-ko="한국은 성경으로 변화되었습니다.<br>이제 한국이 아시아를 변화시킬 차례입니다.">Korea was changed by the Bible.<br>Now Korea can help change Asia.</div>
-  <p class="declaration-sub" data-en="The Museum of the Bible in Seoul is a landmark vision of CrossCulture Community Foundation — bringing the living Word of God to the heart of Asia through education, art, history, and community." data-ko="서울 성경 박물관은 크로스컬처 커뮤니티 파운데이션의 획기적인 비전입니다 — 교육, 예술, 역사, 공동체를 통해 살아있는 하나님의 말씀을 아시아의 심장부로 가져옵니다.">The Museum of the Bible in Seoul is a landmark vision of CrossCulture Community Foundation — bringing the living Word of God to the heart of Asia through education, art, history, and community.</p>
+  <p class="declaration-sub" data-en="The Museum of the Bible Korea in Seoul is a landmark vision of CrossCulture Community Foundation — bringing the living Word of God to the heart of Asia through education, art, history, and community." data-ko="서울 성경 박물관은 크로스컬처 커뮤니티 파운데이션의 획기적인 비전입니다 — 교육, 예술, 역사, 공동체를 통해 살아있는 하나님의 말씀을 아시아의 심장부로 가져옵니다.">The Museum of the Bible Korea in Seoul is a landmark vision of CrossCulture Community Foundation — bringing the living Word of God to the heart of Asia through education, art, history, and community.</p>
 </section>
 
 <!-- BEFORE & AFTER -->
@@ -295,7 +277,7 @@
       <div class="vision-icon">🇰🇷</div>
       <div>
         <h3 data-en="The Bible & Korea" data-ko="성경과 한국">The Bible & Korea</h3>
-        <p data-en="From the first missionaries in 1884 to the Han River Miracle — how the Word of God transformed an entire nation. This is Korea's proudest story." data-ko="1884년 첫 선교사부터 한강의 기적까지 — 하나님의 말씀이 어떻게 한 민족 전체를 변화시켰는지. 이것은 한국인의 가장 자랑스러운 이야기입니다.">From the first missionaries in 1884 to the Han River Miracle — how the Word of God transformed an entire nation. This is Korea's proudest story.</p>
+        <p data-en="From the Catholic martyrs of the early 1800s, to the Bible translated in Manchuria in 1882 and smuggled across the border, to the Han River Miracle — how the Word of God found Korea before Korea found the world. This is Korea's most remarkable story." data-ko="1800년대 초 천주교 순교자들부터 1882년 만주에서 번역되어 국경을 넘어 밀반입된 성경까지, 그리고 한강의 기적까지 — 하나님의 말씀이 어떻게 한국을 먼저 찾아왔는지. 이것은 한국의 가장 놀라운 이야기입니다.">From the Catholic martyrs of the early 1800s, to the Bible translated in Manchuria in 1882 and smuggled across the border, to the Han River Miracle — how the Word of God found Korea before Korea found the world. This is Korea's most remarkable story.</p>
       </div>
     </div>
     <div class="vision-item">
@@ -388,7 +370,7 @@
   <p data-en="Your gift today plants a seed for a Museum of the Bible in Seoul that will serve Korea and all of Asia for generations. Every dollar given through CrossCulture Community Foundation is tax-deductible in the USA." data-ko="오늘 드리는 당신의 헌금은 서울 성경 박물관을 위한 씨앗을 심습니다 — 수 세대에 걸쳐 한국과 아시아 전체를 섬길. 크로스컬처 커뮤니티 파운데이션을 통한 모든 기부는 미국에서 세금 공제가 됩니다.">Your gift today plants a seed for a Museum of the Bible in Seoul that will serve Korea and all of Asia for generations. Every dollar given through CrossCulture Community Foundation is tax-deductible in the USA.</p>
   <div class="give-buttons">
     <a href="https://www.zeffy.com/en-US/donation-form/museum-of-the-bible-in-seoul" target="_blank" class="btn-dark" data-en="Give to the Museum Fund" data-ko="박물관 후원하기">Give to the Museum Fund</a>
-    <a href="https://www.crossculture-community.com/#contact" class="btn-outline-dark" data-en="Partner With Us" data-ko="파트너 문의">Partner With Us</a>
+    <a href="join.html" class="btn-outline-dark" data-en="Register to Make it Happen" data-ko="실현을 위해 등록하기">Register to Make it Happen</a>
   </div>
 </section>
 
@@ -416,32 +398,17 @@
     </div>
   </form>
 </div>
-<footer>
-  <div class="footer-logo">Cross<span>Culture</span> Community Foundation</div>
-  <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
-  <div>© 2026 CrossCulture Community Foundation</div>
-</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
-function toggleMenu() {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger');
-  menu.classList.toggle('open');
-  btn.classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('mobile-menu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
-document.addEventListener('click', function(e) {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger');
-  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
-    menu.classList.remove('open');
-    btn.classList.remove('open');
-  }
-});
-</script>
+<footer>
+  <div class="footer-logo" style="display:flex;align-items:center;gap:12px;"><img src="logo.png" alt="CrossCulture Community" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:0.85;"><span>CrossCulture Community Foundation</span></div>
+  <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <a href="https://www.facebook.com/CrossCultureCommunity" target="_blank" style="color:rgba(247,243,236,0.5);text-decoration:none;font-size:0.8rem;transition:color 0.2s;" onmouseover="this.style.color='#E8C87A'" onmouseout="this.style.color='rgba(247,243,236,0.5)'">📘 Facebook</a>
+    <a href="https://www.youtube.com/@BillRMajors" target="_blank" style="color:rgba(247,243,236,0.5);text-decoration:none;font-size:0.8rem;transition:color 0.2s;" onmouseover="this.style.color='#E8C87A'" onmouseout="this.style.color='rgba(247,243,236,0.5)'">▶️ YouTube</a>
+    <a href="https://www.instagram.com/crossculturecf" target="_blank" style="color:rgba(247,243,236,0.5);text-decoration:none;font-size:0.8rem;transition:color 0.2s;" onmouseover="this.style.color='#E8C87A'" onmouseout="this.style.color='rgba(247,243,236,0.5)'">📸 Instagram</a>
+    <span>© 2026 CrossCulture Community Foundation</span>
+  </div>
+</footer>
 
 
 <script>
@@ -542,12 +509,142 @@ function closeMenu() {
   document.getElementById('mobile-menu').classList.remove('open');
   document.getElementById('hamburger').classList.remove('open');
 }
+// Close menu when clicking outside
 document.addEventListener('click', function(e) {
   var menu = document.getElementById('mobile-menu');
   var btn = document.getElementById('hamburger');
   if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
     menu.classList.remove('open');
     btn.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
+
+<script>
+(function() {
+  var lang = 'en';
+
+  function applyLang(l) {
+    lang = l;
+    sessionStorage.setItem('ccf_lang', l);
+    document.body.classList.remove('ko');
+    if (l === 'ko') document.body.classList.add('ko');
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn && btnKo) {
+      if (l === 'en') { btnEn.classList.add('active'); btnKo.classList.remove('active'); }
+      else { btnEn.classList.remove('active'); btnKo.classList.add('active'); }
+    }
+    var els = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var v = el.getAttribute('data-' + l);
+      if (!v) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = v;
+      else el.innerHTML = v;
+    }
+    // Update all internal nav links to carry language
+    var links = document.querySelectorAll('nav a[href]');
+    for (var j = 0; j < links.length; j++) {
+      var href = links[j].getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('#')) continue;
+      // Remove existing lang param
+      href = href.replace(/[?&]lang=[a-z]+/, '');
+      // Add new lang param if Korean
+      if (l === 'ko') {
+        href = href + (href.indexOf('?') >= 0 ? '&' : '?') + 'lang=ko';
+      }
+      links[j].setAttribute('href', href);
+    }
+  }
+
+  window.setLang = applyLang;
+
+  window.handleContact = function(e) {
+    e.preventDefault();
+    alert(lang === 'ko'
+      ? '메시지 감사합니다! 곧 연락드리겠습니다.\n\nbillmajors@crossculture-community.com'
+      : 'Thank you! We will be in touch soon.\n\nbillmajors@crossculture-community.com');
+    e.target.reset();
+  };
+
+  window.handleNotify = function() {
+    var email = document.getElementById('notify-email');
+    if (!email || !email.value || email.value.indexOf('@') === -1) {
+      alert(lang === 'ko' ? '유효한 이메일 주소를 입력해 주세요.' : 'Please enter a valid email address.');
+      return;
+    }
+    alert(lang === 'ko' ? '감사합니다! 알려드리겠습니다.' : 'Thank you! We will notify you.');
+    email.value = '';
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Read language from URL param or sessionStorage
+    var params = new URLSearchParams(window.location.search);
+    var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
+    applyLang(savedLang);
+
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn) btnEn.addEventListener('click', function() { applyLang('en'); });
+    if (btnKo) btnKo.addEventListener('click', function() { applyLang('ko'); });
+
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('main-nav') || document.querySelector('nav');
+      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.08)' : 'none';
+    });
+
+    // Smooth scroll for anchor links
+    var anchors = document.querySelectorAll('a[href^="#"]');
+    for (var i = 0; i < anchors.length; i++) {
+      anchors[i].addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  });
+})();
+
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+// Close menu when clicking outside
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+</script>
+<script>
+function toggleMenu() {
+  var m = document.getElementById('mobile-menu');
+  var b = document.getElementById('hamburger');
+  m.classList.toggle('open'); b.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+  var m = document.getElementById('mobile-menu');
+  var b = document.getElementById('hamburger');
+  if (m && b && !m.contains(e.target) && !b.contains(e.target)) {
+    m.classList.remove('open'); b.classList.remove('open');
   }
 });
 </script>
