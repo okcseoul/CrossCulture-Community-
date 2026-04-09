@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <title>CrossCulture Community — Seoul, Korea since 1982</title>
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SPTSXBF3T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>CrossCulture Community Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --cream: #F7F3EC; --warm-white: #FDFAF5;
@@ -231,16 +237,18 @@
 </style>
 </head>
 <body>
+
 <nav id="main-nav">
   <a href="#hero" class="nav-logo"><img src="logo.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
   <ul id="nav-links">
-    <li><a href="#vision" data-en="About" data-ko="소개">About</a></li>
+    <li><a href="#vision" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="#story" data-en="Our Story" data-ko="우리의 이야기">Our Story</a></li>
     <li><a href="#projects" data-en="Projects" data-ko="프로젝트">Projects</a></li>
-    <li></li>
-    <li><a href="join.html" data-en="Join" data-ko="가입">Join</a></li>
-    <li><a href="stories.html" data-en="Stories" data-ko="이야기">Stories</a></li>
-    <li><a href="stories.html#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
-    <li><a href="stories.html#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
+    <li><a href="about.html" data-en="About" data-ko="소개">About</a></li>
+    <li><a href="museum.html" data-en="Museum" data-ko="박물관">Museum</a></li>
+    <li><a href="blog.html" data-en="Stories" data-ko="이야기">Stories</a></li>
+    <li><a href="#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
+    <li><a href="#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -253,14 +261,16 @@
   </div>
 </nav>
 
+<!-- MOBILE MENU -->
 <div id="mobile-menu" class="mobile-menu">
-  <a href="#vision" onclick="closeMenu()" data-en="About" data-ko="소개">About</a>
+  <a href="#vision" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="#story" onclick="closeMenu()" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
   <a href="#projects" onclick="closeMenu()" data-en="Projects" data-ko="프로젝트">Projects</a>
-  
-  <a href="join.html" onclick="closeMenu()" data-en="Join" data-ko="가입">Join</a>
-  <a href="stories.html" onclick="closeMenu()" data-en="Stories" data-ko="이야기">Stories</a>
-  <a href="stories.html#contact" onclick="closeMenu()" data-en="Contact" data-ko="연락처">Contact</a>
-  <a href="stories.html#give" onclick="closeMenu()" class="mobile-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
+  <a href="about.html" onclick="closeMenu()" data-en="About" data-ko="소개">About</a>
+  <a href="museum.html" onclick="closeMenu()" data-en="Museum" data-ko="박물관">Museum</a>
+  <a href="blog.html" onclick="closeMenu()" data-en="Stories" data-ko="이야기">Stories</a>
+  <a href="#contact" onclick="closeMenu()" data-en="Contact" data-ko="연락처">Contact</a>
+  <a href="#give" onclick="closeMenu()" class="mobile-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
 </div>
 
 <section id="hero">
@@ -291,48 +301,34 @@
   </div>
 </section>
 
-<!-- WHO / ABOUT — Foundational Vision -->
-<section id="vision" style="background:var(--cream);padding:80px 80px;">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-label" data-en="Who — Our Story" data-ko="누구 — 우리의 이야기">Who — Our Story</div>
-    
+<section id="vision">
+  <div>
+    <div class="section-label" data-en="Foundational Vision" data-ko="기초 비전">Foundational Vision</div>
+    <h2 class="section-title" data-en="A Movement, Not an Organization" data-ko="조직이 아닌 운동">A Movement, Not an Organization</h2>
+    <p class="vision-statement" data-en='"CrossCulture Community is a movement of people living as apprentices of Jesus Christ, formed by the Word of God and led by the Spirit of God — becoming living epistles, visible in who they are becoming."' data-ko='"크로스컬처 커뮤니티는 하나님의 말씀으로 형성되고 하나님의 성령으로 이끌림을 받아 예수 그리스도의 제자로 살아가는 사람들의 운동입니다 — 살아있는 서신이 되어가며, 되어가는 모습 속에서 드러나는."'>"CrossCulture Community is a movement of people living as apprentices of Jesus Christ, formed by the Word of God and led by the Spirit of God — becoming living epistles, visible in who they are becoming."</p>
+    <p class="vision-body" data-en="We are committed to lifelong transformation, giving our allegiance to Jesus Christ, and walking in obedience as His disciples. Through relationships, individuals and families form CrossCulture Communities — expressions of love and unity in the world, but not of the world — telling stories from the living Word of God that belong to all of humanity.<br><br>Our hope is anchored in the promise of Jesus Christ. We live as faithful stewards, actively engaged in His mission, while eagerly awaiting His return and the fulfillment of His Kingdom." data-ko="우리는 평생의 변화에 헌신하며, 예수 그리스도께 충성을 다하고, 그분의 제자로서 순종하며 걸어갑니다. 관계를 통해 개인과 가정이 크로스컬처 커뮤니티를 형성합니다 — 세상 안에 있지만 세상에 속하지 않는 사랑과 연합의 표현입니다 — 온 인류에게 속한 살아있는 하나님의 말씀으로부터 나온 이야기들을 전하며.<br><br>우리의 소망은 예수 그리스도의 약속에 닻을 내리고 있습니다. 우리는 그분의 사명에 적극적으로 참여하며 살아가면서, 그분의 재림과 그분의 나라의 완성을 간절히 기다립니다.">We are committed to lifelong transformation, giving our allegiance to Jesus Christ, and walking in obedience as His disciples. Through relationships, individuals and families form CrossCulture Communities — expressions of love and unity in the world, but not of the world — telling stories from the living Word of God that belong to all of humanity.<br><br>Our hope is anchored in the promise of Jesus Christ. We live as faithful stewards, actively engaged in His mission, while eagerly awaiting His return and the fulfillment of His Kingdom.</p>
+  </div>
+  <div>
+    <div class="pillar"><div class="pillar-icon">✝</div><div>
+      <div class="pillar-title" data-en="Cross — The Gospel" data-ko="십자가 — 복음">Cross — The Gospel</div>
+      <p class="pillar-text" data-en="Carrying the Cross: Jesus' death, burial, resurrection, and His witnesses. The foundation of everything we do." data-ko="십자가를 지는 것: 예수님의 죽음, 장사, 부활, 그리고 그분의 증인들. 우리가 하는 모든 것의 기초입니다.">Carrying the Cross: Jesus' death, burial, resurrection, and His witnesses. The foundation of everything we do.</p>
+    </div></div>
+    <div class="pillar"><div class="pillar-icon">🌏</div><div>
+      <div class="pillar-title" data-en="Culture — The Kingdom" data-ko="문화 — 하나님 나라">Culture — The Kingdom</div>
+      <p class="pillar-text" data-en="Living in culture as the Holy Spirit dwells within us, transforming us and launching the Kingdom of God." data-ko="성령께서 우리 안에 거하시며 우리를 변화시키고 하나님 나라를 시작하시는 가운데 문화 속에서 살아가는 것.">Living in culture as the Holy Spirit dwells within us, transforming us and launching the Kingdom of God.</p>
+    </div></div>
+    <div class="pillar"><div class="pillar-icon">🤝</div><div>
+      <div class="pillar-title" data-en="Community — The Mandate" data-ko="공동체 — 사명">Community — The Mandate</div>
+      <p class="pillar-text" data-en='Jesus&apos; mandate: "Go and make disciples." Transformed lives expressed through services and mission-focused projects.' data-ko='예수님의 명령: "가서 제자를 삼으라." 변화된 삶은 섬김과 사명 중심의 프로젝트를 통해 표현됩니다.'>Jesus' mandate: "Go and make disciples." Transformed lives expressed through services and mission-focused projects.</p>
+    </div></div>
+    <div class="pillar"><div class="pillar-icon">📖</div><div>
+      <div class="pillar-title" data-en="Services &amp; Projects" data-ko="섬김 &amp; 프로젝트">Services &amp; Projects</div>
+      <p class="pillar-text" data-en="Teaching, care, generosity, counseling, and hospitality — alongside education, compassion ministries, and long-term vision projects in Asia." data-ko="가르침, 돌봄, 관대함, 상담, 환대 — 그리고 교육, 구제 사역, 아시아의 장기 비전 프로젝트.">Teaching, care, generosity, counseling, and hospitality — alongside education, compassion ministries, and long-term vision projects in Asia.</p>
+    </div></div>
   </div>
 </section>
 
-<!-- WHAT — What is CrossCulture Community -->
-<section style="background:var(--earth-dark);padding:80px 80px;"><style>.feature-icon{background:rgba(255,255,255,0.1)!important;}.feature-text{color:var(--cream)!important;}.feature-title{color:var(--cream)!important;}</style>
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-label" style="color:var(--gold-light);" data-en="What — CrossCulture Community" data-ko="무엇 — 크로스컬처 커뮤니티">What — CrossCulture Community</div>
-    <div style="color:var(--cream);">
-    <h2 id="about-what" data-en="What is CrossCulture Community?" data-ko="크로스컬처 커뮤니티란 무엇인가?">What is CrossCulture Community?</h2>
-
-  <p data-en="It is not a program. It is not a building. It is not an institution — at least, not yet. CrossCulture Community is what happens when the Gospel of Jesus Christ meets real life across cultural boundaries." data-ko="그것은 프로그램이 아닙니다. 건물도 아닙니다. 기관도 아닙니다 — 적어도 아직은. 크로스컬처 커뮤니티는 예수 그리스도의 복음이 문화적 경계를 넘어 실제 삶과 만날 때 일어나는 것입니다.">It is not a program. It is not a building. It is not an institution — at least, not yet. CrossCulture Community is what happens when the Gospel of Jesus Christ meets real life across cultural boundaries.</p>
-
-  <div class="pillar-grid">
-    <div class="pillar-card">
-      <div class="pillar-icon">✝</div>
-      <div class="pillar-title" data-en="Cross" data-ko="십자가">Cross</div>
-      <p class="pillar-text" data-en="The Gospel of Jesus Christ is the foundation. His death, burial, resurrection, and the witness of His followers is the message we carry." data-ko="예수 그리스도의 복음이 기초입니다. 그분의 죽음, 장사, 부활, 그리고 그분의 증인들의 증언이 우리가 전하는 메시지입니다.">The Gospel of Jesus Christ is the foundation. His death, burial, resurrection, and the witness of His followers is the message we carry.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-icon">🌏</div>
-      <div class="pillar-title" data-en="Culture" data-ko="문화">Culture</div>
-      <p class="pillar-text" data-en="We do not retreat from culture. We enter it fully and faithfully as the Holy Spirit transforms us from within, launching the Kingdom of God." data-ko="우리는 문화에서 물러서지 않습니다. 성령께서 우리를 내면에서 변화시키시며 하나님 나라를 시작하시는 가운데 완전하고 신실하게 문화 속으로 들어갑니다.">We do not retreat from culture. We enter it fully and faithfully as the Holy Spirit transforms us from within, launching the Kingdom of God.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-icon">🤝</div>
-      <div class="pillar-title" data-en="Community" data-ko="공동체">Community</div>
-      <p class="pillar-text" data-en="Jesus did not say go and build organizations. He said go and make disciples. Disciples become communities — love and unity visible in the world." data-ko="예수님은 단체를 세우라고 하지 않으셨습니다. 가서 제자를 삼으라고 하셨습니다. 제자들은 공동체가 됩니다 — 세상 속에서 보이는 사랑과 연합.">Jesus did not say go and build organizations. He said go and make disciples. Disciples become communities — love and unity visible in the world.</p>
-    </div>
-  </div>
-
-  
-    </div>
-  </div>
-</section>
-
-<!-- WHEN — A Life Called to Korea -->
-<section id="when">
+<section id="story">
   <div class="story-inner">
     <div class="story-left">
       <div class="section-label" data-en="Bill &amp; Niki" data-ko="빌 &amp; 니키 메이저스">Bill &amp; Niki</div>
@@ -367,35 +363,6 @@
   </div>
 </section>
 
-<!-- Bill & Niki — appears once, after the timeline -->
-<section style="background:var(--cream);padding:60px 80px;">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="bill-card">
-    <img src="bill_niki_photo.jpg" alt="Bill & Niki Majors" style="border-radius:4px;width:100%;height:auto;display:block;">
-    <div>
-      <h3>Bill &amp; Niki</h3>
-      <p data-en="Bill Ray Majors, D.Min. has served as a missionary and pastor in Seoul, Korea since 1982. He holds a Doctor of Ministry from Biola University, a Master of Arts from Dallas Theological Seminary, and completed Clinical Pastoral Education at MD Anderson Cancer Center in Houston. He is a dual citizen of the United States and Republic of Korea, and was awarded Honorary Citizenship of Seoul by Mayor Lee Myung-bak in 2005." data-ko="빌 레이 메이저스 신학박사(D.Min.)는 1982년부터 서울에서 선교사이자 목사로 섬겨왔습니다. 바이올라대학교 신학박사, 댈러스 신학교 석사를 취득했으며, 휴스턴 MD 앤더슨 암센터에서 임상목회교육을 이수했습니다. 미국과 대한민국의 이중국적자이며, 2005년 이명박 서울시장으로부터 서울 명예시민증을 받았습니다.">Bill Ray Majors, D.Min. has served as a missionary and pastor in Seoul, Korea since 1982. He holds a Doctor of Ministry from Biola University, a Master of Arts from Dallas Theological Seminary, and completed Clinical Pastoral Education at MD Anderson Cancer Center in Houston. He is a dual citizen of the United States and Republic of Korea, and was awarded Honorary Citizenship of Seoul by Mayor Lee Myung-bak in 2005.</p>
-      <p data-en="Niki (Ja-kyung Lyu) serves alongside Bill as Treasurer of 크로스컬처 커뮤니티 (CrossCulture Community), the Unincorporated Non-Profit Association registered in Seoul, Korea." data-ko="니키(유자경) 메이저스는 크로스컬처 커뮤니티 파운데이션의 재무담당자이자 한국 비법인사단의 공동 임원으로 빌과 함께 섬기고 있습니다.">Niki (Ja-kyung Lyu) serves alongside Bill as Treasurer of 크로스컬처 커뮤니티 (CrossCulture Community), the Unincorporated Non-Profit Association registered in Seoul, Korea.</p>
-    </div>
-  </div>
-  </div>
-</section>
-
-<!-- WHERE — Where We Are Today -->
-<section style="background:var(--warm-white);padding:80px 80px;">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-label" data-en="Where — Where We Are Today" data-ko="어디 — 현재 우리의 위치">Where — Where We Are Today</div>
-    <h2 id="about-today" data-en="Where We Are Today" data-ko="현재 우리의 위치">Where We Are Today</h2>
-
-  <p data-en="CrossCulture Community Foundation is a 501(c)3 tax-exempt nonprofit registered in Texas, USA — providing the formal structure for tax-deductible giving that supports the on-the-ground work in Asia. EIN: 84-2974290." data-ko="크로스컬처 커뮤니티 파운데이션은 미국 텍사스주에 등록된 501(c)3 세금 면제 비영리 단체입니다 — 아시아 현지 사역을 지원하는 세금 공제 기부를 위한 공식 구조를 제공합니다. EIN: 84-2974290.">CrossCulture Community Foundation is a 501(c)3 tax-exempt nonprofit registered in Texas, USA — providing the formal structure for tax-deductible giving that supports the on-the-ground work in Asia. EIN: 84-2974290.</p>
-
-  <p data-en="In 2026, 크로스컬처 커뮤니티 (CrossCulture Community) was formally established in Seoul as an Unincorporated Non-Profit Association (UNA) — giving the Korea ministry its own legal standing for the first time." data-ko="2026년, 크로스컬처 커뮤니티(CrossCulture Community)가 서울에 비법인사단(UNA)으로 공식 설립되었습니다 — 한국 사역이 처음으로 자체적인 법적 지위를 갖추게 되었습니다.">In 2026, 크로스컬처 커뮤니티 (CrossCulture Community) was formally established in Seoul as an Unincorporated Non-Profit Association (UNA) — giving the Korea ministry its own legal standing for the first time.</p>
-
-  
-  </div>
-</section>
-
-<!-- HOW — Current Projects -->
 <section id="projects">
   <div class="section-header">
     <div class="section-label" style="justify-content:center;" data-en="How We Work" data-ko="우리의 사역 방식">How We Work</div>
@@ -448,160 +415,65 @@
   </div>
 </section>
 
-<!-- WHY — The Dream Ahead -->
-<section style="background:var(--earth-dark);padding:80px 80px;">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-label" style="color:var(--gold-light);" data-en="Why — The Dream Ahead" data-ko="왜 — 앞에 놓인 꿈">Why — The Dream Ahead</div>
-    <div style="color:var(--cream);">
-    <h2 id="about-museum" data-en="The Dream Ahead: Museum of the Bible in Seoul" data-ko="앞에 놓인 꿈: 서울 성경 박물관">The Dream Ahead: Museum of the Bible in Seoul</h2>
-    <p data-en="Every movement has a horizon it is walking toward. For CrossCulture Community, that horizon is the Museum of the Bible in Seoul — a landmark cultural institution that brings the living Word of God to the heart of Asia through education, art, exhibition, and community engagement." data-ko="모든 운동은 향해 걸어가는 지평선이 있습니다. 크로스컬처 커뮤니티에게 그 지평선은 서울 성경 박물관입니다 — 교육, 예술, 전시, 그리고 공동체 참여를 통해 살아있는 하나님의 말씀을 아시아의 심장부로 가져오는 획기적인 문화 기관입니다.">Every movement has a horizon it is walking toward. For CrossCulture Community, that horizon is the Museum of the Bible in Seoul — a landmark cultural institution that brings the living Word of God to the heart of Asia through education, art, exhibition, and community engagement.</p>
-    <p data-en="Korea stands at a remarkable crossroads — geographically, culturally, and spiritually. A Museum of the Bible in Seoul would serve not only Korea but all of Asia as a witness to the transforming power of Scripture." data-ko="한국은 지리적으로, 문화적으로, 영적으로 놀라운 교차로에 서 있습니다. 서울 성경 박물관은 한국뿐만 아니라 성경의 변화시키는 능력의 증인으로서 아시아 전체를 섬길 것입니다.">Korea stands at a remarkable crossroads — geographically, culturally, and spiritually. A Museum of the Bible in Seoul would serve not only Korea but all of Asia as a witness to the transforming power of Scripture.</p>
-    <p data-en="It is a long-term vision. But then again, so was a 21-year-old sitting on a suitcase at Gimpo Airport in 1982." data-ko="이것은 장기적인 비전입니다. 하지만 그것도 마찬가지였습니다 — 1982년 김포공항에서 짐 가방 위에 앉아있던 21세 청년처럼.">It is a long-term vision. But then again, so was a 21-year-old sitting on a suitcase at Gimpo Airport in 1982.</p>
-    <a href="https://www.crossculture-community.com/museum" target="_blank" class="btn-gold" data-en="Museum" data-ko="박물관">Museum</a>
+<section id="give" style="background:var(--earth-dark);text-align:center;padding:80px 40px;box-sizing:border-box;width:100%;">
+  <div class="section-label" style="justify-content:center;color:var(--gold-light);" data-en="Give Today" data-ko="오늘 후원하세요">Give Today</div>
+  <h2 class="section-title" style="color:var(--cream);text-align:center;" data-en="Ready to Give?" data-ko="후원 준비가 되셨나요?">Ready to Give?</h2>
+  <p style="color:#F7F3EC;max-width:520px;margin:0 auto 16px;font-size:0.95rem;line-height:1.8;text-align:center;padding:0;box-sizing:border-box;" data-en="Select a project above and give directly through Zeffy." data-ko="위에서 프로젝트를 선택하고 Zeffy를 통해 직접 후원하세요.">Select a project above and give directly through Zeffy.</p>
+  <p style="color:#F7F3EC;max-width:520px;margin:0 auto 40px;font-size:0.85rem;line-height:2;text-align:center;padding:0;box-sizing:border-box;">
+    <span style="display:inline-block;margin:0 8px;">✓ 100% Secure</span>
+    <span style="display:inline-block;margin:0 8px;">✓ Zero Platform Fees</span>
+    <span style="display:inline-block;margin:0 8px;">✓ Instant Tax Receipt</span>
+  </p>
+
+  <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(201,148,58,0.3);border-radius:4px;padding:20px 32px;max-width:560px;margin:0 auto 32px;text-align:left;">
+    <div style="font-size:0.75rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;" data-en="Korean Won Bank Transfer" data-ko="원화 계좌이체">Korean Won Bank Transfer</div>
+    <div style="font-size:0.88rem;color:rgba(247,243,236,0.75);line-height:1.8;" data-en="Museum donations in Korean Won or any designation of donations to CrossCulture Community through online banking can be sent to Shinhan Bank: 01036135896 — Any questions contact Bill Majors (010-3613-5896)." data-ko="서울 성경 박물관 후원금 또는 크로스컬처 커뮤니티에 대한 모든 지정 후원금을 원화로 온라인 이체하실 경우 신한은행 01036135896으로 보내주시면 됩니다 — 문의사항은 빌 목사에게 연락해 주세요 (010-3613-5896).">Museum donations in Korean Won or any designation of donations to CrossCulture Community through online banking can be sent to Shinhan Bank: 01036135896 — Any questions contact Bill Majors (010-3613-5896).</div>
   </div>
 
-  
+  <a href="#projects" style="display:inline-block;background:var(--gold);color:var(--ink);padding:16px 40px;font-size:0.85rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.25s;margin-bottom:24px;" data-en="Choose a Project to Support" data-ko="지원할 프로젝트 선택">Choose a Project to Support</a>
 
-</div>
-
-<div class="crosslink-box">
-  
-    </div>
-    <div style="margin-top:32px;">
-      <a href="museum.html" style="display:inline-block;padding:14px 32px;background:var(--gold);color:var(--earth-dark);font-family:inherit;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;" data-en="Explore the Museum Vision" data-ko="박물관 비전 살펴보기">Explore the Museum Vision</a>
-    </div>
-  </div>
-</section>
-
-<!-- THE MAN BEHIND THE MISSION -->
-<section style="background:var(--cream);padding:80px 80px;">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-label" data-en="The Man Behind the Mission" data-ko="사역 뒤의 사람">The Man Behind the Mission</div>
-    <h2 id="about-bill" data-en="The Man Behind the Mission" data-ko="사역 뒤의 사람">The Man Behind the Mission</h2>
-  <p data-en="To read Bill's personal story — his calling at 13, his life in Korea, his autobiography in progress, and his YouTube archive of 40+ years of ministry — visit his personal website." data-ko="빌의 개인적인 이야기를 읽으시려면 — 13세의 소명, 한국에서의 삶, 집필 중인 자서전, 그리고 40년 이상의 사역 유튜브 아카이브 — 그의 개인 웹사이트를 방문하세요.">To read Bill's personal story — his calling at 13, his life in Korea, his autobiography in progress, and his YouTube archive of 40+ years of ministry — visit his personal website.</p>
-  <a href="https://www.billmajors.com" target="_blank" class="btn-gold" data-en="Visit billmajors.com" data-ko="billmajors.com 방문">Visit billmajors.com</a>
-</div>
-
-<footer>
-  <div class="footer-logo">Cross<span>Culture</span> Community Foundation</div>
-  <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
-  <div>© 2026 CrossCulture Community Foundation</div>
-</footer>
-
-
-<script>
-(function() {
-  var lang = 'en';
-
-  function applyLang(l) {
-    lang = l;
-    sessionStorage.setItem('ccf_lang', l);
-    document.body.classList.remove('ko');
-    if (l === 'ko') document.body.classList.add('ko');
-    var btnEn = document.getElementById('btn-en');
-    var btnKo = document.getElementById('btn-ko');
-    if (btnEn && btnKo) {
-      if (l === 'en') { btnEn.classList.add('active'); btnKo.classList.remove('active'); }
-      else { btnEn.classList.remove('active'); btnKo.classList.add('active'); }
-    }
-    var els = document.querySelectorAll('[data-en]');
-    for (var i = 0; i < els.length; i++) {
-      var el = els[i];
-      var v = el.getAttribute('data-' + l);
-      if (!v) continue;
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = v;
-      else el.innerHTML = v;
-    }
-    // Update all internal nav links to carry language
-    var links = document.querySelectorAll('nav a[href]');
-    for (var j = 0; j < links.length; j++) {
-      var href = links[j].getAttribute('href');
-      if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('#')) continue;
-      // Remove existing lang param
-      href = href.replace(/[?&]lang=[a-z]+/, '');
-      // Add new lang param if Korean
-      if (l === 'ko') {
-        href = href + (href.indexOf('?') >= 0 ? '&' : '?') + 'lang=ko';
-      }
-      links[j].setAttribute('href', href);
-    }
-  }
-
-  window.setLang = applyLang;
-
-  window.handleContact = function(e) {
-    e.preventDefault();
-    alert(lang === 'ko'
-      ? '메시지 감사합니다! 곧 연락드리겠습니다.\n\nbillmajors@crossculture-community.com'
-      : 'Thank you! We will be in touch soon.\n\nbillmajors@crossculture-community.com');
-    e.target.reset();
-  };
-
-  window.handleNotify = function() {
-    var email = document.getElementById('notify-email');
-    if (!email || !email.value || email.value.indexOf('@') === -1) {
-      alert(lang === 'ko' ? '유효한 이메일 주소를 입력해 주세요.' : 'Please enter a valid email address.');
-      return;
-    }
-    alert(lang === 'ko' ? '감사합니다! 알려드리겠습니다.' : 'Thank you! We will notify you.');
-    email.value = '';
-  };
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // Read language from URL param or sessionStorage
-    var params = new URLSearchParams(window.location.search);
-    var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
-    applyLang(savedLang);
-
-    var btnEn = document.getElementById('btn-en');
-    var btnKo = document.getElementById('btn-ko');
-    if (btnEn) btnEn.addEventListener('click', function() { applyLang('en'); });
-    if (btnKo) btnKo.addEventListener('click', function() { applyLang('ko'); });
-
-    window.addEventListener('scroll', function() {
-      var nav = document.getElementById('main-nav') || document.querySelector('nav');
-      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.08)' : 'none';
-    });
-
-    // Smooth scroll for anchor links
-    var anchors = document.querySelectorAll('a[href^="#"]');
-    for (var i = 0; i < anchors.length; i++) {
-      anchors[i].addEventListener('click', function(e) {
-        var href = this.getAttribute('href');
-        if (href === '#') return;
-        e.preventDefault();
-        var target = document.querySelector(href);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-  });
-})();
-
-function toggleMenu() {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger');
-  menu.classList.toggle('open');
-  btn.classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('mobile-menu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
-document.addEventListener('click', function(e) {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger');
-  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
-    menu.classList.remove('open');
-    btn.classList.remove('open');
-  }
-});
-</script>
-</body>
-</html
-  </div>
+  <p style="color:rgba(247,243,236,0.45);margin-top:0;font-size:0.8rem;"><span style="color:rgba(247,243,236,0.45);text-decoration:none;">EIN:&#8203;84&#8209;2974290 · CrossCulture Community Foundation · Dallas, TX · </span><span data-en="A 501(c)3 Tax-Exempt Organization" data-ko="501(c)3 세금 면제 단체">A 501(c)3 Tax-Exempt Organization</span></p>
 </section>
 
 
+<!-- MAILCHIMP SUBSCRIBE -->
+<div style="background:var(--earth-dark);padding:60px 80px;text-align:center;box-sizing:border-box;width:100%;">
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold-light);margin-bottom:16px;" data-en="Stay Connected" data-ko="소식을 받아보세요">Stay Connected</h2>
+  <p style="font-size:0.9rem;color:rgba(247,243,236,0.65);max-width:480px;margin:0 auto 32px;line-height:1.8;" data-en="Newsletters, updates, stories from Korea, and announcement of book completion — delivered to your inbox." data-ko="뉴스레터, 사역 소식, 한국에서의 이야기, 그리고 책 출판 소식 — 받은 편지함으로 전달됩니다.">Newsletters, updates, stories from Korea, and announcement of book completion — delivered to your inbox.</p>
+  <form action="https://crossculture-community.us11.list-manage.com/subscribe/post?u=4509eaf80f3c04aea5e8ef08b&id=2f61037e9c&f_id=002bd4e3f0" method="post" target="_blank" novalidate>
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:480px;margin:0 auto;">
+      <input type="text" name="FNAME" placeholder="First Name / 이름" style="padding:14px 16px;border:1.5px solid rgba(201,148,58,0.4);border-radius:2px;font-size:0.9rem;font-family:inherit;background:rgba(255,255,255,0.08);color:var(--cream);outline:none;width:100%;box-sizing:border-box;">
+      <div style="display:flex;flex-wrap:wrap;width:100%;">
+        <input type="email" name="EMAIL" placeholder="Email address / 이메일 주소" required style="flex:1;min-width:0;padding:14px 16px;border:1.5px solid rgba(201,148,58,0.4);border-right:none;border-radius:2px 0 0 2px;font-size:0.9rem;font-family:inherit;background:rgba(255,255,255,0.08);color:var(--cream);outline:none;box-sizing:border-box;">
+        <button type="submit" style="padding:14px 24px;background:var(--gold);color:var(--ink);border:none;border-radius:0 2px 2px 0;font-family:inherit;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
+      </div>
+      <div style="position:absolute;left:-5000px;" aria-hidden="true">
+        <input type="text" name="b_4509eaf80f3c04aea5e8ef08b_2f61037e9c" tabindex="-1" value="">
+      </div>
+    </div>
+  </form>
+</div>
+<section id="contact">
+  <div>
+    <div class="section-label" data-en="Get in Touch" data-ko="연락하기">Get in Touch</div>
+    <h2 class="section-title" data-en="Connect With Us" data-ko="우리와 연결하세요">Connect With Us</h2>
+    <p class="contact-desc" data-en="Whether you want to pray with us, partner in the mission, or simply learn more about what God is doing through CrossCulture Community in Asia — we would love to hear from you." data-ko="우리와 함께 기도하거나, 사역에 동참하거나, 아시아에서 하나님이 크로스컬처 커뮤니티를 통해 하시는 일에 대해 더 알고 싶으시다면 — 연락해 주세요.">Whether you want to pray with us, partner in the mission, or simply learn more about what God is doing through CrossCulture Community in Asia — we would love to hear from you.</p>
+    <div class="contact-details">
+      
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <form class="contact-form" onsubmit="handleContact(event)">
+      <input type="text" id="f-name" placeholder="Your Name / 이름" required>
+      <input type="email" id="f-email" placeholder="Your Email / 이메일" required>
+      <input type="text" id="f-subject" placeholder="Subject / 제목">
+      <textarea id="f-msg" placeholder="Your message / 메시지..."></textarea>
+      <button type="submit" data-en="Send Message" data-ko="메시지 보내기">Send Message</button>
+    </form>
+  </div>
+</section>
 
 <footer>
   <div class="footer-logo" style="display:flex;align-items:center;gap:12px;"><img src="logo.png" alt="CrossCulture Community" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:0.85;"><span>CrossCulture Community Foundation</span></div>
@@ -720,135 +592,6 @@ document.addEventListener('click', function(e) {
   if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
     menu.classList.remove('open');
     btn.classList.remove('open');
-  }
-});
-</script>
-</body>
-</html>
-
-<script>
-(function() {
-  var lang = 'en';
-
-  function applyLang(l) {
-    lang = l;
-    sessionStorage.setItem('ccf_lang', l);
-    document.body.classList.remove('ko');
-    if (l === 'ko') document.body.classList.add('ko');
-    var btnEn = document.getElementById('btn-en');
-    var btnKo = document.getElementById('btn-ko');
-    if (btnEn && btnKo) {
-      if (l === 'en') { btnEn.classList.add('active'); btnKo.classList.remove('active'); }
-      else { btnEn.classList.remove('active'); btnKo.classList.add('active'); }
-    }
-    var els = document.querySelectorAll('[data-en]');
-    for (var i = 0; i < els.length; i++) {
-      var el = els[i];
-      var v = el.getAttribute('data-' + l);
-      if (!v) continue;
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = v;
-      else el.innerHTML = v;
-    }
-    // Update all internal nav links to carry language
-    var links = document.querySelectorAll('nav a[href]');
-    for (var j = 0; j < links.length; j++) {
-      var href = links[j].getAttribute('href');
-      if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('#')) continue;
-      // Remove existing lang param
-      href = href.replace(/[?&]lang=[a-z]+/, '');
-      // Add new lang param if Korean
-      if (l === 'ko') {
-        href = href + (href.indexOf('?') >= 0 ? '&' : '?') + 'lang=ko';
-      }
-      links[j].setAttribute('href', href);
-    }
-  }
-
-  window.setLang = applyLang;
-
-  window.handleContact = function(e) {
-    e.preventDefault();
-    alert(lang === 'ko'
-      ? '메시지 감사합니다! 곧 연락드리겠습니다.\n\nbillmajors@crossculture-community.com'
-      : 'Thank you! We will be in touch soon.\n\nbillmajors@crossculture-community.com');
-    e.target.reset();
-  };
-
-  window.handleNotify = function() {
-    var email = document.getElementById('notify-email');
-    if (!email || !email.value || email.value.indexOf('@') === -1) {
-      alert(lang === 'ko' ? '유효한 이메일 주소를 입력해 주세요.' : 'Please enter a valid email address.');
-      return;
-    }
-    alert(lang === 'ko' ? '감사합니다! 알려드리겠습니다.' : 'Thank you! We will notify you.');
-    email.value = '';
-  };
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // Read language from URL param or sessionStorage
-    var params = new URLSearchParams(window.location.search);
-    var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
-    applyLang(savedLang);
-
-    var btnEn = document.getElementById('btn-en');
-    var btnKo = document.getElementById('btn-ko');
-    if (btnEn) btnEn.addEventListener('click', function() { applyLang('en'); });
-    if (btnKo) btnKo.addEventListener('click', function() { applyLang('ko'); });
-
-    window.addEventListener('scroll', function() {
-      var nav = document.getElementById('main-nav') || document.querySelector('nav');
-      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.08)' : 'none';
-    });
-
-    // Smooth scroll for anchor links
-    var anchors = document.querySelectorAll('a[href^="#"]');
-    for (var i = 0; i < anchors.length; i++) {
-      anchors[i].addEventListener('click', function(e) {
-        var href = this.getAttribute('href');
-        if (href === '#') return;
-        e.preventDefault();
-        var target = document.querySelector(href);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-  });
-})();
-
-function toggleMenu() {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger');
-  menu.classList.toggle('open');
-  btn.classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('mobile-menu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
-// Close menu when clicking outside
-document.addEventListener('click', function(e) {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger');
-  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
-    menu.classList.remove('open');
-    btn.classList.remove('open');
-  }
-});
-</script>
-<script>
-function toggleMenu() {
-  var m = document.getElementById('mobile-menu');
-  var b = document.getElementById('hamburger');
-  m.classList.toggle('open'); b.classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('mobile-menu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
-document.addEventListener('click', function(e) {
-  var m = document.getElementById('mobile-menu');
-  var b = document.getElementById('hamburger');
-  if (m && b && !m.contains(e.target) && !b.contains(e.target)) {
-    m.classList.remove('open'); b.classList.remove('open');
   }
 });
 </script>
