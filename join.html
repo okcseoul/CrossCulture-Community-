@@ -228,31 +228,6 @@
       padding: 24px 16px !important;
     }
   }
-
-  /* MEMBERSHIP FORM */
-  .form-wrapper { max-width: 720px; margin: 0 auto; }
-  .form-section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; padding-bottom: 12px; border-bottom: 1px solid rgba(139,111,71,0.2); }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-  .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
-  .form-row .form-field { margin-bottom: 0; }
-  .form-label-kr { font-size: 0.88rem; font-weight: 500; color: var(--earth-dark); }
-  .form-label-en { font-size: 0.78rem; color: var(--charcoal-soft); opacity: 0.75; margin-top: -4px; }
-  .form-input { width: 100%; padding: 16px 18px; font-size: 1rem; font-family: inherit; color: var(--charcoal); background: var(--warm-white); border: 1.5px solid rgba(139,111,71,0.25); border-radius: 2px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
-  .form-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,148,58,0.1); }
-  .form-input::placeholder { color: rgba(74,74,70,0.35); }
-  .form-select { width: 100%; padding: 16px 18px; font-size: 1rem; font-family: inherit; color: var(--charcoal); background: var(--warm-white); border: 1.5px solid rgba(139,111,71,0.25); border-radius: 2px; outline: none; transition: border-color 0.2s; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B6F47' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; cursor: pointer; }
-  .form-select:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,148,58,0.1); }
-  .form-check { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 24px; padding: 16px; background: rgba(139,111,71,0.04); border-radius: 2px; border: 1px solid rgba(139,111,71,0.1); }
-  .form-check input[type="checkbox"] { width: 20px; height: 20px; min-width: 20px; margin-top: 2px; accent-color: var(--earth-dark); cursor: pointer; }
-  .check-label { font-size: 0.85rem; color: var(--charcoal-soft); line-height: 1.7; cursor: pointer; }
-  .form-submit-wrap { margin-top: 8px; }
-  .btn-submit { width: 100%; padding: 18px 32px; background: var(--earth-dark); color: var(--cream); border: none; border-radius: 2px; font-family: inherit; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.2s; }
-  .btn-submit:hover { background: var(--gold); color: var(--ink); transform: translateY(-2px); }
-  .submit-note { font-size: 0.78rem; color: var(--charcoal-soft); opacity: 0.65; text-align: center; margin-top: 16px; line-height: 1.7; }
-  .form-success { display: none; text-align: center; padding: 48px 32px; }
-  .form-error { display: none; color: #c0392b; font-size: 0.85rem; margin-top: 12px; text-align: center; }
-  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
-
 </style>
 </head>
 <body>
@@ -289,17 +264,17 @@
 <section style="background:var(--earth-dark);padding:100px 80px;text-align:center;">
   <div style="max-width:800px;margin:0 auto;">
     <div class="section-label" style="color:var(--gold-light);" data-en="Join Us" data-ko="함께하세요">Join Us</div>
-    <h1 style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--cream);margin-bottom:24px;" data-en="Be Part of This Historic Mission" data-ko="이 역사적인 사명의 일원이 되십시오">Be Part of This Historic Mission</h1>
-    <p style="font-size:1rem;color:rgba(247,243,236,0.75);line-height:1.9;max-width:640px;margin:0 auto;" data-en="Do you want to be part of the vision for a Museum of the Bible Korea in Seoul? Your registration as a member of CrossCulture Community (크로스컬처 커뮤니티) is a real and meaningful step toward making it possible. Membership is free. There is no financial obligation. But your name — and especially your voice as a Korean citizen or a resident in Korea — matters for the official registration process in Korea. Say yes to this dream." data-ko="서울에 건립될 한국 성경 박물관의 비전에 동참하고 싶으신가요? 크로스컬처 커뮤니티 회원으로 등록하시는 것은 그 실현을 향한 실질적이고 의미 있는 발걸음입니다. 회원 가입은 무료이며 재정적 의무가 없습니다. 그러나 귀하의 이름 — 특히 한국 국적자 또는 한국 거주자로서의 귀하의 목소리 — 는 한국 공식 등록 절차에서 중요합니다. 이 꿈에 '예스'라고 말씀해 주세요.">Do you want to be part of the vision for a Museum of the Bible Korea in Seoul? Your registration as a member of CrossCulture Community (크로스컬처 커뮤니티) is a real and meaningful step toward making it possible. Membership is free. There is no financial obligation. But your name — and especially your voice as a Korean citizen or a resident in Korea — matters for the official registration process in Korea. Say yes to this dream.</p>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--cream);margin-bottom:24px;" data-en="Be Part of This Historic Mission" data-ko="일원이 되어 주세요">Be Part of This Historic Mission</h1>
+    <p style="font-size:1rem;color:rgba(247,243,236,0.75);line-height:1.9;max-width:640px;margin:0 auto;" data-en="Do you want to be part of the vision for a Museum of the Bible Korea in Seoul? Your registration as a member of CrossCulture Community (크로스컬처 커뮤니티) is a real and meaningful step toward making it possible. Membership is free. There is no financial obligation. But your name — and especially your voice as a Korean citizen or a resident in Korea — matters for the official registration process in Korea. Say yes to this dream." data-ko="서울에 건립될 한국 성경 박물관의 비전에 함께하고 싶으신가요? 크로스컬처 커뮤니티 회원으로 등록하는 것은 이 비전을 현실로 만들어가는 의미 있는 참여입니다. 회원 가입은 무료이며, 재정적인 의무는 없습니다. 하지만 귀하의 이름, 특히 한국 국적자 또는 한국 거주자로서의 참여는 공식 등록 절차에서 중요한 역할을 합니다. 이 뜻깊은 여정에 함께해 주세요. 이 꿈에 '예스'라고 응답해 주시길 바랍니다.">Do you want to be part of the vision for a Museum of the Bible Korea in Seoul? Your registration as a member of CrossCulture Community (크로스컬처 커뮤니티) is a real and meaningful step toward making it possible. Membership is free. There is no financial obligation. But your name — and especially your voice as a Korean citizen or a resident in Korea — matters for the official registration process in Korea. Say yes to this dream.</p>
   </div>
 </section>
 
 <section class="membership" id="membership">
     <div class="membership-inner">
       <div class="section-label" style="text-align:center;">Join Us · 함께하세요</div>
-      <h2 class="membership-title-kr">이 역사적인 사명의 일원이 되십시오</h2>
+      <h2 class="membership-title-kr">일원이 되어 주세요</h2>
       <h3 class="membership-title-en">Be Part of This Historic Mission</h3>
-      <p class="membership-body-kr">크로스컬처 커뮤니티 회원이 되어 서울에 건립될 Museum of the Bible Korea(MOTB-Korea)의 초석을 놓는 역사에 함께하십시오.</p>
+      <p class="membership-body-kr">서울에 건립될 한국 성경 박물관의 비전에 함께하고 싶으신가요? 크로스컬처 커뮤니티 회원으로 등록하는 것은 이 비전을 현실로 만들어가는 의미 있는 참여입니다. 회원 가입은 무료이며, 재정적인 의무는 없습니다. 하지만 귀하의 이름, 특히 한국 국적자 또는 한국 거주자로서의 참여는 공식 등록 절차에서 중요한 역할을 합니다. 이 뜻깊은 여정에 함께해 주세요. 이 꿈에 '예스'라고 응답해 주시길 바랍니다.</p>
       <p class="membership-body-en">Become a member of CrossCulture Community and help lay the foundation for the Museum of the Bible Korea (MOTB-Korea), to be established in Seoul.</p>
       <div class="membership-free"><span>무료 회원 가입 &nbsp;·&nbsp; Free Membership</span></div>
 
