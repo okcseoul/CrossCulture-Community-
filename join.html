@@ -294,6 +294,12 @@
   </div>
 </section>
 
+<div id="thank-you" style="display:none;background:#0A3C8F;color:#F7F3EC;text-align:center;padding:60px 40px;">
+  <div style="font-size:1.8rem;margin-bottom:16px;">✦</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:16px;" data-en="Thank You for Joining" data-ko="함께해 주셔서 감사합니다">Thank You for Joining</h2>
+  <p style="font-size:1rem;opacity:0.85;max-width:540px;margin:0 auto;line-height:1.8;" data-en="Your application has been received. Welcome to CrossCulture Community. A confirmation email will be sent shortly." data-ko="신청서가 접수되었습니다. 크로스컬처 커뮤니티에 오신 것을 환영합니다. 확인 이메일이 곧 발송됩니다.">Your application has been received. Welcome to CrossCulture Community. A confirmation email will be sent shortly.</p>
+</div>
+
 <section class="membership" id="membership">
     <div class="membership-inner">
       <div class="section-label" style="text-align:center;">Join Us · 함께하세요</div>
@@ -347,9 +353,9 @@
 
           <!-- Citizenship -->
           <div class="form-field">
-            <div class="form-label-kr">국적</div>
-            <div class="form-label-en">Citizenship</div>
-            <input class="form-input" type="text" name="citizenship" placeholder="예: 대한민국, 미국 / e.g. Korea, USA">
+            <div class="form-label-kr">국적 *</div>
+            <div class="form-label-en">Citizenship (required)</div>
+            <input class="form-input" type="text" name="citizenship" placeholder="예: 대한민국, 미국 / e.g. Korea, USA" required>
           </div>
 
           <!-- Citizenship and residency explanatory note -->
@@ -404,7 +410,7 @@
           <!-- Hidden metadata -->
           <input type="hidden" name="_subject" value="New CrossCulture Community Membership Application">
           <input type="hidden" name="_replyto" id="replyto_field" value="">
-          <input type="hidden" name="_next" value="https://www.crossculture-community.com/join.html?submitted=true">
+          <input type="hidden" name="_next" value="https://www.crossculture-community.com/join.html">
 
           <!-- Submit -->
           <div class="form-submit-wrap">
@@ -566,6 +572,15 @@ document.addEventListener('click', function(e) {
     btn.classList.remove('open');
   }
 });
+</script>
+<script>
+if (window.location.search.includes('submitted=true')) {
+  var ty = document.getElementById('thank-you');
+  if (ty) {
+    ty.style.display = 'block';
+    setTimeout(function() { ty.scrollIntoView({ behavior: 'smooth' }); }, 100);
+  }
+}
 </script>
 </body>
 </html>
