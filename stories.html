@@ -1,1 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SPTSXBF3T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Stories from Korea — CrossCulture Community Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F7F3EC; --warm-white: #FDFAF5;
+    --earth: #8B6F47; --earth-dark: #5C4A2A; --earth-light: #C4A882;
+    --charcoal: #2C2C2A; --charcoal-soft: #4A4A46;
+    --gold: #C9943A; --gold-light: #E8C87A; --ink: #1A1A18;
+    --blue-dark: #1A3A6B;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { font-family: "DM Sans", sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+  body.ko { font-family: "Noto Sans KR", sans-serif; }
 
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(253,250,245,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); gap: 16px; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { height: 44px; width: auto; }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; transition: color 0.2s; }
+  nav ul a:hover, nav ul a.active { color: var(--gold); }
+  .nav-give { background: var(--earth-dark) !important; color: var(--cream) !important; padding: 10px 20px; border-radius: 2px; }
+  .nav-give:hover { background: var(--gold) !important; color: var(--ink) !important; }
+  .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(139,111,71,0.15); border-radius: 20px; padding: 4px; border: 1px solid rgba(139,111,71,0.25); }
+  .lang-btn { padding: 6px 14px; border-radius: 16px; border: none; background: transparent; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.2s; color: var(--charcoal-soft); font-family: inherit; }
+  .lang-btn.active { background: var(--earth-dark); color: var(--cream); }
+
+  /* HERO */
+  .blog-hero { background: var(--cream); padding: 140px 80px 80px; position: relative; overflow: hidden; }
+  .blog-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 80% 50%, rgba(201,148,58,0.08) 0%, transparent 60%); }
+  .blog-hero-inner { position: relative; z-index: 2; max-width: 700px; }
+  .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .section-label::before { content: ""; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .page-title { font-family: "Cormorant Garamond", serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; color: var(--earth-dark); line-height: 1.1; margin-bottom: 20px; }
+  body.ko .page-title { font-family: "Noto Sans KR", sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); }
+  .page-desc { font-size: 1rem; color: var(--charcoal-soft); line-height: 1.85; max-width: 560px; border-left: 3px solid var(--gold-light); padding-left: 20px; }
+
+  /* BLOG LAYOUT */
+  .blog-body { max-width: 1100px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 2fr 1fr; gap: 60px; align-items: start; }
+
+  /* CATEGORIES */
+  .category-tabs { display: flex; gap: 8px; margin-bottom: 48px; flex-wrap: wrap; }
+  .cat-tab { padding: 8px 20px; border-radius: 2px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border: 1.5px solid rgba(139,111,71,0.25); color: var(--charcoal-soft); background: transparent; transition: all 0.2s; font-family: inherit; }
+  .cat-tab.active, .cat-tab:hover { background: var(--earth-dark); color: var(--cream); border-color: var(--earth-dark); }
+
+  /* STORY CARDS */
+  .story-card { background: var(--warm-white); border: 1px solid rgba(139,111,71,0.12); border-radius: 4px; margin-bottom: 32px; overflow: hidden; transition: box-shadow 0.2s; }
+  .story-card:hover { box-shadow: 0 8px 32px rgba(92,74,42,0.1); }
+  .story-card-header { background: var(--earth-dark); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .story-category { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); }
+  .story-date { font-size: 0.75rem; color: rgba(247,243,236,0.5); }
+  .story-card-body { padding: 32px; }
+  .story-title { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; font-weight: 600; color: var(--earth-dark); line-height: 1.25; margin-bottom: 16px; }
+  body.ko .story-title { font-family: "Noto Sans KR", sans-serif; font-size: 1.3rem; }
+  .story-excerpt { font-size: 0.92rem; color: var(--charcoal-soft); line-height: 1.9; margin-bottom: 24px; }
+  .story-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid rgba(139,111,71,0.1); }
+  .story-author { font-size: 0.78rem; color: var(--charcoal-soft); opacity: 0.7; }
+  .read-more { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+  .read-more::after { content: "→"; }
+
+  /* LETTERS SECTION */
+  .letters-card { background: var(--cream); border: 1px solid rgba(139,111,71,0.15); border-radius: 4px; margin-bottom: 32px; overflow: hidden; }
+  .letters-card-header { background: var(--blue-dark); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .letters-card-body { padding: 32px; }
+  .letter-quote { font-family: "Cormorant Garamond", serif; font-size: 1.05rem; font-style: italic; color: var(--charcoal-soft); line-height: 1.9; border-left: 3px solid var(--gold-light); padding-left: 20px; margin-bottom: 20px; }
+  body.ko .letter-quote { font-family: "Noto Sans KR", sans-serif; font-style: normal; }
+  .letter-pending { background: var(--earth-dark); border-radius: 4px; padding: 24px 32px; text-align: center; }
+  .letter-pending p { font-size: 0.85rem; color: rgba(247,243,236,0.65); line-height: 1.7; font-style: italic; }
+
+  /* SIDEBAR */
+  .sidebar { position: sticky; top: 100px; }
+  .sidebar-card { background: var(--cream); border: 1px solid rgba(139,111,71,0.15); border-radius: 4px; padding: 32px; margin-bottom: 24px; }
+  .sidebar-title { font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 600; color: var(--earth-dark); margin-bottom: 16px; }
+  body.ko .sidebar-title { font-family: "Noto Sans KR", sans-serif; font-size: 1rem; }
+  .sidebar-text { font-size: 0.85rem; color: var(--charcoal-soft); line-height: 1.75; margin-bottom: 16px; }
+  .sidebar-dark { background: var(--earth-dark); border-radius: 4px; padding: 32px; margin-bottom: 24px; }
+  .sidebar-dark .sidebar-title { color: var(--gold-light); }
+  .sidebar-dark .sidebar-text { color: rgba(247,243,236,0.65); }
+  .btn-gold { display: block; text-align: center; background: var(--gold); color: var(--ink); padding: 12px 20px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; margin-top: 16px; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .btn-cream { display: block; text-align: center; background: var(--cream); color: var(--earth-dark); padding: 12px 20px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; margin-top: 12px; }
+  .btn-cream:hover { background: var(--warm-white); }
+  .archive-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(139,111,71,0.1); font-size: 0.83rem; color: var(--charcoal-soft); }
+  .archive-item:last-child { border-bottom: none; }
+  .archive-count { background: var(--earth-dark); color: var(--cream); font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; }
+
+  /* SUBSCRIBE */
+  .subscribe-section { background: var(--earth-dark); padding: 80px; text-align: center; }
+  .subscribe-section h2 { font-family: "Cormorant Garamond", serif; font-size: 2rem; color: var(--gold-light); margin-bottom: 16px; }
+  body.ko .subscribe-section h2 { font-family: "Noto Sans KR", sans-serif; font-size: 1.5rem; }
+  .subscribe-section p { font-size: 0.9rem; color: rgba(247,243,236,0.65); max-width: 480px; margin: 0 auto 32px; line-height: 1.8; }
+  .subscribe-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 14px 16px; border: 1.5px solid rgba(201,148,58,0.4); border-right: none; border-radius: 2px 0 0 2px; font-size: 0.9rem; font-family: inherit; background: rgba(255,255,255,0.08); color: var(--cream); outline: none; }
+  .subscribe-form input::placeholder { color: rgba(247,243,236,0.35); }
+  .subscribe-form input:focus { border-color: var(--gold); }
+  .subscribe-form button { padding: 14px 24px; background: var(--gold); color: var(--ink); border: none; border-radius: 0 2px 2px 0; font-family: inherit; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .subscribe-form button:hover { background: var(--gold-light); }
+
+  footer { background: var(--ink); color: rgba(247,243,236,0.5); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: "Cormorant Garamond", serif; font-size: 1.1rem; font-weight: 600; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 20px; }
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    nav ul { display: none; }
+    .nav-give { display: none; }
+    * { max-width: 100%; box-sizing: border-box; }
+    img { max-width: 100%; height: auto; }
+    table { display: block; overflow-x: auto; }
+    .give-buttons { flex-direction: column; align-items: center; }
+    footer { flex-direction: column; text-align: center; padding: 28px 20px; gap: 12px; }
+  }
+  @media (max-width: 480px) {
+    section { padding-left: 16px !important; padding-right: 16px !important; }
+    nav { padding: 12px 16px; }
+    nav ul { display: none; }
+    .blog-hero { padding: 100px 24px 60px; }
+    .blog-body { grid-template-columns: 1fr; padding: 48px 24px; gap: 40px; }
+    .sidebar { position: static; }
+    .subscribe-section { padding: 60px 24px; }
+    .subscribe-form { flex-direction: column; }
+    .subscribe-form input { border-right: 1.5px solid rgba(201,148,58,0.4); border-bottom: none; border-radius: 2px 2px 0 0; }
+    .subscribe-form button { border-radius: 0 0 2px 2px; }
+    footer { flex-direction: column; text-align: center; padding: 24px; }
+  }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--earth-dark); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: rgba(253,250,245,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); z-index: 99; flex-direction: column; padding: 8px 0 16px; box-shadow: 0 8px 32px rgba(92,74,42,0.1); }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { padding: 14px 24px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; border-bottom: 1px solid rgba(139,111,71,0.08); transition: all 0.2s; }
+  .mobile-menu a:hover { color: var(--gold); background: rgba(201,148,58,0.05); }
+  .mobile-menu .mobile-give { color: var(--cream); background: var(--earth-dark); margin: 12px 24px 0; border-radius: 2px; text-align: center; border-bottom: none; }
+  .mobile-menu .mobile-give:hover { background: var(--gold); color: var(--ink); }
+  @media (max-width: 900px) { .hamburger { display: flex; } }
+
+  .stories-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
+  .story-col { display: flex; flex-direction: column; gap: 16px; }
+  .story-col-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+  .col-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+  .col-label::before { content: ''; display: inline-block; width: 28px; height: 1.5px; background: var(--gold); margin-right: 8px; vertical-align: middle; }
+  .col-refresh-btn { padding: 6px 14px; background: transparent; border: 1.5px solid rgba(139,111,71,0.3); color: var(--earth); font-family: inherit; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all 0.2s; white-space: nowrap; }
+  .col-refresh-btn:hover { background: var(--earth-dark); color: var(--cream); border-color: var(--earth-dark); }
+  .blog-featured-card { background: var(--warm-white); border: 1px solid rgba(139,111,71,0.15); border-radius: 4px; padding: 28px; min-height: 220px; transition: box-shadow 0.2s; }
+  .blog-featured-card:hover { box-shadow: 0 6px 24px rgba(92,74,42,0.08); }
+  .card-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-light); border-radius: 2px; padding: 3px 8px; display: inline-block; margin-bottom: 12px; }
+  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--earth-dark); line-height: 1.25; margin-bottom: 12px; }
+  .card-excerpt { font-size: 0.87rem; color: var(--charcoal-soft); line-height: 1.85; margin-bottom: 14px; }
+  .card-excerpt.italic { font-style: italic; border-left: 3px solid var(--gold-light); padding-left: 14px; }
+  .card-meta { font-size: 0.72rem; color: var(--charcoal-soft); opacity: 0.6; padding-top: 12px; border-top: 1px solid rgba(139,111,71,0.1); }
+  @media (max-width: 860px) { .stories-two-col { grid-template-columns: 1fr; } }
+
+  /* Contact & Give */
+  .contact-item a:hover { text-decoration: underline; }
+
+  /* CONTACT SECTION */
+  .section-title { font-family: "Cormorant Garamond", serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--earth-dark); line-height: 1.15; margin-bottom: 20px; }
+  body.ko .section-title { font-family: "Noto Sans KR", sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+  .contact-section { background: var(--cream); padding: 80px 40px; }
+  .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contact-left { padding-top: 8px; }
+  .contact-desc { font-size: 0.95rem; color: var(--charcoal-soft); line-height: 1.85; margin-bottom: 32px; max-width: 420px; }
+  .contact-details { display: flex; flex-direction: column; gap: 16px; }
+  .contact-item { display: flex; flex-direction: column; gap: 4px; font-size: 0.88rem; }
+  .contact-item span:first-child { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+  .contact-item a, .contact-item span:last-child { color: var(--charcoal-soft); text-decoration: none; }
+  .contact-right { background: var(--earth-dark); border-radius: 4px; padding: 40px; }
+  @media (max-width: 860px) {
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .contact-section { padding: 60px 24px; }
+    .contact-right { padding: 28px; }
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .contact-form input, .contact-form textarea { padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; color: var(--cream); font-family: inherit; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+  .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold-light); }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(247,243,236,0.35); }
+  .contact-form textarea { resize: vertical; min-height: 120px; }
+  .contact-form button { padding: 16px; background: var(--gold); color: var(--ink); border: none; border-radius: 2px; font-family: inherit; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+  .contact-form button:hover { background: var(--gold-light); }
+
+  footer { background: var(--ink); color: rgba(247,243,236,0.5); padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-left > * { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+  .hero-eyebrow { animation-delay: 0.1s; } .hero-title { animation-delay: 0.25s; } .hero-tagline { animation-delay: 0.4s; } .hero-ctas { animation-delay: 0.55s; }
+
+  @media (max-width: 900px) {
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    nav { padding: 14px 20px; }
+    nav ul { display: none; }
+    .nav-give { display: none; }
+    section { padding: 48px 20px; }
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 90px 20px 48px; }
+    .hero-right { display: none; }
+    .hero-title { font-size: clamp(2rem, 8vw, 3.5rem); }
+    .hero-tagline { font-size: 0.9rem; }
+    #vision { grid-template-columns: 1fr; gap: 32px; }
+    .vision-content { max-width: 100%; }
+    .story-inner { grid-template-columns: 1fr; gap: 32px; }
+    .story-text { padding: 32px 20px; }
+    .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+    .projects-vision { flex-direction: column; gap: 16px; }
+    .project-card { padding: 24px 20px; }
+    #give { padding: 48px 20px; }
+    #give h2 { font-size: 1.8rem; }
+    .give-inner { padding: 0; }
+    #contact { grid-template-columns: 1fr; gap: 32px; }
+    .contact-info { padding: 0; }
+    .contact-form-wrap { padding: 0; }
+    .subscribe-section, div[style*="background:var(--earth-dark)"] { padding: 48px 20px !important; }
+    .subscribe-form, form[action*="mailchimp"] { max-width: 100% !important; }
+    .subscribe-form input, form[action*="mailchimp"] input[type="email"],
+    form[action*="mailchimp"] input[type="text"] { width: 100% !important; border-right: 1.5px solid rgba(201,148,58,0.4) !important; border-bottom: none !important; border-radius: 2px 2px 0 0 !important; }
+    form[action*="mailchimp"] div[style*="display:flex"] { flex-direction: column !important; }
+    form[action*="mailchimp"] button[type="submit"] { border-radius: 0 0 2px 2px !important; width: 100% !important; }
+    footer { flex-direction: column; text-align: center; padding: 28px 20px; gap: 12px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    * { max-width: 100%; }
+    img { max-width: 100%; height: auto; }
+    #give { padding: 60px 20px !important; }
+    #give p, #give h2, #give .section-label { text-align: center !important; padding-left: 16px; padding-right: 16px; }
+    #give > * { max-width: 100% !important; }
+  }
+  @media (max-width: 480px) {
+    section { padding: 40px 16px; }
+    .hero-left { padding: 80px 16px 40px; }
+    nav { padding: 12px 16px; }
+    .section-label { font-size: 0.65rem; }
+    .section-title { font-size: clamp(1.6rem, 7vw, 2.5rem); }
+    .project-card { padding: 20px 16px; }
+    footer { padding: 24px 16px; }
+    #give { padding: 48px 16px !important; text-align: center; }
+    #give p { padding: 0 8px; }
+    #give div[style*="max-width:560px"],
+    #give div[style*="max-width: 560px"] { padding: 0 8px; }
+    form[action*="mailchimp"] { width: 100% !important; }
+    form[action*="mailchimp"] > div { max-width: 100% !important; width: 100% !important; padding: 0 !important; }
+    form[action*="mailchimp"] input { width: 100% !important; border-radius: 2px !important; border-right: 1.5px solid rgba(201,148,58,0.4) !important; }
+    form[action*="mailchimp"] div[style*="display:flex"],
+    form[action*="mailchimp"] div[style*="display: flex"] { flex-direction: column !important; }
+    form[action*="mailchimp"] button[type="submit"] {
+      width: 100% !important;
+      border-radius: 0 0 2px 2px !important;
+      padding: 14px !important;
+    }
+    div[style*="background:var(--earth-dark)"][style*="padding:60px"],
+    div[style*="background:var(--earth-dark)"][style*="padding: 60px"] { padding: 48px 16px !important; }
+    #give p { color: #F7F3EC !important; opacity: 1 !important; visibility: visible !important; display: block !important; text-align: center !important; width: 100% !important; padding: 0 16px !important; box-sizing: border-box !important; }
+    #give p span { color: #F7F3EC !important; opacity: 0.85 !important; visibility: visible !important; }
+    #give { padding: 48px 16px !important; overflow: visible !important; }
+  }
+
+  /* HAMBURGER */
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--earth-dark); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* MOBILE MENU */
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: rgba(253,250,245,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(139,111,71,0.12); z-index: 99; flex-direction: column; padding: 8px 0 16px; box-shadow: 0 8px 32px rgba(92,74,42,0.1); }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { padding: 14px 24px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal-soft); text-decoration: none; border-bottom: 1px solid rgba(139,111,71,0.08); transition: all 0.2s; }
+  .mobile-menu a:hover { color: var(--gold); background: rgba(201,148,58,0.05); }
+  .mobile-menu .mobile-give { color: var(--cream); background: var(--earth-dark); margin: 12px 24px 0; border-radius: 2px; text-align: center; border-bottom: none; }
+  .mobile-menu .mobile-give:hover { background: var(--gold); color: var(--ink); }
+
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+  }
+
+  .zeffy-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  @media (max-width: 600px) {
+    .zeffy-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 20px !important;
+      padding: 24px 16px !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="CrossCulture Community"></a>
+  <ul>
+    <li><a href="index.html" data-en="Home" data-ko="홈">Home</a></li>
+    
+    <li><a href="museum.html" data-en="Museum" data-ko="박물관">Museum</a></li>
+    <li><a href="join.html" data-en="Join" data-ko="가입">Join</a></li>
+    <li><a href="blog.html" class="active" data-en="Stories" data-ko="이야기">Stories</a></li>
+    <li><a href="#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
+    <li><a href="#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en">EN</button>
+      <button class="lang-btn" id="btn-ko">한국어</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu">
+  <a href="index.html" data-en="Home" data-ko="홈" onclick="closeMenu()" class="">Home</a>
+  <a href="about.html" data-en="About" data-ko="소개" onclick="closeMenu()" class="">About</a>
+  <a href="museum.html" data-en="Museum" data-ko="박물관" onclick="closeMenu()" class="">Museum</a>
+  <a href="blog.html" class="active" data-en="Stories" data-ko="이야기" onclick="closeMenu()" class="">Stories</a>
+  <a href="#contact" data-en="Contact" data-ko="연락처" onclick="closeMenu()" class="">Contact</a>
+  <a href="#give"  data-en="Give Now" data-ko="후원하기" onclick="closeMenu()" class="mobile-give">Give Now</a>
+</div>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <div class="section-label" data-en="From the Field" data-ko="현장에서">From the Field</div>
+    <h1 class="page-title" data-en="Stories from Korea" data-ko="한국에서 온 이야기들">Stories from Korea</h1>
+    <p class="page-desc" data-en="Forty years of life and ministry in Korea means forty years of stories. Some will appear in the autobiography. Some come back from those whose lives were touched. All are true." data-ko="40년의 삶과 사역은 곧 40년의 이야기입니다. 일부는 자서전에 담길 것이고, 일부는 삶이 바뀐 분들의 입에서 다시 찾아왔습니다. 모두 사실입니다.">Forty years of life and ministry in Korea means forty years of stories. Some will appear in the autobiography. Some come back from those whose lives were touched. All are true.</p>
+  </div>
+</div>
+
+<!-- BLOG BODY -->
+<div class="blog-body">
+  <div class="main-content">
+
+    <div class="stories-two-col">
+      <div class="story-col">
+        <div class="story-col-header">
+          <div class="col-label" data-en="Stories from Bill (14)" data-ko="빌의 이야기 (14)">Stories from Bill (14)</div>
+          <button class="col-refresh-btn" onclick="nextStory()" data-en="&#8635; Another Story" data-ko="&#8635; 다른 이야기">&#8635; Another Story</button>
+        </div>
+        <div id="blog-story-card" class="blog-featured-card"></div>
+      </div>
+      <div class="story-col">
+        <div class="story-col-header">
+          <div class="col-label" data-en="Voices from the Past (3)" data-ko="과거의 목소리들 (3)">Voices from the Past (3)</div>
+          <button class="col-refresh-btn" onclick="nextVoice()" data-en="&#8635; Another Voice" data-ko="&#8635; 다른 목소리">&#8635; Another Voice</button>
+        </div>
+        <div id="blog-voice-card" class="blog-featured-card"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="blog-sidebar">
+    <div class="sidebar-card">
+    <div class="sidebar-title" data-en="About the Autobiography" data-ko="자서전을 소개합니다">About the Autobiography</div>
+      <div class="sidebar-text" data-en="&quot;Jesus Led Me All the Way&quot; — Bill's autobiography is written and currently seeking a professional editor. Book 1 covers his calling at 13, his arrival in Korea in 1982, and his early years of ministry." data-ko="&quot;예수님이 모든 길을 인도하셨습니다&quot; — 빌 목사의 자서전은 완성되었으며 현재 전문 편집자를 찾고 있습니다. 제1권은 13세의 부르심, 1982년 한국 도착, 그리고 초기 사역의 시간들을 담고 있습니다.">&#8220;Jesus Led Me All the Way&#8221; — Bill's autobiography is written and currently seeking a professional editor. Book 1 covers his calling at 13, his arrival in Korea in 1982, and his early years of ministry.</div>
+      <a href="https://www.billmajors.com#book" target="_blank" class="btn-gold" data-en="Notify Me When Published" data-ko="출판 소식 받기">Notify Me When Published</a>
+    </div>
+
+
+
+    <div class="sidebar-card">
+      <div class="sidebar-title" data-en="Support the Mission" data-ko="사역을 후원해 주세요">Support the Mission</div>
+      <div class="sidebar-text" data-en="Every story shared here is the fruit of 40+ years of faithful ministry. Help continue the work in Korea and Asia." data-ko="이곳에서 나누는 모든 이야기는 40년 넘는 신실한 사역이 맺은 열매입니다. 한국과 아시아에서의 사역이 계속 이어질 수 있도록 함께해 주세요.">Every story shared here is the fruit of 40+ years of faithful ministry. Help continue the work in Korea and Asia.</div>
+      <a href="#give" class="btn-gold" data-en="Give Today" data-ko="지금 후원하기">Give Today</a>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title" data-en="Visit Bill's Personal Site" data-ko="빌 목사 개인 사이트">Visit Bill's Personal Site</div>
+      <div class="sidebar-text" data-en="More stories, YouTube videos from 40+ years of ministry, and the full timeline of Bill's life in Korea." data-ko="더 많은 이야기들, 40년 넘는 사역 유튜브 영상, 그리고 빌 목사의 한국 생활 전체 타임라인을 만나보세요.">More stories, YouTube videos from 40+ years of ministry, and the full timeline of Bill's life in Korea.</div>
+      <a href="https://www.billmajors.com" target="_blank" class="btn-gold" data-en="Visit billmajors.com" data-ko="billmajors.com 방문하기">Visit billmajors.com</a>
+    </div>
+
+  
+  </div>
+</div>
+
+<!-- SUBSCRIBE -->
+<div class="subscribe-section" id="subscribe">
+  <h2 data-en="Stay Connected" data-ko="소식을 받아보세요">Stay Connected</h2>
+  <p data-en="New stories, ministry updates, and news about the autobiography — delivered to your inbox. No spam. Just the stories worth telling." data-ko="새로운 이야기들, 사역 소식, 자서전 관련 소식 — 받은 편지함으로 전해드립니다. 스팸은 없습니다. 전할 가치 있는 이야기만 보내드립니다.">New stories, ministry updates, and news about the autobiography — delivered to your inbox. No spam. Just the stories worth telling.</p>
+  <form action="https://crossculture-community.us11.list-manage.com/subscribe/post?u=4509eaf80f3c04aea5e8ef08b&id=2f61037e9c&f_id=002bd4e3f0" method="post" target="_blank" style="display:flex;gap:0;max-width:480px;margin:0 auto;" onsubmit="return validateSubscribe()">
+    <input type="email" name="EMAIL" id="sub-email" placeholder="Your email address" required style="flex:1;padding:14px 16px;border:1.5px solid rgba(201,148,58,0.4);border-right:none;border-radius:2px 0 0 2px;font-size:0.9rem;font-family:inherit;background:rgba(255,255,255,0.08);color:var(--cream);outline:none;">
+    <input type="text" name="b_4509eaf80f3c04aea5e8ef08b_2f61037e9c" tabindex="-1" value="" style="position:absolute;left:-5000px;" aria-hidden="true">
+    <button type="submit" data-en="Subscribe" data-ko="구독" style="padding:14px 24px;background:var(--gold);color:var(--ink);border:none;border-radius:0 2px 2px 0;font-family:inherit;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;white-space:nowrap;">Subscribe</button>
+  </form>
+  <p style="font-size:0.75rem;color:rgba(247,243,236,0.4);margin-top:12px;" data-en="Powered by Mailchimp · Unsubscribe anytime" data-ko="Mailchimp 제공 · 언제든지 구독 취소 가능">Powered by Mailchimp · Unsubscribe anytime</p>
+</div>
+
+
+
+<section id="give" style="background:var(--earth-dark);text-align:center;padding:80px 40px;box-sizing:border-box;width:100%;">
+  <div class="section-label" style="justify-content:center;color:var(--gold-light);" data-en="Give Today" data-ko="후원해 주세요">Give Today</div>
+  <h2 class="section-title" style="color:var(--cream);text-align:center;" data-en="Ready to Give?" data-ko="후원을 원하시나요?">Ready to Give?</h2>
+  <p style="color:#F7F3EC;max-width:520px;margin:0 auto 16px;font-size:0.95rem;line-height:1.8;text-align:center;padding:0;box-sizing:border-box;" data-en="Give directly to the General Fund, or choose a specific project to support." data-ko="일반 기금에 바로 후원하시거나, 지원하실 사역을 선택해 주세요.">Give directly to the General Fund, or choose a specific project to support.</p>
+  <p style="color:#F7F3EC;max-width:520px;margin:0 auto 40px;font-size:0.85rem;line-height:2;text-align:center;padding:0;box-sizing:border-box;">
+    <span style="display:inline-block;margin:0 8px;">✓ 100% Secure</span>
+    <span style="display:inline-block;margin:0 8px;">✓ Zero Platform Fees</span>
+    <span style="display:inline-block;margin:0 8px;">✓ Instant Tax Receipt</span>
+  </p>
+
+  <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(201,148,58,0.3);border-radius:4px;padding:20px 32px;max-width:560px;margin:0 auto 32px;text-align:left;">
+    <div style="font-size:0.75rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;" data-en="Korean Won Bank Transfer" data-ko="원화 계좌이체">Korean Won Bank Transfer</div>
+    <div style="font-size:0.88rem;color:rgba(247,243,236,0.75);line-height:1.8;" data-en="Museum donations in Korean Won or any designation of donations to CrossCulture Community through online banking can be sent to Shinhan Bank: 01036135896 — Any questions contact Bill Majors (010-3613-5896)." data-ko="서울 성경박물관 또는 크로스컬처 커뮤니티를 위한 원화 헌금은 신한은행 01036135896으로 보내주시면 됩니다 — 문의사항은 빌 목사에게 연락해 주세요 (010-3613-5896).">Museum donations in Korean Won or any designation of donations to CrossCulture Community through online banking can be sent to Shinhan Bank: 01036135896 — Any questions contact Bill Majors (010-3613-5896).</div>
+  </div>
+
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+    <a href="https://www.zeffy.com/en-US/donation-form/general-fund-99" target="_blank"
+       style="display:inline-block;background:var(--gold);color:var(--ink);padding:16px 40px;font-size:0.85rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.25s;"
+       onmouseover="this.style.background='var(--gold-light)'" onmouseout="this.style.background='var(--gold)'"
+       data-en="Give to General Fund" data-ko="일반 기금 후원하기">Give to General Fund</a>
+    <a href="index.html#projects"
+       style="display:inline-block;background:transparent;color:var(--gold-light);padding:16px 40px;font-size:0.85rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:1.5px solid rgba(201,148,58,0.5);transition:all 0.25s;"
+       onmouseover="this.style.background='rgba(201,148,58,0.12)'" onmouseout="this.style.background='transparent'"
+       data-en="Choose a Project" data-ko="사역 선택하기">Choose a Project</a>
+  </div>
+
+  <p style="color:rgba(247,243,236,0.45);margin-top:0;font-size:0.8rem;"><span style="color:rgba(247,243,236,0.45);text-decoration:none;">EIN:&#8203;84&#8209;2974290 · CrossCulture Community Foundation · Dallas, TX · </span><span data-en="A 501(c)3 Tax-Exempt Organization" data-ko="501(c)3 세금 면제 단체">A 501(c)3 Tax-Exempt Organization</span></p>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="section-label" data-en="Get in Touch" data-ko="연락해 주세요">Get in Touch</div>
+      <h2 class="section-title" data-en="Connect With Us" data-ko="함께 이야기 나누어요">Connect With Us</h2>
+      <p class="contact-desc" data-en="Whether you want to pray with us, partner in the mission, or simply learn more about what God is doing through CrossCulture Community in Asia — we would love to hear from you." data-ko="함께 기도하고 싶으신가요? 사역에 동참하고 싶으신가요? 아시아에서 하나님이 크로스컬처 커뮤니티를 통해 행하시는 일에 대해 더 알고 싶으신가요? 언제든지 연락해 주세요.">Whether you want to pray with us, partner in the mission, or simply learn more about what God is doing through CrossCulture Community in Asia — we would love to hear from you.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <span data-en="Email" data-ko="이메일">Email</span>
+          <a href="/cdn-cgi/l/email-protection#d3b1babfbfbeb2b9bca1a093b0a1bca0a0b0a6bfa7a6a1b6feb0bcbebea6bdbaa7aafdb0bcbe"><span class="__cf_email__" data-cfemail="e88a818484858982879a9ba88b9a879b9b8b9d849c9d9a8dc58b8785859d86819c91c68b8785">[email&#160;protected]</span></a>
+        </div>
+        <div class="contact-item">
+          <span data-en="Based in" data-ko="위치">Based in</span>
+          <span data-en="Seoul, Korea · Since 1982" data-ko="대한민국 서울 · 1982년부터">Seoul, Korea · Since 1982</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <form class="contact-form" onsubmit="handleContact(event)">
+        <input type="text" id="f-name" placeholder="Your Name / 이름" required>
+        <input type="email" id="f-email" placeholder="Your Email / 이메일" required>
+        <input type="text" id="f-subject" placeholder="Subject / 제목">
+        <textarea id="f-msg" placeholder="Your message / 메시지..."></textarea>
+        <button type="submit" data-en="Send Message" data-ko="메시지 보내기">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Cross<span>Culture</span> Community Foundation</div>
+  <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
+  <div>© 2026 CrossCulture Community Foundation</div>
+</footer>
+
+
+<script>
+
+(function() {
+  var lang = 'en';
+
+  function applyLang(l) {
+    lang = l;
+    sessionStorage.setItem('ccf_lang', l);
+    document.body.classList.remove('ko');
+    if (l === 'ko') document.body.classList.add('ko');
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn && btnKo) {
+      if (l === 'en') { btnEn.classList.add('active'); btnKo.classList.remove('active'); }
+      else { btnEn.classList.remove('active'); btnKo.classList.add('active'); }
+    }
+    var els = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var v = el.getAttribute('data-' + l);
+      if (!v) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = v;
+      else el.innerHTML = v;
+    }
+    // Update all internal nav links to carry language
+    var links = document.querySelectorAll('nav a[href]');
+    for (var j = 0; j < links.length; j++) {
+      var href = links[j].getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('#')) continue;
+      // Remove existing lang param
+      href = href.replace(/[?&]lang=[a-z]+/, '');
+      // Add new lang param if Korean
+      if (l === 'ko') {
+        href = href + (href.indexOf('?') >= 0 ? '&' : '?') + 'lang=ko';
+      }
+      links[j].setAttribute('href', href);
+    }
+  }
+
+  window.setLang = applyLang;
+
+  window.handleContact = function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var name = document.getElementById('f-name').value;
+    var email = document.getElementById('f-email').value;
+    var subject = document.getElementById('f-subject').value;
+    var msg = document.getElementById('f-msg').value;
+    var btn = form.querySelector('button[type="submit"]');
+    var origText = btn.textContent;
+    btn.textContent = lang === 'ko' ? '보내는 중...' : 'Sending...';
+    btn.disabled = true;
+    fetch('https://formspree.io/f/xojpjnlb', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, subject: subject, message: msg, _subject: 'CCF Contact: ' + (subject || name) })
+    }).then(function(r) {
+      if (r.ok) {
+        btn.textContent = lang === 'ko' ? '✓ 전송되었습니다' : '✓ Message Sent';
+        btn.style.background = '#4a7c59';
+        form.reset();
+        setTimeout(function() { btn.textContent = origText; btn.style.background = ''; btn.disabled = false; }, 4000);
+      } else {
+        btn.textContent = origText; btn.disabled = false;
+        alert(lang === 'ko' ? '전송에 실패했습니다. 이메일로 직접 연락해 주세요.' : 'Send failed. Please email us directly.');
+      }
+    }).catch(function() {
+      btn.textContent = origText; btn.disabled = false;
+      alert(lang === 'ko' ? '전송에 실패했습니다. 이메일로 직접 연락해 주세요.' : 'Send failed. Please email us directly.');
+    });
+  };
+
+  window.handleNotify = function() {
+    var email = document.getElementById('notify-email');
+    if (!email || !email.value || email.value.indexOf('@') === -1) {
+      alert(lang === 'ko' ? '유효한 이메일 주소를 입력해 주세요.' : 'Please enter a valid email address.');
+      return;
+    }
+    alert(lang === 'ko' ? '감사합니다! 알려드리겠습니다.' : 'Thank you! We will notify you.');
+    email.value = '';
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Read language from URL param or sessionStorage
+    var params = new URLSearchParams(window.location.search);
+    var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
+    applyLang(savedLang);
+
+    var btnEn = document.getElementById('btn-en');
+    var btnKo = document.getElementById('btn-ko');
+    if (btnEn) btnEn.addEventListener('click', function() { applyLang('en'); });
+    if (btnKo) btnKo.addEventListener('click', function() { applyLang('ko'); });
+
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('main-nav') || document.querySelector('nav');
+      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.08)' : 'none';
+    });
+
+    // Smooth scroll for anchor links
+    var anchors = document.querySelectorAll('a[href^="#"]');
+    for (var i = 0; i < anchors.length; i++) {
+      anchors[i].addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  });
+})();
+
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+</script>
+
+<script>
+var BLOG_STORIES = [
+  {tag_en:"The Beginning \u00b7 Age 13",tag_ko:"\uc2dc\uc791 \u00b7 13\uc138",title_en:"I Tried Not to Raise My Hand",title_ko:"\uc190\uc744 \ub4e4\uc9c0 \uc54a\uc73c\ub824 \ud588\uc2b5\ub2c8\ub2e4",excerpt_en:"I was 13 years old at a youth camp when a missionary speaker asked three questions. \"How many want to be President?\" Hundreds of hands went up \u2014 including mine. \"How many want to be the richest businessman in the world?\" I raised mine even higher. Then came the third question. \"How many of you believe God wants you to be a missionary?\" I tried not to raise my hand. But I couldn't keep it down. Getting out of my chair to walk to that stage was harder than raising my hand. Seven or eight teenagers stood in a line while he prayed over us. I never looked back. 44 years later I'm still in Seoul, Korea \u2014 still telling people about Jesus.",excerpt_ko:"13\uc0b4 \ub54c \uccad\uc18c\ub144 \ucea0\ud504\uc5d0\uc11c \ud55c \uc120\uad50\uc0ac \uac15\uc0ac\uac00 \uc138 \uac00\uc9c0 \uc9c8\ubb38\uc744 \ud588\uc2b5\ub2c8\ub2e4. \"\ub300\ud1b5\ub839\uc774 \ub418\uace0 \uc2f6\uc740 \uc0ac\ub78c?\" \uc218\ubc31 \uba85\uc758 \uc190\uc774 \uc62c\ub77c\uac14\uc2b5\ub2c8\ub2e4 \u2014 \uc81c \uc190\ub3c4 \ud3ec\ud568\ud574\uc11c. \"\uc138\uacc4\uc5d0\uc11c \uac00\uc7a5 \ubd80\uc720\ud55c \uc0ac\uc5c5\uac00\uac00 \ub418\uace0 \uc2f6\uc740 \uc0ac\ub78c?\" \uc800\ub294 \ub354 \ub192\uc774 \uc190\uc744 \ub4e4\uc5c8\uc2b5\ub2c8\ub2e4. \uadf8\ub9ac\uace0 \uc138 \ubc88\uc9f8 \uc9c8\ubb38\uc774 \uc654\uc2b5\ub2c8\ub2e4. \"\ud558\ub098\ub2d8\uc774 \uc790\uc2e0\uc744 \uc120\uad50\uc0ac\ub85c \ubd80\ub974\uc2e0\ub2e4\uace0 \ubbff\ub294 \uc0ac\ub78c?\" \uc190\uc744 \ub4e4\uc9c0 \uc54a\uc73c\ub824 \ud588\uc2b5\ub2c8\ub2e4. \ud558\uc9c0\ub9cc \ub0b4\ub9b4 \uc218\uac00 \uc5c6\uc5c8\uc2b5\ub2c8\ub2e4. \uc758\uc790\uc5d0\uc11c \uc77c\uc5b4\ub098 \ubb34\ub300\ub85c \uac77\ub294 \uac83\uc740 \uc190\uc744 \ub4dc\ub294 \uac83\ubcf4\ub2e4 \ub354 \uc5b4\ub824\uc6e0\uc2b5\ub2c8\ub2e4. \uc77c\uacf1 \uc5ec\ub35f \uba85\uc758 \uc2ed\ub300\ub4e4\uc774 \uc904\uc744 \uc11c\uc11c \uae30\ub3c4\ub97c \ubc1b\uc558\uc2b5\ub2c8\ub2e4. \uadf8 \uc774\ud6c4\ub85c \ub3cc\uc544\ubcf8 \uc801\uc774 \uc5c6\uc2b5\ub2c8\ub2e4. 44\ub144\uc774 \uc9c0\ub09c \uc9c0\uae08\ub3c4 \uc11c\uc6b8\uc5d0\uc11c \u2014 \uc5ec\uc804\ud788 \uc608\uc218\ub2d8\uc744 \uc804\ud558\uace0 \uc788\uc2b5\ub2c8\ub2e4.",meta_en:"Bill Ray Majors \u00b7 The moment that changed everything \u00b7 \"Jesus Led Me All the Way\"",meta_ko:"\ube4c \ub808\uc774 \uba54\uc774\uc800\uc2a4 \u00b7 \ubaa8\ub4e0 \uac83\uc744 \ubc14\uafbc \uc21c\uac04 \u00b7 \"\uc608\uc218\ub2d8\uc774 \ud56d\uc0c1 \ub098\ub97c \uc774\ub044\uc168\uc2b5\ub2c8\ub2e4\""},
+  {tag_en:"First Story \u00b7 June 2, 1982",tag_ko:"\uccab \ubc88\uc9f8 \uc774\uc57c\uae30 \u00b7 1982\ub144 6\uc6d4 2\uc77c",title_en:"The Man Called Hama and the Suitcase at Gimpo Airport",title_ko:"\uae40\ud3ec\uacf5\ud56d \uc9d0 \uc704\uc5d0 \uc549\uc544\uc11c \u2014 \ud558\ub9c8\ub77c \ubd88\ub9b0 \ub0a8\uc790",excerpt_en:"I arrived at Gimpo International Airport late in the evening, June 2nd 1982. The man who had promised to meet me was not there yet. I came without any contact information in Seoul and I did not understand the culture engaged in \"Korea Time.\" I was stranded and could not speak Korean. All I could do was sit on one of my suitcases and worry about my unbearable problems.",excerpt_ko:"1982\ub144 6\uc6d4 2\uc77c \uc800\ub141 \ub2a6\uac8c \uae40\ud3ec\uad6d\uc81c\uacf5\ud56d\uc5d0 \ub3c4\ucc29\ud588\uc2b5\ub2c8\ub2e4. \uc800\ub97c \ub9cc\ub098\uae30\ub85c \uc57d\uc18d\ud55c \uc0ac\ub78c\uc774 \uc544\uc9c1 \uc5c6\uc5c8\uc2b5\ub2c8\ub2e4. \uc11c\uc6b8\uc5d0\uc11c \uc5f0\ub77d\ud560 \uc218 \uc788\ub294 \uc815\ubcf4\ub3c4 \uc5c6\uc774 \uc654\uace0 '\ucf54\ub9ac\uc544 \ud0c0\uc784'\uc774\ub77c\ub294 \ubb38\ud654\ub3c4 \uc774\ud574\ud558\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. \uc9d0 \uac00\ubc29 \uc704\uc5d0 \uc549\uc544 \uac10\ub2f9\ud558\uae30 \ud798\ub4e0 \uc0c1\ud669\uc744 \uac71\uc815\ud558\ub294 \uac83\ubfd0\uc774\uc5c8\uc2b5\ub2c8\ub2e4.",meta_en:"Bill Ray Majors \u00b7 June 2, 1982 \u00b7 First night in Korea",meta_ko:"\ube4c \ub808\uc774 \uba54\uc774\uc800\uc2a4 \u00b7 1982\ub144 6\uc6d4 2\uc77c \u00b7 \ud55c\uad6d\uc5d0\uc11c\uc758 \uccab\ub0a0 \ubc24"},
+  {tag_en:"A Week Like No Other \u00b7 June 1982",tag_ko:"\ube44\ud560 \ub370 \uc5c6\ub294 \ud55c \uc8fc \u00b7 1982\ub144 6\uc6d4",title_en:"Graduated Monday. Ordained Wednesday. Korea on Monday.",title_ko:"\uc6d4\uc694\uc77c \uc878\uc5c5. \uc218\uc694\uc77c \uc548\uc218. \uc6d4\uc694\uc77c \ud55c\uad6d\ud589.",excerpt_en:"During college Bill had been invited to Korea for a summer internship \u2014 but he could not go. He was delivering the Chattanooga Times every morning, 365 days a year. So he finished his degree, handed in his paper route, and within one extraordinary week \u2014 graduated on Monday, was ordained and sent out by his home church on Wednesday, and boarded a plane out of Los Angeles on June 1st with a one-way ticket.",excerpt_ko:"\ub300\ud559 \uc2dc\uc808 \ube4c\uc740 \ud55c\uad6d \uc5ec\ub984 \uc778\ud134\uc2ed\uc5d0 \ucd08\ub300\ubc1b\uc558\uc2b5\ub2c8\ub2e4 \u2014 \ud558\uc9c0\ub9cc \uac08 \uc218 \uc5c6\uc5c8\uc2b5\ub2c8\ub2e4. 365\uc77c \uc544\uce68\ub9c8\ub2e4 \ucc44\ud130\ub204\uac00 \ud0c0\uc784\uc988\ub97c \ubc30\ub2ec\ud558\uace0 \uc788\uc5c8\uae30 \ub54c\ubb38\uc785\ub2c8\ub2e4. \uadf8\ub798\uc11c \uc878\uc5c5\ud558\uace0, \uc2e0\ubb38 \ubc30\ub2ec\uc744 \uadf8\ub9cc\ub450\uace0, \ud558\ub098\uc758 \ub180\ub77c\uc6b4 \ud55c \uc8fc\uc5d0 \u2014 \uc6d4\uc694\uc77c \uc878\uc5c5, \uc218\uc694\uc77c \ubaa8\uad50\ud68c\uc5d0\uc11c \uc548\uc218 \ubc0f \ud30c\uc1a1, 6\uc6d4 1\uc77c \ud3b8\ub3c4 \ud2f0\ucf13\uc73c\ub85c LA\uc5d0\uc11c \ube44\ud589\uae30\uc5d0 \ud0d1\uc2b9\ud588\uc2b5\ub2c8\ub2e4.",meta_en:"Bill Ray Majors \u00b7 The week that changed everything",meta_ko:"\ube4c \ub808\uc774 \uba54\uc774\uc800\uc2a4 \u00b7 \ubaa8\ub4e0 \uac83\uc744 \ubc14\uafbc \uadf8 \uc8fc"},
+  {tag_en:"Ministry Milestone \u00b7 December 25, 2004",tag_ko:"\uc0ac\uc5ed\uc758 \uc774\uc815\ud45c \u00b7 2004\ub144 12\uc6d4 25\uc77c",title_en:"Five Churches, One Christmas Morning",title_ko:"\ub2e4\uc12f \uad50\ud68c, \ud558\ub098\uc758 \ud06c\ub9ac\uc2a4\ub9c8\uc2a4 \uc544\uce68",excerpt_en:"In 2004, Bill co-founded AIM \u2014 the Association of International Ministries \u2014 with US Army Chaplain Jim King, the other co-founder. On Christmas Day 2004, five churches gathered for the very first AIM Joint Christmas Worship. Each church had a choir rotating on stage and in between the reading of scripture in a variety of languages of the native speakers in this international Christmas worship.",excerpt_ko:"2004\ub144, \ube4c\uc740 \ub610 \ub2e4\ub978 \uacf5\ub3d9 \ucc3d\ub9bd\uc790\uc778 \ubbf8 \uc721\uad70 \ucc44\ud50c\ub9b0 \uc9d0 \ud0b9\uacfc \ud568\uaed8 AIM(\uad6d\uc81c \uc0ac\uc5ed \ud611\uc758\ud68c)\uc744 \uacf5\ub3d9 \ucc3d\ub9bd\ud588\uc2b5\ub2c8\ub2e4. 2004\ub144 \ud06c\ub9ac\uc2a4\ub9c8\uc2a4\uc5d0 \ub2e4\uc12f \uad50\ud68c\uac00 \uc81c1\ud68c AIM \uc5f0\ud569 \ud06c\ub9ac\uc2a4\ub9c8\uc2a4 \uc608\ubc30\uc5d0 \ubaa8\uc600\uc2b5\ub2c8\ub2e4. \uac01 \uad50\ud68c\ub294 \ubb34\ub300\uc5d0\uc11c \ub3cc\uc544\uac00\uba70 \uc131\uac00\ub300 \uacf5\uc5f0\uc744 \ud3bc\ucce4\uace0, \uadf8 \uc0ac\uc774\uc0ac\uc774\uc5d0 \uc774 \uad6d\uc81c \ud06c\ub9ac\uc2a4\ub9c8\uc2a4 \uc608\ubc30\uc5d0 \ucc38\uc11d\ud55c \uc6d0\uc5b4\ubbfc\ub4e4\uc774 \ub2e4\uc591\ud55c \uc5b8\uc5b4\ub85c \uc131\uacbd\uc744 \ub0ad\ub3c5\ud588\uc2b5\ub2c8\ub2e4.",meta_en:"AIM Joint Christmas Worship \u00b7 Youngnak Mission Chapel",meta_ko:"AIM \uc5f0\ud569 \ud06c\ub9ac\uc2a4\ub9c8\uc2a4 \uc608\ubc30 \u00b7 \uc601\ub77d \uc120\uad50 \ucc44\ud50c"},
+  {tag_en:"A Life Moment \u00b7 October 31, 1987",tag_ko:"\uc0b6\uc758 \uc21c\uac04 \u00b7 1987\ub144 10\uc6d4 31\uc77c",title_en:"There Was No Halloween That Day",title_ko:"\uadf8\ub0a0 \ud55c\uad6d\uc5d0\ub294 \ud57c\ub7ec\uc708\uc774 \uc5c6\uc5c8\uc2b5\ub2c8\ub2e4",excerpt_en:"Bill arrived in Korea on June 2, 1982 with a one-way ticket \u2014 willing to live and die in Korea if that was God's will. Five years later, on October 31, 1987, he married Ja-kyung 'Niki' Lyu. Halloween in the West \u2014 but in Korea that day, it was simply a beautiful Saturday afternoon. A one-way ticket had become a life.",excerpt_ko:"\ube4c\uc740 1982\ub144 6\uc6d4 2\uc77c \ud3b8\ub3c4 \ud2f0\ucf13\uc73c\ub85c \ud55c\uad6d\uc5d0 \ub3c4\ucc29\ud588\uc2b5\ub2c8\ub2e4. 5\ub144 \ud6c4, 1987\ub144 10\uc6d4 31\uc77c, \uadf8\ub294 \ub958\uc790\uacbd '\ub2c8\ud0a4'\uc640 \uacb0\ud63c\ud588\uc2b5\ub2c8\ub2e4. \uc11c\uad6c\uc5d0\uc11c\ub294 \ud57c\ub7ec\uc708 \u2014 \ud558\uc9c0\ub9cc \uadf8\ub0a0 \ud55c\uad6d\uc5d0\uc11c\ub294 \uadf8\uc800 \uc544\ub984\ub2e4\uc6b4 \ud1a0\uc694\uc77c \uc624\ud6c4\uc600\uc2b5\ub2c8\ub2e4.",meta_en:"Bill & Niki \u00b7 Seoul, Korea \u00b7 October 31, 1987",meta_ko:"\ube4c & \ub2c8\ud0a4 \u00b7 \ub300\ud55c\ubbfc\uad6d \uc11c\uc6b8 \u00b7 1987\ub144 10\uc6d4 31\uc77c"},
+  {tag_en:"From the Field \u00b7 May 2016",tag_ko:"\ud604\uc7a5\uc5d0\uc11c \u00b7 2016\ub144 5\uc6d4",title_en:"Korea Was Never the Final Destination",title_ko:"\ud55c\uad6d\uc740 \uacb0\ucf54 \ucd5c\uc885 \ubaa9\uc801\uc9c0\uac00 \uc544\ub2c8\uc5c8\uc2b5\ub2c8\ub2e4",excerpt_en:"A short-term mission trip to the Philippines in May 2016. For Bill, Korea has always been a base \u2014 not a boundary. The vision was never just Seoul. It was Asia. The Bible did not stop at the Korean border and neither did the mission.",excerpt_ko:"2016\ub144 5\uc6d4 \ud544\ub9ac\ud540 \ub2e8\uae30 \uc120\uad50 \uc5ec\ud589. \ube4c\uc5d0\uac8c \ud55c\uad6d\uc740 \ud56d\uc0c1 \uacbd\uacc4\uac00 \uc544\ub2cc \uae30\uc9c0\uc600\uc2b5\ub2c8\ub2e4. \ube44\uc804\uc740 \uacb0\ucf54 \uc11c\uc6b8\ub9cc\uc774 \uc544\ub2c8\uc5c8\uc2b5\ub2c8\ub2e4. \uc544\uc2dc\uc544\uc600\uc2b5\ub2c8\ub2e4.",meta_en:"Bill Ray Majors \u00b7 Philippines Mission 2016",meta_ko:"\ube4c \ub808\uc774 \uba54\uc774\uc800\uc2a4 \u00b7 \ud544\ub9ac\ud540 \uc120\uad50 2016"},
+  {tag_en:"In His Own Words \u00b7 2025",tag_ko:"\uadf8\uc758 \ub9d0\ub85c \u00b7 2025\ub144",title_en:"November 8, 2025 \u2014 A New Chapter Begins",title_ko:"2025\ub144 11\uc6d4 8\uc77c \u2014 \uc0c8\ub85c\uc6b4 \uc7a5\uc774 \uc2dc\uc791\ub429\ub2c8\ub2e4",excerpt_en:"On his 65th birthday, November 8, 2025, Bill completed his transition from part-time Lead Pastor at SCIC to 100% missionary. It was not a retirement \u2014 it was the completion of an eight-year plan. The plan had always been to be fully supported as a missionary by age 65. By God's grace, that day came.",excerpt_ko:"65\ubc88\uc9f8 \uc0dd\uc77c\uc778 2025\ub144 11\uc6d4 8\uc77c, \ube4c\uc740 SCIC \ud30c\ud2b8\ud0c0\uc784 \ub2f4\uc784\ubaa9\uc0ac\uc5d0\uc11c 100% \uc120\uad50\uc0ac\ub85c\uc758 \uc804\ud658\uc744 \uc644\uc131\ud588\uc2b5\ub2c8\ub2e4. \uc740\ud1f4\uac00 \uc544\ub2c8\uc5c8\uc2b5\ub2c8\ub2e4 \u2014 8\ub144 \uacc4\ud68d\uc758 \uc644\uc131\uc774\uc5c8\uc2b5\ub2c8\ub2e4. \ud558\ub098\ub2d8\uc758 \uc740\ud61c\ub85c \uadf8\ub0a0\uc774 \uc654\uc2b5\ub2c8\ub2e4.",meta_en:"Bill Ray Majors \u00b7 Seoul \u00b7 November 8, 2025",meta_ko:"\ube4c \ub808\uc774 \uba54\uc774\uc800\uc2a4 \u00b7 \uc11c\uc6b8 \u00b7 2025\ub144 11\uc6d4 8\uc77c"},
+  {tag_en:"From the Field \u00b7 May 2016",tag_ko:"\ud604\uc7a5\uc5d0\uc11c \u00b7 2016\ub144 5\uc6d4",title_en:"Beyond Korea \u2014 to The Philippines",title_ko:"\ud55c\uad6d\uc744 \ub118\uc5b4 \u2014 \ud544\ub9ac\ud540\uc73c\ub85c",excerpt_en:"Ken and Bill go on a short-term mission trip to the Philippines. CrossCulture Community in motion \u2014 the Bible's reach does not stop at the Korean border. Asia is the mission field.",excerpt_ko:"\ucf04\uacfc \ube4c\uc774 \ud544\ub9ac\ud540 \ub2e8\uae30 \uc120\uad50 \uc5ec\ud589\uc744 \ub5a0\ub0a9\ub2c8\ub2e4. \uc6c0\uc9c1\uc774\ub294 \ud06c\ub85c\uc2a4\uceec\ucc98 \ucee4\ubba4\ub2c8\ud2f0 \u2014 \uc131\uacbd\uc758 \ub3c4\ub2ec\uc740 \ud55c\uad6d \uad6d\uacbd\uc5d0\uc11c \uba48\ucd94\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4. \uc544\uc2dc\uc544\uac00 \uc120\uad50\uc9c0\uc785\ub2c8\ub2e4.",meta_en:"CrossCulture Community \u00b7 Asia Mission",meta_ko:"\ud06c\ub85c\uc2a4\uceec\ucc98 \ucee4\ubba4\ub2c8\ud2f0 \u00b7 \uc544\uc2dc\uc544 \uc120\uad50"},
+  {tag_en:"Ministry Milestone \u00b7 1982",tag_ko:"\uc0ac\uc5ed\uc758 \uc774\uc815\ud45c \u00b7 1982\ub144",title_en:"Ordained on Wednesday, Korea on Monday",title_ko:"\uc218\uc694\uc77c \uc548\uc218, \uc6d4\uc694\uc77c \ud55c\uad6d\ud589",excerpt_en:"Graduated Monday in Chattanooga. Ordained and sent out by his home church in Oklahoma on Wednesday. Boarded a plane from Los Angeles on June 1st with a one-way ticket. He was 21 years old when he arrived in Seoul, Korea.",excerpt_ko:"\ucc44\ud130\ub204\uac00\uc5d0\uc11c \uc6d4\uc694\uc77c \uc878\uc5c5. \uc218\uc694\uc77c \uc624\ud074\ub77c\ud638\ub9c8 \ubaa8\uad50\ud68c\uc5d0\uc11c \uc548\uc218 \ubc0f \ud30c\uc1a1. 6\uc6d4 1\uc77c \ud3b8\ub3c4 \ud2f0\ucf13\uc73c\ub85c LA\uc5d0\uc11c \ube44\ud589\uae30\uc5d0 \ud0d1\uc2b9. \uc11c\uc6b8\uc5d0 \ub3c4\ucc29\ud588\uc744 \ub54c \uadf8\uc758 \ub098\uc774 21\uc138\uc600\uc2b5\ub2c8\ub2e4.",meta_en:"The week that changed everything",meta_ko:"\ubaa8\ub4e0 \uac83\uc744 \ubc14\uafbc \uadf8 \uc8fc"},
+  {tag_en:"In His Own Words \u00b7 2025",tag_ko:"\uadf8\uc758 \ub9d0\ub85c \u00b7 2025\ub144",title_en:"Still on the Court at 65",title_ko:"65\uc138\uc5d0\ub3c4 \ucf54\ud2b8 \uc704\uc5d0\uc11c",excerpt_en:"Two national championship wins in 2025 \u2014 one in Daejeon (June), one in Wonju (October). Promoted to the Gold League. A man who arrived with a suitcase and no Korean is now a Korean citizen (dual citizenship) competing in national tournaments (amateurs).",excerpt_ko:"2025\ub144 \uc804\uad6d \ucc54\ud53c\uc5b8\uc2ed 2\ud68c \uc6b0\uc2b9 \u2014 \ub300\uc804(6\uc6d4) 1\ud68c, \uc6d0\uc8fc(10\uc6d4) 1\ud68c. \uace8\ub4dc \ub9ac\uadf8 \uc2b9\uaca9. \uc9d0 \uac00\ubc29\uacfc \ud55c\uad6d\uc5b4\ub3c4 \uc5c6\uc774 \ub3c4\ucc29\ud55c \ub0a8\uc790\uac00 \uc774\uc81c \uc774\uc911\uad6d\uc801 \ud55c\uad6d \uc2dc\ubbfc\uc73c\ub85c \uc804\uad6d \uc544\ub9c8\ucd94\uc5b4 \ub300\ud68c\uc5d0\uc11c \uacbd\uc7c1\ud558\uace0 \uc788\uc2b5\ub2c8\ub2e4.",meta_en:"National Senior Tennis Champion \u00b7 Gold League",meta_ko:"\uc804\uad6d \uc2dc\ub2c8\uc5b4 \ud14c\ub2c8\uc2a4 \ucc54\ud53c\uc5b8 \u00b7 \uace8\ub4dc \ub9ac\uadf8"},
+  {tag_en:"A Legacy Moment \u00b7 2012",tag_ko:"\uc720\uc0b0\uc758 \uc21c\uac04 \u00b7 2012\ub144",title_en:"Korean Useful in Houston at MD Anderson",title_ko:"\ud734\uc2a4\ud134 MD \uc564\ub354\uc2a8\uc5d0\uc11c \uc720\uc6a9\ud55c \ud55c\uad6d\uc5b4",excerpt_en:"A missionary who arrived speaking no Korean in 1982 \u2014 now preaching at a Korean immigrant church and speaking fluently in Korean in Houston at MD Anderson Cancer Center, ministering to Korean patients facing the most difficult moments of their lives.",excerpt_ko:"1982\ub144 \ud55c\uad6d\uc5b4\ub97c \ud55c\ub9c8\ub514\ub3c4 \ubabb \ud558\uace0 \ub3c4\ucc29\ud55c \uc120\uad50\uc0ac \u2014 \uc774\uc81c \ud55c\uc778 \uc774\ubbfc \uad50\ud68c\uc5d0\uc11c \uc124\uad50\ud558\uace0 \ud734\uc2a4\ud134 MD \uc564\ub354\uc2a8 \uc554\uc13c\ud130\uc5d0\uc11c \uc720\ucc3d\ud55c \ud55c\uad6d\uc5b4\ub85c \uc0b6\uc758 \uac00\uc7a5 \ud798\ub4e0 \uc21c\uac04\uc744 \ub9de\uc774\ud55c \ud55c\uad6d \ud658\uc790\ub4e4\uc744 \uc12c\uae41\ub2c8\ub2e4.",meta_en:"Hospital Chaplain \u00b7 MD Anderson, Houston",meta_ko:"\ubcd1\uc6d0 \uc6d0\ubaa9 \u00b7 MD \uc564\ub354\uc2a8, \ud734\uc2a4\ud134"},
+  {tag_en:"Witness \u00b7 November 9, 2008",tag_ko:"\uc99d\uc778 \u00b7 2008\ub144 11\uc6d4 9\uc77c",title_en:"Two Languages, One Worship",title_ko:"\ub450 \uc5b8\uc5b4, \ud558\ub098\uc758 \uc608\ubc30",excerpt_en:"A Korean congregation and an International English congregation worshipping together as one. Bill presides in English with Korean slides, then in Korean with English slides. CrossCulture Community in its truest form.",excerpt_ko:"\ud55c\uad6d\uc5b4 \ud68c\uc911\uacfc \uad6d\uc81c \uc601\uc5b4 \ud68c\uc911\uc774 \ud558\ub098\ub85c \uc608\ubc30\ud569\ub2c8\ub2e4. \ube4c\uc774 \uc601\uc5b4\ub85c \uc9c4\ud589\ud558\uba70 \ud55c\uad6d\uc5b4 \ud654\uba74\uc744, \ud55c\uad6d\uc5b4\ub85c \uc9c4\ud589\ud558\uba70 \uc601\uc5b4 \ud654\uba74\uc744 \uc0ac\uc6a9\ud569\ub2c8\ub2e4. \uac00\uc7a5 \uc21c\uc218\ud55c \ud06c\ub85c\uc2a4\uceec\ucc98 \ucee4\ubba4\ub2c8\ud2f0.",meta_en:"Joint Thanksgiving Worship \u00b7 Youngnak Church Seoul 2008",meta_ko:"\uc5f0\ud569 \ucd94\uc218\uac10\uc0ac \uc608\ubc30 \u00b7 \uc601\ub77d\uad50\ud68c \uc11c\uc6b8 2008"},
+  {"tag_en":"A Life Moment · October 31, 1987","tag_ko":"삶의 한 순간 · 1987년 10월 31일","title_en":"Have You Ever Thought About Marrying Your Friend?","title_ko":"친구와 결혺하는 것을 생각해 본 적 있나요?","excerpt_en":"Bill was 27 years old, single, and living as a resident missionary in a Korean orphanage. A visiting American dental missionary, Dr. Dick Nieusma, challenged him: \"Have you ever thought about marrying your friend? Don't you have a girl you enjoy talking to about everything?\" Two weeks of prayer in the rice fields behind the orphanage led to a proposal to Jakyung — Niki. On October 31, 1987, they were married. Halloween in the West. In Korea that day, it was simply a beautiful Saturday afternoon.","excerpt_ko":"빌은 27세, 독신으로 한국 고아원에서 거주 선교사로 살고 있었습니다. 방문한 미국 치과 선교사 딥 니우스마 박사가 도전했습니다: “친구와 결혼하는 것을 생각해 본 적 있나요?” 고아원 뒤 논에서 2주간의 기도 끝에 자경(니키)에게 청혼했습니다. 1987년 10월 31일 결혼했습니다.","meta_en":"Bill & Niki · Seoul, Korea · October 31, 1987","meta_ko":"빌 & 니키 · 대한민국 서울 · 1987년 10월 31일"},
+  {"tag_en":"A Life Moment \u00b7 1987 \u00b7 The Proposal","tag_ko":"\uc0b6\uc758 \ud55c \uc21c\uac04 \u00b7 1987\ub144 \u00b7 \uccad\ud63c","title_en":"If You Say No, We Say Goodbye Here","title_ko":"\uac70\uc808\ud558\uba74 \uc5ec\uae30\uc11c \uc791\ubcc4\uc774\uc5d0\uc694","excerpt_en":"I had already made the decision. But how could I let her know our friendship was more than just friends? One rainy day I picked up Niki after work. I drove for an hour from Seoul through Euijeongbu toward the west. The rain stopped. I saw a cemetery on the mountain side and drove to the top. I had her sit on the hood of the car. Then I proposed: 'If you say yes, I will drive you home. If you say no, we will say goodbye here.' She knew I would never do that. Her answer was maybe — not in the choice category. She couldn't answer by herself. I would need to meet her older brother. Her brother said I would have to meet her father. Her father said: she is my only daughter, the baby of the family — one condition. You have to live in Korea the rest of your life. If it be God's will, I agreed. We were married on October 31, 1987.","excerpt_ko":"\uacb0\uc815\uc740 \uc774\ubbf8 \ub0b4\ub838\uc2b5\ub2c8\ub2e4. \ud558\uc9c0\ub9cc \uc6b0\ub9ac\uc758 \uc6b0\uc815\uc774 \ub2e8\uc21c\ud55c \uc6b0\uc815 \uc774\uc0c1\uc784\uc744 \uc5b4\ub5bb\uac8c \uc54c\ub97c\uae4c\uc694? \uc5b4\ub290 \ube44 \uc624\ub294 \ub0a0 \ud37c\uadfc \ud6c4 \ub2c8\ud0a4\ub97c \ub370\ub9ac\ub7ec \uac14\uc2b5\ub2c8\ub2e4. \uc11c\uc6b8\uc5d0\uc11c \uc758\uc815\ubd80\ub97c \uac70\uccd0 \uc11c\ucabd\uc73c\ub85c \ud55c \uc2dc\uac04\uc744 \ub2ec\ub838\uc2b5\ub2c8\ub2e4. \ube44\uac00 \uadf8\ucce4\uc2b5\ub2c8\ub2e4. \uc0b0 \uc911\ud134\uc5d0 \ubb18\uc9c0\uac00 \ubcf4\uc600\uace0 \ucf54\uc9f1\ub9c8\uc9c0 \ucc28\ub97c \ub428\ub2e4. \ucc28 \ubcf4\ub2bf \uc704\uc5d0 \uc548\ud788\uace0 \uccad\ud63c\ud588\uc2b5\ub2c8\ub2e4. \uc608\uc2a4\ub77c\uace0 \ud558\uba74 \uc9d1\uc5d0 \ub370\ub824\ub2e4 \uc8fc\uaca0\uc2b5\ub2c8\ub2e4. \ub178\ub77c\uace0 \ud558\uba74 \uc5ec\uae30\uc11c \uc791\ubcc4\uc785\ub2c8\ub2e4. \ub300\ub2f5\uc740 \uae00\uc138\uc694\uc600\uc2b5\ub2c8\ub2e4.","meta_en":"Bill & Niki \u00b7 Seoul, Korea \u00b7 October 31, 1987","meta_ko":"\ube4c & \ub2c8\ud0a4 \u00b7 \ub300\ud55c\ubbfc\uad6d \uc11c\uc6b8 \u00b7 1987\ub144 10\uc6d4 31\uc77c"},
+];
+var BLOG_VOICES = [
+  {tag_en:"A Letter \u00b7 18 Years Later",tag_ko:"18\ub144 \ud6c4\uc758 \ud3b8\uc9c0",name_en:"Cassandra \u2014 IWE Young Nak Church, 2007",name_ko:"\uce74\uc0b0\ub4dc\ub77c \u2014 \uc601\ub77d\uad50\ud68c IWE, 2007\ub144",quote_en:"When I lived in South Korea and attended your church, you once gave a sermon about Mary and Martha that resonated with me. Today, in my Lenten devotional, I was reminded of your sermon. As I journey I wonder if I have changed to be more like Mary and less like Martha. This email is less about that question and more about the gratitude of your ministry to me in 2007. Today He sent you to my heart and to my prayers \u2014 and I think sometimes we all need to hear that.",quote_ko:"\ud55c\uad6d\uc5d0\uc11c \uc0b4\uba70 \ubaa9\uc0ac\ub2d8 \uad50\ud68c\uc5d0 \ub2e4\ub2d0 \ub54c, \ub9c8\ub9ac\uc544\uc640 \ub9c8\ub974\ub2e4\uc5d0 \uad00\ud55c \uc124\uad50\uac00 \uc81c \ub9c8\uc74c\uc5d0 \uae4a\uc774 \ub0a8\uc558\uc2b5\ub2c8\ub2e4. \uc624\ub298 \uc0ac\uc21c\uc808 \ubb35\uc0c1\uc5d0\uc11c \uadf8 \uc124\uad50\uac00 \ub2e4\uc2dc \ub5a0\uc62c\ub790\uc2b5\ub2c8\ub2e4. \uc774 \uc774\uba54\uc77c\uc740 2007\ub144 \ubaa9\uc0ac\ub2d8\uc758 \uc0ac\uc5ed\uc5d0 \ub300\ud55c \uac10\uc0ac\uc785\ub2c8\ub2e4. \uc624\ub298 \ud558\ub098\ub2d8\uaed8\uc11c \ubaa9\uc0ac\ub2d8\uc744 \uc81c \ub9c8\uc74c\uacfc \uae30\ub3c4 \uc18d\uc73c\ub85c \ubcf4\ub0b4\uc168\uc2b5\ub2c8\ub2e4.",meta_en:"A sermon preached in 2007 \u2014 still speaking 18 years later",meta_ko:"2007\ub144\uc5d0 \uc804\ud574\uc9c4 \uc124\uad50 \u2014 18\ub144\uc774 \uc9c0\ub09c \uc9c0\uae08\ub3c4 \ub9d0\uc500\ud558\uace0 \uc788\uc2b5\ub2c8\ub2e4"},
+  {tag_en:"A Message from Germany \u00b7 2023",tag_ko:"\ub3c5\uc77c\uc5d0\uc11c \uc628 \uba54\uc2dc\uc9c0 \u00b7 2023\ub144",name_en:"Jerusha \u2014 SCIC Congregation, 2023",name_ko:"\uc81c\ub8e8\uc0e4 \u2014 SCIC \ud68c\uc911, 2023\ub144",quote_en:"Your \"do the best you can with the resources you have... and abandon the outcome\" is being greatly quoted in my work field now. I quoted it sometimes and now colleagues picked it up as well \u2014 even put your quote in our magazine and prayer journal, both for personal evangelism. May it influence many people as it encouraged me. Just wanted you to know you have a lasting impact and it's bigger than you might think.",quote_ko:"\"\uac00\uc9c4 \uc790\uc6d0\uc73c\ub85c \ucd5c\uc120\uc744 \ub2e4\ud558\ub418... \uacb0\uacfc\ub294 \ub0b4\ub824\ub193\uc73c\ub77c\"\ub294 \ub9d0\uc500\uc774 \uc81c \uc9c1\uc7a5\uc5d0\uc11c \ub110\ub9ac \uc778\uc6a9\ub418\uace0 \uc788\uc2b5\ub2c8\ub2e4. \uc81c\uac00 \uac00\ub054 \uc778\uc6a9\ud588\ub294\ub370 \uc774\uc81c \ub3d9\ub8cc\ub4e4\ub3c4 \ud568\uaed8 \uc0ac\uc6a9\ud558\uace0 \uc788\uc73c\uba70 \u2014 \uac1c\uc778 \uc804\ub3c4\ub97c \uc704\ud55c \uc7a1\uc9c0\uc640 \uae30\ub3c4 \uc800\ub110 \ubaa8\ub450\uc5d0 \ubaa9\uc0ac\ub2d8\uc758 \uc774\ub984\uacfc \ud568\uaed8 \uc2e4\ub838\uc2b5\ub2c8\ub2e4. \uc800\ub97c \uaca9\ub824\ud588\ub4ef\uc774 \ub9ce\uc740 \uc0ac\ub78c\ub4e4\uc5d0\uac8c \uc601\ud5a5\uc744 \ubbf8\uce58\uae30\ub97c \ubc14\ub78d\ub2c8\ub2e4. \ubaa9\uc0ac\ub2d8\uc758 \uc601\ud5a5\ub825\uc774 \uc0dd\uac01\ubcf4\ub2e4 \ud6e8\uc52c \ud06c\ub2e4\ub294 \uac83\uc744 \uc54c\uc544\uc8fc\uc168\uc73c\uba74 \ud569\ub2c8\ub2e4.",meta_en:"A quote traveled from a classroom to Seoul to Germany \u2014 and keeps going",meta_ko:"\uad50\uc2e4\uc5d0\uc11c \uc11c\uc6b8\ub85c, \uc11c\uc6b8\uc5d0\uc11c \ub3c5\uc77c\ub85c \u2014 \uadf8\ub9ac\uace0 \uacc4\uc18d \uc774\uc5b4\uc9c0\uace0 \uc788\uc2b5\ub2c8\ub2e4"},
+  {tag_en:"A Letter from a Co-Founder \u00b7 2017",tag_ko:"\uacf5\ub3d9 \ucc3d\ub9bd\uc790\ub85c\ubd80\ud130\uc758 \ud3b8\uc9c0 \u00b7 2017\ub144",name_en:"Chaplain Jim King \u2014 US Army Korea, 2002\u20132006",name_ko:"\uc9d0 \ud0b9 \ucc44\ud50c\ub9b0 \u2014 \uc8fc\ud55c\ubbf8\uad70, 2002\u20132006\ub144",quote_en:"No one else has your special blend of experiences and knowledge. You have been in Korea over half your life \u2014 fluent in both English and Korean, a citizen of both the United States and South Korea. You are a place where East meets West, and the two blend in harmony. For over 10 years I have watched you foster ministry, facilitate missions, and further God's Kingdom. Your insightful ability to collaborate in calling with others multiplies the effectiveness of all and produces lasting individual growth, ministry development, and cultural change.",quote_ko:"\ubaa9\uc0ac\ub2d8\ub9cc\uc774 \uac00\uc9c4 \ud2b9\ubcc4\ud55c \uacbd\ud5d8\uacfc \uc9c0\uc2dd\uc758 \uc870\ud569\uc744 \uac00\uc9c4 \uc0ac\ub78c\uc740 \uc5c6\uc2b5\ub2c8\ub2e4. \uc778\uc0dd\uc758 \uc808\ubc18 \uc774\uc0c1\uc744 \ud55c\uad6d\uc5d0\uc11c \ubcf4\ub0b4\uba70 \uc601\uc5b4\uc640 \ud55c\uad6d\uc5b4\uc5d0 \uc720\ucc3d\ud558\uace0, \ubbf8\uad6d\uacfc \ud55c\uad6d \ub450 \ub098\ub77c\uc758 \uc2dc\ubbfc\uc785\ub2c8\ub2e4. \ubaa9\uc0ac\ub2d8\uc740 \ub3d9\uc591\uacfc \uc11c\uc591\uc774 \ub9cc\ub098\ub294 \uacf3\uc774\uba70, \ub450 \ubb38\ud654\uac00 \uc870\ud654\ub86d\uac8c \uc5b4\uc6b0\ub7ec\uc9c0\ub294 \uc790\ub9ac\uc785\ub2c8\ub2e4. 10\ub144 \uc774\uc0c1 \ubaa9\uc0ac\ub2d8\uc774 \uc0ac\uc5ed\uc744 \ud0a4\uc6b0\uace0, \uc120\uad50\ub97c \ucd09\uc9c4\ud558\uba70, \ud558\ub098\ub2d8\uc758 \ub098\ub77c\ub97c \ub113\ud600\uac00\ub294 \uac83\uc744 \uc9c0\ucf1c\ubd24\uc2b5\ub2c8\ub2e4.",meta_en:"Co-founder of AIM \u00b7 Written 2017 \u00b7 Served in Korea 2002\u20132006",meta_ko:"AIM \uacf5\ub3d9 \ucc3d\ub9bd\uc790 \u00b7 2017\ub144 \uc791\uc131 \u00b7 2002\u20132006\ub144 \ud55c\uad6d \uadfc\ubb34"},
+];
+
+var curStory = -1, curVoice = -1;
+
+function getLang() { return document.body.classList.contains('ko') ? 'ko' : 'en'; }
+
+function renderBlogStory() {
+  var card = document.getElementById('blog-story-card');
+  if (!card || curStory < 0) return;
+  var l = getLang(), s = BLOG_STORIES[curStory];
+  card.innerHTML =
+    '<div class="card-tag">' + (l==='ko'?s.tag_ko:s.tag_en) + '</div>' +
+    '<div class="card-title">' + (l==='ko'?s.title_ko:s.title_en) + '</div>' +
+    '<p class="card-excerpt">' + (l==='ko'?s.excerpt_ko:s.excerpt_en) + '</p>' +
+    '<div class="card-meta">' + (l==='ko'?s.meta_ko:s.meta_en) + '</div>';
+}
+
+function renderBlogVoice() {
+  var card = document.getElementById('blog-voice-card');
+  if (!card || curVoice < 0) return;
+  var l = getLang(), v = BLOG_VOICES[curVoice];
+  card.innerHTML =
+    '<div class="card-tag">' + (l==='ko'?v.tag_ko:v.tag_en) + '</div>' +
+    '<div class="card-title">' + (l==='ko'?v.name_ko:v.name_en) + '</div>' +
+    '<p class="card-excerpt italic">&ldquo;' + (l==='ko'?v.quote_ko:v.quote_en) + '&rdquo;</p>' +
+    '<div class="card-meta">' + (l==='ko'?v.meta_ko:v.meta_en) + '</div>';
+}
+
+function nextStory() {
+  var avail = BLOG_STORIES.map(function(_,i){return i;}).filter(function(i){return i!==curStory;});
+  curStory = avail[Math.floor(Math.random()*avail.length)];
+  renderBlogStory();
+}
+
+function nextVoice() {
+  var avail = BLOG_VOICES.map(function(_,i){return i;}).filter(function(i){return i!==curVoice;});
+  curVoice = avail[Math.floor(Math.random()*avail.length)];
+  renderBlogVoice();
+}
+
+// Initialize cards and wire up language buttons
+document.addEventListener('DOMContentLoaded', function() {
+  nextStory();
+  nextVoice();
+  var btnEn = document.getElementById('btn-en');
+  var btnKo = document.getElementById('btn-ko');
+  if (btnEn) btnEn.addEventListener('click', function() { setTimeout(function(){ renderBlogStory(); renderBlogVoice(); }, 0); });
+  if (btnKo) btnKo.addEventListener('click', function() { setTimeout(function(){ renderBlogStory(); renderBlogVoice(); }, 0); });
+});
+</script>
+</body>
+</html>
