@@ -440,8 +440,36 @@
 
     <!-- Intro -->
     <div class="intro">
-      <div class="intro-ko">크로스컬처 커뮤니티에 오신 것을 환영합니다. 아래 양식을 작성하여 회원으로 등록해 주세요. 모든 배경의 분들을 환영합니다.</div>
-      <div class="intro-en">Welcome to CrossCulture Community. Please complete the form below to register as a member. All are welcome regardless of background.</div>
+      <div class="intro-ko">크로스컬처 커뮤니티에 오신 것을 환영합니다. 아래 양식을 작성하고 제출해 주세요.</div>
+      <div class="intro-en">Welcome to CrossCulture Community. Please complete and submit the form below.</div>
+    </div>
+
+    <!-- What happens next -->
+    <div style="background:var(--white);border:1.5px solid var(--gold);border-radius:8px;padding:16px;margin-bottom:20px;">
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;">이 양식을 제출하시면 · What happens after you submit</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:16px;min-width:20px;">✦</span>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text);">크로스컬처 커뮤니티의 소식, 행사 및 참여 기회에 관한 정보를 수신하실 수 있습니다.</div>
+            <div style="font-size:11px;color:var(--text-muted);font-style:italic;margin-top:2px;">You will receive information about CrossCulture Community news, gatherings, and opportunities to participate.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:16px;min-width:20px;">✦</span>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text);">귀하의 신청서는 2027년 4월 회원심사 기간에 검토됩니다. 심사 결과는 연례 여름 총회 이전에 통보됩니다.</div>
+            <div style="font-size:11px;color:var(--text-muted);font-style:italic;margin-top:2px;">Your application will be reviewed during the April 2027 membership review period. You will be notified of the outcome before the Annual Summer Gathering.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:16px;min-width:20px;">✦</span>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text);">그 전까지 행사 참여 및 활동을 통해 크로스컬처 커뮤니티와 함께 성장하실 수 있습니다.</div>
+            <div style="font-size:11px;color:var(--text-muted);font-style:italic;margin-top:2px;">In the meantime you are welcome to participate in activities and grow with the CrossCulture Community.</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Form -->
@@ -569,7 +597,15 @@
 
         <!-- 10. Privacy -->
         <label class="checkbox-item">
-          <input type="checkbox" name="10_agree_privacy" value="Agreed" required>
+          <input type="checkbox" name="10_agree_bible_commitment" value="Agreed" required>
+          <span class="checkbox-text">
+            <span class="checkbox-ko">크로스컬처 커뮤니티의 공동 지향에 동의합니다 — 성경이 나 자신, 우리 가족, 공동체, 국가 및 세계에 말씀하도록 함께 귀 기울이며, 의견과 해석이 다를 때에도 서로를 사랑할 것을 헌신합니다.</span>
+            <span class="checkbox-en">I agree to the shared commitment of CrossCulture Community — to listen together to what the Bible is saying to the individual, family, community, nation, and world, and to love one another even when opinions and interpretations differ.</span>
+          </span>
+        </label>
+
+        <label class="checkbox-item">
+          <input type="checkbox" name="11_agree_privacy" value="Agreed" required>
           <span class="checkbox-text">
             <span class="checkbox-ko">개인정보 처리방침에 동의합니다.</span>
             <span class="checkbox-en">I agree to the Privacy Policy.</span>
@@ -584,21 +620,21 @@
         <div class="donation-title-en">Are you interested in financially supporting CrossCulture Community Foundation?</div>
         <div class="donation-options">
           <label class="donation-option">
-            <input type="radio" name="11_donation_interest" value="Yes - interested">
+            <input type="radio" name="12_donation_interest" value="Yes - interested">
             <span>
               <span class="donation-option-ko">예, 후원에 관심 있습니다</span>
               <span class="donation-option-en">Yes, I am interested in supporting CCF</span>
             </span>
           </label>
           <label class="donation-option">
-            <input type="radio" name="11_donation_interest" value="Maybe later">
+            <input type="radio" name="12_donation_interest" value="Maybe later">
             <span>
               <span class="donation-option-ko">나중에 알려드리겠습니다</span>
               <span class="donation-option-en">I will let you know later</span>
             </span>
           </label>
           <label class="donation-option">
-            <input type="radio" name="11_donation_interest" value="No">
+            <input type="radio" name="12_donation_interest" value="No">
             <span>
               <span class="donation-option-ko">아니오</span>
               <span class="donation-option-en">No, not at this time</span>
@@ -617,8 +653,23 @@
 
     <!-- Success message -->
     <div class="success-msg" id="successMsg">
-      <div class="success-ko">✅ 가입이 완료되었습니다!</div>
-      <div class="success-en" style="margin-top:6px;">Welcome to CrossCulture Community. Your membership has been registered.</div>
+      <div class="success-ko">✅ 신청서가 접수되었습니다!</div>
+      <div style="font-size:14px;color:var(--success);margin-top:8px;font-weight:500;">감사합니다. 크로스컬처 커뮤니티에 오신 것을 환영합니다.</div>
+      <div style="margin-top:12px;text-align:left;background:var(--light-blue);border-radius:6px;padding:12px;">
+        <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:8px;">다음 단계 · What happens next:</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.8;">
+          ✦ 크로스컬처 커뮤니티의 소식과 행사 정보를 수신하실 것입니다.<br>
+          ✦ 귀하의 신청서는 2027년 4월 회원심사 기간에 검토됩니다.<br>
+          ✦ 연례 여름 총회 이전에 심사 결과를 통보해 드립니다.<br>
+          ✦ 그 전까지 행사 참여를 통해 함께 성장하실 수 있습니다.
+        </div>
+        <div style="font-size:11px;color:var(--text-muted);font-style:italic;margin-top:8px;line-height:1.7;">
+          ✦ You will receive CrossCulture Community news and event information.<br>
+          ✦ Your application will be reviewed during the April 2027 membership review period.<br>
+          ✦ You will be notified of the outcome before the Annual Summer Gathering.<br>
+          ✦ In the meantime you are welcome to participate in activities and grow with us.
+        </div>
+      </div>
     </div>
 
     <!-- Footer -->
