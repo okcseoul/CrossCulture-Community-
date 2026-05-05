@@ -339,7 +339,6 @@
     <form action="https://formspree.io/f/mdabgerd" method="POST" id="joinForm">
 
       <!-- Hidden fields for Formspree -->
-      <input type="hidden" name="_subject" value="새 회원 가입 · New Member Registration — CrossCulture Community">
       <input type="hidden" name="_next" value="https://crossculture-community.com/join-confirmed">
 
       <!-- 1. Full Name -->
@@ -348,7 +347,7 @@
           <span class="label-ko">성명<span class="required-star">*</span></span>
           <span class="label-en">Full Name</span>
         </label>
-        <input type="text" name="full_name" placeholder="성명을 입력해 주세요 · Enter your full name" required>
+        <input type="text" name="1_name" placeholder="성명을 입력해 주세요 · Enter your full name" required>
       </div>
 
       <!-- 2. Email -->
@@ -357,7 +356,7 @@
           <span class="label-ko">이메일<span class="required-star">*</span></span>
           <span class="label-en">Email Address</span>
         </label>
-        <input type="email" name="email" placeholder="이메일 주소 · Email address" required>
+        <input type="email" name="2_email" placeholder="이메일 주소 · Email address" required>
       </div>
 
       <!-- 3. Phone -->
@@ -366,7 +365,7 @@
           <span class="label-ko">연락처<span class="required-star">*</span></span>
           <span class="label-en">Phone Number (including country code)</span>
         </label>
-        <input type="tel" name="phone" placeholder="예: 010-1234-5678 · Example: +1-555-123-4567" required>
+        <input type="tel" name="3_phone" placeholder="예: 010-1234-5678 · Example: +1-555-123-4567" required>
       </div>
 
       <!-- 4 & 5. Citizenship & Country (two columns) -->
@@ -376,14 +375,14 @@
             <span class="label-ko">국적<span class="required-star">*</span></span>
             <span class="label-en">Citizenship</span>
           </label>
-          <input type="text" name="citizenship" placeholder="예: 한국 · Korea · USA" required>
+          <input type="text" name="4_citizenship" placeholder="예: 한국 · Korea · USA" required>
         </div>
         <div class="field-group">
           <label>
             <span class="label-ko">거주국<span class="required-star">*</span></span>
             <span class="label-en">Country of Residence</span>
           </label>
-          <input type="text" name="country" placeholder="예: 한국 · Korea · USA" required>
+          <input type="text" name="5_country" placeholder="예: 한국 · Korea · USA" required>
         </div>
       </div>
 
@@ -393,7 +392,7 @@
           <span class="label-ko">거주 도시</span>
           <span class="label-en">City (optional)</span>
         </label>
-        <input type="text" name="city" placeholder="예: 서울 · Seoul · New York">
+        <input type="text" name="6_city" placeholder="예: 서울 · Seoul · New York">
       </div>
 
       <!-- 7. Referral -->
@@ -402,7 +401,7 @@
           <span class="label-ko">가입 경로</span>
           <span class="label-en">How did you hear about us? (optional)</span>
         </label>
-        <select name="referral">
+        <select name="7_referral">
           <option value="" disabled selected>선택해 주세요 · Please select</option>
           <option value="Bill Majors">Bill Majors (대표 · President)</option>
           <option value="Friend">지인 소개 · Friend / Acquaintance</option>
@@ -420,7 +419,7 @@
 
         <!-- 8. Bylaws -->
         <label class="checkbox-item">
-          <input type="checkbox" name="agree_bylaws" value="Agreed" required>
+          <input type="checkbox" name="8_agree_bylaws" value="Agreed" required>
           <span class="checkbox-text">
             <span class="checkbox-ko">정관에 동의합니다.</span>
             <span class="checkbox-en">I agree to the Bylaws of CrossCulture Community.</span>
@@ -429,7 +428,7 @@
 
         <!-- 9. Mission & Purpose -->
         <label class="checkbox-item">
-          <input type="checkbox" name="agree_mission" value="Agreed" required>
+          <input type="checkbox" name="9_agree_mission" value="Agreed" required>
           <span class="checkbox-text">
             <span class="checkbox-ko">사업목적 및 사명에 동의합니다 — 문화·교육·인도주의적 활동을 통해 모든 사람을 성경의 변혁적 능력으로 초대하는 것.</span>
             <span class="checkbox-en">I agree to the Mission and Purpose — to invite all people to engage with the transformative power of the Bible through cultural, educational, and humanitarian activities.</span>
@@ -438,7 +437,7 @@
 
         <!-- 10. Privacy -->
         <label class="checkbox-item">
-          <input type="checkbox" name="agree_privacy" value="Agreed" required>
+          <input type="checkbox" name="10_agree_privacy" value="Agreed" required>
           <span class="checkbox-text">
             <span class="checkbox-ko">개인정보 처리방침에 동의합니다.</span>
             <span class="checkbox-en">I agree to the Privacy Policy.</span>
