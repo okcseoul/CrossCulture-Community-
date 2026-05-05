@@ -309,6 +309,115 @@
       font-style: italic;
     }
 
+    /* Documents section */
+    .docs-section {
+      background: var(--white);
+      border: 1.5px solid var(--gold);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .docs-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .docs-note-ko {
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .docs-note-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .docs-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .doc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .doc-link:hover {
+      background: #dce6f9;
+      border-color: var(--navy);
+    }
+    .doc-icon { font-size: 20px; }
+    .doc-text { display: flex; flex-direction: column; }
+    .doc-ko {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .doc-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Donation select */
+    .donation-section {
+      background: var(--light-blue);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+    .donation-title-ko {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .donation-title-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .donation-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .donation-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .donation-option input[type="radio"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      accent-color: var(--navy);
+      cursor: pointer;
+    }
+    .donation-option-ko {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .donation-option-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
     /* Mobile */
     @media (max-width: 480px) {
       .header-ko { font-size: 22px; }
@@ -413,6 +522,29 @@
         </select>
       </div>
 
+      <!-- Documents to read before agreeing -->
+      <div class="docs-section">
+        <div class="docs-title">동의 전 필독 서류 · Please Read Before Agreeing <span style="color:var(--gold)">*</span></div>
+        <div class="docs-note-ko">아래 문서를 읽으신 후 동의해 주세요.</div>
+        <div class="docs-note-en">Please read the following documents before checking the agreement boxes below.</div>
+        <div class="docs-links">
+          <a href="https://raw.githubusercontent.com/okcseoul/CrossCulture-Community-/main/docs/CCF_Bylaws_Revised_2026.pdf" target="_blank" class="doc-link">
+            <span class="doc-icon">📄</span>
+            <span class="doc-text">
+              <span class="doc-ko">정관 읽기 · 다운로드</span>
+              <span class="doc-en">Read / Download Bylaws</span>
+            </span>
+          </a>
+          <a href="https://raw.githubusercontent.com/okcseoul/CrossCulture-Community-/main/docs/CCF_Purpose_Vision_MOTB_Korea.pdf" target="_blank" class="doc-link">
+            <span class="doc-icon">📄</span>
+            <span class="doc-text">
+              <span class="doc-ko">사업목적 및 사명 읽기 · 다운로드</span>
+              <span class="doc-en">Read / Download Mission & Purpose</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
       <!-- Agreements -->
       <div class="agreements">
         <div class="agreements-title">동의 사항 · Agreements <span style="color:var(--gold)">*</span></div>
@@ -444,6 +576,35 @@
           </span>
         </label>
 
+      </div>
+
+      <!-- 11. Donation Interest -->
+      <div class="donation-section">
+        <div class="donation-title-ko">CCF 후원에 관심이 있으십니까? <span style="font-weight:300;font-size:11px;">(선택 · Optional)</span></div>
+        <div class="donation-title-en">Are you interested in financially supporting CrossCulture Community Foundation?</div>
+        <div class="donation-options">
+          <label class="donation-option">
+            <input type="radio" name="11_donation_interest" value="Yes - interested">
+            <span>
+              <span class="donation-option-ko">예, 후원에 관심 있습니다</span>
+              <span class="donation-option-en">Yes, I am interested in supporting CCF</span>
+            </span>
+          </label>
+          <label class="donation-option">
+            <input type="radio" name="11_donation_interest" value="Maybe later">
+            <span>
+              <span class="donation-option-ko">나중에 알려드리겠습니다</span>
+              <span class="donation-option-en">I will let you know later</span>
+            </span>
+          </label>
+          <label class="donation-option">
+            <input type="radio" name="11_donation_interest" value="No">
+            <span>
+              <span class="donation-option-ko">아니오</span>
+              <span class="donation-option-en">No, not at this time</span>
+            </span>
+          </label>
+        </div>
       </div>
 
       <!-- Submit -->
