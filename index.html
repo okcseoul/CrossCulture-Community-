@@ -38,38 +38,39 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 48px;
-    background: rgba(10,60,143,0.97);
+    padding: 10px 48px;
+    background: rgba(255,255,255,0.97);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(194,134,21,0.3);
+    border-bottom: 2px solid rgba(194,134,21,0.3);
     transition: box-shadow 0.3s;
   }
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.25rem; font-weight: 600;
-    color: var(--white); text-decoration: none;
+    color: var(--navy); text-decoration: none;
     display: flex; align-items: center; gap: 10px;
   }
+  .nav-logo img { height: 44px; width: auto; }
   nav ul { display: flex; gap: 24px; list-style: none; }
   nav ul a {
-    font-size: 0.8rem; font-weight: 500;
+    font-size: 0.8rem; font-weight: 600;
     letter-spacing: 0.07em; text-transform: uppercase;
-    color: rgba(255,255,255,0.85); text-decoration: none;
+    color: var(--navy); text-decoration: none;
     transition: color 0.2s;
   }
   nav ul a:hover { color: var(--gold); }
   .nav-right { display: flex; align-items: center; gap: 16px; }
   .lang-toggle { display: flex; gap: 4px; }
   .lang-btn {
-    background: transparent; border: 1px solid rgba(255,255,255,0.3);
-    color: rgba(255,255,255,0.7); padding: 4px 10px;
+    background: transparent; border: 1px solid rgba(10,60,143,0.3);
+    color: var(--navy); padding: 4px 10px;
     font-size: 0.72rem; cursor: pointer; border-radius: 2px;
     font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em;
     transition: all 0.2s;
   }
   .lang-btn.active, .lang-btn:hover {
-    background: var(--gold); border-color: var(--gold);
-    color: var(--navy-dark);
+    background: var(--navy); border-color: var(--navy);
+    color: var(--white);
   }
   .btn-give {
     background: var(--gold); color: var(--navy-dark) !important;
@@ -87,7 +88,7 @@
   }
   .hamburger span {
     display: block; width: 24px; height: 2px;
-    background: rgba(255,255,255,0.85); transition: all 0.3s;
+    background: var(--navy); transition: all 0.3s;
   }
   .mobile-menu {
     display: none; position: fixed; top: 60px; left: 0; right: 0;
@@ -399,7 +400,7 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#hero" class="nav-logo">CrossCulture Community</a>
+  <a href="#hero" class="nav-logo"><img src="crossculture_logo_transparent.png" alt="CrossCulture Community">CrossCulture Community</a>
   <ul>
     <li><a href="#who" data-en="About" data-ko="소개">About</a></li>
     <li><a href="#museum" data-en="Museum" data-ko="성경박물관">Museum</a></li>
