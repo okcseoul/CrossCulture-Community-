@@ -50,7 +50,7 @@
     color: var(--white); text-decoration: none;
     display: flex; align-items: center; gap: 10px;
   }
-  .nav-logo span { color: var(--gold); }
+  .nav-logo img { height: 32px; width: auto; opacity: 0.92; }
   nav ul { display: flex; gap: 24px; list-style: none; }
   nav ul a {
     font-size: 0.8rem; font-weight: 500;
@@ -288,7 +288,8 @@
   #contact .section-tag { color: var(--gold); }
   #contact .lead { color: rgba(255,255,255,0.75); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
-  .contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: rgba(255,255,255,0.8); }
+  .contact-item span { color: rgba(255,255,255,0.8); }
   .contact-item a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
   .contact-item a:hover { color: var(--gold); }
   .contact-form input, .contact-form textarea {
@@ -336,11 +337,11 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#hero" class="nav-logo">Cross<span>Culture</span> Community</a>
+  <a href="#hero" class="nav-logo"><img src="logo.png" alt="CrossCulture Community">CrossCulture Community</a>
   <ul>
     <li><a href="#who" data-en="About" data-ko="소개">About</a></li>
     <li><a href="#museum" data-en="Museum" data-ko="성경박물관">Museum</a></li>
-    <li><a href="#blog" data-en="Blog" data-ko="블로그">Blog</a></li>
+    <li><a href="#blog" data-en="Stories" data-ko="이야기">Stories</a></li>
     <li><a href="#join" data-en="Join" data-ko="가입">Join</a></li>
     <li><a href="#contact" data-en="Contact" data-ko="연락">Contact</a></li>
   </ul>
@@ -360,7 +361,7 @@
 <div class="mobile-menu" id="mobile-menu">
   <a href="#who" onclick="closeMenu()" data-en="About" data-ko="소개">About</a>
   <a href="#museum" onclick="closeMenu()" data-en="Museum" data-ko="성경박물관">Museum</a>
-  <a href="#blog" onclick="closeMenu()" data-en="Blog" data-ko="블로그">Blog</a>
+  <a href="#blog" onclick="closeMenu()" data-en="Stories" data-ko="이야기">Stories</a>
   <a href="#join" onclick="closeMenu()" data-en="Join" data-ko="가입">Join</a>
   <a href="#contact" onclick="closeMenu()" data-en="Contact" data-ko="연락">Contact</a>
   <a href="join.html" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
@@ -387,8 +388,8 @@
     <div class="who-grid">
       <div class="who-text">
         <p data-en="CrossCulture Community Foundation (CCF) was established in Texas in 2019 as a 501(c)(3) nonprofit, and in March 2026 was registered as a nonprofit voluntary organization in Seoul, Korea." data-ko="크로스컬처 커뮤니티 재단(CCF)은 2019년 텍사스에서 501(c)(3) 비영리단체로 설립되었으며, 2026년 3월 서울에서 비영리민간단체로 등록되었습니다.">CrossCulture Community Foundation (CCF) was established in Texas in 2019 as a 501(c)(3) nonprofit, and in March 2026 was registered as a nonprofit voluntary organization in Seoul, Korea.</p>
-        <p data-en="Our founder, Rev. Dr. Bill R. Majors, has served as a missionary in Seoul since June 2, 1982. CrossCulture Community is his capstone vision — a center where the Bible is honored as the universal heritage of all humanity." data-ko="창립자인 매죠스 빌리 래이 목사는 1982년 6월 2일부터 서울에서 선교사로 섬겨왔습니다. 크로스컬처 커뮤니티는 성경을 온 인류의 보편적 유산으로 높이는 중심이 되고자 하는 그의 비전입니다.">Our founder, Rev. Dr. Bill R. Majors, has served as a missionary in Seoul since June 2, 1982. CrossCulture Community is his capstone vision — a center where the Bible is honored as the universal heritage of all humanity.</p>
-        <p data-en="We are open to all, regardless of faith. Our community is built on horizontal unity — mutual listening, shared stories, and lives transformed by the living Word." data-ko="우리는 신앙에 관계없이 모든 분들께 열려 있습니다. 우리 공동체는 수평적 연대 위에 세워집니다 — 서로 귀 기울이고, 이야기를 나누며, 살아있는 말씀으로 변화된 삶을 함께합니다.">We are open to all, regardless of faith. Our community is built on horizontal unity — mutual listening, shared stories, and lives transformed by the living Word.</p>
+        <p data-en="Our founder, Rev. Dr. Bill R. Majors, has served as a missionary in Seoul since June 1, 1982. CrossCulture Community is his vision — a center where the Bible is honored as the universal heritage of all humanity." data-ko="창립자인 매죠스 빌리 래이 목사는 1982년 6월 1일부터 서울에서 선교사로 섬겨왔습니다. 크로스컬처 커뮤니티는 성경을 온 인류의 보편적 유산으로 높이는 중심이 되고자 하는 그의 비전입니다.">Our founder, Rev. Dr. Bill R. Majors, has served as a missionary in Seoul since June 1, 1982. CrossCulture Community is his vision — a center where the Bible is honored as the universal heritage of all humanity.</p>
+        <p data-en="We are open to all, regardless of faith. Our community is built on horizontal unity — mutual listening, shared stories, and lives transformed by the living Word. The movement is to let the Bible speak for itself." data-ko="우리는 신앙에 관계없이 모든 분들께 열려 있습니다. 우리 공동체는 수평적 연대 위에 세워집니다 — 서로 귀 기울이고, 이야기를 나누며, 살아있는 말씀으로 변화된 삶을 함께합니다. 이 운동의 목표는 성경이 스스로 말씀하시도록 하는 것입니다.">We are open to all, regardless of faith. Our community is built on horizontal unity — mutual listening, shared stories, and lives transformed by the living Word. The movement is to let the Bible speak for itself.</p>
         <a href="https://www.billmajors.com" target="_blank" class="blog-link" data-en="Meet Bill Majors" data-ko="빌 매죠스 목사 만나기">Meet Bill Majors</a>
       </div>
       <div class="who-verse">
@@ -427,7 +428,7 @@
   <div class="container">
     <div class="section-tag" data-en="WHERE WE ARE" data-ko="우리가 있는 곳">WHERE WE ARE</div>
     <h2 data-en="Seoul, Korea — Then and Now" data-ko="대한민국 서울 — 그때와 지금">Seoul, Korea — Then and Now</h2>
-    <p class="lead" data-en="Bill Majors arrived in Seoul on June 2, 1982. More than four decades later, this city remains the heart of CrossCulture Community's ministry — a city of 10 million, a gateway to Asia, and a place where the Word continues to take flesh in unexpected ways." data-ko="빌 매죠스 목사는 1982년 6월 2일 서울에 도착했습니다. 40년이 넘는 세월이 흐른 지금도 이 도시는 크로스컬처 커뮤니티 사역의 심장부입니다 — 천만의 도시, 아시아의 관문, 그리고 말씀이 예기치 않은 방식으로 계속해서 육신이 되는 곳.">Bill Majors arrived in Seoul on June 2, 1982. More than four decades later, this city remains the heart of CrossCulture Community's ministry — a city of 10 million, a gateway to Asia, and a place where the Word continues to take flesh in unexpected ways.</p>
+    <p class="lead" data-en="Bill Majors arrived in Seoul on June 1, 1982. More than four decades later, this international city remains the heart of CrossCulture Community's ministry — the area of Seoul is embraced by 23 million commuters and an infinite number of tourists, a gateway to Asia, and a place where the Word continues to take flesh in unexpected ways." data-ko="빌 매죠스 목사는 1982년 6월 1일 서울에 도착했습니다. 40년이 넘는 세월이 흐른 지금도 이 국제도시는 크로스컬처 커뮤니티 사역의 심장부입니다 — 서울 일대는 2천3백만 명의 통근자와 수없이 많은 관광객을 품고 있으며, 아시아의 관문이자 말씀이 예기치 않은 방식으로 계속해서 육신이 되는 곳입니다.">Bill Majors arrived in Seoul on June 1, 1982. More than four decades later, this international city remains the heart of CrossCulture Community's ministry — the area of Seoul is embraced by 23 million commuters and an infinite number of tourists, a gateway to Asia, and a place where the Word continues to take flesh in unexpected ways.</p>
     <div class="where-stats">
       <div class="stat">
         <div class="stat-num">44+</div>
@@ -453,8 +454,8 @@
     <div class="museum-box">
       <div>
         <h3 data-en="대한민국 성경박물관<br>(MOTB-Korea)" data-ko="대한민국 성경박물관<br>(MOTB-Korea)">대한민국 성경박물관<br>(MOTB-Korea)</h3>
-        <p data-en="The Museum of the Bible Korea is our capstone vision — a place where the Bible's journey as the universal heritage of humanity is celebrated, displayed, and made accessible to all in the heart of Seoul." data-ko="대한민국 성경박물관은 우리의 최종 비전입니다 — 성경이 인류의 보편적 유산으로서 걸어온 여정을 서울 중심부에서 기념하고, 전시하며, 모든 사람에게 개방하는 공간입니다.">The Museum of the Bible Korea is our capstone vision — a place where the Bible's journey as the universal heritage of humanity is celebrated, displayed, and made accessible to all in the heart of Seoul.</p>
-        <p data-en="We distinguish ourselves from existing Korean church history museums: our focus is the Bible as global human heritage — not any single denomination or national church." data-ko="우리는 기존의 한국 교회 역사 박물관과 다릅니다: 우리의 초점은 성경 자체 — 어떤 교단이나 국가 교회가 아닌, 전 세계 인류의 유산으로서의 성경입니다.">We distinguish ourselves from existing Korean church history museums: our focus is the Bible as global human heritage — not any single denomination or national church.</p>
+        <p data-en="The Museum of the Bible Korea is our capstone vision — a world class place where the Bible's journey as the universal heritage of humanity is celebrated, displayed, and made accessible to all in the heart of downtown Seoul." data-ko="대한민국 성경박물관은 우리의 최종 비전입니다 — 성경이 인류의 보편적 유산으로서 걸어온 여정을 서울 도심 한복판에서 세계 수준으로 기념하고, 전시하며, 모든 사람에게 개방하는 공간입니다.">The Museum of the Bible Korea is our capstone vision — a world class place where the Bible's journey as the universal heritage of humanity is celebrated, displayed, and made accessible to all in the heart of downtown Seoul.</p>
+        <p data-en="We distinguish ourselves from existing Korean church history museums: our focus is the Bible as global human heritage — not representing any religion, denomination or church." data-ko="우리는 기존의 한국 교회 역사 박물관과 다릅니다: 우리의 초점은 전 세계 인류의 유산으로서의 성경 그 자체입니다 — 어떤 종교, 교단, 교회도 대표하지 않습니다.">We distinguish ourselves from existing Korean church history museums: our focus is the Bible as global human heritage — not representing any religion, denomination or church.</p>
         <a href="https://www.museumofthebiblekorea.org" target="_blank" class="btn-gold" data-en="Visit MOTB-Korea" data-ko="대한민국 성경박물관 방문하기">Visit MOTB-Korea</a>
       </div>
       <div class="museum-quote">
@@ -472,9 +473,9 @@
     <h2 data-en="Become Part of the Story" data-ko="이야기의 일부가 되세요">Become Part of the Story</h2>
     <div class="join-grid">
       <div class="join-text">
-        <p data-en="Membership in CrossCulture Community is free and open to all — believers, seekers, and anyone who values the Bible's place in human history and culture." data-ko="크로스컬처 커뮤니티 회원 가입은 무료이며 신자, 구도자, 역사와 문화 속에서 성경의 위치를 소중히 여기는 모든 분들께 열려 있습니다.">Membership in CrossCulture Community is free and open to all — believers, seekers, and anyone who values the Bible's place in human history and culture.</p>
-        <p data-en="Your membership supports the founding of the Museum of the Bible Korea and helps establish CrossCulture Community as a recognized nonprofit in Seoul under Korean law (NPNGO registration requires 200+ members, of whom 50% must be Korean citizens residing in Korea)." data-ko="회원 가입은 대한민국 성경박물관 설립을 지원하고, 한국 법에 따른 비영리 단체로서 크로스컬처 커뮤니티를 공식 등록하는 데 도움이 됩니다 (비영리민간단체 등록에는 200명 이상의 회원이 필요하며, 그 중 50%는 한국에 거주하는 한국 시민이어야 합니다).">Your membership supports the founding of the Museum of the Bible Korea and helps establish CrossCulture Community as a recognized nonprofit in Seoul under Korean law.</p>
-        <p data-en="You can also give to support the missionary ministry of Bill Majors and the ongoing work of CrossCulture Community." data-ko="또한 빌 매죠스 목사의 선교 사역과 크로스컬처 커뮤니티의 지속적인 사역을 지원하기 위한 후원도 하실 수 있습니다.">You can also give to support the missionary ministry of Bill Majors and the ongoing work of CrossCulture Community.</p>
+        <p data-en="Membership in CrossCulture Community is currently free and stays open to all — believers, seekers, and/or anyone who values the Bible's place in human history and culture." data-ko="크로스컬처 커뮤니티 회원 가입은 현재 무료이며 계속 열려 있습니다 — 신자, 구도자, 그리고/또는 역사와 문화 속에서 성경의 위치를 소중히 여기는 모든 분들께.">Membership in CrossCulture Community is currently free and stays open to all — believers, seekers, and/or anyone who values the Bible's place in human history and culture.</p>
+        <p data-en="Your membership can support the founding of the Museum of the Bible Korea and help establish CrossCulture Community as a recognized nonprofit in Seoul under Korean law (NPNGO registration in 2026 requires 100+ members, of whom 50% must be Korean citizens residing in Korea)." data-ko="회원 가입은 대한민국 성경박물관 설립을 지원하고, 한국 법에 따른 비영리 단체로서 크로스컬처 커뮤니티를 공식 등록하는 데 도움이 될 수 있습니다 (2026년 비영리민간단체 등록에는 100명 이상의 회원이 필요하며, 그 중 50%는 한국에 거주하는 한국 시민이어야 합니다).">Your membership can support the founding of the Museum of the Bible Korea and help establish CrossCulture Community as a recognized nonprofit in Seoul under Korean law (NPNGO registration in 2026 requires 100+ members, of whom 50% must be Korean citizens residing in Korea).</p>
+        <p data-en="You can give to support CrossCulture Community." data-ko="크로스컬처 커뮤니티를 후원하실 수 있습니다.">You can give to support CrossCulture Community.</p>
       </div>
       <div>
         <div class="join-card" style="margin-bottom:20px;">
@@ -497,7 +498,7 @@
   <div class="container">
     <div class="section-tag" data-en="STORIES & VOICES" data-ko="이야기 & 목소리">STORIES & VOICES</div>
     <h2 data-en="From the Field" data-ko="현장에서">From the Field</h2>
-    <p class="lead" data-en="Stories from Korea — from Bill's field journal, from voices along the journey, and from the lives that the living Word continues to shape across cultures and generations." data-ko="한국에서의 이야기들 — 빌의 현장 일지, 여정을 함께한 이들의 목소리, 그리고 살아있는 말씀이 문화와 세대를 넘어 계속해서 빚어가는 삶들로부터.">Stories from Korea — from Bill's field journal, from voices along the journey, and from the lives that the living Word continues to shape across cultures and generations.</p>
+    <p class="lead" data-en="Stories of many in Korea — from Bill's field journal, from voices along the journey, and from the lives that the living Word continues to shape across cultures and generations." data-ko="한국에서의 수많은 이야기들 — 빌의 현장 일지, 여정을 함께한 이들의 목소리, 그리고 살아있는 말씀이 문화와 세대를 넘어 계속해서 빚어가는 삶들로부터.">Stories of many in Korea — from Bill's field journal, from voices along the journey, and from the lives that the living Word continues to shape across cultures and generations.</p>
     <a href="https://www.billmajors.com" target="_blank" class="blog-link" data-en="Read stories at billmajors.com" data-ko="billmajors.com에서 이야기 읽기">Read stories at billmajors.com</a>
   </div>
 </section>
