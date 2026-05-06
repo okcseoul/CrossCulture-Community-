@@ -50,7 +50,6 @@
     color: var(--white); text-decoration: none;
     display: flex; align-items: center; gap: 10px;
   }
-  .nav-logo img { height: 32px; width: auto; opacity: 0.92; }
   nav ul { display: flex; gap: 24px; list-style: none; }
   nav ul a {
     font-size: 0.8rem; font-weight: 500;
@@ -337,7 +336,7 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#hero" class="nav-logo"><img src="logo.png" alt="CrossCulture Community">CrossCulture Community</a>
+  <a href="#hero" class="nav-logo">CrossCulture Community</a>
   <ul>
     <li><a href="#who" data-en="About" data-ko="소개">About</a></li>
     <li><a href="#museum" data-en="Museum" data-ko="성경박물관">Museum</a></li>
@@ -350,7 +349,7 @@
       <button class="lang-btn active" id="btn-en" data-lang="en">EN</button>
       <button class="lang-btn" id="btn-ko" data-lang="ko">한국어</button>
     </div>
-    <a href="join.html" class="btn-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
+    <a href="https://www.zeffy.com/en-US/donation-form/museum-of-the-bible-in-seoul" target="_blank" class="btn-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -364,7 +363,7 @@
   <a href="#blog" onclick="closeMenu()" data-en="Stories" data-ko="이야기">Stories</a>
   <a href="#join" onclick="closeMenu()" data-en="Join" data-ko="가입">Join</a>
   <a href="#contact" onclick="closeMenu()" data-en="Contact" data-ko="연락">Contact</a>
-  <a href="join.html" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
+  <a href="https://www.zeffy.com/en-US/donation-form/museum-of-the-bible-in-seoul" target="_blank" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
 </div>
 
 <!-- HERO -->
@@ -512,10 +511,11 @@
     <div class="contact-grid">
       <div>
         <div class="contact-item"><span>📍</span><span data-en="Seoul, Republic of Korea" data-ko="대한민국 서울">Seoul, Republic of Korea</span></div>
-        <div class="contact-item"><span>✉️</span><a href="mailto:billmajors@gmail.com">billmajors@gmail.com</a></div>
+        <div class="contact-item"><span>✉️</span><a href="mailto:billmajors@crossculture-community.com">billmajors@crossculture-community.com</a></div>
         <div class="contact-item"><span>🌐</span><a href="https://www.crossculture-community.com" target="_blank">crossculture-community.com</a></div>
-        <div class="contact-item" style="margin-top:8px;"><span>🏦</span><span data-en="Korean Donations: Shinhan Bank 01036135896 매죠스빌리래이" data-ko="국내 후원: 신한은행 01036135896 매죠스빌리래이">Korean Donations: Shinhan Bank 01036135896 매죠스빌리래이</span></div>
-        <div class="contact-item"><span>📋</span><span>EIN: 84-2974290 (US 501(c)(3))</span></div>
+        <div class="contact-item"><span>🏦</span><span data-en="Donations in Korean Won: Shinhan Bank 01036135896 매죠스빌리래이" data-ko="원화 후원: 신한은행 01036135896 매죠스빌리래이">Donations in Korean Won: Shinhan Bank 01036135896 매죠스빌리래이</span></div>
+        <div class="contact-item"><span>🏦</span><a href="https://www.zeffy.com/en-US/donation-form/museum-of-the-bible-in-seoul" target="_blank" data-en="Donations through banks in the USA (click this link)" data-ko="미국 은행을 통한 후원 (링크 클릭)">Donations through banks in the USA (click this link)</a></div>
+        <div class="contact-item"><span>📋</span><span data-en="EIN: 84-2974290 — USA, 501(c)(3) in Dallas, Texas" data-ko="EIN: 84-2974290 — 미국 텍사스주 달라스 501(c)(3)">EIN: 84-2974290 — USA, 501(c)(3) in Dallas, Texas</span></div>
       </div>
       <form class="contact-form" onsubmit="handleContact(event)">
         <input type="text" id="c-name" placeholder="Name / 이름" required>
@@ -537,7 +537,9 @@
   </div>
   <div style="margin-top:8px;">
     <a href="https://www.billmajors.com" target="_blank" style="margin-right:16px;">Bill Majors</a>
-    <a href="https://www.museumofthebiblekorea.org" target="_blank">Museum of the Bible Korea</a>
+    <a href="https://www.museumofthebiblekorea.org" target="_blank" style="margin-right:16px;">Museum of the Bible Korea</a>
+    <a href="https://www.facebook.com/crossculturecf" target="_blank" style="margin-right:16px;">📘 Facebook</a>
+    <a href="https://www.instagram.com/crossculturecf" target="_blank">📷 Instagram</a>
   </div>
 </footer>
 
