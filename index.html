@@ -81,6 +81,22 @@
   }
   .btn-give:hover { background: var(--gold-light) !important; }
 
+  /* FOOTER LANG TOGGLE */
+  .footer-lang-toggle {
+    display: flex; gap: 4px; justify-content: center; margin-bottom: 16px;
+  }
+  .footer-lang-btn {
+    background: transparent; border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7); padding: 4px 12px;
+    font-size: 0.72rem; cursor: pointer; border-radius: 2px;
+    font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .footer-lang-btn.active, .footer-lang-btn:hover {
+    background: var(--gold); border-color: var(--gold);
+    color: var(--navy-dark);
+  }
+
   /* HAMBURGER */
   .hamburger {
     display: none; flex-direction: column; gap: 5px;
@@ -414,7 +430,7 @@
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
-      <button class="lang-btn active" id="btn-en" data-lang="en">EN</button>
+      <button class="lang-btn active" id="btn-en" data-lang="en">ENG</button>
       <button class="lang-btn" id="btn-ko" data-lang="ko">한국어</button>
     </div>
     <a href="#projects" class="btn-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
@@ -665,6 +681,10 @@
 
 <!-- FOOTER -->
 <footer>
+  <div class="footer-lang-toggle" role="group" aria-label="Language / 언어">
+    <button class="footer-lang-btn active" id="footer-btn-en" onclick="applyLang('en')">ENG</button>
+    <button class="footer-lang-btn" id="footer-btn-ko" onclick="applyLang('ko')">한국어</button>
+  </div>
   <div>
     <a href="https://www.crossculture-community.com" data-en="CrossCulture Community Foundation" data-ko="크로스컬처 커뮤니티 파운데이션">CrossCulture Community Foundation</a>
     <span> · </span>
@@ -687,6 +707,8 @@
     lang = l;
     document.getElementById('btn-en').classList.toggle('active', l === 'en');
     document.getElementById('btn-ko').classList.toggle('active', l === 'ko');
+    document.getElementById('footer-btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('footer-btn-ko').classList.toggle('active', l === 'ko');
     var els = document.querySelectorAll('[data-en]');
     for (var i = 0; i < els.length; i++) {
       var el = els[i];
@@ -702,6 +724,8 @@
       ? '크로스컬처 커뮤니티 재단'
       : 'CrossCulture Community Foundation';
   }
+
+  window.applyLang = applyLang;
 
   document.getElementById('btn-en').addEventListener('click', function() { applyLang('en'); });
   document.getElementById('btn-ko').addEventListener('click', function() { applyLang('ko'); });
