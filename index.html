@@ -353,6 +353,13 @@
   }
   .project-give:hover { color: var(--gold); }
 
+  .give-bank { border-color: rgba(194,134,21,0.45); }
+  .bank-detail { margin-top: 8px; border-top: 1px solid rgba(194,134,21,0.2); padding-top: 14px; display: flex; flex-direction: column; gap: 9px; }
+  .bank-row { display: flex; flex-direction: column; gap: 2px; }
+  .bank-label { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--charcoal-soft); }
+  .bank-value { font-size: 0.95rem; color: var(--navy); font-weight: 500; }
+  .bank-num { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.04em; color: var(--gold); }
+
   /* ROADMAP */
   #roadmap { background: var(--navy); }
   #roadmap h2 { color: var(--white); }
@@ -555,8 +562,18 @@
   <div class="container">
     <div class="section-tag" data-en="GIVE" data-ko="후원">GIVE</div>
     <h2 data-en="Support the Work" data-ko="사역을 후원하세요">Support the Work</h2>
-    <p class="lead" data-en="CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. CCF is a 501(c)(3) — all US donations are tax-deductible." data-ko="크로스컬처 커뮤니티는 전적으로 후원자들의 헌신으로 운영됩니다. 모든 후원은 아시아에서의 문화 간 교육과 참여를 증진합니다. CCF는 501(c)(3) 단체로 미국 내 기부는 세금 공제 대상입니다.">CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. CCF is a 501(c)(3) — all US donations are tax-deductible.</p>
+    <p class="lead" data-en="CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. Give in Korean Won by Shinhan Bank transfer, or in US dollars through CCF — a 501(c)(3), so US donations are tax-deductible." data-ko="크로스컬처 커뮤니티는 전적으로 후원자들의 헌신으로 운영됩니다. 모든 후원은 아시아에서의 문화 간 교육과 참여를 증진합니다. 신한은행 원화 송금으로, 또는 CCF를 통해 미국 달러로 후원하실 수 있습니다 — CCF는 501(c)(3) 단체로 미국 내 기부는 세금 공제 대상입니다.">CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. Give in Korean Won by Shinhan Bank transfer, or in US dollars through CCF — a 501(c)(3), so US donations are tax-deductible.</p>
     <div class="projects-grid">
+      <div class="project-card give-bank">
+        <span class="project-icon">🏦</span>
+        <div class="project-title" data-en="Korean Won · Shinhan Bank" data-ko="원화 후원 · 신한은행">Korean Won · Shinhan Bank</div>
+        <p class="project-desc" data-en="For donors in Korea — give directly by Won bank transfer to CrossCulture Community's Shinhan account." data-ko="한국 내 후원자를 위한 안내 — 크로스컬처 커뮤니티의 신한은행 계좌로 원화 송금을 통해 직접 후원하실 수 있습니다.">For donors in Korea — give directly by Won bank transfer to CrossCulture Community's Shinhan account.</p>
+        <div class="bank-detail">
+          <div class="bank-row"><span class="bank-label" data-en="Bank" data-ko="은행">Bank</span><span class="bank-value">신한은행 (Shinhan Bank)</span></div>
+          <div class="bank-row"><span class="bank-label" data-en="Account" data-ko="계좌번호">Account</span><span class="bank-value bank-num">01036135896</span></div>
+          <div class="bank-row"><span class="bank-label" data-en="Holder" data-ko="예금주">Holder</span><span class="bank-value">매죠스빌리래이 (크로스컬처 커뮤니티)</span></div>
+        </div>
+      </div>
       <div class="project-card">
         <span class="project-icon">🌐</span>
         <div class="project-title" data-en="General Fund" data-ko="일반 후원">General Fund</div>
@@ -570,16 +587,16 @@
         <a href="https://www.zeffy.com/en-US/donation-form/missionary-fund-living-expenses" target="_blank" class="project-give" data-en="Give to Bill &amp; Niki's Living Fund →" data-ko="빌 &amp; 니키 생활 후원 →">Give to Bill &amp; Niki's Living Fund →</a>
       </div>
       <div class="project-card">
-        <span class="project-icon">🏠</span>
-        <div class="project-title" data-en="Event &amp; Guest Facility" data-ko="행사 &amp; 게스트 시설">Event &amp; Guest Facility</div>
-        <p class="project-desc" data-en="Raising funds to lease a flexible space in Seoul for events, guest housing, and community project work." data-ko="행사, 숙소, 공동체 프로젝트를 위한 서울의 유연한 공간 임대 자금을 모금합니다.">Raising funds to lease a flexible space in Seoul for events, guest housing, and community project work.</p>
-        <a href="https://www.zeffy.com/en-US/donation-form/event-and-guest-facilities" target="_blank" class="project-give" data-en="Give to Facility Fund →" data-ko="시설 후원 →">Give to Facility Fund →</a>
-      </div>
-      <div class="project-card">
         <span class="project-icon">🏛️</span>
         <div class="project-title" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</div>
         <p class="project-desc" data-en="A landmark long-term vision — bringing the Bible's history and heritage to Korea and Asia through education, art, and community." data-ko="교육, 예술, 공동체를 통해 성경의 역사와 유산을 한국과 아시아에 전하는 장기 비전 프로젝트.">A landmark long-term vision — bringing the Bible's history and heritage to Korea and Asia through education, art, and community.</p>
         <a href="https://www.zeffy.com/en-US/donation-form/museum-of-the-bible-in-seoul" target="_blank" class="project-give" data-en="Give to this Vision →" data-ko="이 비전에 후원 →">Give to this Vision →</a>
+      </div>
+      <div class="project-card">
+        <span class="project-icon">🏠</span>
+        <div class="project-title" data-en="Event &amp; Guest Facility" data-ko="행사 &amp; 게스트 시설">Event &amp; Guest Facility</div>
+        <p class="project-desc" data-en="Raising funds to lease a flexible space in Seoul for events, guest housing, and community project work." data-ko="행사, 숙소, 공동체 프로젝트를 위한 서울의 유연한 공간 임대 자금을 모금합니다.">Raising funds to lease a flexible space in Seoul for events, guest housing, and community project work.</p>
+        <a href="https://www.zeffy.com/en-US/donation-form/event-and-guest-facilities" target="_blank" class="project-give" data-en="Give to Facility Fund →" data-ko="시설 후원 →">Give to Facility Fund →</a>
       </div>
     </div>
   </div>
