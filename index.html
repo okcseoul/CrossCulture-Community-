@@ -354,6 +354,18 @@
   .project-give:hover { color: var(--gold); }
 
   .give-bank { border-color: rgba(194,134,21,0.45); }
+  .give-group-heading {
+    grid-column: 1 / -1; margin-top: 12px;
+    display: flex; flex-direction: column; gap: 4px;
+    border-bottom: 2px solid rgba(10,60,143,0.15); padding-bottom: 10px;
+  }
+  .give-group-heading:first-child { margin-top: 0; }
+  .give-group-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 600; color: var(--navy);
+  }
+  .give-group-sub { font-size: 0.85rem; color: var(--charcoal-soft); letter-spacing: 0.02em; }
+  .bank-note { font-size: 0.78rem; color: var(--charcoal-soft); margin-top: 12px; line-height: 1.6; }
   .bank-detail { margin-top: 8px; border-top: 1px solid rgba(194,134,21,0.2); padding-top: 14px; display: flex; flex-direction: column; gap: 9px; }
   .bank-row { display: flex; flex-direction: column; gap: 2px; }
   .bank-label { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--charcoal-soft); }
@@ -562,17 +574,26 @@
   <div class="container">
     <div class="section-tag" data-en="GIVE" data-ko="후원">GIVE</div>
     <h2 data-en="Support the Work" data-ko="사역을 후원하세요">Support the Work</h2>
-    <p class="lead" data-en="CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. Give in Korean Won by Shinhan Bank transfer, or in US dollars through CCF — a 501(c)(3), so US donations are tax-deductible." data-ko="크로스컬처 커뮤니티는 전적으로 후원자들의 헌신으로 운영됩니다. 모든 후원은 아시아에서의 문화 간 교육과 참여를 증진합니다. 신한은행 원화 송금으로, 또는 CCF를 통해 미국 달러로 후원하실 수 있습니다 — CCF는 501(c)(3) 단체로 미국 내 기부는 세금 공제 대상입니다.">CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. Give in Korean Won by Shinhan Bank transfer, or in US dollars through CCF — a 501(c)(3), so US donations are tax-deductible.</p>
+    <p class="lead" data-en="CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. There are two ways to give, to two legally independent organizations: in Korean Won to CrossCulture Community (the Korean nonprofit association), or in US dollars to CrossCulture Community Foundation (CCF) — a Texas 501(c)(3), so US donations are tax-deductible." data-ko="크로스컬처 커뮤니티는 전적으로 후원자들의 헌신으로 운영됩니다. 모든 후원은 아시아에서의 문화 간 교육과 참여를 증진합니다. 후원 방법은 두 가지이며, 각각 법적으로 독립된 단체로 전달됩니다 — 한국 비영리임의단체인 크로스컬처 커뮤니티에 원화로, 또는 미국 텍사스 501(c)(3) 단체인 크로스컬처 커뮤니티 파운데이션(CCF)에 미국 달러로 후원하실 수 있습니다. 미국 내 기부는 세금 공제 대상입니다.">CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. There are two ways to give, to two legally independent organizations: in Korean Won to CrossCulture Community (the Korean nonprofit association), or in US dollars to CrossCulture Community Foundation (CCF) — a Texas 501(c)(3), so US donations are tax-deductible.</p>
     <div class="projects-grid">
+      <div class="give-group-heading">
+        <span class="give-group-title" data-en="In Korea · CrossCulture Community" data-ko="국내 · 크로스컬처 커뮤니티">In Korea · CrossCulture Community</span>
+        <span class="give-group-sub" data-en="Korean nonprofit association (비영리임의단체) · gifts in Korean Won" data-ko="비영리임의단체 · 원화 후원">Korean nonprofit association (비영리임의단체) · gifts in Korean Won</span>
+      </div>
       <div class="project-card give-bank">
         <span class="project-icon">🏦</span>
-        <div class="project-title" data-en="Korean Won · Shinhan Bank" data-ko="원화 후원 · 신한은행">Korean Won · Shinhan Bank</div>
-        <p class="project-desc" data-en="For donors in Korea — give directly by Won bank transfer to CrossCulture Community's Shinhan account." data-ko="한국 내 후원자를 위한 안내 — 크로스컬처 커뮤니티의 신한은행 계좌로 원화 송금을 통해 직접 후원하실 수 있습니다.">For donors in Korea — give directly by Won bank transfer to CrossCulture Community's Shinhan account.</p>
+        <div class="project-title" data-en="Give in Korea · CrossCulture Community" data-ko="국내 후원 · 크로스컬처 커뮤니티">Give in Korea · CrossCulture Community</div>
+        <p class="project-desc" data-en="For donors in Korea — give in Korean Won by direct bank transfer to CrossCulture Community, a registered Korean nonprofit association." data-ko="한국 내 후원자를 위한 안내 — 한국의 비영리임의단체인 크로스컬처 커뮤니티 계좌로 원화 송금을 통해 직접 후원하실 수 있습니다.">For donors in Korea — give in Korean Won by direct bank transfer to CrossCulture Community, a registered Korean nonprofit association.</p>
         <div class="bank-detail">
           <div class="bank-row"><span class="bank-label" data-en="Bank" data-ko="은행">Bank</span><span class="bank-value">신한은행 (Shinhan Bank)</span></div>
-          <div class="bank-row"><span class="bank-label" data-en="Account" data-ko="계좌번호">Account</span><span class="bank-value bank-num">01036135896</span></div>
-          <div class="bank-row"><span class="bank-label" data-en="Holder" data-ko="예금주">Holder</span><span class="bank-value">매죠스빌리래이 (크로스컬처 커뮤니티)</span></div>
+          <div class="bank-row"><span class="bank-label" data-en="Account" data-ko="계좌번호">Account</span><span class="bank-value bank-num">100-038-836672</span></div>
+          <div class="bank-row"><span class="bank-label" data-en="Holder" data-ko="예금주">Holder</span><span class="bank-value">크로스컬처 커뮤니티 (CrossCulture Community)</span></div>
         </div>
+        <p class="bank-note" data-en="Korean organizational tax number / 고유번호 602-80-07169" data-ko="고유번호 602-80-07169">Korean organizational tax number / 고유번호 602-80-07169</p>
+      </div>
+      <div class="give-group-heading">
+        <span class="give-group-title" data-en="In the USA · CrossCulture Community Foundation" data-ko="미국 · 크로스컬처 커뮤니티 파운데이션">In the USA · CrossCulture Community Foundation</span>
+        <span class="give-group-sub" data-en="Texas 501(c)(3) · EIN 84-2974290 · gifts in US dollars are tax-deductible" data-ko="미국 텍사스 501(c)(3) · EIN 84-2974290 · 미국 달러 후원, 세금 공제 대상">Texas 501(c)(3) · EIN 84-2974290 · gifts in US dollars are tax-deductible</span>
       </div>
       <div class="project-card">
         <span class="project-icon">🌐</span>
@@ -682,7 +703,7 @@
         <div class="contact-item"><span>📍</span><span data-en="Seoul, Republic of Korea" data-ko="대한민국 서울">Seoul, Republic of Korea</span></div>
         <div class="contact-item"><span>✉️</span><a href="mailto:billmajors@crossculture-community.com">billmajors@crossculture-community.com</a></div>
         <div class="contact-item"><span>🌐</span><a href="https://www.crossculture-community.com" target="_blank">crossculture-community.com</a></div>
-        <div class="contact-item"><span>🏦</span><span data-en="Donations in Korean Won: Shinhan Bank 01036135896 매죠스빌리래이" data-ko="원화 후원: 신한은행 01036135896 매죠스빌리래이">Donations in Korean Won: Shinhan Bank 01036135896 매죠스빌리래이</span></div>
+        <div class="contact-item"><span>🏦</span><span data-en="Donations in Korean Won: Shinhan Bank 100-038-836672 · 크로스컬처 커뮤니티 (CrossCulture Community)" data-ko="원화 후원: 신한은행 100-038-836672 · 크로스컬처 커뮤니티">Donations in Korean Won: Shinhan Bank 100-038-836672 · 크로스컬처 커뮤니티 (CrossCulture Community)</span></div>
         <div class="contact-item"><span>🏦</span><a href="#projects" data-en="Donations through banks in the USA (click this link)" data-ko="미국 은행을 통한 후원 (링크 클릭)">Donations through banks in the USA (click this link)</a></div>
         <div class="contact-item"><span>📋</span><span data-en="EIN: 84-2974290 — USA, 501(c)(3) in Dallas, Texas" data-ko="EIN: 84-2974290 — 미국 텍사스주 달라스 501(c)(3)">EIN: 84-2974290 — USA, 501(c)(3) in Dallas, Texas</span></div>
       </div>
