@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vision — CrossCulture Community Foundation</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SPTSXBF3T');
+</script>
+<link rel="icon" type="image/png" href="ccf_logo_300x300.png">
+<link rel="apple-touch-icon" href="ccf_logo_300x300.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -15,7 +25,7 @@
     --gold: #C9943A; --gold-light: #E8C87A; --ink: #1A1A18;
   }
   html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.7; overflow-x: hidden; padding-top: 76px; }
   body.ko { font-family: 'Noto Sans KR', sans-serif; }
 
   /* LANGUAGE TOGGLE */
@@ -51,7 +61,7 @@
   .mobile-menu .mobile-give:hover { background: var(--gold); color: var(--ink); }
 
   /* PAGE HERO */
-  .page-hero { padding: 140px 80px 80px; background: var(--cream); border-bottom: 1px solid rgba(139,111,71,0.12); }
+  .page-hero { padding: 80px 80px 80px; background: var(--cream); border-bottom: 1px solid rgba(139,111,71,0.12); }
   .page-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
   .page-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
   .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 600; line-height: 1.1; color: var(--earth-dark); margin-bottom: 20px; }
@@ -128,13 +138,12 @@
     nav { padding: 14px 20px; }
     nav ul { display: none; }
     .hamburger { display: flex; }
-    .page-hero { padding: 120px 24px 48px; }
+    .page-hero { padding: 48px 24px 48px; }
     section { padding: 48px 24px; }
     #vision { grid-template-columns: 1fr; gap: 32px; }
     .story-inner { grid-template-columns: 1fr; gap: 32px; }
     .projects-grid { grid-template-columns: 1fr; gap: 16px; }
     .project-card { padding: 24px 20px; }
-    footer { padding: 28px 24px; flex-direction: column; text-align: center; }
   }
 </style>
 </head>
@@ -142,7 +151,7 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="index.html" class="nav-logo"><img src="/logo.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
+  <a href="index.html" class="nav-logo"><img src="ccf_logo_300x300.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
   <ul id="nav-links">
     <li><a href="museum.html" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a></li>
     <li><a href="why-korea.html" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a></li>
@@ -293,10 +302,10 @@
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <a href="index.html"><img src="/logo.png" alt="CrossCulture Community"></a>
+      <a href="index.html"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
       <div class="footer-lang-toggle">
-        <button class="footer-lang-btn active" id="footer-btn-en" onclick="window.setLang('en')">ENG</button>
-        <button class="footer-lang-btn" id="footer-btn-ko" onclick="window.setLang('ko')">한국어</button>
+        <button class="footer-lang-btn active" id="footer-btn-en" onclick="applyLang('en')">ENG</button>
+        <button class="footer-lang-btn" id="footer-btn-ko" onclick="applyLang('ko')">한국어</button>
       </div>
     </div>
     <div class="footer-nav">
@@ -365,6 +374,7 @@
     }
   }
   window.setLang = applyLang;
+  window.applyLang = applyLang;
   document.addEventListener('DOMContentLoaded', function() {
     var params = new URLSearchParams(window.location.search);
     var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
