@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원 가입 · Join — CrossCulture Community</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A3C8F;
+      --navy-dark: #072d6b;
+      --gold: #C28615;
+      --gold-light: #e8a82a;
+      --white: #FFFFFF;
+      --off-white: #F8F7F4;
+      --light-blue: #EEF2FA;
+      --text: #1A1A2E;
+      --text-muted: #666;
+      --border: #D0D8EC;
+      --success: #1A6B2A;
+      --error: #8B0000;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      background: var(--navy);
+      padding: 32px 24px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(194, 134, 21, 0.12);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      background: rgba(194, 134, 21, 0.08);
+    }
+    .header-ko {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+      position: relative;
+      z-index: 1;
+    }
+    .header-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(200, 216, 255, 0.85);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    .header-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 12px auto 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .header-sub {
+      font-size: 13px;
+      color: rgba(200, 216, 255, 0.7);
+      position: relative;
+      z-index: 1;
+      font-weight: 300;
+    }
+
+    /* Form container */
+    .container {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 0 16px 48px;
+    }
+
+    /* Intro box */
+    .intro {
+      background: var(--light-blue);
+      border-left: 4px solid var(--navy);
+      padding: 16px 18px;
+      margin: 24px 0 20px;
+      border-radius: 0 6px 6px 0;
+    }
+    .intro-ko {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+    .intro-en {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* Form */
+    form { display: flex; flex-direction: column; gap: 0; }
+
+    .field-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .label-ko {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .label-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-left: 4px;
+    }
+    .required-star {
+      color: var(--gold);
+      font-size: 14px;
+      margin-left: 2px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(10, 60, 143, 0.1);
+    }
+    input::placeholder { color: #aaa; font-size: 13px; }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230A3C8F' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    select option { color: var(--text); }
+    select option:first-child { color: #aaa; }
+
+    /* Two column layout for citizenship/country */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Checkboxes */
+    .agreements {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 16px;
+      margin-bottom: 16px;
+    }
+    .agreements-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+      cursor: pointer;
+    }
+    .checkbox-item:last-child { margin-bottom: 0; }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: var(--navy);
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+    }
+
+    .checkbox-text { flex: 1; }
+    .checkbox-ko {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+      display: block;
+    }
+    .checkbox-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+      display: block;
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    /* Submit button */
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.5px;
+      margin-top: 8px;
+    }
+    .submit-btn:hover {
+      background: var(--navy-dark);
+      transform: translateY(-1px);
+    }
+    .submit-btn:active { transform: translateY(0); }
+    .submit-btn-sub {
+      font-size: 11px;
+      font-weight: 300;
+      opacity: 0.75;
+      display: block;
+      margin-top: 3px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Footer note */
+    .footer-note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .footer-note a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    /* Success message (hidden by default) */
+    .success-msg {
+      display: none;
+      background: #F0FFF4;
+      border: 2px solid var(--success);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .success-msg.visible { display: block; }
+    .success-ko {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--success);
+      margin-bottom: 6px;
+    }
+    .success-en {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Documents section */
+    .docs-section {
+      background: var(--white);
+      border: 1.5px solid var(--gold);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .docs-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .docs-note-ko {
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .docs-note-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .docs-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .doc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .doc-link:hover {
+      background: #dce6f9;
+      border-color: var(--navy);
+    }
+    .doc-icon { font-size: 20px; }
+    .doc-text { display: flex; flex-direction: column; }
+    .doc-ko {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .doc-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Donation select */
+    .donation-section {
+      background: var(--light-blue);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+    .donation-title-ko {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .donation-title-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .donation-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .donation-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .donation-option input[type="radio"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      accent-color: var(--navy);
+      cursor: pointer;
+    }
+    .donation-option-ko {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .donation-option-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .header-ko { font-size: 22px; }
+      .two-col { grid-template-columns: 1fr; gap: 0; }
+      .two-col .field-group:first-child { margin-bottom: 16px; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="ccf_logo_300x300.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="ccf_logo_300x300.png">
+  <link rel="apple-touch-icon" href="ccf_logo_300x300.png">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-ko">크로스컬처 커뮤니티 회원 가입</div>
+    <div class="header-divider"></div>
+    <div class="header-en">CrossCulture Community — Membership Registration</div>
+    <div class="header-sub" style="margin-top:8px;">crossculture-community.com</div>
+  </div>
+
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="intro">
+      <div class="intro-ko">크로스컬처 커뮤니티에 오신 것을 환영합니다. 아래 양식을 작성하고 제출해 주세요.</div>
+      <div class="intro-en">Welcome to CrossCulture Community. Please complete and submit the form below.</div>
+    </div>
+
+    <!-- What happens next -->
+    <div style="background:var(--white);border:1.5px solid var(--gold);border-radius:8px;padding:16px;margin-bottom:20px;">
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;">이 양식을 제출하시면 · What happens after you submit</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:16px;min-width:20px;">✦</span>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text);">크로스컬처 커뮤니티의 소식, 행사 및 참여 기회에 관한 정보를 수신하실 수 있습니다.</div>
+            <div style="font-size:11px;color:var(--text-muted);font-style:italic;margin-top:2px;">You will receive information about CrossCulture Community news, gatherings, and opportunities to participate.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:16px;min-width:20px;">✦</span>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text);">귀하의 신청서는 2027년 4월 회원심사 기간에 검토됩니다. 심사 결과는 연례 여름 총회 이전에 통보됩니다.</div>
+            <div style="font-size:11px;color:var(--text-muted);font-style:italic;margin-top:2px;">Your application will be reviewed during the April 2027 membership review period. You will be notified of the outcome before the Annual Summer Gathering.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:16px;min-width:20px;">✦</span>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--text);">그 전까지 행사 참여 및 활동을 통해 크로스컬처 커뮤니티와 함께 성장하실 수 있습니다.</div>
+            <div style="font-size:11px;color:var(--text-muted);font-style:italic;margin-top:2px;">In the meantime you are welcome to participate in activities and grow with the CrossCulture Community.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form action="https://formspree.io/f/mdabgerd" method="POST" id="joinForm">
+
+      <!-- Hidden fields for Formspree -->
+      <input type="hidden" name="_next" value="https://crossculture-community.com/join-confirmed">
+
+      <!-- 1. Full Name -->
+      <div class="field-group">
+        <label>
+          <span class="label-ko">성명<span class="required-star">*</span></span>
+          <span class="label-en">Full Name</span>
+        </label>
+        <input type="text" name="01_name" placeholder="성명을 입력해 주세요 · Enter your full name" required>
+      </div>
+
+      <!-- 2. Email -->
+      <div class="field-group">
+        <label>
+          <span class="label-ko">이메일<span class="required-star">*</span></span>
+          <span class="label-en">Email Address</span>
+        </label>
+        <input type="email" name="02_email" placeholder="이메일 주소 · Email address" required>
+      </div>
+
+      <!-- 3. Phone -->
+      <div class="field-group">
+        <label>
+          <span class="label-ko">연락처<span class="required-star">*</span></span>
+          <span class="label-en">Phone Number (including country code)</span>
+        </label>
+        <input type="tel" name="03_phone" placeholder="예: 010-1234-5678 · Example: +1-555-123-4567" required>
+      </div>
+
+      <!-- 4. Citizenship -->
+      <div class="field-group">
+        <label>
+          <span class="label-ko">국적<span class="required-star">*</span></span>
+          <span class="label-en">Citizenship</span>
+        </label>
+        <input type="text" name="04_citizenship" placeholder="예: 한국 · Korea · USA" required>
+      </div>
+
+      <!-- 5 & 6. City & Country (two columns) -->
+      <div class="two-col">
+        <div class="field-group">
+          <label>
+            <span class="label-ko">거주 도시</span>
+            <span class="label-en">City (optional)</span>
+          </label>
+          <input type="text" name="05_city" placeholder="예: 서울 · Seoul · New York">
+        </div>
+        <div class="field-group">
+          <label>
+            <span class="label-ko">거주국<span class="required-star">*</span></span>
+            <span class="label-en">Country of Residence</span>
+          </label>
+          <input type="text" name="06_country" placeholder="예: 한국 · Korea · USA" required>
+        </div>
+      </div>
+
+      <!-- 7. Referral -->
+      <div class="field-group">
+        <label>
+          <span class="label-ko">가입 경로</span>
+          <span class="label-en">How did you hear about us? (optional)</span>
+        </label>
+        <select name="07_referral">
+          <option value="" disabled selected>선택해 주세요 · Please select</option>
+          <option value="Bill Majors">Bill Majors (대표 · President)</option>
+          <option value="Friend">지인 소개 · Friend / Acquaintance</option>
+          <option value="Website">웹사이트 · Website</option>
+          <option value="Social Media">소셜미디어 · Social Media</option>
+          <option value="Church">교회 · Church</option>
+          <option value="Event">행사 · Event</option>
+          <option value="Other">기타 · Other</option>
+        </select>
+      </div>
+
+      <!-- Documents to read before agreeing -->
+      <div class="docs-section">
+        <div class="docs-title">동의 전 필독 서류 · Please Read Before Agreeing <span style="color:var(--gold)">*</span></div>
+        <div class="docs-note-ko">아래 문서를 읽으신 후 동의해 주세요.</div>
+        <div class="docs-note-en">Please read the following documents before checking the agreement boxes below.</div>
+        <div class="docs-links">
+          <a href="https://raw.githubusercontent.com/okcseoul/CrossCulture-Community-/main/docs/CCF_Bylaws_Revised_2026.pdf" target="_blank" class="doc-link">
+            <span class="doc-icon">📄</span>
+            <span class="doc-text">
+              <span class="doc-ko">정관 읽기 · 다운로드</span>
+              <span class="doc-en">Read / Download Bylaws</span>
+            </span>
+          </a>
+          <a href="https://raw.githubusercontent.com/okcseoul/CrossCulture-Community-/main/docs/CCF_Purpose_Vision_MOTB_Korea.pdf" target="_blank" class="doc-link">
+            <span class="doc-icon">📄</span>
+            <span class="doc-text">
+              <span class="doc-ko">사업목적 및 사명 읽기 · 다운로드</span>
+              <span class="doc-en">Read / Download Mission & Purpose</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Agreements -->
+      <div class="agreements">
+        <div class="agreements-title">동의 사항 · Agreements <span style="color:var(--gold)">*</span></div>
+
+        <!-- 8. Bylaws -->
+        <label class="checkbox-item">
+          <input type="checkbox" name="08_agree_bylaws" value="Agreed" required>
+          <span class="checkbox-text">
+            <span class="checkbox-ko">정관에 동의합니다.</span>
+            <span class="checkbox-en">I agree to the Bylaws of CrossCulture Community.</span>
+          </span>
+        </label>
+
+        <!-- 9. Mission & Purpose -->
+        <label class="checkbox-item">
+          <input type="checkbox" name="09_agree_mission" value="Agreed" required>
+          <span class="checkbox-text">
+            <span class="checkbox-ko">사업목적 및 사명에 동의합니다 — 문화·교육·인도주의적 활동을 통해 모든 사람을 성경의 변혁적 능력으로 초대하는 것.</span>
+            <span class="checkbox-en">I agree to the Mission and Purpose — to invite all people to engage with the transformative power of the Bible through cultural, educational, and humanitarian activities.</span>
+          </span>
+        </label>
+
+        <!-- 10. Privacy -->
+        <label class="checkbox-item">
+          <input type="checkbox" name="10_agree_bible_commitment" value="Agreed" required>
+          <span class="checkbox-text">
+            <span class="checkbox-ko">크로스컬처 커뮤니티의 공동 지향에 동의합니다 — 성경이 나 자신, 우리 가족, 공동체, 국가 및 세계에 말씀하도록 함께 귀 기울이며, 의견과 해석이 다를 때에도 서로를 사랑할 것을 헌신합니다.</span>
+            <span class="checkbox-en">I agree to the shared commitment of CrossCulture Community — to listen together to what the Bible is saying to the individual, family, community, nation, and world, and to love one another even when opinions and interpretations differ.</span>
+          </span>
+        </label>
+
+        <label class="checkbox-item">
+          <input type="checkbox" name="11_agree_privacy" value="Agreed" required>
+          <span class="checkbox-text">
+            <span class="checkbox-ko">개인정보 처리방침에 동의합니다.</span>
+            <span class="checkbox-en">I agree to the Privacy Policy.</span>
+          </span>
+        </label>
+
+      </div>
+
+      <!-- 11. Donation Interest -->
+      <div class="donation-section">
+        <div class="donation-title-ko">CCF 후원에 관심이 있으십니까? <span style="font-weight:300;font-size:11px;">(선택 · Optional)</span></div>
+        <div class="donation-title-en">Are you interested in financially supporting CrossCulture Community Foundation?</div>
+        <div class="donation-options">
+          <label class="donation-option">
+            <input type="radio" name="12_donation_interest" value="Yes - interested">
+            <span>
+              <span class="donation-option-ko">예, 후원에 관심 있습니다</span>
+              <span class="donation-option-en">Yes, I am interested in supporting CCF</span>
+            </span>
+          </label>
+          <label class="donation-option">
+            <input type="radio" name="12_donation_interest" value="Maybe later">
+            <span>
+              <span class="donation-option-ko">나중에 알려드리겠습니다</span>
+              <span class="donation-option-en">I will let you know later</span>
+            </span>
+          </label>
+          <label class="donation-option">
+            <input type="radio" name="12_donation_interest" value="No">
+            <span>
+              <span class="donation-option-ko">아니오</span>
+              <span class="donation-option-en">No, not at this time</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">
+        가입하기
+        <span class="submit-btn-sub">Join CrossCulture Community</span>
+      </button>
+
+    </form>
+
+    <!-- Success message -->
+    <div class="success-msg" id="successMsg">
+      <div class="success-ko">✅ 신청서가 접수되었습니다!</div>
+      <div style="font-size:14px;color:var(--success);margin-top:8px;font-weight:500;">감사합니다. 크로스컬처 커뮤니티에 오신 것을 환영합니다.</div>
+      <div style="margin-top:12px;text-align:left;background:var(--light-blue);border-radius:6px;padding:12px;">
+        <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:8px;">다음 단계 · What happens next:</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.8;">
+          ✦ 크로스컬처 커뮤니티의 소식과 행사 정보를 수신하실 것입니다.<br>
+          ✦ 귀하의 신청서는 2027년 4월 회원심사 기간에 검토됩니다.<br>
+          ✦ 연례 여름 총회 이전에 심사 결과를 통보해 드립니다.<br>
+          ✦ 그 전까지 행사 참여를 통해 함께 성장하실 수 있습니다.
+        </div>
+        <div style="font-size:11px;color:var(--text-muted);font-style:italic;margin-top:8px;line-height:1.7;">
+          ✦ You will receive CrossCulture Community news and event information.<br>
+          ✦ Your application will be reviewed during the April 2027 membership review period.<br>
+          ✦ You will be notified of the outcome before the Annual Summer Gathering.<br>
+          ✦ In the meantime you are welcome to participate in activities and grow with us.
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-note">
+      <p>크로스컬처 커뮤니티 · CrossCulture Community</p>
+      <p style="margin-top:4px;"><a href="https://crossculture-community.com">crossculture-community.com</a></p>
+      <p style="margin-top:8px;">CrossCulture Community Foundation · Texas 501(c)(3) · EIN: 84-2974290</p>
+    </div>
+
+  </div>
+
+  <script>
+    const form = document.getElementById('joinForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          successMsg.classList.add('visible');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          alert('제출 중 오류가 발생했습니다. 다시 시도해 주세요.\nSubmission error. Please try again.');
+        }
+      } catch (err) {
+        alert('네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.\nNetwork error. Please try again shortly.');
+      }
+    });
+  </script>
+
+</body>
+</html>

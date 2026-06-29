@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>창립총회 · Founding General Assembly — CrossCulture Community</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A3C8F;
+      --navy-dark: #072d6b;
+      --gold: #C28615;
+      --gold-light: #e8a82a;
+      --white: #FFFFFF;
+      --off-white: #F8F7F4;
+      --light-blue: #EEF2FA;
+      --text: #1A1A2E;
+      --text-muted: #666;
+      --border: #D0D8EC;
+      --success: #1A6B2A;
+      --green-bg: #F0FFF4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--navy);
+      padding: 32px 24px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(194,134,21,0.12);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      background: rgba(194,134,21,0.08);
+    }
+    .header-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .header-ko {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+      position: relative;
+      z-index: 1;
+    }
+    .header-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 12px auto 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .header-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: rgba(200,216,255,0.85);
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+    .header-date {
+      font-size: 13px;
+      color: var(--gold);
+      margin-top: 10px;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 16px 64px;
+    }
+
+    /* ── YouTube Join Button ── */
+    .youtube-section {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin: 24px 0 20px;
+      text-align: center;
+    }
+    .youtube-label-ko {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .youtube-label-en {
+      font-size: 12px;
+      color: rgba(200,216,255,0.7);
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .youtube-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #FF0000;
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      transition: background 0.2s, transform 0.1s;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .youtube-btn:hover {
+      background: #cc0000;
+      transform: translateY(-1px);
+    }
+    .youtube-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+    .youtube-time {
+      font-size: 12px;
+      color: var(--gold);
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* ── Section headers ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 28px 0 14px;
+    }
+    .section-number {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .section-title-ko {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .section-title-en {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ── Step boxes ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .step {
+      display: flex;
+      gap: 12px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 2px;
+    }
+    .step-1 .step-num { background: var(--navy); }
+    .step-2 .step-num { background: var(--gold); }
+    .step-3 .step-num { background: var(--success); }
+    .step-4 .step-num { background: var(--navy); }
+    .step-ko {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+      display: block;
+    }
+    .step-en {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      display: block;
+      margin-top: 3px;
+      line-height: 1.4;
+    }
+
+    /* ── Video section ── */
+    .video-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .video-card-header {
+      background: var(--light-blue);
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .video-card-title-ko {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .video-card-title-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .video-placeholder {
+      background: #1a1a2e;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 13px;
+    }
+    .video-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.3;
+    }
+    .video-embed {
+      aspect-ratio: 16/9;
+      width: 100%;
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ── Documents ── */
+    .doc-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .doc-link:hover {
+      border-color: var(--navy);
+      background: var(--light-blue);
+    }
+    .doc-icon { font-size: 24px; }
+    .doc-ko {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      display: block;
+    }
+    .doc-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+      display: block;
+      margin-top: 2px;
+    }
+    .doc-badge {
+      margin-left: auto;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    /* ── New member note ── */
+    .new-member-note {
+      background: #FFF8E1;
+      border: 1.5px solid var(--gold);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .new-member-ko {
+      font-size: 13px;
+      font-weight: 500;
+      color: #5C3D00;
+      margin-bottom: 4px;
+    }
+    .new-member-en {
+      font-size: 11px;
+      color: #7A5500;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .join-link {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .join-link:hover { background: var(--gold-light); }
+
+    /* ── Formspree form ── */
+    .form-section {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 16px;
+    }
+    .form-intro-ko {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .form-intro-en {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .field-group { margin-bottom: 14px; }
+    label { display: block; margin-bottom: 5px; }
+    .label-ko { font-size: 13px; font-weight: 500; color: var(--text); }
+    .label-en { font-size: 11px; color: var(--text-muted); font-weight: 300; margin-left: 4px; }
+    .required-star { color: var(--gold); font-size: 13px; margin-left: 2px; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(10,60,143,0.1);
+    }
+    input::placeholder { color: #aaa; font-size: 13px; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .agreements {
+      background: var(--light-blue);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .agreements-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    .checkbox-item:last-child { margin-bottom: 0; }
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: var(--navy);
+    }
+    .checkbox-ko { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.5; display: block; }
+    .checkbox-en { font-size: 11px; color: var(--text-muted); font-style: italic; display: block; margin-top: 2px; line-height: 1.4; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .submit-btn:hover { background: var(--navy-dark); transform: translateY(-1px); }
+    .submit-btn-sub { font-size: 11px; font-weight: 300; opacity: 0.75; display: block; margin-top: 3px; }
+
+    /* Success */
+    .success-msg {
+      display: none;
+      background: var(--green-bg);
+      border: 2px solid var(--success);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+    }
+    .success-msg.visible { display: block; }
+    .success-ko { font-size: 18px; font-weight: 700; color: var(--success); margin-bottom: 6px; }
+    .success-en { font-size: 13px; color: var(--text-muted); font-style: italic; }
+
+    /* Quorum notice */
+    .quorum-notice {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .quorum-ko { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .quorum-en { font-size: 12px; opacity: 0.75; font-style: italic; }
+    .quorum-number { font-size: 28px; font-weight: 700; color: var(--gold); display: block; margin: 6px 0; }
+
+    /* Footer */
+    .footer-note {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .footer-note a { color: var(--navy); text-decoration: none; }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .header-ko { font-size: 22px; }
+      .two-col { grid-template-columns: 1fr; }
+      .two-col .field-group:first-child { margin-bottom: 14px; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="ccf_logo_300x300.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="ccf_logo_300x300.png">
+  <link rel="apple-touch-icon" href="ccf_logo_300x300.png">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-badge">창립총회 · Founding General Assembly</div>
+    <div class="header-ko">크로스컬처 커뮤니티</div>
+    <div class="header-divider"></div>
+    <div class="header-en">CrossCulture Community</div>
+    <div class="header-date">2026년 6월 6일 (토) · Saturday, June 6, 2026  ·  오후 6:00 PM KST</div>
+  </div>
+
+  <div class="container">
+
+    <!-- Notice sending date -->
+    <div style="background:var(--light-blue);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin:16px 0 0;text-align:center;font-size:13px;color:var(--navy);">
+      📣 소집 통보일: 2026년 5월 31일 오후 6:00 KST  ·  Notice sent: May 31, 2026 at 6:00 PM KST  (총회 7일 전  ·  7 days before GA)
+    </div>
+
+    <!-- YouTube Join Button -->
+    <div class="youtube-section">
+      <div class="youtube-label-ko">총회 YouTube Live 참여</div>
+      <div class="youtube-label-en">Join the General Assembly on YouTube Live</div>
+      <a href="https://www.youtube.com/@crossculturecf410" target="_blank" class="youtube-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/>
+        </svg>
+        YouTube Live 입장 · Join Live
+      </a>
+      
+    </div>
+
+    <!-- Quorum notice -->
+    <div class="quorum-notice">
+      <div class="quorum-ko">정족수 목표 · Quorum Target</div>
+      <span class="quorum-number">60명 / 118명</span>
+      <div class="quorum-en">60 of 118 registered members needed (majority)  ·  여러분의 참여가 창립을 완성합니다</div>
+    </div>
+
+    <!-- Two participation options -->
+    <div class="section-header">
+      <div class="section-number">✦</div>
+      <div>
+        <div class="section-title-ko">참여 방법 — 두 가지 중 하나를 선택하세요</div>
+        <div class="section-title-en">Two Ways to Participate — Choose What Works for You</div>
+      </div>
+    </div>
+
+    <!-- ⚠ Required reading notice -->
+    <div style="background:#FFF3CD;border:2px solid var(--gold);border-radius:8px;padding:14px 16px;margin-bottom:16px;">
+      <div style="font-size:14px;font-weight:700;color:#5C3D00;margin-bottom:6px;">⚠ 두 가지 방법 모두: 투표 전에 반드시 아래 자료를 읽으십시오.</div>
+      <div style="font-size:12px;color:#7A5500;font-style:italic;line-height:1.6;">⚠ Both options require reading the documents below before voting. Please read first, then submit your consent.</div>
+    </div>
+
+    <!-- OPTION A -->
+    <div style="background:var(--white);border:2px solid #1A6B2A;border-radius:10px;overflow:hidden;margin-bottom:14px;">
+      <div style="background:#1A6B2A;padding:12px 16px;display:flex;align-items:center;gap:10px;">
+        <span style="background:var(--white);color:#1A6B2A;font-size:14px;font-weight:700;padding:4px 10px;border-radius:20px;white-space:nowrap;">OPTION A</span>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:var(--white);">사전 투표 (Early Vote) — 권장</div>
+          <div style="font-size:11px;color:rgba(200,255,200,0.85);font-style:italic;">Read the materials → Submit the consent form → No need to attend live</div>
+        </div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-size:13px;color:var(--text);line-height:1.8;">
+          ▸ 아래 자료를 읽으십시오 (정관, 사명, 단체소개서)<br>
+          <span style="color:var(--text-muted);font-style:italic;font-size:12px;">Read the required materials below (bylaws, mission, organization introduction)</span><br><br>
+          ▸ 아래 동의서를 작성하여 이메일 또는 카카오톡으로 제출하십시오<br>
+          <span style="color:var(--text-muted);font-style:italic;font-size:12px;">Complete the consent form below and submit by email or KakaoTalk</span><br><br>
+          ▸ 제출 기한: 2026년 6월 6일(토) 오후 6:00 KST 이전<br>
+          <span style="color:var(--text-muted);font-style:italic;font-size:12px;">Deadline: June 6, 2026 before 6:00 PM KST</span><br><br>
+          ▸ <strong>라이브 미팅에 참석할 필요가 없습니다</strong><br>
+          <span style="color:var(--text-muted);font-style:italic;font-size:12px;">No need to attend the live meeting</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION B -->
+    <div style="background:var(--white);border:2px solid #FF0000;border-radius:10px;overflow:hidden;margin-bottom:20px;">
+      <div style="background:#CC0000;padding:12px 16px;display:flex;align-items:center;gap:10px;">
+        <span style="background:var(--white);color:#CC0000;font-size:14px;font-weight:700;padding:4px 10px;border-radius:20px;white-space:nowrap;">OPTION B</span>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:var(--white);">YouTube Live 참석 (Live Attendance)</div>
+          <div style="font-size:11px;color:rgba(255,200,200,0.9);font-style:italic;">Read the materials → Watch the live broadcast → Vote during the session</div>
+        </div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-size:13px;color:var(--text);line-height:1.8;">
+          ▸ 아래 자료를 미리 읽으십시오 (정관, 사명, 단체소개서)<br>
+          <span style="color:var(--text-muted);font-style:italic;font-size:12px;">Read the required materials below in advance</span><br><br>
+          ▸ 2026년 6월 6일(토) 오후 6:00 KST — YouTube Live 방송에 참석하십시오<br>
+          <span style="color:var(--text-muted);font-style:italic;font-size:12px;">June 6, 2026 at 6:00 PM KST — Watch the live broadcast</span><br><br>
+          ▸ YouTube 채널: <a href="https://www.youtube.com/@crossculturecf410" target="_blank" style="color:#CC0000;font-weight:700;">youtube.com/@crossculturecf410</a><br><br>
+          ▸ 라이브 방송 중 아래 동의서를 제출하십시오<br>
+          <span style="color:var(--text-muted);font-style:italic;font-size:12px;">Submit the consent form below during the live session</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- New member note -->
+    <div class="new-member-note">
+      <div class="new-member-ko">신규 회원 안내 · New Member Information</div>
+      <div class="new-member-en">Not yet a member? You can join at the GA.</div>
+      <div style="font-size:13px;color:#5C3D00;line-height:1.7;margin-bottom:10px;">
+        총회 당일 신규 가입을 원하시는 분은 <strong>사전에</strong> 아래 정보를 billmajors@crossculture-community.com 또는 카카오톡(okcseoul)으로 보내 주십시오. 승인 후 총회 참여 및 투표가 가능합니다.<br>
+        <span style="font-size:12px;font-style:italic;color:#7A5500;">Those wishing to join at the GA must submit the following in advance to be counted: full name · address · phone number · nationality · country of residence</span>
+      </div>
+      <div style="font-size:13px;color:#5C3D00;line-height:1.8;margin-bottom:10px;">
+        필요 정보 · Required information:<br>
+        ▸ 성명 / Full name<br>
+        ▸ 주소 / Address<br>
+        ▸ 연락처 / Phone number<br>
+        ▸ 국적 / Nationality<br>
+        ▸ 거주국 / Country of residence
+      </div>
+      <a href="mailto:billmajors@crossculture-community.com" class="join-link">billmajors@crossculture-community.com</a>
+      <span style="margin:0 8px;color:#7A5500;">또는 · or</span>
+      <a href="#" class="join-link">KakaoTalk: okcseoul</a>
+    </div>
+
+    <!-- Video 1 -->
+    <div class="section-header">
+      <div class="section-number">▶</div>
+      <div>
+        <div class="section-title-ko">영상 1 — 환영 인사</div>
+        <div class="section-title-en">Video 1 — Welcome</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-card-header">
+        <div class="video-card-title-ko">매죠스빌리래이 대표의 환영 인사 · Welcome from Bill R. Majors, President</div>
+        <div class="video-card-title-en">Korean & English · 5–7 minutes</div>
+      </div>
+      <!-- Replace YOUTUBE_VIDEO_ID_1 with actual YouTube video ID -->
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID_1" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="section-header">
+      <div class="section-number">▶</div>
+      <div>
+        <div class="section-title-ko">영상 2 — 정관 및 사업목적 안내</div>
+        <div class="section-title-en">Video 2 — Bylaws & Mission Overview</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-card-header">
+        <div class="video-card-title-ko">정관 주요 내용 및 사업목적 설명 · Bylaws & Mission/Purpose Explained</div>
+        <div class="video-card-title-en">Korean & English · 15–20 minutes</div>
+      </div>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID_2" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Documents -->
+    <div class="section-header">
+      <div class="section-number">📄</div>
+      <div>
+        <div class="section-title-ko">서류 다운로드 및 읽기</div>
+        <div class="section-title-en">Download & Read Documents</div>
+      </div>
+    </div>
+
+    <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/okcseoul/CrossCulture-Community-/main/B03_CC_Bylaws_2026_v3.pdf&embedded=true" target="_blank" class="doc-link">
+      <span class="doc-icon">📋</span>
+      <span>
+        <span class="doc-ko">정관 · Bylaws</span>
+        <span class="doc-en">크로스컬처 커뮤니티 정관 (한국어·영어) · CrossCulture Community Bylaws (Korean & English)</span>
+      </span>
+      <span class="doc-badge">PDF</span>
+    </a>
+
+    <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/okcseoul/CrossCulture-Community-/main/CCF_Organization_Introduction_2026_v2.pdf&embedded=true" target="_blank" class="doc-link">
+      <span class="doc-icon">🌐</span>
+      <span>
+        <span class="doc-ko">단체 소개서 · Organization Introduction</span>
+        <span class="doc-en">크로스컬처 커뮤니티 소개 · Who We Are</span>
+      </span>
+      <span class="doc-badge">PDF</span>
+    </a>
+
+    <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/okcseoul/CrossCulture-Community-/main/A02_CC_Foundation_Purpose_2026.pdf&embedded=true" target="_blank" class="doc-link">
+      <span class="doc-icon">✦</span>
+      <span>
+        <span class="doc-ko">사업목적 및 사명 · Mission & Purpose</span>
+        <span class="doc-en">우리의 사명과 비전 · Our Mission and Vision</span>
+      </span>
+      <span class="doc-badge">PDF</span>
+    </a>
+
+
+
+    <!-- Consent Form -->
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <div>
+        <div class="section-title-ko">총회 동의서 제출 (필수)</div>
+        <div class="section-title-en">Submit GA Consent Form (Required)</div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="form-intro-ko">영상 시청 및 서류 확인 후 아래 동의서를 작성하고 제출해 주세요. 이것이 창립총회의 공식 참여 기록입니다.</div>
+      <div class="form-intro-en">After watching the videos and reading the documents, please complete and submit this consent form. This is your official General Assembly participation record.</div>
+
+      <form action="https://formspree.io/f/ASSEMBLY_ENDPOINT_HERE" method="POST" id="assemblyForm">
+        <input type="hidden" name="_next" value="https://crossculture-community.com/assembly-confirmed">
+
+        <!-- 00 Member status -->
+        <div style="background:#FFF8E1;border:1.5px solid var(--gold);border-radius:8px;padding:14px 16px;margin-bottom:16px;">
+          <div style="font-size:13px;font-weight:700;color:#5C3D00;margin-bottom:4px;">2026년 4월에 발송된 회원 가입 양식을 작성하셨습니까? <span style="font-weight:300;">(필수 · Required)</span></div>
+          <div style="font-size:11px;color:#7A5500;font-style:italic;margin-bottom:12px;">Did you fill out the membership form that was sent out in April 2026? (That is what made you a member.)</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
+              <input type="radio" name="00_member_status" value="Yes - registered member April 2026" required style="width:16px;height:16px;min-width:16px;margin-top:3px;accent-color:var(--navy);cursor:pointer;">
+              <span>
+                <span style="font-size:13px;font-weight:700;color:var(--navy);display:block;">예 — 이미 회원이십니다</span>
+                <span style="font-size:12px;color:var(--text);display:block;margin-top:2px;">4월에 가입 양식을 제출하셨습니다. 오늘 이 양식을 통해 창립총회에 참여하시면 됩니다.</span>
+                <span style="font-size:11px;color:var(--text-muted);font-style:italic;display:block;margin-top:2px;">Yes — you are already a member. You submitted the membership form in April. By submitting this form today your General Assembly participation is recorded.</span>
+              </span>
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
+              <input type="radio" name="00_member_status" value="No - joining through GA today" required style="width:16px;height:16px;min-width:16px;margin-top:3px;accent-color:var(--navy);cursor:pointer;">
+              <span>
+                <span style="font-size:13px;font-weight:700;color:var(--success);display:block;">아니오 — 처음 참여하십니다</span>
+                <span style="font-size:12px;color:var(--text);display:block;margin-top:2px;">이 양식을 제출하시면 회원 가입과 창립총회 참여가 동시에 완료됩니다. 환영합니다!</span>
+                <span style="font-size:11px;color:var(--text-muted);font-style:italic;display:block;margin-top:2px;">No — this is your first time. By submitting this form you are joining as a member and your General Assembly participation is recorded. Welcome!</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 01 Name -->
+        <div class="field-group">
+          <label>
+            <span class="label-ko">성명<span class="required-star">*</span></span>
+            <span class="label-en">Full Name</span>
+          </label>
+          <input type="text" name="01_name" placeholder="성명을 입력해 주세요 · Full name" required>
+        </div>
+
+        <!-- 02 Email -->
+        <div class="field-group">
+          <label>
+            <span class="label-ko">이메일<span class="required-star">*</span></span>
+            <span class="label-en">Email Address</span>
+          </label>
+          <input type="email" name="02_email" placeholder="이메일 주소 · Email address" required>
+        </div>
+
+        <!-- 03 Phone -->
+        <div class="field-group">
+          <label>
+            <span class="label-ko">연락처<span class="required-star">*</span></span>
+            <span class="label-en">Phone Number</span>
+          </label>
+          <input type="tel" name="03_phone" placeholder="예: 010-1234-5678" required>
+        </div>
+
+        <!-- 04 & 05 Citizenship & Country -->
+        <div class="two-col">
+          <div class="field-group">
+            <label>
+              <span class="label-ko">국적<span class="required-star">*</span></span>
+              <span class="label-en">Citizenship</span>
+            </label>
+            <input type="text" name="04_citizenship" placeholder="예: 한국 · Korea" required>
+          </div>
+          <div class="field-group">
+            <label>
+              <span class="label-ko">거주국<span class="required-star">*</span></span>
+              <span class="label-en">Country</span>
+            </label>
+            <input type="text" name="05_country" placeholder="예: 한국 · Korea" required>
+          </div>
+        </div>
+
+        <!-- 06 City -->
+        <div class="field-group">
+          <label>
+            <span class="label-ko">거주 도시</span>
+            <span class="label-en">City (optional)</span>
+          </label>
+          <input type="text" name="06_city" placeholder="예: 서울 · Seoul · New York">
+        </div>
+
+        <!-- Agreements -->
+        <div class="agreements">
+          <div class="agreements-title">동의 사항 · Agreements <span style="color:var(--gold)">*</span></div>
+
+          <label class="checkbox-item">
+            <input type="checkbox" name="07_agree_bylaws" value="Agreed" required>
+            <span>
+              <span class="checkbox-ko">정관에 동의합니다.</span>
+              <span class="checkbox-en">I agree to the Bylaws of CrossCulture Community.</span>
+            </span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" name="08_agree_mission" value="Agreed" required>
+            <span>
+              <span class="checkbox-ko">사업목적 및 사명에 동의합니다.</span>
+              <span class="checkbox-en">I agree to the Mission and Purpose of CrossCulture Community.</span>
+            </span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" name="09_agree_leadership" value="Agreed" required>
+            <span>
+              <span class="checkbox-ko">매죠스빌리래이를 크로스컬처 커뮤니티 이사장(대표)으로 확인합니다.</span>
+              <span class="checkbox-en">I confirm Bill R. Majors as President & Founder (이사장) of CrossCulture Community.</span>
+            </span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" name="10_agree_registration" value="Agreed" required>
+            <span>
+              <span class="checkbox-ko">사단법인 설립허가 신청(문화체육관광부, 민법 제32조)에 필요한 모든 행정 절차를 이사장에게 위임합니다.</span>
+              <span class="checkbox-en">I authorize the President to take all actions necessary to apply for 사단법인 establishment permit with the Ministry of Culture, Sports and Tourism (민법 제32조 / Civil Code Art. 32).</span>
+            </span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" name="11_agree_bible_commitment" value="Agreed" required>
+            <span>
+              <span class="checkbox-ko">크로스컬처 커뮤니티의 공동 지향에 동의합니다 — 성경이 나 자신, 우리 가족, 공동체, 국가 및 세계에 말씀하도록 함께 귀 기울이며, 의견과 해석이 다를 때에도 서로를 사랑할 것을 헌신합니다.</span>
+              <span class="checkbox-en">I agree to the shared commitment of CrossCulture Community — to listen together to what the Bible is saying to the individual, family, community, nation, and world, and to love one another even when opinions and interpretations differ.</span>
+            </span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" name="12_agree_privacy" value="Agreed" required>
+            <span>
+              <span class="checkbox-ko">개인정보 처리방침에 동의합니다.</span>
+              <span class="checkbox-en">I agree to the Privacy Policy.</span>
+            </span>
+          </label>
+
+        </div>
+
+        <button type="submit" class="submit-btn">
+          동의서 제출하기
+          <span class="submit-btn-sub">Submit GA Consent Form</span>
+        </button>
+
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        <div class="success-ko">✅ 제출이 완료되었습니다!</div>
+        <div class="success-en" style="margin-top:6px;">Your consent has been recorded. Thank you for participating in the Founding General Assembly of CrossCulture Community.</div>
+        <div style="margin-top:10px;font-size:13px;color:#1A6B2A;font-weight:500;">YouTube로 돌아가 채팅창에 "완료"를 입력해 주세요 · Return to YouTube and type "completed" in the chat</div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-note">
+      <p>크로스컬처 커뮤니티 · CrossCulture Community</p>
+      <p style="margin-top:4px;"><a href="https://crossculture-community.com">crossculture-community.com</a></p>
+      <p style="margin-top:8px;">CrossCulture Community Foundation · Texas 501(c)(3) · EIN: 84-2974290</p>
+    </div>
+
+  </div>
+
+  <script>
+    const form = document.getElementById('assemblyForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          successMsg.classList.add('visible');
+          window.scrollTo({ top: successMsg.offsetTop - 20, behavior: 'smooth' });
+        } else {
+          alert('제출 중 오류가 발생했습니다. 다시 시도해 주세요.\nSubmission error. Please try again.');
+        }
+      } catch (err) {
+        alert('네트워크 오류가 발생했습니다.\nNetwork error. Please try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>
