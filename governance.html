@@ -1,1 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SPTSXBF3T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Governance — CrossCulture Community</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="ccf_logo_300x300.png">
+<link rel="apple-touch-icon" href="ccf_logo_300x300.png">
+<style>
+  :root {
+    --navy: #0A3C8F; --navy-dark: #072d6a;
+    --gold: #C28615; --gold-light: #d4a02a;
+    --cream: #fdf8f0; --charcoal: #2c2c2c; --charcoal-soft: #4a4a4a;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Source Sans 3', sans-serif; color: var(--charcoal); background: var(--cream); line-height: 1.7; }
 
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 6px 48px; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 2px solid rgba(194,134,21,0.3); transition: box-shadow 0.3s; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { height: 64px; width: auto; }
+  nav ul { display: flex; gap: 24px; list-style: none; }
+  nav ul a { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+  nav ul a:hover, nav ul a.active { color: var(--gold); }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .lang-toggle { display: flex; gap: 4px; }
+  .lang-btn { background: transparent; border: 1px solid rgba(10,60,143,0.3); color: var(--navy); padding: 4px 10px; font-size: 0.72rem; cursor: pointer; border-radius: 2px; font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em; transition: all 0.2s; }
+  .lang-btn.active, .lang-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
+  .btn-give { background: var(--gold); color: var(--navy-dark) !important; padding: 9px 20px; border-radius: 2px; font-size: 0.8rem !important; font-weight: 600 !important; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s; }
+  .btn-give:hover { background: var(--gold-light) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--navy-dark); z-index: 99; padding: 16px 0; border-bottom: 2px solid var(--gold); }
+  .mobile-menu.open { display: block; }
+  .mobile-menu a { display: block; padding: 12px 32px; color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-menu .mobile-give { margin: 12px 32px 4px; background: var(--gold); color: var(--navy-dark) !important; padding: 12px 20px; border-radius: 2px; text-align: center; font-weight: 600; }
+  @media (max-width: 900px) { nav { padding: 14px 20px; } nav ul, .nav-right .btn-give { display: none; } .hamburger { display: flex; } }
+
+  /* PAGE HERO */
+  .page-hero { min-height: 50vh; background: linear-gradient(155deg, var(--navy-dark) 0%, var(--navy) 60%, #1a5296 100%); display: flex; align-items: center; padding: 140px 48px 80px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 20%, rgba(194,134,21,0.12) 0%, transparent 60%); }
+  .page-hero-inner { position: relative; z-index: 1; max-width: 760px; }
+  .page-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(194,134,21,0.4); padding: 5px 16px; border-radius: 2px; margin-bottom: 24px; }
+  .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 600; color: var(--white); line-height: 1.15; margin-bottom: 24px; }
+  .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.8); max-width: 600px; line-height: 1.8; }
+
+  /* CONTENT */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 80px 24px; }
+  .section-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; color: var(--navy); line-height: 1.25; margin-bottom: 24px; }
+
+  /* THREE-STEP JOURNEY */
+  #journey { background: var(--white); }
+  .journey-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .journey-step { padding: 36px 28px; border-radius: 4px; border-top: 3px solid rgba(255,255,255,0.15); }
+  .journey-step.done { background: var(--cream); border-top-color: var(--gold); }
+  .journey-step.active { background: var(--navy); border-top-color: var(--gold); }
+  .journey-step.future { background: var(--cream); border-top-color: rgba(194,134,21,0.25); }
+  .step-badge { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal-soft); margin-bottom: 16px; }
+  .journey-step.done .step-badge, .journey-step.active .step-badge { color: var(--gold); }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: rgba(10,60,143,0.1); line-height: 1; margin-bottom: 12px; }
+  .journey-step.active .step-num { color: rgba(255,255,255,0.1); }
+  .step-kr { font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .journey-step.active .step-kr { color: var(--white); }
+  .step-en { font-size: 0.82rem; color: var(--gold); letter-spacing: 0.04em; margin-bottom: 14px; font-weight: 500; }
+  .step-desc { font-size: 0.88rem; color: var(--charcoal-soft); line-height: 1.75; }
+  .journey-step.active .step-desc { color: rgba(255,255,255,0.7); }
+
+  @media (max-width: 768px) { .journey-grid { grid-template-columns: 1fr; gap: 16px; } }
+
+  /* FOUNDING BOARD */
+  #board { background: var(--cream); }
+  .board-table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 0.92rem; }
+  .board-table th { text-align: left; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); padding: 12px 16px; border-bottom: 2px solid rgba(194,134,21,0.3); }
+  .board-table td { padding: 14px 16px; border-bottom: 1px solid rgba(10,60,143,0.08); color: var(--charcoal-soft); }
+  .board-table tr:last-child td { border-bottom: none; }
+  .board-table td:first-child { font-weight: 600; color: var(--navy); }
+  @media (max-width: 600px) { .board-table thead { display: none; } .board-table tr { display: block; padding: 16px 0; border-bottom: 1px solid rgba(10,60,143,0.1); } .board-table td { display: block; padding: 4px 0; border: none; } .board-table td:first-child { font-size: 1rem; margin-bottom: 4px; } }
+
+  /* DOCUMENTS */
+  #documents { background: var(--white); }
+  .docs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .doc-card { background: var(--cream); border: 1px solid rgba(194,134,21,0.2); border-radius: 4px; padding: 32px 28px; border-top: 3px solid var(--gold); }
+  .doc-num { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .doc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
+  .doc-body { font-size: 0.88rem; color: var(--charcoal-soft); line-height: 1.75; margin-bottom: 16px; }
+  .doc-link { font-size: 0.82rem; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+  .doc-link:hover { color: var(--gold); }
+  @media (max-width: 600px) { .docs-grid { grid-template-columns: 1fr; } }
+
+  /* LEGAL NOTE */
+  #legal { background: var(--navy); }
+  #legal h2 { color: var(--white); }
+  .legal-note { color: rgba(255,255,255,0.75); font-size: 0.95rem; line-height: 1.85; margin-top: 24px; }
+  .legal-note strong { color: var(--gold); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* FOOTER */
+  footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 60px 48px 32px; }
+  .footer-main { display: grid; grid-template-columns: 180px 1fr; gap: 56px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .footer-brand img { height: 52px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
+  .footer-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+  .footer-col-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.83rem; margin-bottom: 9px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { display: flex; gap: 24px; flex-wrap: wrap; font-size: 0.76rem; color: rgba(255,255,255,0.3); }
+  .footer-lang-toggle { display: flex; gap: 4px; }
+  .footer-lang-btn { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); padding: 4px 12px; font-size: 0.72rem; cursor: pointer; border-radius: 2px; font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em; transition: all 0.2s; }
+  .footer-lang-btn.active, .footer-lang-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--navy-dark); }
+  @media (max-width: 768px) { .footer-main { grid-template-columns: 1fr; gap: 32px; } .footer-nav { grid-template-columns: 1fr 1fr; gap: 20px; } footer { padding: 40px 20px 24px; } .footer-bottom { flex-direction: column; gap: 6px; } section { padding: 60px 20px; } .page-hero { padding: 120px 24px 60px; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+  <ul>
+    <li><a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a></li>
+    <li><a href="why-korea.html" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a></li>
+    <li><a href="vision.html" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="news.html" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en">ENG</button>
+      <button class="lang-btn" id="btn-ko">한국어</button>
+    </div>
+    <a href="index.html#projects" class="btn-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="https://www.museumofthebiblekorea.com" target="_blank" onclick="closeMenu()" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+  <a href="why-korea.html" onclick="closeMenu()" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a>
+  <a href="vision.html" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="news.html" onclick="closeMenu()" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a>
+  <a href="index.html#projects" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner reveal">
+    <div class="page-tag" data-en="Governance" data-ko="거버넌스">Governance</div>
+    <h1 data-en="세 단계의 여정 — Three-Step Journey" data-ko="세 단계의 여정">세 단계의 여정 — Three-Step Journey</h1>
+    <p data-en="CrossCulture Community is building its legal foundation in Korea through three stages — each step increasing capacity, credibility, and institutional permanence." data-ko="크로스컬처 커뮤니티는 세 단계를 통해 한국에서의 법적 기반을 구축하고 있습니다 — 각 단계마다 역량, 신뢰성, 기관의 영속성이 높아집니다.">CrossCulture Community is building its legal foundation in Korea through three stages — each step increasing capacity, credibility, and institutional permanence.</p>
+  </div>
+</div>
+
+<!-- THREE-STEP JOURNEY -->
+<section id="journey">
+  <div class="container reveal">
+    <div class="section-tag" data-en="LEGAL DEVELOPMENT" data-ko="법적 발전 단계">LEGAL DEVELOPMENT</div>
+    <h2 data-en="Building on Solid Ground" data-ko="견고한 기반 위에 세우다">Building on Solid Ground</h2>
+    <div class="journey-grid">
+      <div class="journey-step done">
+        <div class="step-badge" data-en="✅ Complete" data-ko="✅ 완료">✅ Complete</div>
+        <div class="step-num">01</div>
+        <div class="step-kr">비법인단체</div>
+        <div class="step-en">Unincorporated Association</div>
+        <p class="step-desc" data-en="크로스컬처 커뮤니티가 한국에서 비법인단체로 설립되었습니다. 법적 존재의 첫 걸음. CrossCulture Community established as an unincorporated association in Korea — the first step of legal existence." data-ko="크로스컬처 커뮤니티가 한국에서 비법인단체로 설립되었습니다. 법적 존재의 첫 걸음.">크로스컬처 커뮤니티가 한국에서 비법인단체로 설립되었습니다. 법적 존재의 첫 걸음. CrossCulture Community established as an unincorporated association in Korea — the first step of legal existence.</p>
+      </div>
+      <div class="journey-step active">
+        <div class="step-badge" data-en="🔄 In Progress" data-ko="🔄 진행 중">🔄 In Progress</div>
+        <div class="step-num">02</div>
+        <div class="step-kr">사단법인</div>
+        <div class="step-en">Incorporated Association</div>
+        <p class="step-desc" data-en="Pursuing incorporation under the Ministry of Culture, Sports and Tourism. Permits faith-centered directors while remaining open to the public in a nonsectarian way. Enables corporate donor tax benefits and access to government grants." data-ko="문화체육관광부 산하 사단법인 설립 추진. 신앙 중심의 이사진을 허용하며, 비종파적 방식으로 일반에 공개되는 공익 단체로서 법인 기부자 세제 혜택과 정부 보조금 신청이 가능해집니다.">Pursuing incorporation under the Ministry of Culture, Sports and Tourism. Permits faith-centered directors while remaining open to the public in a nonsectarian way. Enables corporate donor tax benefits and access to government grants.</p>
+      </div>
+      <div class="journey-step future">
+        <div class="step-badge" data-en="🏛️ Vision" data-ko="🏛️ 비전">🏛️ Vision</div>
+        <div class="step-num">03</div>
+        <div class="step-kr">재단법인</div>
+        <div class="step-en">Foundation</div>
+        <p class="step-desc" data-en="The permanent legal foundation for the Museum of the Bible Korea — holding its collection, building, and endowment in perpetuity." data-ko="대한민국 성경박물관의 영구적 법적 토대입니다. 건물과 컬렉션, 기금을 영속적으로 보호하고 관리하는 재단.">The permanent legal foundation for the Museum of the Bible Korea — holding its collection, building, and endowment in perpetuity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDING BOARD -->
+<section id="board">
+  <div class="container reveal">
+    <div class="section-tag" data-en="FOUNDING BOARD" data-ko="창립이사회">FOUNDING BOARD</div>
+    <h2 data-en="창립이사회 — Founding Board" data-ko="창립이사회">창립이사회 — Founding Board</h2>
+    <table class="board-table">
+      <thead>
+        <tr>
+          <th data-en="Name" data-ko="이름">Name</th>
+          <th data-en="Korean Name" data-ko="한국어 이름">Korean Name</th>
+          <th data-en="Role" data-ko="역할">Role</th>
+          <th data-en="Location" data-ko="소재지">Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bill R. Majors</td>
+          <td>매죠스빌리래이</td>
+          <td data-en="President / 대표" data-ko="대표">President / 대표</td>
+          <td data-en="Seoul, Korea" data-ko="서울, 대한민국">Seoul, Korea</td>
+        </tr>
+        <tr>
+          <td>Kenneth L. Werho</td>
+          <td>Kenneth L. Werho</td>
+          <td data-en="Secretary / 간사" data-ko="간사">Secretary / 간사</td>
+          <td data-en="Seoul, Korea" data-ko="서울, 대한민국">Seoul, Korea</td>
+        </tr>
+        <tr>
+          <td>Jakyung (Niki) Lyu</td>
+          <td>유자경</td>
+          <td data-en="Treasurer / 회계" data-ko="회계">Treasurer / 회계</td>
+          <td data-en="Seoul, Korea" data-ko="서울, 대한민국">Seoul, Korea</td>
+        </tr>
+        <tr>
+          <td>Phil J. Kim</td>
+          <td>김필조</td>
+          <td data-en="Founding Director / 창립이사" data-ko="창립이사">Founding Director / 창립이사</td>
+          <td>USA</td>
+        </tr>
+        <tr>
+          <td>Stephen P. White</td>
+          <td>Stephen P. White</td>
+          <td data-en="Founding Director / 창립이사" data-ko="창립이사">Founding Director / 창립이사</td>
+          <td>USA</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PUBLIC DOCUMENTS -->
+<section id="documents">
+  <div class="container reveal">
+    <div class="section-tag" data-en="PUBLIC DOCUMENTS" data-ko="공개 문서">PUBLIC DOCUMENTS</div>
+    <h2 data-en="Four Public Documents" data-ko="네 가지 공개 문서">Four Public Documents</h2>
+    <div class="docs-grid">
+      <div class="doc-card">
+        <div class="doc-num" data-en="Document 01" data-ko="문서 01">Document 01</div>
+        <div class="doc-title" data-en="Mission &amp; Vision Statement" data-ko="사명 및 비전 선언문">Mission &amp; Vision Statement<br><span style="font-size:0.9rem;color:var(--charcoal-soft);">사명 및 비전 선언문</span></div>
+        <p class="doc-body" data-en="The foundational statement of CrossCulture Community's purpose, mission, and vision for Korea and Asia." data-ko="크로스컬처 커뮤니티의 목적, 사명, 비전에 대한 기초 선언문입니다.">The foundational statement of CrossCulture Community's purpose, mission, and vision for Korea and Asia.</p>
+        <a href="index.html" class="doc-link" data-en="View on crossculture-community.com →" data-ko="crossculture-community.com에서 보기 →">View on crossculture-community.com →</a>
+      </div>
+      <div class="doc-card">
+        <div class="doc-num" data-en="Document 02" data-ko="문서 02">Document 02</div>
+        <div class="doc-title" data-en="Membership Information Packet" data-ko="회원 안내문">Membership Information Packet<br><span style="font-size:0.9rem;color:var(--charcoal-soft);">회원 안내문</span></div>
+        <p class="doc-body" data-en="Membership is open to all, free of charge. One member, one vote. Voluntary donations do not affect membership or voting rights. Privacy compliant with Korea's PIPA." data-ko="회원 가입은 무료이며 모든 분께 열려 있습니다. 1인 1표. 자발적 기부는 회원 자격 및 투표권에 영향을 주지 않습니다. 한국 개인정보 보호법(PIPA) 준수.">Membership is open to all, free of charge. One member, one vote. Voluntary donations do not affect membership or voting rights. Privacy compliant with Korea's PIPA.</p>
+        <a href="join.html" class="doc-link" data-en="Become a Member →" data-ko="회원 가입하기 →">Become a Member →</a>
+      </div>
+      <div class="doc-card">
+        <div class="doc-num" data-en="Document 03" data-ko="문서 03">Document 03</div>
+        <div class="doc-title" data-en="Bylaws / Constitution (Draft)" data-ko="정관 (초안)">Bylaws / Constitution (Draft)<br><span style="font-size:0.9rem;color:var(--charcoal-soft);">정관 (초안)</span></div>
+        <p class="doc-body" data-en="Full 30-article constitution across 10 chapters: General Provisions, Membership, General Assembly, Board Structure, Officers, Finance, Privacy, Dissolution, Protected Provisions, and Supplementary." data-ko="10장 30조의 정관: 총칙, 회원, 총회, 이사회 구조, 임원, 재정, 개인정보, 해산, 보호 조항, 부칙.">Full 30-article constitution across 10 chapters: General Provisions, Membership, General Assembly, Board Structure, Officers, Finance, Privacy, Dissolution, Protected Provisions, and Supplementary.</p>
+        <a href="bylaws.html" class="doc-link" data-en="Read the Bylaws →" data-ko="정관 보기 →">Read the Bylaws →</a>
+      </div>
+      <div class="doc-card">
+        <div class="doc-num" data-en="Document 04" data-ko="문서 04">Document 04</div>
+        <div class="doc-title" data-en="US Partner Organization" data-ko="미국 파트너 기관">US Partner Organization<br><span style="font-size:0.9rem;color:var(--charcoal-soft);">미국 파트너 기관</span></div>
+        <p class="doc-body" data-en="CrossCulture Community Foundation · Texas 501(c)(3) · EIN 84-2974290. Founder: Bill R. Majors. Tax-deductible donations for US donors." data-ko="크로스컬처 커뮤니티 파운데이션 · 텍사스 501(c)(3) · EIN 84-2974290. 창립자: 매죠스빌리래이. 미국 기부자를 위한 세금 공제 후원.">CrossCulture Community Foundation · Texas 501(c)(3) · EIN 84-2974290. Founder: Bill R. Majors. Tax-deductible donations for US donors.</p>
+        <a href="index.html#projects" class="doc-link" data-en="Give in US Dollars →" data-ko="미국 달러로 후원하기 →">Give in US Dollars →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL NOTE -->
+<section id="legal">
+  <div class="container reveal">
+    <div class="section-tag" data-en="LEGAL NOTICE" data-ko="법적 고지">LEGAL NOTICE</div>
+    <h2 data-en="Protected Provisions" data-ko="보호 조항">Protected Provisions</h2>
+    <div class="legal-note">
+      <p data-en="The following provisions of the CrossCulture Community bylaws carry special protection and cannot be altered by ordinary amendment procedures:" data-ko="크로스컬처 커뮤니티 정관의 다음 조항들은 특별한 보호를 받으며 일반적인 개정 절차로는 변경할 수 없습니다:">The following provisions of the CrossCulture Community bylaws carry special protection and cannot be altered by ordinary amendment procedures:</p>
+      <p style="margin-top:20px;" data-en="<strong>Art. 3 (Purpose/Mission)</strong> — Cannot be altered without Founding Board unanimity. <strong>Art. 25 (Mission Lock)</strong> — Supreme protection clause. <strong>Art. 26 (Founding Board Protection)</strong> — The Founding Board cannot be removed by the General Assembly. Founding Board membership: President is Bill Majors; successor Presidents are appointed by the Founding Board only." data-ko="<strong>제3조 (목적/사명)</strong> — 창립이사회 만장일치 없이는 변경 불가. <strong>제25조 (사명 잠금)</strong> — 최고 보호 조항. <strong>제26조 (창립이사회 보호)</strong> — 창립이사회는 총회에 의해 해임될 수 없습니다. 창립이사회: 대표는 매죠스빌리래이이며, 후임 대표는 창립이사회만이 임명합니다."><strong>Art. 3 (Purpose/Mission)</strong> — Cannot be altered without Founding Board unanimity. <strong>Art. 25 (Mission Lock)</strong> — Supreme protection clause. <strong>Art. 26 (Founding Board Protection)</strong> — The Founding Board cannot be removed by the General Assembly. Founding Board membership: President is Bill Majors; successor Presidents are appointed by the Founding Board only.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+      <div class="footer-lang-toggle" role="group" aria-label="Language / 언어">
+        <button class="footer-lang-btn active" id="footer-btn-en" onclick="applyLang('en')">ENG</button>
+        <button class="footer-lang-btn" id="footer-btn-ko" onclick="applyLang('ko')">한국어</button>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="About" data-ko="소개">About</div>
+        <a href="about.html" data-en="Founder" data-ko="창립자">Founder</a>
+        <a href="about.html" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
+        <a href="governance.html" data-en="Three-Step Journey" data-ko="세 단계의 여정">Three-Step Journey</a>
+        <a href="governance.html" data-en="Governance" data-ko="거버넌스">Governance</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Get Involved" data-ko="참여하기">Get Involved</div>
+        <a href="join.html" data-en="Become a Member" data-ko="회원 가입">Become a Member</a>
+        <a href="index.html#projects" data-en="Give / Donate" data-ko="후원">Give / Donate</a>
+        <a href="join.html" data-en="Corporate Partnership" data-ko="기업 파트너십">Corporate Partnership</a>
+        <a href="join.html" data-en="Volunteer" data-ko="자원봉사">Volunteer</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Connect" data-ko="연락">Connect</div>
+        <a href="mailto:billmajors@crossculture-community.com" data-en="Contact Us" data-ko="연락하기">Contact Us</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill's Blog" data-ko="빌의 블로그">Bill's Blog</a>
+        <a href="https://www.facebook.com/crossculturecf" target="_blank" data-en="Facebook" data-ko="페이스북">Facebook</a>
+        <a href="https://www.instagram.com/crossculturecf" target="_blank" data-en="Instagram" data-ko="인스타그램">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Our Projects" data-ko="우리의 프로젝트">Our Projects</div>
+        <a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+        <a href="news.html" data-en="Torah Presentations" data-ko="토라 발표">Torah Presentations</a>
+        <a href="news.html" data-en="Past Exhibitions" data-ko="과거 전시">Past Exhibitions</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill Majors" data-ko="빌 메이저스">Bill Majors</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 <span data-en="CrossCulture Community Foundation" data-ko="크로스컬처 커뮤니티 파운데이션">CrossCulture Community Foundation</span></span>
+    <span>EIN: 84-2974290 · 501(c)(3)</span>
+    <span data-en="Korea 비법인단체 · 602-80-07169" data-ko="대한민국 비법인단체 · 고유번호 602-80-07169">Korea 비법인단체 · 602-80-07169</span>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var lang = 'en';
+  function applyLang(l) {
+    lang = l;
+    sessionStorage.setItem('ccf_lang', l);
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-ko').classList.toggle('active', l === 'ko');
+    document.getElementById('footer-btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('footer-btn-ko').classList.toggle('active', l === 'ko');
+    var els = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var val = el.getAttribute('data-' + l);
+      if (!val) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = val;
+      else el.innerHTML = val;
+    }
+    document.title = l === 'ko' ? '거버넌스 — 크로스컬처 커뮤니티' : 'Governance — CrossCulture Community';
+  }
+  window.applyLang = applyLang;
+  var params = new URLSearchParams(window.location.search);
+  var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
+  applyLang(savedLang);
+  document.getElementById('btn-en').addEventListener('click', function() { applyLang('en'); });
+  document.getElementById('btn-ko').addEventListener('click', function() { applyLang('ko'); });
+  window.toggleMenu = function() { document.getElementById('mobile-menu').classList.toggle('open'); };
+  window.closeMenu = function() { document.getElementById('mobile-menu').classList.remove('open'); };
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('main-nav');
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.12)' : 'none';
+  });
+  var revealEls = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(function(el) { revealObserver.observe(el); });
+})();
+</script>
+</body>
+</html>

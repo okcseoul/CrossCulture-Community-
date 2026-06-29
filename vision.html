@@ -109,11 +109,19 @@
   .zeffy-grid { grid-template-columns: repeat(4, 1fr) !important; }
 
   /* FOOTER */
-  footer { background: var(--ink); color: rgba(247,243,236,0.5); padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--cream); display: flex; align-items: center; gap: 10px; }
-  .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-  .footer-links a { color: rgba(247,243,236,0.5); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--gold-light); }
+  footer { background: #072d6a; color: rgba(255,255,255,0.55); padding: 60px 48px 32px; }
+  .footer-main { display: grid; grid-template-columns: 180px 1fr; gap: 56px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .footer-brand img { height: 52px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
+  .footer-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+  .footer-col-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #C9943A; margin-bottom: 14px; }
+  .footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.83rem; margin-bottom: 9px; transition: color 0.2s; }
+  .footer-col a:hover { color: #ffffff; }
+  .footer-bottom { display: flex; gap: 24px; flex-wrap: wrap; font-size: 0.76rem; color: rgba(255,255,255,0.3); }
+  .footer-lang-toggle { display: flex; gap: 4px; }
+  .footer-lang-btn { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); padding: 4px 12px; font-size: 0.72rem; cursor: pointer; border-radius: 2px; letter-spacing: 0.05em; transition: all 0.2s; }
+  .footer-lang-btn.active, .footer-lang-btn:hover { background: #C9943A; border-color: #C9943A; color: #072d6a; }
+  @media (max-width: 768px) { .footer-main { grid-template-columns: 1fr; gap: 28px; } .footer-nav { grid-template-columns: 1fr 1fr; gap: 16px; } footer { padding: 40px 20px 24px; } .footer-bottom { flex-direction: column; gap: 6px; } }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
@@ -136,12 +144,11 @@
 <nav id="main-nav">
   <a href="index.html" class="nav-logo"><img src="/logo.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
   <ul id="nav-links">
-    <li><a href="index.html" data-en="Home" data-ko="홈">Home</a></li>
-    <li><a href="#vision" class="active" data-en="Vision" data-ko="비전">Vision</a></li>
-    <li><a href="#story" data-en="Our Story" data-ko="우리의 이야기">Our Story</a></li>
-    <li><a href="#projects" data-en="Projects" data-ko="프로젝트">Projects</a></li>
-    <li><a href="index.html#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
-    <li><a href="index.html#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
+    <li><a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a></li>
+    <li><a href="why-korea.html" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a></li>
+    <li><a href="vision.html" class="active" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="news.html" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a></li>
+    <li><a href="index.html#projects" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -156,12 +163,11 @@
 
 <!-- MOBILE MENU -->
 <div id="mobile-menu" class="mobile-menu">
-  <a href="index.html" onclick="closeMenu()" data-en="Home" data-ko="홈">Home</a>
-  <a href="#vision" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
-  <a href="#story" onclick="closeMenu()" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
-  <a href="#projects" onclick="closeMenu()" data-en="Projects" data-ko="프로젝트">Projects</a>
-  <a href="index.html#contact" onclick="closeMenu()" data-en="Contact" data-ko="연락처">Contact</a>
-  <a href="index.html#give" onclick="closeMenu()" class="mobile-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
+  <a href="https://www.museumofthebiblekorea.com" target="_blank" onclick="closeMenu()" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+  <a href="why-korea.html" onclick="closeMenu()" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a>
+  <a href="vision.html" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="news.html" onclick="closeMenu()" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a>
+  <a href="index.html#projects" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -285,14 +291,49 @@
 </section>
 
 <footer>
-  <div class="footer-logo"><img src="/logo.png" alt="CrossCulture Community" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:0.85;"><span>CrossCulture <span style="color:var(--gold);">Community</span> Foundation</span></div>
-  <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
-  <div class="footer-links">
-    <a href="index.html" data-en="Home" data-ko="홈">Home</a>
-    <a href="about.html" data-en="About" data-ko="소개">About</a>
-    <a href="membership.html" data-en="Join" data-ko="회원 가입">Join</a>
-    <a href="https://museumofthebiblekorea.org" target="_blank">museumofthebiblekorea.org</a>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html"><img src="/logo.png" alt="CrossCulture Community"></a>
+      <div class="footer-lang-toggle">
+        <button class="footer-lang-btn active" id="footer-btn-en" onclick="window.setLang('en')">ENG</button>
+        <button class="footer-lang-btn" id="footer-btn-ko" onclick="window.setLang('ko')">한국어</button>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="About" data-ko="소개">About</div>
+        <a href="about.html" data-en="Founder" data-ko="창립자">Founder</a>
+        <a href="about.html" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
+        <a href="governance.html" data-en="Three-Step Journey" data-ko="세 단계의 여정">Three-Step Journey</a>
+        <a href="governance.html" data-en="Governance" data-ko="거버넌스">Governance</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Get Involved" data-ko="참여하기">Get Involved</div>
+        <a href="join.html" data-en="Become a Member" data-ko="회원 가입">Become a Member</a>
+        <a href="index.html#projects" data-en="Give / Donate" data-ko="후원">Give / Donate</a>
+        <a href="join.html" data-en="Corporate Partnership" data-ko="기업 파트너십">Corporate Partnership</a>
+        <a href="join.html" data-en="Volunteer" data-ko="자원봉사">Volunteer</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Connect" data-ko="연락">Connect</div>
+        <a href="mailto:billmajors@crossculture-community.com" data-en="Contact Us" data-ko="연락하기">Contact Us</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill's Blog" data-ko="빌의 블로그">Bill's Blog</a>
+        <a href="https://www.facebook.com/crossculturecf" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/crossculturecf" target="_blank">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Our Projects" data-ko="우리의 프로젝트">Our Projects</div>
+        <a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+        <a href="news.html" data-en="Torah Presentations" data-ko="토라 발표">Torah Presentations</a>
+        <a href="news.html" data-en="Past Exhibitions" data-ko="과거 전시">Past Exhibitions</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill Majors" data-ko="빌 메이저스">Bill Majors</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
     <span>© 2026 CrossCulture Community Foundation</span>
+    <span>EIN: 84-2974290 · 501(c)(3)</span>
+    <span>Korea 비법인단체 · 602-80-07169</span>
   </div>
 </footer>
 
@@ -310,6 +351,9 @@
       if (l === 'en') { btnEn.classList.add('active'); btnKo.classList.remove('active'); }
       else { btnEn.classList.remove('active'); btnKo.classList.add('active'); }
     }
+    var fEn = document.getElementById('footer-btn-en');
+    var fKo = document.getElementById('footer-btn-ko');
+    if (fEn && fKo) { fEn.classList.toggle('active', l === 'en'); fKo.classList.toggle('active', l === 'ko'); }
     var els = document.querySelectorAll('[data-en]');
     for (var i = 0; i < els.length; i++) {
       var el = els[i];

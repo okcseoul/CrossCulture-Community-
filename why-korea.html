@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SPTSXBF3T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Korea — CrossCulture Community</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="ccf_logo_300x300.png">
+<link rel="apple-touch-icon" href="ccf_logo_300x300.png">
+<style>
+  :root {
+    --navy: #0A3C8F;
+    --navy-dark: #072d6a;
+    --gold: #C28615;
+    --gold-light: #d4a02a;
+    --cream: #fdf8f0;
+    --charcoal: #2c2c2c;
+    --charcoal-soft: #4a4a4a;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 48px;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid rgba(194,134,21,0.3);
+    transition: box-shadow 0.3s;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 600;
+    color: var(--navy); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo img { height: 64px; width: auto; }
+  nav ul { display: flex; gap: 24px; list-style: none; }
+  nav ul a {
+    font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--navy); text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav ul a:hover, nav ul a.active { color: var(--gold); }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .lang-toggle { display: flex; gap: 4px; }
+  .lang-btn {
+    background: transparent; border: 1px solid rgba(10,60,143,0.3);
+    color: var(--navy); padding: 4px 10px;
+    font-size: 0.72rem; cursor: pointer; border-radius: 2px;
+    font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--navy); border-color: var(--navy); color: var(--white);
+  }
+  .btn-give {
+    background: var(--gold); color: var(--navy-dark) !important;
+    padding: 9px 20px; border-radius: 2px;
+    font-size: 0.8rem !important; font-weight: 600 !important;
+    letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s;
+  }
+  .btn-give:hover { background: var(--gold-light) !important; }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all 0.3s; }
+  .mobile-menu {
+    display: none; position: fixed; top: 76px; left: 0; right: 0;
+    background: var(--navy-dark); z-index: 99; padding: 16px 0;
+    border-bottom: 2px solid var(--gold);
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu a {
+    display: block; padding: 12px 32px;
+    color: rgba(255,255,255,0.85); text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-menu .mobile-give {
+    margin: 12px 32px 4px;
+    background: var(--gold); color: var(--navy-dark) !important;
+    padding: 12px 20px; border-radius: 2px; text-align: center; font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 20px; }
+    nav ul, .nav-right .btn-give { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    min-height: 60vh;
+    background: linear-gradient(155deg, var(--navy-dark) 0%, var(--navy) 60%, #1a5296 100%);
+    display: flex; align-items: center;
+    padding: 140px 48px 80px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(194,134,21,0.12) 0%, transparent 60%);
+  }
+  .page-hero-inner { position: relative; z-index: 1; max-width: 760px; }
+  .page-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(194,134,21,0.4);
+    padding: 5px 16px; border-radius: 2px; margin-bottom: 24px;
+  }
+  .page-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 600;
+    color: var(--white); line-height: 1.15; margin-bottom: 24px;
+  }
+  .page-hero h1 em { color: var(--gold); font-style: normal; }
+  .page-hero p {
+    font-size: 1.05rem; color: rgba(255,255,255,0.8);
+    max-width: 600px; line-height: 1.8;
+  }
+
+  /* CONTENT */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 80px 24px; }
+  .section-tag {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600;
+    color: var(--navy); line-height: 1.25; margin-bottom: 24px;
+  }
+  .lead {
+    font-size: 1.05rem; color: var(--charcoal-soft);
+    line-height: 1.85; margin-bottom: 20px;
+  }
+
+  /* ESSAY SECTIONS */
+  #why-korea { background: var(--white); }
+  #why-seoul { background: var(--navy); }
+  #why-gwanghwamun { background: var(--cream); }
+  #why-seoul h2 { color: var(--white); }
+  #why-seoul .section-tag { color: var(--gold-light); }
+
+  .essay-body p {
+    font-size: 1.02rem; color: var(--charcoal-soft);
+    line-height: 1.9; margin-bottom: 24px;
+  }
+  .essay-body p:last-child { margin-bottom: 0; }
+
+  .pull-quote {
+    border-left: 4px solid var(--gold);
+    padding: 24px 32px; margin: 36px 0;
+    background: var(--cream); border-radius: 0 4px 4px 0;
+  }
+  #why-seoul .pull-quote { background: rgba(255,255,255,0.06); border-color: var(--gold); }
+  .pull-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-style: italic;
+    color: var(--navy); line-height: 1.6; margin: 0;
+  }
+  #why-seoul .pull-quote p { color: rgba(255,255,255,0.9); }
+
+  .impact-list { list-style: none; margin: 28px 0; }
+  .impact-list li {
+    padding: 14px 0 14px 20px;
+    border-bottom: 1px solid rgba(10,60,143,0.08);
+    font-size: 0.97rem; color: var(--charcoal-soft); line-height: 1.7;
+    position: relative;
+  }
+  .impact-list li::before {
+    content: ''; position: absolute; left: 0; top: 22px;
+    width: 6px; height: 6px; background: var(--gold); border-radius: 50%;
+  }
+  .impact-list li:last-child { border-bottom: none; }
+  #why-seoul .essay-body p { color: rgba(255,255,255,0.82); }
+  #why-seoul .impact-list li { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.1); }
+  #why-seoul .impact-list li::before { background: var(--gold); }
+
+  .gwanghwamun-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start; }
+  .gwanghwamun-text .essay-body p { color: var(--charcoal-soft); }
+  .gwanghwamun-box {
+    background: var(--navy); color: var(--white);
+    border-radius: 4px; padding: 36px;
+    border-top: 3px solid var(--gold);
+  }
+  .gwanghwamun-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; color: var(--gold); margin-bottom: 16px;
+  }
+  .gwanghwamun-box .impact-list li { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.1); }
+
+  /* STATS SECTION */
+  #stats { background: var(--navy); }
+  #stats h2 { color: var(--white); }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
+  .stat-card { border-left: 2px solid var(--gold); padding-left: 20px; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem; font-weight: 600; color: var(--gold); line-height: 1;
+  }
+  .stat-label-en { font-size: 0.85rem; color: rgba(255,255,255,0.65); margin-top: 6px; }
+  .stat-label-ko { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  /* SCRIPTURE SECTION */
+  #scripture { background: var(--cream); text-align: center; }
+  .scripture-box {
+    background: var(--navy); color: var(--white);
+    padding: 48px; border-radius: 4px; border-left: 4px solid var(--gold);
+    text-align: left; max-width: 640px; margin: 40px auto 0;
+  }
+  .scripture-box blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-style: italic; line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .scripture-box cite { font-size: 0.82rem; color: var(--gold); font-style: normal; letter-spacing: 0.06em; }
+
+  /* CTA SECTION */
+  #cta { background: var(--white); }
+  .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
+  .cta-card {
+    background: var(--cream); border: 1px solid rgba(194,134,21,0.25);
+    border-radius: 4px; padding: 36px 32px;
+  }
+  .cta-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; color: var(--navy); margin-bottom: 10px;
+  }
+  .cta-card p { font-size: 0.92rem; color: var(--charcoal-soft); line-height: 1.75; margin-bottom: 20px; }
+  .cta-card a {
+    display: inline-block; background: var(--navy); color: var(--white);
+    padding: 11px 24px; border-radius: 2px; text-decoration: none;
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; transition: background 0.2s;
+  }
+  .cta-card a:hover { background: var(--navy-dark); }
+  .cta-card a.gold { background: var(--gold); color: var(--navy-dark); }
+  .cta-card a.gold:hover { background: var(--gold-light); }
+
+  @media (max-width: 768px) {
+    .cta-grid, .gwanghwamun-grid { grid-template-columns: 1fr; }
+    .page-hero { padding: 120px 24px 60px; }
+    section { padding: 60px 20px; }
+    .scripture-box { padding: 32px 24px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* FOOTER */
+  footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 60px 48px 32px; }
+  .footer-main { display: grid; grid-template-columns: 180px 1fr; gap: 56px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .footer-brand img { height: 52px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
+  .footer-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+  .footer-col-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.83rem; margin-bottom: 9px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { display: flex; gap: 24px; flex-wrap: wrap; font-size: 0.76rem; color: rgba(255,255,255,0.3); }
+  .footer-lang-toggle { display: flex; gap: 4px; }
+  .footer-lang-btn { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); padding: 4px 12px; font-size: 0.72rem; cursor: pointer; border-radius: 2px; font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em; transition: all 0.2s; }
+  .footer-lang-btn.active, .footer-lang-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--navy-dark); }
+  @media (max-width: 768px) { .footer-main { grid-template-columns: 1fr; gap: 32px; } .footer-nav { grid-template-columns: 1fr 1fr; gap: 20px; } footer { padding: 40px 20px 24px; } .footer-bottom { flex-direction: column; gap: 6px; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+  <ul>
+    <li><a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a></li>
+    <li><a href="why-korea.html" class="active" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a></li>
+    <li><a href="vision.html" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="news.html" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en" data-lang="en">ENG</button>
+      <button class="lang-btn" id="btn-ko" data-lang="ko">한국어</button>
+    </div>
+    <a href="index.html#projects" class="btn-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="https://www.museumofthebiblekorea.com" target="_blank" onclick="closeMenu()" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+  <a href="why-korea.html" onclick="closeMenu()" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a>
+  <a href="vision.html" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="news.html" onclick="closeMenu()" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a>
+  <a href="index.html#projects" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner reveal">
+    <div class="page-tag" data-en="Why Korea · Why Seoul · Why Gwanghwamun" data-ko="왜 한국인가 · 왜 서울인가 · 왜 광화문인가">Why Korea · Why Seoul · Why Gwanghwamun</div>
+    <h1 data-en="The Right Story<br>in the Right <em>Place</em>" data-ko="올바른 이야기,<br>올바른 <em>장소</em>에">The Right Story<br>in the Right <em>Place</em></h1>
+    <p data-en="The Bible is one of the most consequential documents in human history. Korea is where it did its most remarkable work. And Gwanghwamun is where Korea tells its most important stories to the world." data-ko="성경은 인류 역사상 가장 중요한 문헌 중 하나입니다. 한국은 성경이 가장 놀라운 열매를 맺은 곳입니다. 그리고 광화문은 한국이 세계를 향해 가장 중요한 이야기를 전하는 곳입니다.">The Bible is one of the most consequential documents in human history. Korea is where it did its most remarkable work. And Gwanghwamun is where Korea tells its most important stories to the world.</p>
+  </div>
+</div>
+
+<!-- WHY KOREA -->
+<section id="why-korea">
+  <div class="container reveal">
+    <div class="section-tag" data-en="WHY KOREA" data-ko="왜 한국인가">WHY KOREA</div>
+    <h2 data-en="What the Bible Did Here" data-ko="성경이 이 땅에서 한 일">What the Bible Did Here</h2>
+    <div class="essay-body">
+      <p data-en="The Bible is not the property of any religion. It is one of the most consequential documents in human history — a text that has shaped law, governance, ethics, education, and the arc of civilizations. Korea does not need a Museum of the Bible because Korea is a Christian nation. Korea needs a Museum of the Bible because Korea demonstrates what the Bible does when it enters a culture." data-ko="성경은 어느 특정 종교의 소유물이 아닙니다. 성경은 인류 역사상 가장 중요한 문헌 중 하나로서, 법률, 통치, 윤리, 교육, 그리고 문명의 흐름을 형성해 온 텍스트입니다. 한국에 성경박물관이 필요한 이유는 한국이 기독교 국가이기 때문이 아닙니다. 성경이 하나의 문화 안에 들어왔을 때 무엇을 하는지를 한국이 증명하기 때문입니다.">The Bible is not the property of any religion. It is one of the most consequential documents in human history — a text that has shaped law, governance, ethics, education, and the arc of civilizations. Korea does not need a Museum of the Bible because Korea is a Christian nation. Korea needs a Museum of the Bible because Korea demonstrates what the Bible does when it enters a culture.</p>
+
+      <p data-en="In 1882, there was no Protestant church in Korea. The Bible arrived before the missionaries — carried across the Manchurian border by Sŏ Sang-ryun, a Korean man who had encountered Scripture in China and brought it home at personal risk. Within a single generation, the results were extraordinary." data-ko="1882년, 한국에는 개신교회가 없었습니다. 성경은 선교사들보다 먼저 도착했습니다 — 중국에서 성경을 접하고 개인적 위험을 무릅쓰고 귀국한 서상륜이 만주 국경을 넘어 가져왔습니다. 단 한 세대 안에 그 결과는 놀라웠습니다.">In 1882, there was no Protestant church in Korea. The Bible arrived before the missionaries — carried across the Manchurian border by Sŏ Sang-ryun, a Korean man who had encountered Scripture in China and brought it home at personal risk. Within a single generation, the results were extraordinary.</p>
+
+      <ul class="impact-list">
+        <li data-en="<strong>한글 was rehabilitated.</strong> The Korean vernacular script, suppressed by the elite for centuries, was elevated by Bible translators as the language of the people — restoring literacy to millions." data-ko="<strong>한글이 복권되었습니다.</strong> 수 세기 동안 지배층에 의해 억압받던 한국 고유 문자가 성경 번역자들에 의해 민중의 언어로 격상되었습니다 — 수백만 명에게 문해력을 되돌려 주었습니다."><strong>한글 was rehabilitated.</strong> The Korean vernacular script, suppressed by the elite for centuries, was elevated by Bible translators as the language of the people — restoring literacy to millions.</li>
+        <li data-en="<strong>The first schools for women and commoners were founded.</strong> Ewha Girls' School (1886) and Pai Chai School opened education to those the Confucian order had excluded." data-ko="<strong>여성과 평민을 위한 최초의 학교들이 세워졌습니다.</strong> 이화학당(1886년)과 배재학당은 유교 질서가 배제했던 이들에게 교육의 문을 열었습니다."><strong>The first schools for women and commoners were founded.</strong> Ewha Girls' School (1886) and Pai Chai School opened education to those the Confucian order had excluded.</li>
+        <li data-en="<strong>Korea's first modern hospital was established.</strong> Horace Allen founded Gwanghyewon (제중원) in 1885 — later Severance Hospital, the seed of Yonsei University Medical Center." data-ko="<strong>한국 최초의 근대식 병원이 세워졌습니다.</strong> 호러스 알렌이 1885년 광혜원(제중원)을 설립했습니다 — 이후 세브란스 병원이 되었고, 연세대학교 의료원의 씨앗이 되었습니다."><strong>Korea's first modern hospital was established.</strong> Horace Allen founded Gwanghyewon (제중원) in 1885 — later Severance Hospital, the seed of Yonsei University Medical Center.</li>
+        <li data-en="<strong>16 of the 33 signatories of the 1919 Declaration of Independence were Christian.</strong> A community that had existed for one generation provided nearly half of those who signed their names to national freedom." data-ko="<strong>1919년 독립선언서 서명자 33인 중 16인이 기독교인이었습니다.</strong> 불과 한 세대 전에 형성된 공동체가 민족의 자유를 위해 서명한 이들의 절반에 가까운 수를 배출했습니다."><strong>16 of the 33 signatories of the 1919 Declaration of Independence were Christian.</strong> A community that had existed for one generation provided nearly half of those who signed their names to national freedom.</li>
+        <li data-en="<strong>Korea became the world's second-largest missionary-sending nation.</strong> By 2017, Korea had sent 27,000 missionaries to 170 nations. Seoul is home to the world's largest Presbyterian, Methodist, and Charismatic congregations." data-ko="<strong>한국은 세계 두 번째 규모의 선교사 파송 국가가 되었습니다.</strong> 2017년까지 한국은 170개국에 2만 7천 명의 선교사를 파송했습니다. 서울은 세계 최대의 장로교회, 감리교회, 은사주의 교회의 본거지입니다."><strong>Korea became the world's second-largest missionary-sending nation.</strong> By 2017, Korea had sent 27,000 missionaries to 170 nations. Seoul is home to the world's largest Presbyterian, Methodist, and Charismatic congregations.</li>
+      </ul>
+
+      <div class="pull-quote">
+        <p data-en="&ldquo;No nation on earth received the Bible in 1882 with no church, and by 1919 had enough Christians to make up nearly half of a national independence movement. That story belongs in a museum.&rdquo;" data-ko="&ldquo;1882년에 교회가 하나도 없는 상태에서 성경을 받아들였고, 1919년에는 독립운동 서명자의 절반에 가까운 기독교인을 배출한 나라는 지구상에 없습니다. 그 이야기는 박물관에 담겨야 합니다.&rdquo;">&ldquo;No nation on earth received the Bible in 1882 with no church, and by 1919 had enough Christians to make up nearly half of a national independence movement. That story belongs in a museum.&rdquo;</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SEOUL -->
+<section id="why-seoul">
+  <div class="container reveal">
+    <div class="section-tag" data-en="WHY SEOUL" data-ko="왜 서울인가">WHY SEOUL</div>
+    <h2 data-en="The Heir of the North" data-ko="북쪽의 유산을 이어받은 도시">The Heir of the North</h2>
+    <div class="essay-body">
+      <p data-en="Korea's Bible story did not begin in Seoul. It began in the North — in Pyongyang, called the &ldquo;Jerusalem of the East,&rdquo; and in Sorae village, where the first Korean-organized church was planted without a Western missionary present. The 1907 Great Revival that swept through Pyongyang became one of the defining moments in world Christian history." data-ko="한국의 성경 이야기는 서울에서 시작되지 않았습니다. 그것은 북쪽에서 시작되었습니다 — '동방의 예루살렘'이라 불리던 평양과, 서양 선교사 없이 한국인 스스로 세운 최초의 교회가 있던 소래마을에서였습니다. 1907년 평양을 휩쓴 대부흥은 세계 기독교 역사의 결정적인 순간 중 하나가 되었습니다.">Korea's Bible story did not begin in Seoul. It began in the North — in Pyongyang, called the &ldquo;Jerusalem of the East,&rdquo; and in Sorae village, where the first Korean-organized church was planted without a Western missionary present. The 1907 Great Revival that swept through Pyongyang became one of the defining moments in world Christian history.</p>
+
+      <p data-en="That origin is now inaccessible. The division of Korea in 1945 sealed the North. Christian leaders, scholars, and institutions fled south. Seoul became the heir — the city where the inheritance of Korea's Bible history landed and took root." data-ko="그 기원은 이제 접근할 수 없습니다. 1945년 한국의 분단으로 북쪽은 봉쇄되었습니다. 기독교 지도자들과 학자들, 기관들이 남쪽으로 피난했습니다. 서울이 그 계승자가 되었습니다 — 한국 성경 역사의 유산이 내려앉아 뿌리를 내린 도시가 되었습니다.">That origin is now inaccessible. The division of Korea in 1945 sealed the North. Christian leaders, scholars, and institutions fled south. Seoul became the heir — the city where the inheritance of Korea's Bible history landed and took root.</p>
+
+      <p data-en="The institutions the Bible built are in Seoul:" data-ko="성경이 세운 기관들이 서울에 있습니다:">The institutions the Bible built are in Seoul:</p>
+
+      <ul class="impact-list">
+        <li data-en="<strong>Yonsei University</strong> — founded from Severance Hospital (1885) and Gwanghyewon, Korea's first modern medical institution, established by missionary Horace Allen." data-ko="<strong>연세대학교</strong> — 선교사 호러스 알렌이 1885년 설립한 한국 최초의 근대 의료 기관인 광혜원(제중원)과 세브란스 병원으로부터 출발했습니다."><strong>Yonsei University</strong> — founded from Severance Hospital (1885) and Gwanghyewon, Korea's first modern medical institution, established by missionary Horace Allen.</li>
+        <li data-en="<strong>Ewha Womans University</strong> — established 1886, the world's largest women's university, born from the Bible's insistence on equal access to education." data-ko="<strong>이화여자대학교</strong> — 1886년 설립, 세계 최대의 여자대학교로, 교육 기회의 평등을 주장한 성경의 가르침에서 태어났습니다."><strong>Ewha Womans University</strong> — established 1886, the world's largest women's university, born from the Bible's insistence on equal access to education.</li>
+        <li data-en="<strong>Pai Chai School</strong> — Korea's first Western-style school for men, founded 1885 by Henry Appenzeller, which produced generations of national leaders." data-ko="<strong>배재학당</strong> — 1885년 헨리 아펜젤러가 세운 한국 최초의 서양식 남학교로, 수 세대의 민족 지도자들을 배출했습니다."><strong>Pai Chai School</strong> — Korea's first Western-style school for men, founded 1885 by Henry Appenzeller, which produced generations of national leaders.</li>
+        <li data-en="<strong>Korean Bible Society</strong> — operating in Seoul since 1895, one of the oldest continually active institutions in modern Korea, the custodian of the translated Word in the Korean language." data-ko="<strong>대한성서공회</strong> — 1895년부터 서울에서 운영되어 온 한국 근현대사에서 가장 오래된 현역 기관 중 하나로, 한국어로 번역된 말씀의 수호자입니다."><strong>Korean Bible Society</strong> — operating in Seoul since 1895, one of the oldest continually active institutions in modern Korea, the custodian of the translated Word in the Korean language.</li>
+      </ul>
+
+      <div class="pull-quote">
+        <p data-en="&ldquo;The origin is in the North. The inheritance is in Seoul. A Museum of the Bible belongs in the city where that inheritance lives.&rdquo;" data-ko="&ldquo;기원은 북쪽에 있습니다. 유산은 서울에 있습니다. 성경박물관은 그 유산이 살아 숨 쉬는 도시에 있어야 합니다.&rdquo;">&ldquo;The origin is in the North. The inheritance is in Seoul. A Museum of the Bible belongs in the city where that inheritance lives.&rdquo;</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GWANGHWAMUN -->
+<section id="why-gwanghwamun">
+  <div class="container reveal">
+    <div class="section-tag" data-en="WHY GWANGHWAMUN" data-ko="왜 광화문인가">WHY GWANGHWAMUN</div>
+    <h2 data-en="Six Hundred Years at the<br>Center of Korea" data-ko="600년간 한국의 중심에">Six Hundred Years at the<br>Center of Korea</h2>
+    <div class="gwanghwamun-grid">
+      <div class="gwanghwamun-text">
+        <div class="essay-body">
+          <p data-en="Gwanghwamun is not merely a neighborhood. It is a 600-year-old civic address — the corridor running from Gyeongbokgung Palace south to City Hall, the spine of Korean public life since the Joseon Dynasty was founded in 1392." data-ko="광화문은 단순한 동네가 아닙니다. 그것은 600년의 역사를 가진 시민적 주소입니다 — 경복궁에서 시청까지 이어지는 조선왕조 창건(1392년) 이래 한국 공적 삶의 중심축입니다.">Gwanghwamun is not merely a neighborhood. It is a 600-year-old civic address — the corridor running from Gyeongbokgung Palace south to City Hall, the spine of Korean public life since the Joseon Dynasty was founded in 1392.</p>
+
+          <p data-en="Every major story in Korean history intersects here. It is where King Sejong created 한글 in 1443 — the script that would later be rescued from marginalization by Bible translators. It is where a million people gathered in 1919 to declare independence from Japanese occupation. It is where modern Korea rehearses its identity for the world." data-ko="한국 역사의 모든 중요한 이야기가 여기에서 교차합니다. 1443년 세종대왕이 한글을 창제한 곳입니다 — 이후 성경 번역자들에 의해 소외에서 구원될 그 문자. 1919년 백만 명이 모여 일제 식민지배로부터의 독립을 선언한 곳입니다. 오늘날 한국이 세계를 향해 자신의 정체성을 펼쳐 보이는 곳입니다.">Every major story in Korean history intersects here. It is where King Sejong created 한글 in 1443 — the script that would later be rescued from marginalization by Bible translators. It is where a million people gathered in 1919 to declare independence from Japanese occupation. It is where modern Korea rehearses its identity for the world.</p>
+
+          <p data-en="The connection between 한글 and the Bible is not incidental. When the Bible arrived in Korea in 1882, 한글 had been marginalized for over four centuries — dismissed by the Confucian elite who preferred classical Chinese. Bible translators chose 한글 deliberately, as the language of the people. In doing so, they participated in the rehabilitation of Korea's most democratic cultural achievement." data-ko="한글과 성경의 연결은 우연이 아닙니다. 1882년 성경이 한국에 들어왔을 때, 한글은 4세기 이상 소외되어 있었습니다 — 한문을 선호하는 유교 지배층에 의해 천시당했습니다. 성경 번역자들은 민중의 언어로서 한글을 의도적으로 선택했습니다. 그렇게 함으로써 그들은 한국의 가장 민주적인 문화적 성취를 복권시키는 데 동참했습니다.">The connection between 한글 and the Bible is not incidental. When the Bible arrived in Korea in 1882, 한글 had been marginalized for over four centuries — dismissed by the Confucian elite who preferred classical Chinese. Bible translators chose 한글 deliberately, as the language of the people. In doing so, they participated in the rehabilitation of Korea's most democratic cultural achievement.</p>
+        </div>
+      </div>
+
+      <div class="gwanghwamun-box">
+        <h3 data-en="What Stands Here" data-ko="이곳에 서 있는 것들">What Stands Here</h3>
+        <ul class="impact-list">
+          <li data-en="<strong>Gyeongbokgung Palace</strong> — founded 1392, seat of the Joseon Dynasty, northern anchor of the corridor" data-ko="<strong>경복궁</strong> — 1392년 창건, 조선왕조의 정궁, 이 축의 북쪽 기점"><strong>Gyeongbokgung Palace</strong> — founded 1392, seat of the Joseon Dynasty, northern anchor of the corridor</li>
+          <li data-en="<strong>Gwanghwamun Gate</strong> — built 1395, destroyed and rebuilt through history, fully restored 2010; the symbolic entrance to Korea's political heart" data-ko="<strong>광화문</strong> — 1395년 건립, 역사 속에서 소실과 재건을 반복하며 2010년 완전 복원; 한국 정치의 심장부로 들어서는 상징적 관문"><strong>Gwanghwamun Gate</strong> — built 1395, destroyed and rebuilt through history, fully restored 2010; the symbolic entrance to Korea's political heart</li>
+          <li data-en="<strong>Statue of King Sejong</strong> — the creator of 한글 (1443), whose script the Bible elevated from marginalization to national pride" data-ko="<strong>세종대왕 동상</strong> — 한글(1443년) 창제자, 성경이 그의 문자를 소외에서 국민적 자부심으로 격상시켰습니다"><strong>Statue of King Sejong</strong> — the creator of 한글 (1443), whose script the Bible elevated from marginalization to national pride</li>
+          <li data-en="<strong>Statue of Admiral Yi Sun-sin</strong> — defender of Korea in the Imjin War (1592–98), symbol of national resilience" data-ko="<strong>이순신 장군 동상</strong> — 임진왜란(1592–98년) 당시 조선의 수호자, 민족적 회복력의 상징"><strong>Statue of Admiral Yi Sun-sin</strong> — defender of Korea in the Imjin War (1592–98), symbol of national resilience</li>
+          <li data-en="<strong>Gwanghwamun Square</strong> — 34,000 m² of public civic space, site of Korea's largest gatherings, protests, and celebrations" data-ko="<strong>광화문광장</strong> — 3만 4천 m²의 공공 시민 공간, 한국 최대의 집회·시위·축제의 현장"><strong>Gwanghwamun Square</strong> — 34,000 m² of public civic space, site of Korea's largest gatherings, protests, and celebrations</li>
+          <li data-en="<strong>Sejong Center for the Performing Arts</strong> — Korea's premier cultural venue, on the western flank of the square" data-ko="<strong>세종문화회관</strong> — 광장 서쪽에 자리한 한국 최고의 문화 공연장"><strong>Sejong Center for the Performing Arts</strong> — Korea's premier cultural venue, on the western flank of the square</li>
+          <li data-en="<strong>Underground museums</strong> — Sejong Story Museum and Haetae Story beneath the square, connecting past to present" data-ko="<strong>지하 박물관들</strong> — 광장 아래 세종 이야기관과 해태 이야기관, 과거와 현재를 잇는 공간"><strong>Underground museums</strong> — Sejong Story Museum and Haetae Story beneath the square, connecting past to present</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pull-quote reveal" style="margin-top:48px;">
+      <p data-en="&ldquo;This is the address where Korea tells its most important stories to the world. The story of the Bible's role in Korea — in 한글, in independence, in education, in medicine — is one of those stories. It belongs here.&rdquo;" data-ko="&ldquo;이곳은 한국이 세계를 향해 가장 중요한 이야기들을 전하는 주소입니다. 한국에서 성경이 한 역할 — 한글에서, 독립운동에서, 교육에서, 의학에서 — 은 그 이야기들 중 하나입니다. 이 이야기는 여기에 속합니다.&rdquo;">&ldquo;This is the address where Korea tells its most important stories to the world. The story of the Bible's role in Korea — in 한글, in independence, in education, in medicine — is one of those stories. It belongs here.&rdquo;</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container reveal">
+    <div class="section-tag" data-en="BY THE NUMBERS" data-ko="숫자로 보는">BY THE NUMBERS</div>
+    <h2 data-en="Korea's Bible Story, Measured" data-ko="숫자로 본 한국의 성경 이야기">Korea's Bible Story, Measured</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">1882</div>
+        <div class="stat-label-en" data-en="Bible enters Korea — no church yet" data-ko="">Bible enters Korea — no church yet</div>
+        <div class="stat-label-ko" data-en="" data-ko="성경이 한국에 들어옴 — 교회는 아직 없었습니다">성경이 한국에 들어옴 — 교회는 아직 없었습니다</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">16/33</div>
+        <div class="stat-label-en" data-en="Independence signatories were Christian (1919)" data-ko="">Independence signatories were Christian (1919)</div>
+        <div class="stat-label-ko" data-en="" data-ko="독립선언서 서명자 중 기독교인 (1919년)">독립선언서 서명자 중 기독교인 (1919년)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">27,000</div>
+        <div class="stat-label-en" data-en="Korean missionaries sent to 170 nations (2017)" data-ko="">Korean missionaries sent to 170 nations (2017)</div>
+        <div class="stat-label-ko" data-en="" data-ko="170개국에 파송된 한국 선교사 수 (2017년)">170개국에 파송된 한국 선교사 수 (2017년)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">600</div>
+        <div class="stat-label-en" data-en="Years Gwanghwamun has been Korea's civic heart" data-ko="">Years Gwanghwamun has been Korea's civic heart</div>
+        <div class="stat-label-ko" data-en="" data-ko="광화문이 한국 시민의 심장이 된 세월">광화문이 한국 시민의 심장이 된 세월</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTURE -->
+<section id="scripture">
+  <div class="container reveal">
+    <div class="section-tag" data-en="THE ANCHOR" data-ko="기초 말씀">THE ANCHOR</div>
+    <h2 data-en="Scripture That Grounds the Vision" data-ko="비전의 근거가 되는 말씀">Scripture That Grounds the Vision</h2>
+    <div class="scripture-box">
+      <blockquote data-en="&ldquo;I will bless those who bless you, and in you all the families of the earth shall be blessed.&rdquo;" data-ko="&ldquo;너를 축복하는 자에게는 내가 복을 내리고 너를 저주하는 자에게는 내가 저주하리니 땅의 모든 족속이 너로 말미암아 복을 얻을 것이라.&rdquo;">&ldquo;I will bless those who bless you, and in you all the families of the earth shall be blessed.&rdquo;</blockquote>
+      <cite data-en="Genesis 12:3 — The Abrahamic covenant" data-ko="창세기 12:3 — 아브라함의 언약">Genesis 12:3 — The Abrahamic covenant</cite>
+    </div>
+    <div class="scripture-box" style="margin-top:20px;">
+      <blockquote data-en="&ldquo;For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.&rdquo;" data-ko="&ldquo;하나님이 세상을 이처럼 사랑하사 독생자를 주셨으니 이는 그를 믿는 자마다 멸망하지 않고 영생을 얻게 하려 하심이라.&rdquo;">&ldquo;For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.&rdquo;</blockquote>
+      <cite data-en="John 3:16 — The universal invitation" data-ko="요한복음 3:16 — 보편적 초대">John 3:16 — The universal invitation</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container reveal">
+    <div class="section-tag" data-en="JOIN THE VISION" data-ko="비전에 함께하세요">JOIN THE VISION</div>
+    <h2 data-en="Be Part of Korea's Calling" data-ko="한국의 소명에 함께하세요">Be Part of Korea's Calling</h2>
+    <div class="cta-grid">
+      <div class="cta-card">
+        <h3 data-en="Visit the Museum (Online)" data-ko="박물관 방문 (온라인)">Visit the Museum (Online)</h3>
+        <p data-en="Explore our Interactive Virtual Museum — a cinematic journey through the Bible's arrival, disruption, and legacy in Korea and Asia." data-ko="인터랙티브 가상 박물관을 탐방하세요 — 성경이 한국과 아시아에 도착하고, 변화를 일으키며, 유산을 남긴 여정을 담은 몰입형 전시입니다.">Explore our Interactive Virtual Museum — a cinematic journey through the Bible's arrival, disruption, and legacy in Korea and Asia.</p>
+        <a href="https://www.museumofthebiblekorea.com" target="_blank" class="gold" data-en="Enter the Museum →" data-ko="박물관 입장하기 →">Enter the Museum →</a>
+      </div>
+      <div class="cta-card">
+        <h3 data-en="Become a Member" data-ko="회원이 되세요">Become a Member</h3>
+        <p data-en="Membership in CrossCulture Community is free and open to all. Your name joins a founding community that is building something lasting for Korea and Asia." data-ko="크로스컬처 커뮤니티 회원 가입은 무료이며 모든 분께 열려 있습니다. 당신의 이름이 한국과 아시아를 위한 영속적인 무언가를 세우는 창립 공동체에 합류합니다.">Membership in CrossCulture Community is free and open to all. Your name joins a founding community that is building something lasting for Korea and Asia.</p>
+        <a href="join.html" data-en="Join Now →" data-ko="지금 가입하기 →">Join Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+      <div class="footer-lang-toggle" role="group" aria-label="Language / 언어">
+        <button class="footer-lang-btn active" id="footer-btn-en" onclick="applyLang('en')">ENG</button>
+        <button class="footer-lang-btn" id="footer-btn-ko" onclick="applyLang('ko')">한국어</button>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="About" data-ko="소개">About</div>
+        <a href="about.html" data-en="Founder" data-ko="창립자">Founder</a>
+        <a href="about.html" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
+        <a href="governance.html" data-en="Three-Step Journey" data-ko="세 단계의 여정">Three-Step Journey</a>
+        <a href="governance.html" data-en="Governance" data-ko="거버넌스">Governance</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Get Involved" data-ko="참여하기">Get Involved</div>
+        <a href="join.html" data-en="Become a Member" data-ko="회원 가입">Become a Member</a>
+        <a href="index.html#projects" data-en="Give / Donate" data-ko="후원">Give / Donate</a>
+        <a href="join.html" data-en="Corporate Partnership" data-ko="기업 파트너십">Corporate Partnership</a>
+        <a href="join.html" data-en="Volunteer" data-ko="자원봉사">Volunteer</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Connect" data-ko="연락">Connect</div>
+        <a href="mailto:billmajors@crossculture-community.com" data-en="Contact Us" data-ko="연락하기">Contact Us</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill's Blog" data-ko="빌의 블로그">Bill's Blog</a>
+        <a href="https://www.facebook.com/crossculturecf" target="_blank" data-en="Facebook" data-ko="페이스북">Facebook</a>
+        <a href="https://www.instagram.com/crossculturecf" target="_blank" data-en="Instagram" data-ko="인스타그램">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Our Projects" data-ko="우리의 프로젝트">Our Projects</div>
+        <a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+        <a href="news.html" data-en="Torah Presentations" data-ko="토라 발표">Torah Presentations</a>
+        <a href="news.html" data-en="Past Exhibitions" data-ko="과거 전시">Past Exhibitions</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill Majors" data-ko="빌 메이저스">Bill Majors</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 <span data-en="CrossCulture Community Foundation" data-ko="크로스컬처 커뮤니티 파운데이션">CrossCulture Community Foundation</span></span>
+    <span>EIN: 84-2974290 · 501(c)(3)</span>
+    <span data-en="Korea 비법인단체 · 602-80-07169" data-ko="대한민국 비법인단체 · 고유번호 602-80-07169">Korea 비법인단체 · 602-80-07169</span>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var lang = 'en';
+
+  function applyLang(l) {
+    lang = l;
+    sessionStorage.setItem('ccf_lang', l);
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-ko').classList.toggle('active', l === 'ko');
+    document.getElementById('footer-btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('footer-btn-ko').classList.toggle('active', l === 'ko');
+    var els = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var val = el.getAttribute('data-' + l);
+      if (!val) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = val;
+      else el.innerHTML = val;
+    }
+    document.title = l === 'ko' ? '왜 한국인가 — 크로스컬처 커뮤니티' : 'Why Korea — CrossCulture Community';
+  }
+
+  window.applyLang = applyLang;
+
+  var params = new URLSearchParams(window.location.search);
+  var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
+  applyLang(savedLang);
+
+  document.getElementById('btn-en').addEventListener('click', function() { applyLang('en'); });
+  document.getElementById('btn-ko').addEventListener('click', function() { applyLang('ko'); });
+
+  window.toggleMenu = function() { document.getElementById('mobile-menu').classList.toggle('open'); };
+  window.closeMenu = function() { document.getElementById('mobile-menu').classList.remove('open'); };
+
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('main-nav');
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.12)' : 'none';
+  });
+
+  // Scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(function(el) { revealObserver.observe(el); });
+})();
+</script>
+</body>
+</html>

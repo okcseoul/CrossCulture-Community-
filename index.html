@@ -415,10 +415,48 @@
 
   /* FOOTER */
   footer {
-    background: var(--navy-dark); color: rgba(255,255,255,0.55);
-    text-align: center; padding: 32px 24px; font-size: 0.82rem;
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.55);
+    padding: 60px 48px 32px;
   }
-  footer a { color: var(--gold); text-decoration: none; }
+  .footer-main {
+    display: grid; grid-template-columns: 180px 1fr; gap: 56px;
+    margin-bottom: 40px; padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .footer-brand img { height: 52px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
+  .footer-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+  .footer-col-title {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  }
+  .footer-col a {
+    display: block; color: rgba(255,255,255,0.55); text-decoration: none;
+    font-size: 0.83rem; margin-bottom: 9px; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-size: 0.76rem; color: rgba(255,255,255,0.3);
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  @media (max-width: 768px) {
+    .footer-main { grid-template-columns: 1fr; gap: 32px; }
+    .footer-nav { grid-template-columns: 1fr 1fr; gap: 24px; }
+    footer { padding: 40px 20px 24px; }
+    .footer-bottom { flex-direction: column; gap: 6px; }
+  }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
@@ -440,12 +478,10 @@
 <nav id="main-nav">
   <a href="#hero" class="nav-logo"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
   <ul>
-    <li><a href="#who" data-en="About" data-ko="소개">About</a></li>
-    <li><a href="#museum" data-en="Museum" data-ko="성경박물관">Museum</a></li>
-    <li><a href="#stories" data-en="Stories" data-ko="이야기">Stories</a></li>
-    <li><a href="#projects" data-en="Projects" data-ko="프로젝트">Projects</a></li>
-    <li><a href="#join" data-en="Join" data-ko="가입">Join</a></li>
-    <li><a href="#contact" data-en="Contact" data-ko="연락">Contact</a></li>
+    <li><a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a></li>
+    <li><a href="why-korea.html" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a></li>
+    <li><a href="vision.html" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="news.html" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -461,18 +497,16 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#who" onclick="closeMenu()" data-en="About" data-ko="소개">About</a>
-  <a href="#museum" onclick="closeMenu()" data-en="Museum" data-ko="성경박물관">Museum</a>
-  <a href="#stories" onclick="closeMenu()" data-en="Stories" data-ko="이야기">Stories</a>
-  <a href="#projects" onclick="closeMenu()" data-en="Projects" data-ko="프로젝트">Projects</a>
-  <a href="#join" onclick="closeMenu()" data-en="Join" data-ko="가입">Join</a>
-  <a href="#contact" onclick="closeMenu()" data-en="Contact" data-ko="연락">Contact</a>
+  <a href="https://www.museumofthebiblekorea.com" target="_blank" onclick="closeMenu()" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+  <a href="why-korea.html" onclick="closeMenu()" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a>
+  <a href="vision.html" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="news.html" onclick="closeMenu()" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a>
   <a href="#projects" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
 </div>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-content">
+  <div class="hero-content reveal">
     <div class="hero-tag" data-en="Seoul, Korea · Since 1982" data-ko="서울, 대한민국 · 1982년부터">Seoul, Korea · Since 1982</div>
     <h1 data-en="Where the <em>Word</em> Becomes<br>Living Community" data-ko="말씀이<br><em>살아있는 공동체</em>가 되는 곳">Where the <em>Word</em> Becomes<br>Living Community</h1>
     <p data-en="CrossCulture Community is a movement rooted in the moment when the Word became flesh — crossing every barrier of language, culture, and nation to build a community of transformation." data-ko="크로스컬처 커뮤니티는 말씀이 육신이 되신 그 순간에 뿌리를 둔 운동입니다. 언어, 문화, 국가의 모든 장벽을 넘어 변화의 공동체를 세워갑니다.">CrossCulture Community is a movement rooted in the moment when the Word became flesh — crossing every barrier of language, culture, and nation to build a community of transformation.</p>
@@ -485,12 +519,12 @@
 
 <!-- WHO -->
 <section id="who">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag" data-en="WHO WE ARE" data-ko="우리는 누구인가">WHO WE ARE</div>
     <h2 data-en="A Movement, Not an Institution" data-ko="기관이 아닌 운동">A Movement, Not an Institution</h2>
     <div class="who-grid">
       <div class="who-text">
-        <p data-en="CrossCulture Community Foundation (CCF) was established in Texas in 2019 as a 501(c)(3) nonprofit, and in March 2026 was established as an unincorporated association in Seoul, Korea, currently pursuing 사단법인 incorporation under the Ministry of Culture, Sports and Tourism." data-ko="크로스컬처 커뮤니티 재단(CCF)은 2019년 텍사스에서 501(c)(3) 비영리단체로 설립되었으며, 2026년 3월 서울에서 비영리임의단체로 설립되어 현재 문화체육관광부 산하 사단법인 설립을 추진하고 있습니다.">CrossCulture Community Foundation (CCF) was established in Texas in 2019 as a 501(c)(3) nonprofit, and in March 2026 was established as an unincorporated association in Seoul, Korea, currently pursuing 사단법인 incorporation under the Ministry of Culture, Sports and Tourism.</p>
+        <p data-en="CrossCulture Community Foundation (CCF) was established in Texas in 2019 as a 501(c)(3) nonprofit, and in March 2026 was established as an unincorporated association in Seoul, Korea, currently pursuing 사단법인 incorporation under the Ministry of Culture, Sports and Tourism." data-ko="크로스컬처 커뮤니티 재단(CCF)은 2019년 텍사스에서 501(c)(3) 비영리단체로 설립되었으며, 2026년 3월 서울에서 비법인단체로 설립되어 현재 문화체육관광부 산하 사단법인 설립을 추진하고 있습니다.">CrossCulture Community Foundation (CCF) was established in Texas in 2019 as a 501(c)(3) nonprofit, and in March 2026 was established as an unincorporated association in Seoul, Korea, currently pursuing 사단법인 incorporation under the Ministry of Culture, Sports and Tourism.</p>
         <p data-en="Our founder, Dr. Bill R. Majors, has lived and worked in Seoul since June 1, 1982. CrossCulture Community is his vision — a center where the Bible is honored as the universal heritage of all humanity." data-ko="창립자인 매죠스 빌리 래이 목사는 1982년 6월 1일부터 서울에서 살며 활동해 왔습니다. 크로스컬처 커뮤니티는 성경을 온 인류의 보편적 유산으로 높이는 중심이 되고자 하는 그의 비전입니다.">Our founder, Dr. Bill R. Majors, has lived and worked in Seoul since June 1, 1982. CrossCulture Community is his vision — a center where the Bible is honored as the universal heritage of all humanity.</p>
         <p data-en="We are open to all, regardless of faith. Our community is built on horizontal unity — mutual listening, shared stories, and lives shaped by engagement with the Bible. The movement is to let the Bible speak for itself." data-ko="우리는 신앙에 관계없이 모든 분들께 열려 있습니다. 우리 공동체는 수평적 연대 위에 세워집니다 — 서로 귀 기울이고, 이야기를 나누며, 성경과의 만남으로 빚어진 삶을 함께합니다. 이 운동의 목표는 성경이 스스로 말씀하시도록 하는 것입니다.">We are open to all, regardless of faith. Our community is built on horizontal unity — mutual listening, shared stories, and lives shaped by engagement with the Bible. The movement is to let the Bible speak for itself.</p>
         <a href="https://www.billmajors.com" target="_blank" class="blog-link" data-en="Meet Bill Majors" data-ko="빌 매죠스 목사 만나기">Meet Bill Majors</a>
@@ -505,7 +539,7 @@
 
 <!-- WHAT -->
 <section id="what">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag" data-en="WHAT WE DO" data-ko="우리가 하는 일">WHAT WE DO</div>
     <h2 data-en="How We Work" data-ko="우리의 사역 방식">How We Work</h2>
     <p class="lead" data-en="CrossCulture Community is built around three commitments that reflect the original crossing of cultures in the Incarnation." data-ko="크로스컬처 커뮤니티는 성육신의 문화 교차를 반영하는 세 가지 헌신 위에 세워져 있습니다.">CrossCulture Community is built around three commitments that reflect the original crossing of cultures in the Incarnation.</p>
@@ -528,7 +562,7 @@
 
 <!-- WHERE -->
 <section id="where">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag" data-en="WHERE WE ARE" data-ko="우리가 있는 곳">WHERE WE ARE</div>
     <h2 data-en="Seoul, Korea — Then and Now" data-ko="대한민국 서울 — 그때와 지금">Seoul, Korea — Then and Now</h2>
     <p class="lead" data-en="Bill Majors arrived in Seoul on June 1, 1982. More than four decades later, this international city remains the heart of CrossCulture Community's work — the area of Seoul is embraced by 23 million commuters and an infinite number of tourists, a gateway to Asia, and a place where the Bible continues to shape lives and culture in unexpected ways." data-ko="빌 매죠스 목사는 1982년 6월 1일 서울에 도착했습니다. 40년이 넘는 세월이 흐른 지금도 이 국제도시는 크로스컬처 커뮤니티 사역의 심장부입니다 — 서울 일대는 2천3백만 명의 통근자와 수없이 많은 관광객을 품고 있으며, 아시아의 관문이자 말씀이 예기치 않은 방식으로 계속해서 육신이 되는 곳입니다.">Bill Majors arrived in Seoul on June 1, 1982. More than four decades later, this international city remains the heart of CrossCulture Community's work — the area of Seoul is embraced by 23 million commuters and an infinite number of tourists, a gateway to Asia, and a place where the Bible continues to shape lives and culture in unexpected ways.</p>
@@ -551,7 +585,7 @@
 
 <!-- MUSEUM -->
 <section id="museum">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag" data-en="THE DREAM AHEAD" data-ko="앞에 놓인 꿈">THE DREAM AHEAD</div>
     <h2 data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</h2>
     <div class="museum-box">
@@ -571,19 +605,19 @@
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag" data-en="GIVE" data-ko="후원">GIVE</div>
     <h2 data-en="Support the Work" data-ko="사역을 후원하세요">Support the Work</h2>
-    <p class="lead" data-en="CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. There are two ways to give, to two legally independent organizations: in Korean Won to CrossCulture Community (the Korean nonprofit association), or in US dollars to CrossCulture Community Foundation (CCF) — a Texas 501(c)(3), so US donations are tax-deductible." data-ko="크로스컬처 커뮤니티는 전적으로 후원자들의 헌신으로 운영됩니다. 모든 후원은 아시아에서의 문화 간 교육과 참여를 증진합니다. 후원 방법은 두 가지이며, 각각 법적으로 독립된 단체로 전달됩니다 — 한국 비영리임의단체인 크로스컬처 커뮤니티에 원화로, 또는 미국 텍사스 501(c)(3) 단체인 크로스컬처 커뮤니티 파운데이션(CCF)에 미국 달러로 후원하실 수 있습니다. 미국 내 기부는 세금 공제 대상입니다.">CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. There are two ways to give, to two legally independent organizations: in Korean Won to CrossCulture Community (the Korean nonprofit association), or in US dollars to CrossCulture Community Foundation (CCF) — a Texas 501(c)(3), so US donations are tax-deductible.</p>
+    <p class="lead" data-en="CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. There are two ways to give, to two legally independent organizations: in Korean Won to CrossCulture Community (the Korean nonprofit association), or in US dollars to CrossCulture Community Foundation (CCF) — a Texas 501(c)(3), so US donations are tax-deductible." data-ko="크로스컬처 커뮤니티는 전적으로 후원자들의 헌신으로 운영됩니다. 모든 후원은 아시아에서의 문화 간 교육과 참여를 증진합니다. 후원 방법은 두 가지이며, 각각 법적으로 독립된 단체로 전달됩니다 — 한국 비법인단체인 크로스컬처 커뮤니티에 원화로, 또는 미국 텍사스 501(c)(3) 단체인 크로스컬처 커뮤니티 파운데이션(CCF)에 미국 달러로 후원하실 수 있습니다. 미국 내 기부는 세금 공제 대상입니다.">CrossCulture Community is supported entirely by generous donors. Every gift advances cross-cultural education and engagement in Asia. There are two ways to give, to two legally independent organizations: in Korean Won to CrossCulture Community (the Korean nonprofit association), or in US dollars to CrossCulture Community Foundation (CCF) — a Texas 501(c)(3), so US donations are tax-deductible.</p>
     <div class="projects-grid">
       <div class="give-group-heading">
         <span class="give-group-title" data-en="In Korea · CrossCulture Community" data-ko="국내 · 크로스컬처 커뮤니티">In Korea · CrossCulture Community</span>
-        <span class="give-group-sub" data-en="Korean nonprofit association (비영리임의단체) · gifts in Korean Won" data-ko="비영리임의단체 · 원화 후원">Korean nonprofit association (비영리임의단체) · gifts in Korean Won</span>
+        <span class="give-group-sub" data-en="Korean nonprofit association (비법인단체) · gifts in Korean Won" data-ko="비법인단체 · 원화 후원">Korean nonprofit association (비법인단체) · gifts in Korean Won</span>
       </div>
       <div class="project-card give-bank">
         <span class="project-icon">🏦</span>
         <div class="project-title" data-en="Give in Korea · CrossCulture Community" data-ko="국내 후원 · 크로스컬처 커뮤니티">Give in Korea · CrossCulture Community</div>
-        <p class="project-desc" data-en="For donors in Korea — give in Korean Won by direct bank transfer to CrossCulture Community, a registered Korean nonprofit association." data-ko="한국 내 후원자를 위한 안내 — 한국의 비영리임의단체인 크로스컬처 커뮤니티 계좌로 원화 송금을 통해 직접 후원하실 수 있습니다.">For donors in Korea — give in Korean Won by direct bank transfer to CrossCulture Community, a registered Korean nonprofit association.</p>
+        <p class="project-desc" data-en="For donors in Korea — give in Korean Won by direct bank transfer to CrossCulture Community, a registered Korean nonprofit association." data-ko="한국 내 후원자를 위한 안내 — 한국의 비법인단체인 크로스컬처 커뮤니티 계좌로 원화 송금을 통해 직접 후원하실 수 있습니다.">For donors in Korea — give in Korean Won by direct bank transfer to CrossCulture Community, a registered Korean nonprofit association.</p>
         <div class="bank-detail">
           <div class="bank-row"><span class="bank-label" data-en="Bank" data-ko="은행">Bank</span><span class="bank-value">신한은행 (Shinhan Bank)</span></div>
           <div class="bank-row"><span class="bank-label" data-en="Account" data-ko="계좌번호">Account</span><span class="bank-value bank-num">100-038-836672</span></div>
@@ -625,7 +659,7 @@
 
 <!-- ROADMAP -->
 <section id="roadmap">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag" data-en="ORGANIZATIONAL DEVELOPMENT" data-ko="조직 발전 단계">ORGANIZATIONAL DEVELOPMENT</div>
     <h2 data-en="A Three-Step Journey" data-ko="세 단계의 여정">A Three-Step Journey</h2>
     <p class="lead" data-en="CrossCulture Community is building its legal foundation in Korea through four stages of nonprofit registration — each step increasing credibility, tax benefits, and institutional capacity." data-ko="크로스컬처 커뮤니티는 네 단계의 비영리 등록을 통해 한국에서의 법적 기반을 구축하고 있습니다 — 각 단계마다 신뢰성, 세제 혜택, 기관 역량이 높아집니다.">CrossCulture Community is building its legal foundation in Korea through four stages of nonprofit registration — each step increasing credibility, tax benefits, and institutional capacity.</p>
@@ -633,9 +667,9 @@
       <div class="roadmap-step done">
         <div class="step-badge done" data-en="✅ Complete" data-ko="✅ 완료">✅ Complete</div>
         <div class="step-num">01</div>
-        <div class="step-kr">비영리임의단체</div>
+        <div class="step-kr">비법인단체</div>
         <div class="step-en">Unincorporated Association</div>
-        <p class="step-desc" data-en="CrossCulture Community established as an organization in Korea. The beginning of legal existence." data-ko="크로스컬처 커뮤니티가 한국에서 단체로 설립되었습니다. 법적 존재의 시작.">CrossCulture Community established as an organization in Korea. The beginning of legal existence.</p>
+        <p class="step-desc" data-en="CrossCulture Community established as an organization in Korea. The beginning of legal existence." data-ko="크로스컬처 커뮤니티가 한국에서 비법인단체로 설립되었습니다. 법적 존재의 시작.">CrossCulture Community established as an organization in Korea. The beginning of legal existence.</p>
       </div>
       <div class="roadmap-step active">
         <div class="step-badge active" data-en="🔄 In Progress" data-ko="🔄 진행 중">🔄 In Progress</div>
@@ -657,7 +691,7 @@
 
 
 <section id="join">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag" data-en="JOIN US" data-ko="함께하세요">JOIN US</div>
     <h2 data-en="Become Part of the Story" data-ko="이야기의 일부가 되세요">Become Part of the Story</h2>
     <div class="join-grid">
@@ -684,7 +718,7 @@
 
 <!-- BLOG -->
 <section id="stories">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag" data-en="STORIES & VOICES" data-ko="이야기 & 목소리">STORIES & VOICES</div>
     <h2 data-en="From the Field" data-ko="현장에서">From the Field</h2>
     <p class="lead" data-en="Stories of many in Korea — from Bill's field journal, from voices along the journey, and from the lives that the Bible continues to shape across cultures and generations." data-ko="한국에서의 수많은 이야기들 — 빌의 현장 일지, 여정을 함께한 이들의 목소리, 그리고 성경이 문화와 세대를 넘어 계속해서 빚어가는 삶들로부터.">Stories of many in Korea — from Bill's field journal, from voices along the journey, and from the lives that the Bible continues to shape across cultures and generations.</p>
@@ -694,7 +728,7 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag" data-en="GET IN TOUCH" data-ko="연락하기">GET IN TOUCH</div>
     <h2 data-en="Contact Us" data-ko="연락처">Contact Us</h2>
     <p class="lead" data-en="We'd love to hear from you — whether you have a question, a story to share, or want to learn more about CrossCulture Community." data-ko="질문이 있으시거나, 나누고 싶은 이야기가 있으시거나, 크로스컬처 커뮤니티에 대해 더 알고 싶으시다면 연락주세요.">We'd love to hear from you — whether you have a question, a story to share, or want to learn more about CrossCulture Community.</p>
@@ -719,21 +753,49 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-lang-toggle" role="group" aria-label="Language / 언어">
-    <button class="footer-lang-btn active" id="footer-btn-en" onclick="applyLang('en')">ENG</button>
-    <button class="footer-lang-btn" id="footer-btn-ko" onclick="applyLang('ko')">한국어</button>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+      <div class="footer-lang-toggle" role="group" aria-label="Language / 언어">
+        <button class="footer-lang-btn active" id="footer-btn-en" onclick="applyLang('en')">ENG</button>
+        <button class="footer-lang-btn" id="footer-btn-ko" onclick="applyLang('ko')">한국어</button>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="About" data-ko="소개">About</div>
+        <a href="about.html" data-en="Founder" data-ko="창립자">Founder</a>
+        <a href="about.html" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
+        <a href="governance.html" data-en="Three-Step Journey" data-ko="세 단계의 여정">Three-Step Journey</a>
+        <a href="governance.html" data-en="Governance" data-ko="거버넌스">Governance</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Get Involved" data-ko="참여하기">Get Involved</div>
+        <a href="join.html" data-en="Become a Member" data-ko="회원 가입">Become a Member</a>
+        <a href="#projects" data-en="Give / Donate" data-ko="후원">Give / Donate</a>
+        <a href="join.html" data-en="Corporate Partnership" data-ko="기업 파트너십">Corporate Partnership</a>
+        <a href="join.html" data-en="Volunteer" data-ko="자원봉사">Volunteer</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Connect" data-ko="연락">Connect</div>
+        <a href="mailto:billmajors@crossculture-community.com" data-en="Contact Us" data-ko="연락하기">Contact Us</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill's Blog" data-ko="빌의 블로그">Bill's Blog</a>
+        <a href="https://www.facebook.com/crossculturecf" target="_blank" data-en="Facebook" data-ko="페이스북">Facebook</a>
+        <a href="https://www.instagram.com/crossculturecf" target="_blank" data-en="Instagram" data-ko="인스타그램">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Our Projects" data-ko="우리의 프로젝트">Our Projects</div>
+        <a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+        <a href="news.html" data-en="Torah Presentations" data-ko="토라 발표">Torah Presentations</a>
+        <a href="news.html" data-en="Past Exhibitions" data-ko="과거 전시">Past Exhibitions</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill Majors" data-ko="빌 메이저스">Bill Majors</a>
+      </div>
+    </div>
   </div>
-  <div>
-    <a href="https://www.crossculture-community.com" data-en="CrossCulture Community Foundation" data-ko="크로스컬처 커뮤니티 파운데이션">CrossCulture Community Foundation</a>
-    <span> · </span>
+  <div class="footer-bottom">
+    <span>© 2026 <span data-en="CrossCulture Community Foundation" data-ko="크로스컬처 커뮤니티 파운데이션">CrossCulture Community Foundation</span></span>
     <span>EIN: 84-2974290 · 501(c)(3)</span>
-    <span> · © 2026</span>
-  </div>
-  <div style="margin-top:8px;">
-    <a href="https://www.billmajors.com" target="_blank" style="margin-right:16px;">Bill Majors</a>
-    <a href="https://www.museumofthebiblekorea.com" target="_blank" style="margin-right:16px;">Museum of the Bible Korea</a>
-    <a href="https://www.facebook.com/crossculturecf" target="_blank" style="margin-right:16px;">📘 Facebook</a>
-    <a href="https://www.instagram.com/crossculturecf" target="_blank">📷 Instagram</a>
+    <span data-en="Korea 비법인단체 · 602-80-07169" data-ko="대한민국 비법인단체 · 고유번호 602-80-07169">Korea 비법인단체 · 602-80-07169</span>
   </div>
 </footer>
 
@@ -787,6 +849,18 @@
     var nav = document.querySelector('nav');
     nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.3)' : 'none';
   });
+
+  // Scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(function(el) { revealObserver.observe(el); });
 })();
 </script>
 
