@@ -452,9 +452,10 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
 
   @media (max-width: 768px) {
-    .footer-main { grid-template-columns: 1fr; gap: 32px; }
-    .footer-nav { grid-template-columns: 1fr 1fr; gap: 24px; }
-    footer { padding: 40px 20px 24px; }
+    footer { padding: 40px 20px 24px; overflow: hidden; }
+    .footer-main { display: block; }
+    .footer-brand { margin-bottom: 28px; }
+    .footer-nav { grid-template-columns: 1fr 1fr; gap: 20px; }
     .footer-bottom { flex-direction: column; gap: 6px; }
   }
 
