@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News — CrossCulture Community Foundation</title>
+<title>News / Events — CrossCulture Community Foundation</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SPTSXBF3T');
+</script>
+<link rel="icon" type="image/png" href="ccf_logo_300x300.png">
+<link rel="apple-touch-icon" href="ccf_logo_300x300.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -15,7 +25,7 @@
     --gold: #C9943A; --gold-light: #E8C87A; --ink: #1A1A18;
   }
   html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.7; overflow-x: hidden; padding-top: 76px; }
   body.ko { font-family: 'Noto Sans KR', sans-serif; }
 
   /* LANGUAGE TOGGLE */
@@ -51,7 +61,7 @@
   .mobile-menu .mobile-give:hover { background: var(--gold); color: var(--ink); }
 
   /* PAGE HERO */
-  .page-hero { background: var(--cream); padding: 140px 80px 80px; border-bottom: 1px solid rgba(139,111,71,0.12); }
+  .page-hero { background: var(--cream); padding: 80px 80px 80px; border-bottom: 1px solid rgba(139,111,71,0.12); }
   .page-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
   .page-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
   .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 600; line-height: 1.1; color: var(--earth-dark); margin-bottom: 20px; }
@@ -110,21 +120,32 @@
   .subscribe-row button:hover { background: var(--gold-light); }
 
   /* FOOTER */
-  footer { background: var(--ink); color: rgba(247,243,236,0.5); padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--cream); display: flex; align-items: center; gap: 10px; }
-  .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-  .footer-links a { color: rgba(247,243,236,0.5); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--gold-light); }
+  footer.site-footer { background: var(--ink); color: rgba(247,243,236,0.5); padding: 60px 48px 32px; font-size: 0.8rem; }
+  .footer-main { display: grid; grid-template-columns: 180px 1fr; gap: 56px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .footer-brand img { height: 52px; width: auto; opacity: 0.92; }
+  .footer-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+  .footer-col-title { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.83rem; margin-bottom: 9px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-bottom { display: flex; gap: 24px; flex-wrap: wrap; font-size: 0.76rem; color: rgba(255,255,255,0.3); }
+  .footer-lang-toggle { display: flex; gap: 4px; }
+  .footer-lang-btn { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); padding: 4px 12px; font-size: 0.72rem; cursor: pointer; border-radius: 2px; font-family: inherit; letter-spacing: 0.05em; transition: all 0.2s; }
+  .footer-lang-btn.active, .footer-lang-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 14px 20px; }
     nav ul { display: none; }
     .hamburger { display: flex; }
-    .page-hero { padding: 120px 24px 48px; }
+    .page-hero { padding: 48px 24px 48px; }
     #latest, #archives, #subscribe { padding: 48px 24px; }
     .archives-grid { grid-template-columns: repeat(2, 1fr); }
-    footer { padding: 28px 24px; flex-direction: column; text-align: center; }
+    footer.site-footer { padding: 40px 20px 24px; overflow: hidden; }
+    .footer-main { display: block; }
+    .footer-brand { margin-bottom: 28px; }
+    .footer-nav { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .footer-bottom { flex-direction: column; gap: 6px; }
     .subscribe-row { flex-direction: column; }
     .subscribe-row input { border-right: 1.5px solid rgba(201,148,58,0.4); border-bottom: none; border-radius: 2px 2px 0 0; }
     .subscribe-row button { border-radius: 0 0 2px 2px; }
@@ -138,13 +159,13 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="index.html" class="nav-logo"><img src="/logo.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
+  <a href="index.html" class="nav-logo"><img src="ccf_logo_300x300.png" alt="CrossCulture Community" style="height:44px;width:auto;display:block;"></a>
   <ul id="nav-links">
-    <li><a href="index.html" data-en="Home" data-ko="홈">Home</a></li>
-    <li><a href="#latest" class="active" data-en="Latest" data-ko="최신">Latest</a></li>
-    <li><a href="#archives" data-en="Archives" data-ko="지난 소식">Archives</a></li>
-    <li><a href="#subscribe" data-en="Stay Connected" data-ko="소식 받기">Stay Connected</a></li>
-    <li><a href="index.html#give" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
+    <li><a href="museum.html" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a></li>
+    <li><a href="why-korea.html" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a></li>
+    <li><a href="vision.html" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="news.html" class="active" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a></li>
+    <li><a href="index.html#projects" class="nav-give" data-en="Give Now" data-ko="후원하기">Give Now</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -159,11 +180,11 @@
 
 <!-- MOBILE MENU -->
 <div id="mobile-menu" class="mobile-menu">
-  <a href="index.html" onclick="closeMenu()" data-en="Home" data-ko="홈">Home</a>
-  <a href="#latest" onclick="closeMenu()" data-en="Latest" data-ko="최신">Latest</a>
-  <a href="#archives" onclick="closeMenu()" data-en="Archives" data-ko="지난 소식">Archives</a>
-  <a href="#subscribe" onclick="closeMenu()" data-en="Stay Connected" data-ko="소식 받기">Stay Connected</a>
-  <a href="index.html#give" onclick="closeMenu()" class="mobile-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
+  <a href="museum.html" onclick="closeMenu()" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+  <a href="why-korea.html" onclick="closeMenu()" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a>
+  <a href="vision.html" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="news.html" onclick="closeMenu()" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a>
+  <a href="index.html#projects" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -317,14 +338,52 @@
   </form>
 </section>
 
-<footer>
-  <div class="footer-logo"><img src="/logo.png" alt="CrossCulture Community" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:0.85;"><span>CrossCulture <span style="color:var(--gold);">Community</span> Foundation</span></div>
-  <div data-en="A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290" data-ko="501(c)3 세금 면제 단체 · EIN: 84-2974290">A 501(c)3 Tax-Exempt Organization · EIN: 84-2974290</div>
-  <div class="footer-links">
-    <a href="index.html" data-en="Home" data-ko="홈">Home</a>
-    <a href="membership.html" data-en="Join" data-ko="회원 가입">Join</a>
-    <a href="https://museumofthebiblekorea.org" target="_blank">museumofthebiblekorea.org</a>
-    <span>© 2026 CrossCulture Community Foundation</span>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+      <div class="footer-lang-toggle" role="group" aria-label="Language / 언어">
+        <button class="footer-lang-btn active" id="footer-btn-en" onclick="applyLang('en')">ENG</button>
+        <button class="footer-lang-btn" id="footer-btn-ko" onclick="applyLang('ko')">한국어</button>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="About" data-ko="소개">About</div>
+        <a href="about.html" data-en="Founder" data-ko="창립자">Founder</a>
+        <a href="about.html" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
+        <a href="governance.html" data-en="Three-Step Journey" data-ko="세 단계의 여정">Three-Step Journey</a>
+        <a href="governance.html" data-en="Governance" data-ko="거버넌스">Governance</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Get Involved" data-ko="참여하기">Get Involved</div>
+        <a href="join.html" data-en="Become a Member" data-ko="회원 가입">Become a Member</a>
+        <a href="index.html#projects" data-en="Give / Donate" data-ko="후원">Give / Donate</a>
+        <a href="index.html#artifacts" data-en="Donate an Artifact" data-ko="유물 기증">Donate an Artifact</a>
+        <a href="join.html" data-en="Corporate Partnership" data-ko="기업 파트너십">Corporate Partnership</a>
+        <a href="join.html" data-en="Volunteer" data-ko="자원봉사">Volunteer</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Connect" data-ko="연락">Connect</div>
+        <a href="mailto:billmajors@crossculture-community.com" data-en="Contact Us" data-ko="연락하기">Contact Us</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill's Blog" data-ko="빌의 블로그">Bill's Blog</a>
+        <a href="https://www.facebook.com/crossculturecf" target="_blank" data-en="Facebook" data-ko="페이스북">Facebook</a>
+        <a href="https://www.instagram.com/crossculturecf" target="_blank" data-en="Instagram" data-ko="인스타그램">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Our Projects" data-ko="우리의 프로젝트">Our Projects</div>
+        <a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+        <a href="news.html" data-en="Torah Presentations" data-ko="토라 발표">Torah Presentations</a>
+        <a href="news.html" data-en="Past Exhibitions" data-ko="과거 전시">Past Exhibitions</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill Majors" data-ko="빌 메이저스">Bill Majors</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 <span data-en="CrossCulture Community Foundation" data-ko="크로스컬처 커뮤니티 파운데이션">CrossCulture Community Foundation</span></span>
+    <span>EIN: 84-2974290 · 501(c)(3)</span>
+    <span data-en="Korea 비법인단체 · 602-80-07169" data-ko="대한민국 비법인단체 · 고유번호 602-80-07169">Korea 비법인단체 · 602-80-07169</span>
   </div>
 </footer>
 
@@ -342,6 +401,10 @@
       if (l === 'en') { btnEn.classList.add('active'); btnKo.classList.remove('active'); }
       else { btnEn.classList.remove('active'); btnKo.classList.add('active'); }
     }
+    var fBtnEn = document.getElementById('footer-btn-en');
+    var fBtnKo = document.getElementById('footer-btn-ko');
+    if (fBtnEn) fBtnEn.classList.toggle('active', l === 'en');
+    if (fBtnKo) fBtnKo.classList.toggle('active', l === 'ko');
     var els = document.querySelectorAll('[data-en]');
     for (var i = 0; i < els.length; i++) {
       var el = els[i];
@@ -352,6 +415,7 @@
     }
   }
   window.setLang = applyLang;
+  window.applyLang = applyLang;
   document.addEventListener('DOMContentLoaded', function() {
     var params = new URLSearchParams(window.location.search);
     var savedLang = params.get('lang') || sessionStorage.getItem('ccf_lang') || 'en';
