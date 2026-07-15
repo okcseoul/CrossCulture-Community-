@@ -856,8 +856,21 @@
       document.getElementById('btn-ko').classList.toggle('active', l === 'ko');
       document.getElementById('footer-btn-en').classList.toggle('active', l === 'en');
       document.getElementById('footer-btn-ko').classList.toggle('active', l === 'ko');
+      var els = document.querySelectorAll('[data-en]');
+      for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+        var val = el.getAttribute('data-' + l);
+        if (!val) continue;
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = val;
+        } else {
+          el.innerHTML = val;
+        }
+      }
     }
     window.applyLang = applyLang;
+    document.getElementById('btn-en').addEventListener('click', function() { applyLang('en'); });
+    document.getElementById('btn-ko').addEventListener('click', function() { applyLang('ko'); });
     window.toggleMenu = function() { document.getElementById('mobile-menu').classList.toggle('open'); };
     window.closeMenu = function() { document.getElementById('mobile-menu').classList.remove('open'); };
     window.addEventListener('scroll', function() {
