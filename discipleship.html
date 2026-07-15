@@ -224,6 +224,31 @@ h2 {
   background: rgba(255,255,255,0.05); border-left: 3px solid var(--gold);
   font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.7;
 }
+/* RESOURCES */
+#resources { background: var(--white); }
+.resource-list { margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }
+.resource-card {
+  display: grid; grid-template-columns: 56px 1fr; gap: 20px;
+  background: var(--cream); padding: 28px 30px; border-radius: 4px;
+  border: 1px solid rgba(194,134,21,0.2);
+}
+.resource-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 600; color: var(--gold); line-height: 1;
+}
+.resource-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 4px; }
+.resource-author { font-size: 0.82rem; color: var(--charcoal-soft); letter-spacing: 0.03em; margin-bottom: 14px; }
+.resource-desc { font-size: 0.92rem; color: var(--charcoal-soft); line-height: 1.8; margin-bottom: 14px; }
+.resource-quote {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 1rem; color: var(--navy); line-height: 1.6;
+  border-left: 3px solid var(--gold); padding-left: 16px;
+}
+.resource-more {
+  margin-top: 8px; padding: 18px 24px; border-radius: 4px;
+  background: transparent; border: 1px dashed rgba(10,60,143,0.25);
+  font-size: 0.85rem; color: var(--charcoal-soft); text-align: center; line-height: 1.7;
+}
 /* JOIN CTA */
 #join-cta { background: var(--white); }
 .join-cta-box {
@@ -393,6 +418,66 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
       </div>
     </div>
     <div class="pathway-note" data-en="The full curriculum for each stage is currently in development. Details on course content, format, and schedule will be added here as they are finalized." data-ko="각 단계의 전체 커리큘럼은 현재 개발 중입니다. 과정 내용, 형식, 일정에 대한 세부 사항은 확정되는 대로 이곳에 추가될 예정입니다.">The full curriculum for each stage is currently in development. Details on course content, format, and schedule will be added here as they are finalized.</div>
+  </div>
+</section>
+
+<!-- TOOLS FOR PERSONAL BIBLE STUDY -->
+<section id="resources">
+  <div class="container reveal">
+    <div class="section-tag" data-en="RECOMMENDED RESOURCES" data-ko="추천 자료">RECOMMENDED RESOURCES</div>
+    <h2 data-en="Tools for Personal Bible Study" data-ko="개인 성경공부를 위한 도구">Tools for Personal Bible Study</h2>
+    <p class="lead" data-en="A short, growing list of resources we recommend as you build your own habit of personal Bible study." data-ko="여러분 스스로 개인 성경공부의 습관을 만들어가는 데 도움이 될, 계속 더해질 짧은 자료 목록입니다.">A short, growing list of resources we recommend as you build your own habit of personal Bible study.</p>
+
+    <div class="resource-list">
+      <div class="resource-card">
+        <div class="resource-num">01</div>
+        <div>
+          <div class="resource-title" data-en="Living By the Book" data-ko="리빙 바이 더 북 (Living By the Book)">Living By the Book</div>
+          <div class="resource-author" data-en="Howard G. Hendricks &amp; William D. Hendricks" data-ko="하워드 헨드릭스 &amp; 윌리엄 헨드릭스">Howard G. Hendricks &amp; William D. Hendricks</div>
+          <p class="resource-desc" data-en="For decades, Dr. Howard Hendricks taught Bible Study Methods to more than 30,000 students at Dallas Theological Seminary — a course his students often called life-changing. This book distills that teaching into a simple, three-step method for personal Bible study: Observation (&ldquo;What do I see?&rdquo;), Interpretation (&ldquo;What does it mean?&rdquo;), and Application (&ldquo;How does it work?&rdquo;)." data-ko="하워드 헨드릭스 박사는 수십 년간 댈러스 신학교에서 3만 명이 넘는 학생들에게 성경공부 방법론을 가르쳤습니다 — 그의 제자들이 종종 인생을 바꾸어 놓았다고 말하는 강의였습니다. 이 책은 그 가르침을 개인 성경공부를 위한 간단한 세 단계 방법으로 담아냅니다: 관찰(&ldquo;무엇이 보이는가?&rdquo;), 해석(&ldquo;무엇을 의미하는가?&rdquo;), 적용(&ldquo;어떻게 작동하는가?&rdquo;).">For decades, Dr. Howard Hendricks taught Bible Study Methods to more than 30,000 students at Dallas Theological Seminary — a course his students often called life-changing. This book distills that teaching into a simple, three-step method for personal Bible study: Observation (&ldquo;What do I see?&rdquo;), Interpretation (&ldquo;What does it mean?&rdquo;), and Application (&ldquo;How does it work?&rdquo;).</p>
+          <div class="resource-quote" data-en="&ldquo;This book will keep you from sin, or sin will keep you from this book.&rdquo;" data-ko="&ldquo;이 책이 당신을 죄에서 지켜줄 것이다. 그렇지 않으면 죄가 당신을 이 책에서 멀어지게 할 것이다.&rdquo;">&ldquo;This book will keep you from sin, or sin will keep you from this book.&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-num">02</div>
+        <div>
+          <div class="resource-title" data-en="The Naked Bible Podcast" data-ko="네이키드 바이블 팟캐스트 (The Naked Bible Podcast)">The Naked Bible Podcast</div>
+          <div class="resource-author" data-en="Dr. Michael S. Heiser" data-ko="마이클 하이저 박사">Dr. Michael S. Heiser</div>
+          <p class="resource-desc" data-en="Dr. Heiser, a scholar of the ancient Near East and biblical languages, built this podcast around a simple discipline: strip away the filters of denominational tradition, modern culture, and personal experience, and read the Bible the way its original authors and audience actually understood it. That &ldquo;naked&rdquo; encounter with the text is exactly what raises awareness of how much the Bible actually says — how much gets missed when we default to reading it through our own time and culture instead of its own. Dr. Heiser passed away in 2023, but the podcast continues today, carried on by fellow scholars in the same spirit." data-ko="고대 근동 문화와 성경 언어의 학자였던 하이저 박사는 이 팟캐스트를 하나의 단순한 훈련 위에 세웠습니다: 교단의 전통, 현대 문화, 개인적 경험이라는 필터를 걷어내고, 성경을 원저자와 원래 독자들이 실제로 이해했던 그대로 읽는 것입니다. 이러한 &ldquo;있는 그대로&rdquo;의 본문과의 만남이야말로 성경이 실제로 말하고 있는 것이 얼마나 많은지, 우리가 우리 시대와 문화의 눈으로만 읽을 때 얼마나 많은 것을 놓치는지를 깨닫게 합니다. 하이저 박사는 2023년에 별세하였지만, 팟캐스트는 그의 정신을 이어받은 동료 학자들에 의해 오늘날에도 계속되고 있습니다.">Dr. Heiser, a scholar of the ancient Near East and biblical languages, built this podcast around a simple discipline: strip away the filters of denominational tradition, modern culture, and personal experience, and read the Bible the way its original authors and audience actually understood it. That &ldquo;naked&rdquo; encounter with the text is exactly what raises awareness of how much the Bible actually says — how much gets missed when we default to reading it through our own time and culture instead of its own. Dr. Heiser passed away in 2023, but the podcast continues today, carried on by fellow scholars in the same spirit.</p>
+          <div class="resource-quote" data-en="&ldquo;Biblical theology, stripped bare of denominational confessions and theological systems by exposing context.&rdquo;" data-ko="&ldquo;문맥을 드러냄으로써 교단의 신조와 신학 체계를 걷어낸, 있는 그대로의 성경신학.&rdquo;">&ldquo;Biblical theology, stripped bare of denominational confessions and theological systems by exposing context.&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-num">03</div>
+        <div>
+          <div class="resource-title" data-en="Supernatural" data-ko="수퍼내추럴 (Supernatural)">Supernatural</div>
+          <div class="resource-author" data-en="Dr. Michael S. Heiser" data-ko="마이클 하이저 박사">Dr. Michael S. Heiser</div>
+          <p class="resource-desc" data-en="This is Dr. Heiser's accessible companion to his more academic work, written for the person in the pew rather than the scholar or seminarian. It covers the same core discovery — how much of the Bible's own worldview gets lost when modern readers bring modern assumptions to the text instead of the ancient context its authors actually shared — in plain language, without footnotes or technical argument standing in the way. Reading it is itself an exercise in taking the Word seriously enough to read it on its own terms." data-ko="이 책은 하이저 박사의 보다 학문적인 저작을 일반 성도를 위해 쉽게 풀어낸 안내서입니다 — 신학생이나 학자가 아니라, 교회에 앉아 있는 평범한 성도를 위해 쓰였습니다. 현대의 독자들이 본문에 현대적 전제를 가지고 접근할 때, 성경 저자들이 실제로 공유했던 고대의 문맥 대신 그것을 사용함으로써 성경 자체의 세계관이 얼마나 많이 사라지는지에 대한 동일한 핵심 발견을, 각주나 전문적인 논증 없이 평이한 언어로 다룹니다. 이 책을 읽는 것 자체가 말씀을 그 본래의 언어로 진지하게 읽으려는 훈련입니다.">This is Dr. Heiser's accessible companion to his more academic work, written for the person in the pew rather than the scholar or seminarian. It covers the same core discovery — how much of the Bible's own worldview gets lost when modern readers bring modern assumptions to the text instead of the ancient context its authors actually shared — in plain language, without footnotes or technical argument standing in the way. Reading it is itself an exercise in taking the Word seriously enough to read it on its own terms.</p>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-num">04</div>
+        <div>
+          <div class="resource-title" data-en="The Spirit of the Disciplines" data-ko="스피릿 오브 더 디서플린스 (The Spirit of the Disciplines)">The Spirit of the Disciplines</div>
+          <div class="resource-author" data-en="Dallas Willard" data-ko="달라스 윌라드">Dallas Willard</div>
+          <p class="resource-desc" data-en="Willard, a philosopher and theologian, wrote this book to answer a question too many Christians never ask: how does a life actually come to look like Christ's? His answer centers on spiritual disciplines — not as rule-keeping, but as practices that position a person to be shaped by the Holy Spirit over time. Where Heiser's work deepens our understanding of the Word, Willard's work opens up how the Spirit uses that Word, together with disciplined practice, to transform an ordinary life." data-ko="철학자이자 신학자였던 윌라드는 너무 많은 그리스도인들이 결코 묻지 않는 질문에 답하기 위해 이 책을 썼습니다: 한 사람의 삶이 실제로 어떻게 그리스도를 닮아가게 되는가? 그의 답은 영적 훈련에 집중합니다 — 규율을 지키는 것으로서가 아니라, 시간이 지나며 성령께서 우리를 빚어가시도록 자리를 내어드리는 실천으로서 말입니다. 하이저의 저작이 말씀에 대한 우리의 이해를 깊게 한다면, 윌라드의 저작은 성령께서 그 말씀과 훈련된 실천을 함께 사용하여 평범한 한 삶을 변화시키시는 방법을 열어 보여줍니다.">Willard, a philosopher and theologian, wrote this book to answer a question too many Christians never ask: how does a life actually come to look like Christ's? His answer centers on spiritual disciplines — not as rule-keeping, but as practices that position a person to be shaped by the Holy Spirit over time. Where Heiser's work deepens our understanding of the Word, Willard's work opens up how the Spirit uses that Word, together with disciplined practice, to transform an ordinary life.</p>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-num">05</div>
+        <div>
+          <div class="resource-title" data-en="Renovation of the Heart" data-ko="레노베이션 오브 더 하트 (Renovation of the Heart)">Renovation of the Heart</div>
+          <div class="resource-author" data-en="Dallas Willard" data-ko="달라스 윌라드">Dallas Willard</div>
+          <p class="resource-desc" data-en="If The Spirit of the Disciplines explains the practices that open a life to the Spirit's work, Renovation of the Heart maps out what that work actually changes: thought, feeling, will, body, social relationships, and the soul that holds them all together. Willard's subtitle says it plainly — putting on the character of Christ. It is a clear picture of what sanctification is actually aiming at, not as an abstract ideal, but as a concrete renovation of the whole person over time." data-ko="&#39;스피릿 오브 더 디서플린스&#39;가 성령의 역사에 삶을 열어드리는 훈련들을 설명한다면, &#39;레노베이션 오브 더 하트&#39;는 그 역사가 실제로 무엇을 변화시키는지를 그려냅니다 — 생각, 감정, 의지, 몸, 사회적 관계, 그리고 이 모든 것을 하나로 붙들어주는 영혼까지. 윌라드의 부제가 이를 분명히 말해줍니다 — 그리스도의 성품을 입는 것. 이는 성화가 실제로 무엇을 목표로 하는지에 대한 분명한 그림입니다 — 추상적인 이상으로서가 아니라, 시간이 지나며 이루어지는 한 사람 전체의 구체적인 새로워짐으로서 말입니다.">If The Spirit of the Disciplines explains the practices that open a life to the Spirit's work, Renovation of the Heart maps out what that work actually changes: thought, feeling, will, body, social relationships, and the soul that holds them all together. Willard's subtitle says it plainly — putting on the character of Christ. It is a clear picture of what sanctification is actually aiming at, not as an abstract ideal, but as a concrete renovation of the whole person over time.</p>
+        </div>
+      </div>
+
+      <div class="resource-more" data-en="More resources will be added here as this list grows." data-ko="앞으로 더 많은 자료가 이곳에 추가될 예정입니다.">More resources will be added here as this list grows.</div>
+    </div>
   </div>
 </section>
 
