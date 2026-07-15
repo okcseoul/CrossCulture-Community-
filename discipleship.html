@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1SPTSXBF3T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discipleship Training | CrossCulture Community</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A3C8F;
+  --navy-dark: #072d6a;
+  --gold: #C28615;
+  --gold-light: #d4a02a;
+  --cream: #fdf8f0;
+  --charcoal: #2c2c2c;
+  --charcoal-soft: #4a4a4a;
+  --white: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.7;
+}
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 48px;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid rgba(194,134,21,0.3);
+  transition: box-shadow 0.3s;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 600;
+  color: var(--navy); text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo img { height: 64px; width: auto; }
+nav ul { display: flex; gap: 22px; list-style: none; }
+nav ul a {
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--navy); text-decoration: none;
+  transition: color 0.2s;
+}
+nav ul a:hover, nav ul a.active { color: var(--gold); }
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.lang-toggle { display: flex; gap: 4px; }
+.lang-btn {
+  background: transparent; border: 1px solid rgba(10,60,143,0.3);
+  color: var(--navy); padding: 4px 10px;
+  font-size: 0.72rem; cursor: pointer; border-radius: 2px;
+  font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+.lang-btn.active, .lang-btn:hover {
+  background: var(--navy); border-color: var(--navy);
+  color: var(--white);
+}
+.btn-give {
+  background: var(--gold); color: var(--navy-dark) !important;
+  padding: 9px 20px; border-radius: 2px;
+  font-size: 0.8rem !important; font-weight: 600 !important;
+  letter-spacing: 0.06em; text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-give:hover { background: var(--gold-light) !important; }
+.footer-lang-toggle { display: flex; gap: 4px; justify-content: center; margin-bottom: 16px; }
+.footer-lang-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.7); padding: 4px 12px;
+  font-size: 0.72rem; cursor: pointer; border-radius: 2px;
+  font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+.footer-lang-btn.active, .footer-lang-btn:hover {
+  background: var(--gold); border-color: var(--gold);
+  color: var(--navy-dark);
+}
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all 0.3s; }
+.mobile-menu {
+  display: none; position: fixed; top: 60px; left: 0; right: 0;
+  background: var(--navy-dark); z-index: 99; padding: 20px 0;
+  border-bottom: 2px solid var(--gold);
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block; padding: 12px 32px;
+  text-align: center; color: rgba(255,255,255,0.85); text-decoration: none;
+  font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+  text-transform: uppercase; transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .mobile-give {
+  margin: 12px 32px 4px;
+  background: var(--gold); color: var(--navy-dark) !important;
+  padding: 12px 20px; border-radius: 2px; text-align: center;
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  nav { padding: 14px 20px; }
+  nav ul, .nav-right .btn-give { display: none; }
+  .hamburger { display: flex; }
+}
+/* HERO */
+#hero {
+  min-height: 68vh;
+  background: linear-gradient(155deg, var(--navy-dark) 0%, var(--navy) 60%, #1a5296 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 140px 24px 80px;
+  position: relative; overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 30%, rgba(194,134,21,0.12) 0%, transparent 60%);
+}
+.hero-content { position: relative; z-index: 1; max-width: 760px; }
+.hero-tag {
+  display: inline-block; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid rgba(194,134,21,0.4);
+  padding: 6px 18px; border-radius: 2px; margin-bottom: 28px;
+}
+.hero-content h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 600;
+  color: var(--white); line-height: 1.25; margin-bottom: 24px;
+}
+.hero-content h1 em { color: var(--gold); font-style: normal; }
+.hero-content p {
+  font-size: 1.05rem; color: rgba(255,255,255,0.8);
+  max-width: 600px; margin: 0 auto 36px; line-height: 1.8;
+}
+.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--gold); color: var(--navy-dark);
+  padding: 14px 32px; border-radius: 2px; text-decoration: none;
+  font-weight: 600; font-size: 0.9rem; letter-spacing: 0.06em;
+  text-transform: uppercase; transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--gold-light); }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.5); color: var(--white);
+  padding: 14px 32px; border-radius: 2px; text-decoration: none;
+  font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+/* SECTIONS */
+section { padding: 90px 24px; }
+.container { max-width: 900px; margin: 0 auto; }
+.section-tag {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+}
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600;
+  color: var(--navy); line-height: 1.25; margin-bottom: 20px;
+}
+.lead { font-size: 1.05rem; color: var(--charcoal-soft); max-width: 660px; line-height: 1.8; }
+/* FOUNDATION (Word & Spirit) */
+#foundation { background: var(--white); }
+.foundation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 40px; }
+.foundation-text p { color: var(--charcoal-soft); line-height: 1.85; margin-bottom: 16px; }
+.foundation-verse {
+  background: var(--navy); color: var(--white);
+  padding: 32px 36px; border-radius: 4px;
+  border-left: 4px solid var(--gold);
+}
+.foundation-verse blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-style: italic; line-height: 1.6;
+  margin-bottom: 12px;
+}
+.foundation-verse cite { font-size: 0.82rem; color: var(--gold); font-style: normal; letter-spacing: 0.05em; }
+/* PILLARS */
+#pillars { background: var(--cream); }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+.pillar {
+  background: var(--white); padding: 32px 28px;
+  border-radius: 4px; border-top: 3px solid var(--gold);
+  box-shadow: 0 2px 16px rgba(10,60,143,0.06);
+}
+.pillar h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 10px; }
+.pillar p { font-size: 0.92rem; color: var(--charcoal-soft); line-height: 1.75; }
+/* PATHWAY */
+#pathway { background: var(--navy); color: var(--white); }
+#pathway h2 { color: var(--white); }
+#pathway .lead { color: rgba(255,255,255,0.78); }
+.pathway-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.pathway-step {
+  padding: 28px 24px; border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  border-top: 3px solid rgba(255,255,255,0.15);
+}
+.pathway-step.highlight { background: rgba(194,134,21,0.15); border-top-color: var(--gold); }
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; font-weight: 600;
+  color: rgba(255,255,255,0.18); line-height: 1; margin-bottom: 10px;
+}
+.pathway-step h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold); margin-bottom: 8px; }
+.pathway-step p { font-size: 0.88rem; color: rgba(255,255,255,0.72); line-height: 1.75; }
+.pathway-note {
+  margin-top: 40px; padding: 20px 24px; border-radius: 4px;
+  background: rgba(255,255,255,0.05); border-left: 3px solid var(--gold);
+  font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.7;
+}
+/* JOIN CTA */
+#join-cta { background: var(--white); }
+.join-cta-box {
+  background: var(--cream); padding: 48px; border-radius: 4px;
+  border: 1px solid rgba(194,134,21,0.25);
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center;
+  margin-top: 40px;
+}
+.join-cta-box p { color: var(--charcoal-soft); line-height: 1.85; margin-bottom: 0; }
+.join-cta-actions { display: flex; flex-direction: column; gap: 14px; }
+.join-cta-actions a {
+  display: inline-block; text-align: center; text-decoration: none;
+  padding: 13px 24px; border-radius: 2px; font-weight: 600;
+  font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
+  transition: background 0.2s;
+}
+.join-cta-actions a.primary { background: var(--navy); color: var(--white); }
+.join-cta-actions a.primary:hover { background: var(--navy-dark); }
+.join-cta-actions a.secondary { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+.join-cta-actions a.secondary:hover { background: var(--navy); color: var(--white); }
+/* FOOTER */
+footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 60px 48px 32px; }
+.footer-main {
+  display: grid; grid-template-columns: 180px 1fr; gap: 56px;
+  margin-bottom: 40px; padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand { display: flex; flex-direction: column; gap: 16px; }
+.footer-brand img { height: 52px; width: auto; opacity: 0.92; }
+.footer-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+.footer-col-title {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+}
+.footer-col a {
+  display: block; color: rgba(255,255,255,0.55); text-decoration: none;
+  font-size: 0.83rem; margin-bottom: 9px; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { display: flex; gap: 24px; flex-wrap: wrap; font-size: 0.76rem; color: rgba(255,255,255,0.3); }
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .foundation-grid, .pillars, .pathway-grid, .join-cta-box { grid-template-columns: 1fr; }
+  section { padding: 60px 20px; }
+  .join-cta-box { padding: 32px 24px; }
+  footer { padding: 40px 20px 24px; overflow: hidden; }
+  .footer-main { display: block; }
+  .footer-brand { margin-bottom: 28px; }
+  .footer-nav { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .footer-bottom { flex-direction: column; gap: 6px; }
+}
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="ccf_logo_300x300.png">
+<link rel="icon" type="image/png" sizes="192x192" href="ccf_logo_300x300.png">
+<link rel="apple-touch-icon" href="ccf_logo_300x300.png">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+  <ul>
+    <li><a href="museum.html" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a></li>
+    <li><a href="discipleship.html" class="active" data-en="Discipleship" data-ko="제자훈련">Discipleship</a></li>
+    <li><a href="vision.html" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="news.html" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en" data-lang="en">ENG</button>
+      <button class="lang-btn" id="btn-ko" data-lang="ko">한국어</button>
+    </div>
+    <a href="index.html#projects" class="btn-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="museum.html" onclick="closeMenu()" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+  <a href="discipleship.html" onclick="closeMenu()" data-en="Discipleship" data-ko="제자훈련">Discipleship</a>
+  <a href="vision.html" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="news.html" onclick="closeMenu()" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a>
+  <a href="index.html#projects" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content reveal">
+    <div class="hero-tag" data-en="Word &amp; Spirit · Discipleship Training" data-ko="말씀과 성령 · 제자훈련">Word &amp; Spirit · Discipleship Training</div>
+    <h1 data-en="Grow in the <em>Word</em>.<br>Walk in the Spirit." data-ko="말씀 안에서 자라고,<br><em>성령</em> 안에서 행하라">Grow in the <em>Word</em>.<br>Walk in the Spirit.</h1>
+    <p data-en="CrossCulture Community exists to help people grow in the knowledge of Scripture and in the life of the Spirit — being shaped, corrected, and matured through both, until Christ is formed in us." data-ko="크로스컬처 커뮤니티는 사람들이 성경에 대한 지식과 성령 안의 삶에서 자라가도록 돕기 위해 존재합니다 — 그리스도께서 우리 안에 형성되실 때까지 말씀과 성령 모두를 통해 빚어지고, 교정받고, 성숙해 가는 것입니다.">CrossCulture Community exists to help people grow in the knowledge of Scripture and in the life of the Spirit — being shaped, corrected, and matured through both, until Christ is formed in us.</p>
+    <div class="hero-btns">
+      <a href="#foundation" class="btn-primary" data-en="Our Foundation" data-ko="우리의 기초">Our Foundation</a>
+      <a href="#join-cta" class="btn-outline" data-en="Get Involved" data-ko="참여하기">Get Involved</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDATION: WORD & SPIRIT -->
+<section id="foundation">
+  <div class="container reveal">
+    <div class="section-tag" data-en="OUR FOUNDATION" data-ko="우리의 기초">OUR FOUNDATION</div>
+    <h2 data-en="Neither Text Alone, Nor Instruction Alone" data-ko="말씀만도, 가르침만도 아닌">Neither Text Alone, Nor Instruction Alone</h2>
+    <div class="foundation-grid">
+      <div class="foundation-text">
+        <p data-en="Our discipleship training is built on a single conviction: the Word and the Spirit of God work together. Scripture alone, read without the Spirit's illumination, can become mere information. The Spirit's leading, untethered from Scripture, can drift from the truth. Together, they form and sanctify a life." data-ko="우리의 제자훈련은 하나의 확신 위에 세워져 있습니다: 하나님의 말씀과 성령은 함께 역사하십니다. 성령의 조명 없이 읽는 성경만으로는 단순한 정보에 그칠 수 있습니다. 성경에 뿌리내리지 않은 성령의 인도는 진리에서 벗어날 수 있습니다. 이 둘이 함께할 때 한 사람의 삶이 빚어지고 거룩해집니다.">Our discipleship training is built on a single conviction: the Word and the Spirit of God work together. Scripture alone, read without the Spirit's illumination, can become mere information. The Spirit's leading, untethered from Scripture, can drift from the truth. Together, they form and sanctify a life.</p>
+        <p data-en="This is the heart of sanctification — not a program to complete, but a lifelong process of being made holy, taught by the Word and led by the Spirit, in the company of others walking the same road." data-ko="이것이 성화의 핵심입니다 — 완료해야 할 프로그램이 아니라, 말씀으로 가르침 받고 성령으로 인도받으며, 같은 길을 걷는 이들과 함께 거룩하게 되어가는 평생의 과정입니다.">This is the heart of sanctification — not a program to complete, but a lifelong process of being made holy, taught by the Word and led by the Spirit, in the company of others walking the same road.</p>
+      </div>
+      <div class="foundation-verse">
+        <blockquote data-en="&ldquo;All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work.&rdquo;" data-ko="&ldquo;모든 성경은 하나님의 감동으로 된 것으로 교훈과 책망과 바르게 함과 의로 교육하기에 유익하니 이는 하나님의 사람으로 온전하게 하며 모든 선한 일을 행할 능력을 갖추게 하려 함이라.&rdquo;">&ldquo;All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work.&rdquo;</blockquote>
+        <cite data-en="2 Timothy 3:16–17 (ESV)" data-ko="디모데후서 3:16–17 (개역개정)">2 Timothy 3:16–17 (ESV)</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="container reveal">
+    <div class="section-tag" data-en="HOW WE TRAIN" data-ko="훈련 방식">HOW WE TRAIN</div>
+    <h2 data-en="Three Commitments" data-ko="세 가지 헌신">Three Commitments</h2>
+    <p class="lead" data-en="Every part of our discipleship training reflects these three commitments." data-ko="우리 제자훈련의 모든 부분은 다음의 세 가지 헌신을 반영합니다.">Every part of our discipleship training reflects these three commitments.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <h3 data-en="Word-Centered" data-ko="말씀 중심">Word-Centered</h3>
+        <p data-en="Scripture is read directly and carefully, allowing the Bible to speak for itself rather than leaning primarily on theological commentary." data-ko="성경을 직접, 세밀하게 읽어가며 신학적 해설에 주로 의존하기보다 성경 스스로 말하게 합니다.">Scripture is read directly and carefully, allowing the Bible to speak for itself rather than leaning primarily on theological commentary.</p>
+      </div>
+      <div class="pillar">
+        <h3 data-en="Spirit-Led" data-ko="성령 인도">Spirit-Led</h3>
+        <p data-en="Growth is not merely intellectual. We seek the Spirit's work in conviction, understanding, and transformation as we study and pray together." data-ko="성장은 단순히 지적인 것이 아닙니다. 함께 성경을 공부하고 기도하는 가운데 깨달음과 확신, 변화 안에서 일하시는 성령을 구합니다.">Growth is not merely intellectual. We seek the Spirit's work in conviction, understanding, and transformation as we study and pray together.</p>
+      </div>
+      <div class="pillar">
+        <h3 data-en="Community-Formed" data-ko="공동체 안에서 형성됨">Community-Formed</h3>
+        <p data-en="Sanctification is not a solitary pursuit. Discipleship happens in relationship — mentored, accountable, and shared across cultures and generations." data-ko="성화는 홀로 이루어지는 여정이 아닙니다. 제자훈련은 관계 속에서 일어납니다 — 멘토링을 받고, 서로 책임을 나누며, 문화와 세대를 넘어 함께 나눕니다.">Sanctification is not a solitary pursuit. Discipleship happens in relationship — mentored, accountable, and shared across cultures and generations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATHWAY (placeholder framework — content in development) -->
+<section id="pathway">
+  <div class="container reveal">
+    <div class="section-tag" data-en="THE GROWTH PATHWAY" data-ko="성장의 여정">THE GROWTH PATHWAY</div>
+    <h2 data-en="A Path of Formation" data-ko="형성의 길">A Path of Formation</h2>
+    <p class="lead" data-en="Our discipleship training is being developed as a structured pathway — from foundational study, into mentored growth, toward a life that multiplies into others." data-ko="우리의 제자훈련은 구조화된 여정으로 개발되고 있습니다 — 기초적인 성경 공부에서 시작하여, 멘토링을 통한 성장을 거쳐, 다른 이들에게 배가되는 삶으로 나아갑니다.">Our discipleship training is being developed as a structured pathway — from foundational study, into mentored growth, toward a life that multiplies into others.</p>
+    <div class="pathway-grid">
+      <div class="pathway-step highlight">
+        <div class="step-num">01</div>
+        <h3 data-en="Foundations" data-ko="기초">Foundations</h3>
+        <p data-en="Core Scripture study — who God is, who we are, and the shape of a life under the Word." data-ko="핵심 성경 공부 — 하나님은 누구시며, 우리는 누구이며, 말씀 아래 있는 삶의 모습.">Core Scripture study — who God is, who we are, and the shape of a life under the Word.</p>
+      </div>
+      <div class="pathway-step">
+        <div class="step-num">02</div>
+        <h3 data-en="Formation" data-ko="형성">Formation</h3>
+        <p data-en="Mentored growth — walking with a guide, being shaped by the Spirit through prayer, study, and honest accountability." data-ko="멘토링을 통한 성장 — 인도자와 함께 걸으며, 기도와 공부와 정직한 책임을 통해 성령으로 빚어짐.">Mentored growth — walking with a guide, being shaped by the Spirit through prayer, study, and honest accountability.</p>
+      </div>
+      <div class="pathway-step">
+        <div class="step-num">03</div>
+        <h3 data-en="Multiplication" data-ko="배가">Multiplication</h3>
+        <p data-en="A mature life that disciples others — carrying the Word and Spirit's work into a new generation and new cultures." data-ko="다른 이들을 제자화하는 성숙한 삶 — 말씀과 성령의 역사를 새로운 세대와 새로운 문화로 전함.">A mature life that disciples others — carrying the Word and Spirit's work into a new generation and new cultures.</p>
+      </div>
+    </div>
+    <div class="pathway-note" data-en="The full curriculum for each stage is currently in development. Details on course content, format, and schedule will be added here as they are finalized." data-ko="각 단계의 전체 커리큘럼은 현재 개발 중입니다. 과정 내용, 형식, 일정에 대한 세부 사항은 확정되는 대로 이곳에 추가될 예정입니다.">The full curriculum for each stage is currently in development. Details on course content, format, and schedule will be added here as they are finalized.</div>
+  </div>
+</section>
+
+<!-- JOIN / GET INVOLVED CTA -->
+<section id="join-cta">
+  <div class="container reveal">
+    <div class="section-tag" data-en="GET INVOLVED" data-ko="참여하기">GET INVOLVED</div>
+    <h2 data-en="Walk This Road With Us" data-ko="이 길을 함께 걸으세요">Walk This Road With Us</h2>
+    <div class="join-cta-box">
+      <p data-en="Discipleship training is being developed for members of CrossCulture Community. If you'd like to be notified as courses become available, or want to share your own thoughts as we shape this program, we would love to hear from you." data-ko="제자훈련은 크로스컬처 커뮤니티 회원들을 위해 개발되고 있습니다. 과정이 준비되는 대로 소식을 받고 싶으시거나, 이 프로그램을 함께 만들어가는 데 의견을 나누고 싶으시다면 언제든 연락해 주세요.">Discipleship training is being developed for members of CrossCulture Community. If you'd like to be notified as courses become available, or want to share your own thoughts as we shape this program, we would love to hear from you.</p>
+      <div class="join-cta-actions">
+        <a href="join.html" class="primary" data-en="Become a Member" data-ko="회원 가입하기">Become a Member</a>
+        <a href="mailto:billmajors@crossculture-community.com" class="secondary" data-en="Contact Bill Majors" data-ko="빌 메이저스에게 연락하기">Contact Bill Majors</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+      <div class="footer-lang-toggle" role="group" aria-label="Language / 언어">
+        <button class="footer-lang-btn active" id="footer-btn-en" onclick="applyLang('en')">ENG</button>
+        <button class="footer-lang-btn" id="footer-btn-ko" onclick="applyLang('ko')">한국어</button>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="About" data-ko="소개">About</div>
+        <a href="about.html" data-en="Founder" data-ko="창립자">Founder</a>
+        <a href="about.html" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
+        <a href="governance.html" data-en="Three-Step Journey" data-ko="세 단계의 여정">Three-Step Journey</a>
+        <a href="governance.html" data-en="Governance" data-ko="거버넌스">Governance</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Get Involved" data-ko="참여하기">Get Involved</div>
+        <a href="join.html" data-en="Become a Member" data-ko="회원 가입">Become a Member</a>
+        <a href="discipleship.html" data-en="Discipleship Training" data-ko="제자훈련">Discipleship Training</a>
+        <a href="index.html#projects" data-en="Give / Donate" data-ko="후원">Give / Donate</a>
+        <a href="index.html#artifacts" data-en="Donate an Artifact" data-ko="유물 기증">Donate an Artifact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Connect" data-ko="연락">Connect</div>
+        <a href="mailto:billmajors@crossculture-community.com" data-en="Contact Us" data-ko="연락하기">Contact Us</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill's Blog" data-ko="빌의 블로그">Bill's Blog</a>
+        <a href="https://www.facebook.com/crossculturecf" target="_blank" data-en="Facebook" data-ko="페이스북">Facebook</a>
+        <a href="https://www.instagram.com/crossculturecf" target="_blank" data-en="Instagram" data-ko="인스타그램">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Our Projects" data-ko="우리의 프로젝트">Our Projects</div>
+        <a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+        <a href="news.html" data-en="Torah Presentations" data-ko="토라 발표">Torah Presentations</a>
+        <a href="news.html" data-en="Past Exhibitions" data-ko="과거 전시">Past Exhibitions</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill Majors" data-ko="빌 메이저스">Bill Majors</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 <span data-en="CrossCulture Community Foundation" data-ko="크로스컬처 커뮤니티 파운데이션">CrossCulture Community Foundation</span></span>
+    <span>EIN: 84-2974290 · 501(c)(3)</span>
+    <span data-en="Korea 비법인단체 · 602-80-07169" data-ko="대한민국 비법인단체 · 고유번호 602-80-07169">Korea 비법인단체 · 602-80-07169</span>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var lang = 'en';
+  function applyLang(l) {
+    lang = l;
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-ko').classList.toggle('active', l === 'ko');
+    document.getElementById('footer-btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('footer-btn-ko').classList.toggle('active', l === 'ko');
+    var els = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var val = el.getAttribute('data-' + l);
+      if (!val) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = val;
+      } else {
+        el.innerHTML = val;
+      }
+    }
+    document.title = l === 'ko'
+      ? '제자훈련 | 크로스컬처 커뮤니티'
+      : 'Discipleship Training | CrossCulture Community';
+  }
+  window.applyLang = applyLang;
+  document.getElementById('btn-en').addEventListener('click', function() { applyLang('en'); });
+  document.getElementById('btn-ko').addEventListener('click', function() { applyLang('ko'); });
+
+  window.toggleMenu = function() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  };
+  window.closeMenu = function() {
+    document.getElementById('mobile-menu').classList.remove('open');
+  };
+
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.3)' : 'none';
+  });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(function(el) { revealObserver.observe(el); });
+})();
+</script>
+</body>
+</html>
