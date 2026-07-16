@@ -201,6 +201,93 @@ h2 {
 }
 .pillar h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 10px; }
 .pillar p { font-size: 0.92rem; color: var(--charcoal-soft); line-height: 1.75; }
+/* PRACTICE */
+#practice { background: var(--white); }
+.version-selector {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: var(--navy); border-radius: 4px; padding: 16px 20px; margin: 32px 0 8px;
+}
+.version-selector-label {
+  font-size: 0.8rem; color: rgba(255,255,255,0.85); letter-spacing: 0.03em; margin-right: 4px;
+}
+.version-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.4);
+  color: #fff; padding: 7px 18px; border-radius: 2px; cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif; font-size: 0.85rem; font-weight: 600;
+  letter-spacing: 0.05em; transition: all 0.15s;
+}
+.version-btn:hover { border-color: var(--gold); }
+.version-btn.active { background: var(--gold); border-color: var(--gold); color: var(--navy-dark); }
+.version-note { font-size: 0.75rem; color: rgba(255,255,255,0.6); width: 100%; margin-top: 4px; }
+.verse-loading { font-style: italic; color: var(--charcoal-soft); font-size: 0.9rem; }
+.vn { font-size: 0.62em; font-weight: 700; color: var(--gold); vertical-align: super; line-height: 0; margin-right: 2px; }
+.verse-body { display: block; }
+.verse-body p { margin: 0 0 8px; text-indent: 0; }
+.practice-item {
+  background: var(--cream); border-left: 4px solid var(--gold);
+  border-radius: 4px; padding: 32px 34px; margin-bottom: 28px;
+}
+.practice-label {
+  display: inline-block; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 10px;
+}
+.practice-verse-ref {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+  color: var(--navy); margin-bottom: 14px;
+}
+.practice-verse-text {
+  background: var(--white); border-radius: 4px; padding: 20px 24px;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 1.02rem; line-height: 1.75; color: var(--charcoal);
+  margin-bottom: 24px; border: 1px solid rgba(194,134,21,0.2);
+}
+.practice-verse-text cite { display:block; margin-top:10px; font-size:0.78rem; font-style:normal; color:var(--charcoal-soft); }
+.oia-step { margin-bottom: 18px; }
+.oia-step:last-child { margin-bottom: 0; }
+.oia-step-label {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--navy); margin-bottom: 6px;
+}
+.oia-step-q { font-size: 0.82rem; font-style: italic; color: var(--charcoal-soft); margin-bottom: 8px; }
+.oia-step ul { margin: 0 0 0 20px; padding: 0; }
+.oia-step ul li { font-size: 0.9rem; color: var(--charcoal-soft); line-height: 1.75; margin-bottom: 4px; }
+.oia-step p { font-size: 0.9rem; color: var(--charcoal-soft); line-height: 1.8; }
+
+.mc-block { margin-bottom: 18px; }
+.mc-question { font-size: 0.9rem; color: var(--charcoal); font-weight: 600; margin-bottom: 12px; }
+.mc-options { display: flex; flex-direction: column; gap: 8px; }
+.mc-option {
+  text-align: left; background: var(--white); border: 1px solid rgba(10,60,143,0.2);
+  border-radius: 3px; padding: 10px 16px; font-size: 0.87rem; color: var(--charcoal);
+  cursor: pointer; font-family: 'Source Sans 3', sans-serif; transition: all 0.15s;
+}
+.mc-option:hover { border-color: var(--gold); }
+.mc-option.correct { background: #eaf3ea; border-color: #4a8f4a; color: #2d5c2d; font-weight: 600; }
+.mc-option.incorrect { background: #f7e9e9; border-color: #b05a5a; color: #7a3a3a; }
+.mc-option:disabled { cursor: default; }
+.mc-feedback { font-size: 0.82rem; color: var(--charcoal-soft); margin-top: 8px; font-style: italic; display:none; }
+.mc-feedback.show { display: block; }
+
+.diy-step { margin-bottom: 16px; }
+.diy-step textarea {
+  width: 100%; min-height: 70px; padding: 10px 14px; border-radius: 3px;
+  border: 1px solid rgba(10,60,143,0.25); font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.88rem; color: var(--charcoal); resize: vertical;
+}
+.diy-reveal-btn {
+  background: var(--navy); color: var(--white); border: none;
+  padding: 11px 24px; border-radius: 2px; font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; margin-top: 6px;
+}
+.diy-reveal-btn:hover { background: var(--navy-dark); }
+.diy-answer {
+  display: none; margin-top: 18px; padding-top: 18px;
+  border-top: 1px dashed rgba(194,134,21,0.35);
+}
+.diy-answer.show { display: block; }
+.diy-answer-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+
 /* PATHWAY */
 #pathway { background: var(--navy); color: var(--white); }
 #pathway h2 { color: var(--white); }
@@ -394,6 +481,139 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
   </div>
 </section>
 
+<!-- SEE THE METHOD IN ACTION -->
+<section id="practice">
+  <div class="container reveal">
+    <div class="section-tag" data-en="THE METHOD IN ACTION" data-ko="실제로 적용해보기">THE METHOD IN ACTION</div>
+    <h2 data-en="Three Ways to Practice" data-ko="세 가지 연습 방법">Three Ways to Practice</h2>
+    <p class="lead" data-en="Howard Hendricks taught that personal Bible study is a methodicalness — specific steps, in a specific order, producing a specific result: Observation (&ldquo;What do I see?&rdquo;), Interpretation (&ldquo;What does it mean?&rdquo;), and Application (&ldquo;How does it work?&rdquo;). Here are three passages, each used a different way, so you can see the method, try it with help, and then try it on your own." data-ko="하워드 헨드릭스는 개인 성경공부가 하나의 &lsquo;체계성&rsquo;이라고 가르쳤습니다 — 특정한 단계를, 특정한 순서로 밟아 특정한 결과를 얻는 것입니다: 관찰(&ldquo;무엇이 보이는가?&rdquo;), 해석(&ldquo;무엇을 의미하는가?&rdquo;), 적용(&ldquo;어떻게 작동하는가?&rdquo;). 아래 세 본문은 각기 다른 방식으로 사용됩니다 — 먼저 방법을 보고, 도움을 받아 연습하고, 그다음 스스로 시도해 보세요.">Howard Hendricks taught that personal Bible study is a methodicalness — specific steps, in a specific order, producing a specific result: Observation (&ldquo;What do I see?&rdquo;), Interpretation (&ldquo;What does it mean?&rdquo;), and Application (&ldquo;How does it work?&rdquo;). Here are three passages, each used a different way, so you can see the method, try it with help, and then try it on your own.</p>
+
+    <div class="version-selector">
+      <span class="version-selector-label" data-en="Choose your Bible version:" data-ko="성경 번역본을 선택하세요:">Choose your Bible version:</span>
+      <button class="version-btn active" data-version="KJV" onclick="setVersion('KJV')">KJV</button>
+      <button class="version-btn" data-version="NIV" onclick="setVersion('NIV')">NIV</button>
+      <button class="version-btn" data-version="ESV" onclick="setVersion('ESV')">ESV</button>
+      <span class="version-note" data-en="Your choice stays consistent across all three exercises below." data-ko="선택하신 번역본은 아래 세 가지 연습 전체에 동일하게 적용됩니다.">Your choice stays consistent across all three exercises below.</span>
+    </div>
+
+    <!-- 1. WORKED EXAMPLE: JOHN 15:1-8 -->
+    <div class="practice-item">
+      <span class="practice-label" data-en="① STEP-BY-STEP EXAMPLE — READ THROUGH IT" data-ko="① 단계별 예시 — 읽어보기">① STEP-BY-STEP EXAMPLE — READ THROUGH IT</span>
+      <div class="practice-verse-ref" data-en="John 15:1-8" data-ko="요한복음 15:1-8">John 15:1-8</div>
+      <div class="practice-verse-text verse-passage" data-ref="John 15:1-8" data-ko-ref="요한복음 15:1-8"
+        data-kjv="&lt;p&gt;&lt;sup class='vn'&gt;1&lt;/sup&gt;I am the true vine, and my Father is the husbandman. &lt;sup class='vn'&gt;2&lt;/sup&gt;Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. &lt;sup class='vn'&gt;3&lt;/sup&gt;Now ye are clean through the word which I have spoken unto you. &lt;sup class='vn'&gt;4&lt;/sup&gt;Abide in me, and I in you. As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. &lt;sup class='vn'&gt;5&lt;/sup&gt;I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing. &lt;sup class='vn'&gt;6&lt;/sup&gt;If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned. &lt;sup class='vn'&gt;7&lt;/sup&gt;If ye abide in me, and my words abide in you, ye shall ask what ye will, and it shall be done unto you. &lt;sup class='vn'&gt;8&lt;/sup&gt;Herein is my Father glorified, that ye bear much fruit; so shall ye be my disciples.&lt;/p&gt;"
+        data-esv="&lt;p&gt;&lt;sup class='vn'&gt;1&lt;/sup&gt;&ldquo;I am the true vine, and my Father is the vinedresser. &lt;sup class='vn'&gt;2&lt;/sup&gt;Every branch in me that does not bear fruit he takes away, and every branch that does bear fruit he prunes, that it may bear more fruit. &lt;sup class='vn'&gt;3&lt;/sup&gt;Already you are clean because of the word that I have spoken to you. &lt;sup class='vn'&gt;4&lt;/sup&gt;Abide in me, and I in you. As the branch cannot bear fruit by itself, unless it abides in the vine, neither can you, unless you abide in me. &lt;sup class='vn'&gt;5&lt;/sup&gt;I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing. &lt;sup class='vn'&gt;6&lt;/sup&gt;If anyone does not abide in me, he is thrown away like a branch and withers; and the branches are gathered, thrown into the fire, and burned. &lt;sup class='vn'&gt;7&lt;/sup&gt;If you abide in me, and my words abide in you, ask whatever you wish, and it will be done for you. &lt;sup class='vn'&gt;8&lt;/sup&gt;By this my Father is glorified, that you bear much fruit and so prove to be my disciples.&rdquo;&lt;/p&gt;"
+        data-niv="&lt;p&gt;&lt;sup class='vn'&gt;1&lt;/sup&gt;&ldquo;I am the true vine, and my Father is the gardener. &lt;sup class='vn'&gt;2&lt;/sup&gt;He cuts off every branch in me that bears no fruit, while every branch that does bear fruit he prunes so that it will be even more fruitful. &lt;sup class='vn'&gt;3&lt;/sup&gt;You are already clean because of the word I have spoken to you. &lt;sup class='vn'&gt;4&lt;/sup&gt;Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me. &lt;sup class='vn'&gt;5&lt;/sup&gt;&ldquo;I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. &lt;sup class='vn'&gt;6&lt;/sup&gt;If you do not remain in me, you are like a branch that is thrown away and withers; such branches are picked up, thrown into the fire and burned. &lt;sup class='vn'&gt;7&lt;/sup&gt;If you remain in me and my words remain in you, ask whatever you wish, and it will be done for you. &lt;sup class='vn'&gt;8&lt;/sup&gt;This is to my Father&#39;s glory, that you bear much fruit, showing yourselves to be my disciples.&rdquo;&lt;/p&gt;"><span class="verse-body"></span><cite class="verse-cite"></cite></div>
+
+      <div class="oia-step">
+        <div class="oia-step-label" data-en="1. Observation" data-ko="1. 관찰">1. Observation</div>
+        <div class="oia-step-q" data-en="What do I see?" data-ko="무엇이 보이는가?">What do I see?</div>
+        <ul>
+          <li data-en="Jesus makes an &ldquo;I am&rdquo; statement: &ldquo;I am the true vine.&rdquo;" data-ko="예수님은 &ldquo;나는 ~이다&rdquo;라는 선언을 하십니다: &ldquo;나는 참 포도나무다.&rdquo;">Jesus makes an &ldquo;I am&rdquo; statement: &ldquo;I am the true vine.&rdquo;</li>
+          <li data-en="Three roles are named: the vine (Jesus), the branches (his followers), and the farmer (the Father)." data-ko="세 가지 역할이 등장합니다: 포도나무(예수님), 가지(그를 따르는 자들), 농부(아버지).">Three roles are named: the vine (Jesus), the branches (his followers), and the farmer (the Father).</li>
+          <li data-en="Two things happen to branches: some are &ldquo;taken away,&rdquo; others are &ldquo;pruned.&rdquo;" data-ko="가지에게 두 가지 일이 일어납니다: 어떤 가지는 &ldquo;제거되고&rdquo;, 어떤 가지는 &ldquo;깨끗하게 됩니다(가지치기).&rdquo;">Two things happen to branches: some are &ldquo;taken away,&rdquo; others are &ldquo;pruned.&rdquo;</li>
+          <li data-en="One word repeats more than any other: &ldquo;remain&rdquo; (also translated &ldquo;abide&rdquo;)." data-ko="다른 어떤 단어보다 많이 반복되는 단어가 있습니다: &ldquo;거하다(remain/abide)&rdquo;.">One word repeats more than any other: &ldquo;remain&rdquo; (also translated &ldquo;abide&rdquo;).</li>
+          <li data-en="The passage ends by tying fruit to two things: the Father's glory, and being called a disciple." data-ko="본문은 열매를 두 가지와 연결하며 마칩니다: 아버지의 영광, 그리고 제자라 불리는 것.">The passage ends by tying fruit to two things: the Father's glory, and being called a disciple.</li>
+        </ul>
+      </div>
+      <div class="oia-step">
+        <div class="oia-step-label" data-en="2. Interpretation" data-ko="2. 해석">2. Interpretation</div>
+        <div class="oia-step-q" data-en="What does it mean?" data-ko="무엇을 의미하는가?">What does it mean?</div>
+        <p data-en="A branch has no life source of its own — cut off from the vine, it doesn't just grow slower, it has nothing at all. &ldquo;Remain&rdquo; describes a settled, ongoing connection, not a single decision made once. Pruning is not punishment; it's the Father's positive work, aimed at more fruit, not less. And fruit itself isn't something a branch produces by effort — it's the natural, visible result of staying attached to the vine." data-ko="가지는 스스로의 생명의 근원을 가지고 있지 않습니다 — 포도나무에서 잘려나가면 단지 더디게 자라는 것이 아니라 아예 아무것도 없게 됩니다. &ldquo;거하다&rdquo;는 한 번의 결단이 아니라 안정되고 지속적인 연결을 의미합니다. 가지치기는 벌이 아니라 아버지께서 더 많은 열매를 위해 행하시는 긍정적인 일입니다. 그리고 열매는 가지가 애써 만들어내는 것이 아니라, 포도나무에 붙어 있는 것의 자연스럽고 눈에 보이는 결과입니다.">A branch has no life source of its own — cut off from the vine, it doesn't just grow slower, it has nothing at all. &ldquo;Remain&rdquo; describes a settled, ongoing connection, not a single decision made once. Pruning is not punishment; it's the Father's positive work, aimed at more fruit, not less. And fruit itself isn't something a branch produces by effort — it's the natural, visible result of staying attached to the vine.</p>
+      </div>
+      <div class="oia-step">
+        <div class="oia-step-label" data-en="3. Application" data-ko="3. 적용">3. Application</div>
+        <div class="oia-step-q" data-en="How does it work?" data-ko="어떻게 작동하는가?">How does it work?</div>
+        <p data-en="&ldquo;Abiding&rdquo; is a daily practice — ongoing time in the Word and prayer, not sporadic effort. It reframes a hard season: a difficult pruning may not be punishment at all, but the Father shaping you toward more fruit. And it shifts the starting question from &ldquo;How do I produce results?&rdquo; to &ldquo;Am I staying connected?&rdquo; A question worth sitting with: where in your life right now are you trying to bear fruit without staying connected to the vine?" data-ko="&ldquo;거함&rdquo;은 매일의 실천입니다 — 이따금씩의 노력이 아니라 말씀과 기도 안에서의 지속적인 시간입니다. 이는 힘든 시기를 다시 보게 합니다: 어려운 가지치기는 전혀 벌이 아니라, 아버지께서 더 많은 열매를 위해 우리를 빚어가시는 과정일 수 있습니다. 그리고 이는 시작하는 질문 자체를 바꿉니다 — &ldquo;내가 어떻게 결과를 만들어낼까?&rdquo;에서 &ldquo;내가 계속 연결되어 있는가?&rdquo;로 말입니다. 곱씹어볼 질문 하나: 지금 당신의 삶에서, 포도나무와 연결되지 않은 채 열매를 맺으려 애쓰고 있는 부분은 어디입니까?">&ldquo;Abiding&rdquo; is a daily practice — ongoing time in the Word and prayer, not sporadic effort. It reframes a hard season: a difficult pruning may not be punishment at all, but the Father shaping you toward more fruit. And it shifts the starting question from &ldquo;How do I produce results?&rdquo; to &ldquo;Am I staying connected?&rdquo; A question worth sitting with: where in your life right now are you trying to bear fruit without staying connected to the vine?</p>
+      </div>
+    </div>
+
+    <!-- 2. GUIDED PRACTICE: PSALM 119:9-11 (MULTIPLE CHOICE) -->
+    <div class="practice-item">
+      <span class="practice-label" data-en="② GUIDED PRACTICE — CHOOSE AN ANSWER FOR EACH STEP" data-ko="② 안내를 따라 연습하기 — 각 단계별로 답을 선택해 보세요">② GUIDED PRACTICE — CHOOSE AN ANSWER FOR EACH STEP</span>
+      <div class="practice-verse-ref" data-en="Psalm 119:9-11" data-ko="시편 119:9-11">Psalm 119:9-11</div>
+      <div class="practice-verse-text verse-passage" data-ref="Psalm 119:9-11" data-ko-ref="시편 119:9-11"
+        data-kjv="&lt;p&gt;&lt;sup class='vn'&gt;9&lt;/sup&gt;Wherewithal shall a young man cleanse his way? by taking heed thereto according to thy word. &lt;sup class='vn'&gt;10&lt;/sup&gt;With my whole heart have I sought thee: O let me not wander from thy commandments. &lt;sup class='vn'&gt;11&lt;/sup&gt;Thy word have I hid in mine heart, that I might not sin against thee.&lt;/p&gt;"
+        data-esv="&lt;p&gt;&lt;sup class='vn'&gt;9&lt;/sup&gt;How can a young man keep his way pure? By guarding it according to your word. &lt;sup class='vn'&gt;10&lt;/sup&gt;With my whole heart I seek you; let me not wander from your commandments! &lt;sup class='vn'&gt;11&lt;/sup&gt;I have stored up your word in my heart, that I might not sin against you.&lt;/p&gt;"
+        data-niv="&lt;p&gt;&lt;sup class='vn'&gt;9&lt;/sup&gt;How can a young person stay on the path of purity? By living according to your word. &lt;sup class='vn'&gt;10&lt;/sup&gt;I seek you with all my heart; do not let me stray from your commands. &lt;sup class='vn'&gt;11&lt;/sup&gt;I have hidden your word in my heart that I might not sin against you.&lt;/p&gt;"><span class="verse-body"></span><cite class="verse-cite"></cite></div>
+
+      <div class="mc-block" data-step="observation">
+        <div class="mc-question" data-en="Observation — What repeated idea connects all three verses?" data-ko="관찰 — 세 구절을 모두 연결하는 반복된 개념은 무엇입니까?">Observation — What repeated idea connects all three verses?</div>
+        <div class="mc-options">
+          <button class="mc-option" data-correct="false" data-en="Wisdom from elders" data-ko="어른들의 지혜">Wisdom from elders</button>
+          <button class="mc-option" data-correct="true" data-en="God's word / heart" data-ko="하나님의 말씀 / 마음">God's word / heart</button>
+          <button class="mc-option" data-correct="false" data-en="The temple in Jerusalem" data-ko="예루살렘 성전">The temple in Jerusalem</button>
+          <button class="mc-option" data-correct="false" data-en="Suffering and endurance" data-ko="고난과 인내">Suffering and endurance</button>
+        </div>
+        <div class="mc-feedback" data-en="&ldquo;Word&rdquo; and &ldquo;heart&rdquo; each appear across these three verses — the passage is built around where God's word is kept: not just known, but held in the heart." data-ko="&ldquo;말씀&rdquo;과 &ldquo;마음&rdquo;이라는 단어가 이 세 구절에 걸쳐 각각 등장합니다 — 이 본문은 하나님의 말씀이 어디에 간직되는지를 중심으로 세워져 있습니다: 단지 아는 것이 아니라 마음에 품는 것입니다.">&ldquo;Word&rdquo; and &ldquo;heart&rdquo; each appear across these three verses — the passage is built around where God's word is kept: not just known, but held in the heart.</div>
+      </div>
+
+      <div class="mc-block" data-step="interpretation">
+        <div class="mc-question" data-en="Interpretation — According to this passage, how does someone avoid moral failure?" data-ko="해석 — 이 본문에 따르면, 어떻게 도덕적 실패를 피할 수 있습니까?">Interpretation — According to this passage, how does someone avoid moral failure?</div>
+        <div class="mc-options">
+          <button class="mc-option" data-correct="false" data-en="By relying on willpower alone" data-ko="오직 의지력만으로">By relying on willpower alone</button>
+          <button class="mc-option" data-correct="false" data-en="By avoiding every possible temptation" data-ko="모든 유혹을 피함으로써">By avoiding every possible temptation</button>
+          <button class="mc-option" data-correct="true" data-en="By treasuring and internalizing God's word" data-ko="하나님의 말씀을 소중히 여기고 마음에 새김으로써">By treasuring and internalizing God's word</button>
+          <button class="mc-option" data-correct="false" data-en="By seeking counsel from religious leaders" data-ko="종교 지도자에게 조언을 구함으로써">By seeking counsel from religious leaders</button>
+        </div>
+        <div class="mc-feedback" data-en="The psalmist's own answer is explicit: &ldquo;By living according to your word&rdquo; — and the method is named directly: hiding the word in the heart." data-ko="시편 기자 자신의 답은 명확합니다: &ldquo;주의 말씀만 지킬 따름이니이다&rdquo; — 그리고 그 방법이 직접 언급됩니다: 말씀을 마음에 두는 것입니다.">The psalmist's own answer is explicit: &ldquo;By living according to your word&rdquo; — and the method is named directly: hiding the word in the heart.</div>
+      </div>
+
+      <div class="mc-block" data-step="application">
+        <div class="mc-question" data-en="Application — What is the most direct, practical way to live out &ldquo;I have hidden your word in my heart&rdquo;?" data-ko="적용 — &ldquo;내가 주의 말씀을 내 마음에 두었나이다&rdquo;를 실천하는 가장 직접적이고 실제적인 방법은 무엇입니까?">Application — What is the most direct, practical way to live out &ldquo;I have hidden your word in my heart&rdquo;?</div>
+        <div class="mc-options">
+          <button class="mc-option" data-correct="false" data-en="Reading the Bible occasionally, when convenient" data-ko="편할 때만 가끔 성경을 읽는 것">Reading the Bible occasionally, when convenient</button>
+          <button class="mc-option" data-correct="true" data-en="Memorizing Scripture so it's present even without a Bible nearby" data-ko="성경이 곁에 없어도 마음에 있도록 말씀을 암송하는 것">Memorizing Scripture so it's present even without a Bible nearby</button>
+          <button class="mc-option" data-correct="false" data-en="Studying the original Hebrew grammar" data-ko="히브리어 문법을 연구하는 것">Studying the original Hebrew grammar</button>
+          <button class="mc-option" data-correct="false" data-en="Attending a worship service weekly" data-ko="매주 예배에 참석하는 것">Attending a worship service weekly</button>
+        </div>
+        <div class="mc-feedback" data-en="&ldquo;Hidden in the heart&rdquo; describes Scripture that's memorized — carried with you, present in a moment of temptation whether or not a physical Bible is at hand." data-ko="&ldquo;마음에 둔다&rdquo;는 것은 암송된 말씀을 의미합니다 — 성경책이 곁에 있든 없든, 유혹의 순간에 함께 하는 말씀입니다.">&ldquo;Hidden in the heart&rdquo; describes Scripture that's memorized — carried with you, present in a moment of temptation whether or not a physical Bible is at hand.</div>
+      </div>
+    </div>
+
+    <!-- 3. DO IT YOURSELF: JAMES 1:22-25 -->
+    <div class="practice-item">
+      <span class="practice-label" data-en="③ DO IT YOURSELF — THEN CHECK YOUR WORK" data-ko="③ 스스로 해보기 — 그 후 확인해 보세요">③ DO IT YOURSELF — THEN CHECK YOUR WORK</span>
+      <div class="practice-verse-ref" data-en="James 1:22-25" data-ko="야고보서 1:22-25">James 1:22-25</div>
+      <div class="practice-verse-text verse-passage" data-ref="James 1:22-25" data-ko-ref="야고보서 1:22-25"
+        data-kjv="&lt;p&gt;&lt;sup class='vn'&gt;22&lt;/sup&gt;But be ye doers of the word, and not hearers only, deceiving your own selves. &lt;sup class='vn'&gt;23&lt;/sup&gt;For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass: &lt;sup class='vn'&gt;24&lt;/sup&gt;For he beholdeth himself, and goeth his way, and straightway forgetteth what manner of man he was. &lt;sup class='vn'&gt;25&lt;/sup&gt;But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed.&lt;/p&gt;"
+        data-esv="&lt;p&gt;&lt;sup class='vn'&gt;22&lt;/sup&gt;But be doers of the word, and not hearers only, deceiving yourselves. &lt;sup class='vn'&gt;23&lt;/sup&gt;For if anyone is a hearer of the word and not a doer, he is like a man who looks intently at his natural face in a mirror. &lt;sup class='vn'&gt;24&lt;/sup&gt;For he looks at himself and goes away and at once forgets what he was like. &lt;sup class='vn'&gt;25&lt;/sup&gt;But the one who looks into the perfect law, the law of liberty, and perseveres, being no hearer who forgets but a doer who acts, he will be blessed in his doing.&lt;/p&gt;"
+        data-niv="&lt;p&gt;&lt;sup class='vn'&gt;22&lt;/sup&gt;Do not merely listen to the word, and so deceive yourselves. Do what it says. &lt;sup class='vn'&gt;23&lt;/sup&gt;Anyone who listens to the word but does not do what it says is like someone who looks at his face in a mirror &lt;sup class='vn'&gt;24&lt;/sup&gt;and, after looking at himself, goes away and immediately forgets what he looks like. &lt;sup class='vn'&gt;25&lt;/sup&gt;But whoever looks intently into the perfect law that gives freedom, and continues in it&mdash;not forgetting what they have heard, but doing it&mdash;they will be blessed in what they do.&lt;/p&gt;"><span class="verse-body"></span><cite class="verse-cite"></cite></div>
+
+      <div class="diy-step">
+        <div class="oia-step-label" data-en="1. Observation — What do I see?" data-ko="1. 관찰 — 무엇이 보이는가?">1. Observation — What do I see?</div>
+        <textarea placeholder="Write what you observe in the passage..." data-placeholder-en="Write what you observe in the passage..." data-placeholder-ko="본문에서 관찰한 것을 적어보세요..."></textarea>
+      </div>
+      <div class="diy-step">
+        <div class="oia-step-label" data-en="2. Interpretation — What does it mean?" data-ko="2. 해석 — 무엇을 의미하는가?">2. Interpretation — What does it mean?</div>
+        <textarea placeholder="Write what you think it means..." data-placeholder-en="Write what you think it means..." data-placeholder-ko="어떤 의미인지 적어보세요..."></textarea>
+      </div>
+      <div class="diy-step">
+        <div class="oia-step-label" data-en="3. Application — How does it work?" data-ko="3. 적용 — 어떻게 작동하는가?">3. Application — How does it work?</div>
+        <textarea placeholder="Write how you will apply it..." data-placeholder-en="Write how you will apply it..." data-placeholder-ko="어떻게 적용할지 적어보세요..."></textarea>
+      </div>
+
+      <button class="diy-reveal-btn" onclick="toggleDiyAnswer()" data-en="Check My Work" data-ko="내 답 확인하기">Check My Work</button>
+
+      <div class="diy-answer" id="diy-answer">
+        <div class="diy-answer-label" data-en="A SUGGESTED ANSWER — NOT THE ONLY RIGHT ONE" data-ko="제안된 답 — 유일한 정답은 아닙니다">A SUGGESTED ANSWER — NOT THE ONLY RIGHT ONE</div>
+        <div class="oia-step">
+          <div class="oia-step-label" data-en="Observation" data-ko="관찰">Observation</div>
+          <p data-en="Two people are compared: a &ldquo;hearer&rdquo; and a &ldquo;doer.&rdquo; The hearer is compared to a man who looks in a mirror and &ldquo;immediately forgets.&rdquo; The law is called &ldquo;perfect&rdquo; and connected to &ldquo;freedom.&rdquo; The doer is called &ldquo;blessed.&rdquo;" data-ko="두 사람이 비교됩니다: &ldquo;듣는 자&rdquo;와 &ldquo;행하는 자.&rdquo; 듣는 자는 거울을 보고 &ldquo;곧 잊어버리는&rdquo; 사람에 비유됩니다. 율법은 &ldquo;온전하다&rdquo;고 불리며 &ldquo;자유&rdquo;와 연결됩니다. 행하는 자는 &ldquo;복 있다&rdquo;고 불립니다.">Two people are compared: a &ldquo;hearer&rdquo; and a &ldquo;doer.&rdquo; The hearer is compared to a man who looks in a mirror and &ldquo;immediately forgets.&rdquo; The law is called &ldquo;perfect&rdquo; and connected to &ldquo;freedom.&rdquo; The doer is called &ldquo;blessed.&rdquo;</p>
+        </div>
+        <div class="oia-step">
+          <div class="oia-step-label" data-en="Interpretation" data-ko="해석">Interpretation</div>
+          <p data-en="James isn't condemning hearing — hearing is the assumed starting point. The danger is stopping there, treating the Word like a mirror glance that's forgotten the moment you look away. The doer &ldquo;continues&rdquo; — a lasting engagement, not a single moment of obedience." data-ko="야고보는 듣는 것 자체를 정죄하는 것이 아닙니다 — 듣는 것은 당연히 전제되는 출발점입니다. 위험한 것은 거기서 멈추는 것, 즉 말씀을 거울을 잠깐 보고 눈을 돌리는 순간 잊어버리는 것처럼 대하는 것입니다. 행하는 자는 &ldquo;계속합니다&rdquo; — 이는 한순간의 순종이 아니라 지속적인 관계입니다.">James isn't condemning hearing — hearing is the assumed starting point. The danger is stopping there, treating the Word like a mirror glance that's forgotten the moment you look away. The doer &ldquo;continues&rdquo; — a lasting engagement, not a single moment of obedience.</p>
+        </div>
+        <div class="oia-step">
+          <div class="oia-step-label" data-en="Application" data-ko="적용">Application</div>
+          <p data-en="A simple self-check: after reading Scripture this week, did you close the book and move on unaffected — like the man who forgets his own reflection? Or did something you read lead to an actual changed action, decision, or conversation?" data-ko="간단한 자기 점검: 이번 주 성경을 읽은 후, 자신의 얼굴을 잊어버리는 사람처럼 책을 덮고 아무 영향 없이 지나갔습니까? 아니면 읽은 무언가가 실제로 변화된 행동, 결정, 혹은 대화로 이어졌습니까?">A simple self-check: after reading Scripture this week, did you close the book and move on unaffected — like the man who forgets his own reflection? Or did something you read lead to an actual changed action, decision, or conversation?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PATHWAY (placeholder framework — content in development) -->
 <section id="pathway">
   <div class="container reveal">
@@ -567,6 +787,7 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
     document.title = l === 'ko'
       ? '제자훈련 | 크로스컬처 커뮤니티'
       : 'Discipleship Training | CrossCulture Community';
+    if (typeof renderAllPassages === 'function') renderAllPassages();
   }
   window.applyLang = applyLang;
   document.getElementById('btn-en').addEventListener('click', function() { applyLang('en'); });
@@ -594,6 +815,85 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
     });
   }, { threshold: 0.08 });
   revealEls.forEach(function(el) { revealObserver.observe(el); });
+
+  // MULTIPLE CHOICE QUIZ (Psalm 119:9-11 guided practice)
+  document.querySelectorAll('.mc-block').forEach(function(block) {
+    var options = block.querySelectorAll('.mc-option');
+    var feedback = block.querySelector('.mc-feedback');
+    options.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var isCorrect = btn.getAttribute('data-correct') === 'true';
+        options.forEach(function(o) {
+          o.disabled = true;
+          if (o.getAttribute('data-correct') === 'true') {
+            o.classList.add('correct');
+          } else if (o === btn) {
+            o.classList.add('incorrect');
+          }
+        });
+        feedback.classList.add('show');
+      });
+    });
+  });
+
+  // DIY REVEAL (James 1:22-25)
+  window.toggleDiyAnswer = function() {
+    var el = document.getElementById('diy-answer');
+    el.classList.toggle('show');
+  };
+
+  // ---- BIBLE VERSION SELECTOR ----
+  var currentVersion = 'KJV';
+
+  function renderPassage(el) {
+    var ref = el.getAttribute('data-ref');
+    var body = el.querySelector('.verse-body');
+    var cite = el.querySelector('.verse-cite');
+
+    // Korean mode: show the Korean reference with a link to the 개역개정 text.
+    if (lang === 'ko') {
+      var koRef = el.getAttribute('data-ko-ref') || ref;
+      body.textContent = '';
+      var link = document.createElement('a');
+      link.href = 'https://www.bskorea.or.kr/bible/korbibReadpage.php?version=GAE&book=' + encodeURIComponent(ref);
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = koRef + ' — 개역개정 본문 보기';
+      body.appendChild(link);
+      cite.textContent = '';
+      return;
+    }
+
+    // English mode — all three versions display inline from their data attributes.
+    var versionKey = 'data-' + currentVersion.toLowerCase(); // data-kjv / data-esv / data-niv
+    var html = el.getAttribute(versionKey);
+    if (html) {
+      body.innerHTML = html;
+      if (currentVersion === 'KJV') {
+        cite.textContent = ref + ' (King James Version — public domain)';
+      } else if (currentVersion === 'ESV') {
+        cite.textContent = ref + ' (ESV® — The Holy Bible, English Standard Version®, © 2001 Crossway)';
+      } else if (currentVersion === 'NIV') {
+        cite.textContent = ref + ' (NIV® — The Holy Bible, New International Version®, © 1973, 1978, 1984, 2011 Biblica, Inc.)';
+      }
+      return;
+    }
+  }
+
+  function renderAllPassages() {
+    document.querySelectorAll('.verse-passage').forEach(renderPassage);
+  }
+
+  window.setVersion = function(v) {
+    currentVersion = v;
+    document.querySelectorAll('.version-btn').forEach(function(b) {
+      b.classList.toggle('active', b.getAttribute('data-version') === v);
+    });
+    renderAllPassages();
+  };
+
+  // Initial render
+  renderAllPassages();
 })();
 </script>
 </body>
