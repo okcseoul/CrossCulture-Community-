@@ -124,6 +124,14 @@
   body.ko .archive-btn-title { font-family: 'Noto Sans KR', sans-serif; font-size: 0.9rem; }
   .archive-btn-date { font-size: 0.75rem; color: var(--charcoal-soft); letter-spacing: 0.04em; }
   .archive-btn-arrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-top: 10px; display: block; }
+  .bilingual-archive { margin-top: 36px; margin-bottom: 56px; }
+  .bilingual-archive-card { background: var(--warm-white); border: 1px solid rgba(139,111,71,0.18); border-left: 4px solid var(--gold); padding: 26px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
+  .bilingual-archive-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--earth-dark); margin-bottom: 5px; }
+  .bilingual-archive-card p { font-size: 0.8rem; color: var(--charcoal-soft); }
+  .archive-language-links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .archive-language-link { display: inline-block; padding: 10px 15px; border: 1px solid var(--earth); color: var(--earth-dark); text-decoration: none; font-size: 0.78rem; font-weight: 500; transition: all 0.2s; }
+  .archive-language-link:hover { background: var(--earth-dark); border-color: var(--earth-dark); color: var(--cream); }
+  .legacy-heading { font-family: 'Cormorant Garamond', serif; color: var(--earth-dark); font-size: 1.5rem; margin: 0 0 8px; }
 
   /* STAY CONNECTED */
   #subscribe { background: var(--earth-dark); padding: 80px; text-align: center; }
@@ -173,6 +181,7 @@
   @media (max-width: 600px) {
     .archives-grid { grid-template-columns: 1fr; }
     .language-editions { grid-template-columns: 1fr; }
+    .bilingual-archive-card { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -256,7 +265,24 @@
   <div class="archives-inner">
     <div class="section-label" data-en="Past Newsletters · 지난 뉴스레터" data-ko="지난 뉴스레터 · Past Newsletters">Past Newsletters · 지난 뉴스레터</div>
     <h2 class="section-title" data-en="Newsletter Archive" data-ko="뉴스레터 아카이브">Newsletter Archive</h2>
-    <p style="font-size:0.9rem;color:var(--charcoal-soft);max-width:560px;margin-bottom:8px;" data-en="Click any newsletter below to read it in full. All past newsletters are preserved in our Mailchimp archive." data-ko="아래의 뉴스레터를 클릭하면 전체 내용을 읽을 수 있습니다. 모든 지난 뉴스레터는 Mailchimp 아카이브에 보관되어 있습니다.">Click any newsletter below to read it in full. All past newsletters are preserved in our Mailchimp archive.</p>
+    <p style="font-size:0.9rem;color:var(--charcoal-soft);max-width:620px;margin-bottom:8px;" data-en="Every new newsletter remains here permanently in both English and Korean. Choose an edition below to read or share." data-ko="모든 새 뉴스레터는 영어와 한국어로 이곳에 영구 보관됩니다. 아래에서 원하시는 언어를 선택하여 읽거나 공유해 주세요.">Every new newsletter remains here permanently in both English and Korean. Choose an edition below to read or share.</p>
+
+    <div class="bilingual-archive">
+      <article class="bilingual-archive-card">
+        <div>
+          <h3 data-en="Foundations for What Comes Next" data-ko="다음 여정을 위한 기초">Foundations for What Comes Next</h3>
+          <p data-en="July 2026 · Ministry Update" data-ko="2026년 7월 · 사역 소식">July 2026 · Ministry Update</p>
+        </div>
+        <div class="archive-language-links">
+          <a class="archive-language-link" href="newsletter-july-2026-en.html">English</a>
+          <a class="archive-language-link" href="newsletter-july-2026-ko.html">한국어</a>
+        </div>
+      </article>
+      <!-- For each future newsletter, keep its dated EN/KO pages permanently and add another bilingual-archive-card here. -->
+    </div>
+
+    <h3 class="legacy-heading" data-en="Earlier Mailchimp Newsletters" data-ko="이전 Mailchimp 뉴스레터">Earlier Mailchimp Newsletters</h3>
+    <p style="font-size:0.86rem;color:var(--charcoal-soft);max-width:620px;margin-bottom:8px;" data-en="Newsletters published before July 2026 remain available through the original Mailchimp archive." data-ko="2026년 7월 이전에 발행된 뉴스레터는 기존 Mailchimp 아카이브에서 계속 읽으실 수 있습니다.">Newsletters published before July 2026 remain available through the original Mailchimp archive.</p>
 
     <div class="archives-grid">
 
