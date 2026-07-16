@@ -102,6 +102,12 @@
   .newsletter-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,148,58,0.3); padding-bottom: 4px; transition: all 0.2s; }
   .newsletter-link:hover { color: var(--earth-dark); border-color: var(--earth-dark); gap: 14px; }
   .newsletter-link::after { content: '→'; }
+  .language-editions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .edition-card { display: block; padding: 24px; background: var(--cream); border: 1px solid rgba(139,111,71,0.2); border-radius: 3px; text-decoration: none; transition: all 0.25s; }
+  .edition-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(92,74,42,0.12); border-color: var(--gold); }
+  .edition-language { display: block; color: var(--gold); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px; }
+  .edition-title { display: block; color: var(--earth-dark); font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; line-height: 1.25; }
+  .edition-action { display: block; color: var(--charcoal-soft); font-size: 0.8rem; margin-top: 12px; }
 
   /* DIVIDER */
   .divider { border: none; border-top: 1px solid rgba(139,111,71,0.12); margin: 0; }
@@ -166,6 +172,7 @@
   }
   @media (max-width: 600px) {
     .archives-grid { grid-template-columns: 1fr; }
+    .language-editions { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -221,14 +228,24 @@
       <span class="newsletter-date">2026</span>
     </div>
 
-    <h3 class="newsletter-title" data-en="A New Chapter in 2026" data-ko="2026년, 새로운 장">A New Chapter in 2026</h3>
+    <h3 class="newsletter-title" data-en="Foundations for What Comes Next" data-ko="다음 여정을 위한 기초">Foundations for What Comes Next</h3>
 
     <div class="newsletter-body">
-      <p data-en="This newsletter marks a significant moment in the CrossCulture Community story. After 40+ years of ministry in Seoul, we are entering a new chapter — one defined by organizational structure, a growing membership, and the vision of the Museum of the Bible Korea (MOTB-Korea) taking its first steps toward reality." data-ko="이 뉴스레터는 크로스컬처 커뮤니티 이야기의 중요한 순간을 기록합니다. 서울에서 40년 이상의 사역 끝에, 우리는 새로운 장에 접어들고 있습니다 — 조직적 구조, 성장하는 회원들, 그리고 Museum of the Bible Korea(MOTB-Korea)의 비전이 현실을 향한 첫 발걸음을 내딛는 장입니다.">This newsletter marks a significant moment in the CrossCulture Community story. After 40+ years of ministry in Seoul, we are entering a new chapter — one defined by organizational structure, a growing membership, and the vision of the Museum of the Bible Korea (MOTB-Korea) taking its first steps toward reality.</p>
-      <p data-en="CrossCulture Community was formally established in Seoul in March 2026 as an Unincorporated Non-Profit Association. Three bilingual websites are now live. A membership system is in place. And the journey toward NPNGO registration — requiring 100 verified members — has begun." data-ko="크로스컬처 커뮤니티는 2026년 3월 서울에서 비법인사단으로 공식 설립되었습니다. 세 개의 이중 언어 웹사이트가 운영 중입니다. 회원 시스템이 구축되었습니다. 그리고 100명의 검증된 회원을 요구하는 비영리민간단체 등록을 향한 여정이 시작되었습니다.">CrossCulture Community was formally established in Seoul in March 2026 as an Unincorporated Non-Profit Association. Three bilingual websites are now live. A membership system is in place. And the journey toward NPNGO registration — requiring 100 verified members — has begun.</p>
+      <p data-en="The Lord often builds through quiet but important steps. Online discipleship training is taking shape, the Museum of the Bible Korea now has a digital front door, and CrossCulture Community has gained a formal organizational foundation in Korea." data-ko="주님께서는 종종 조용하지만 중요한 걸음을 통해 일하십니다. 온라인 제자훈련이 모습을 갖추어가고, 대한민국 성경박물관의 디지털 현관이 열렸으며, 크로스컬처 커뮤니티는 한국에서 공식적인 조직 기반을 마련했습니다.">The Lord often builds through quiet but important steps. Online discipleship training is taking shape, the Museum of the Bible Korea now has a digital front door, and CrossCulture Community has gained a formal organizational foundation in Korea.</p>
+      <p data-en="Choose your language to read the complete update, see what is being built, and learn how you can pray and partner with Bill and Niki in Asia." data-ko="원하시는 언어를 선택하여 전체 소식을 읽고, 현재 진행 중인 일과 아시아에서 빌과 니키의 사역을 위해 기도하고 동역할 방법을 확인해 보세요.">Choose your language to read the complete update, see what is being built, and learn how you can pray and partner with Bill and Niki in Asia.</p>
     </div>
-
-    <a href="https://mailchi.mp/12d6ee08df7d/a-new-chapter-in-2026" target="_blank" class="newsletter-link" data-en="Read the full newsletter" data-ko="전체 뉴스레터 읽기">Read the full newsletter</a>
+    <div class="language-editions">
+      <a href="newsletter-july-2026-en.html" class="edition-card">
+        <span class="edition-language">English Edition</span>
+        <span class="edition-title">Foundations for What Comes Next</span>
+        <span class="edition-action">Read in English →</span>
+      </a>
+      <a href="newsletter-july-2026-ko.html" class="edition-card">
+        <span class="edition-language">한국어판</span>
+        <span class="edition-title">다음 여정을 위한 기초</span>
+        <span class="edition-action">한국어로 읽기 →</span>
+      </a>
+    </div>
   </div>
 </section>
 
