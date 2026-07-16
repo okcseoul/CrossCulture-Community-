@@ -490,9 +490,10 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
 
     <div class="version-selector">
       <span class="version-selector-label" data-en="Choose your Bible version:" data-ko="성경 번역본을 선택하세요:">Choose your Bible version:</span>
-      <button class="version-btn active" data-version="KJV" onclick="setVersion('KJV')">KJV</button>
+      <button class="version-btn" data-version="KJV" onclick="setVersion('KJV')">KJV</button>
       <button class="version-btn" data-version="NIV" onclick="setVersion('NIV')">NIV</button>
-      <button class="version-btn" data-version="ESV" onclick="setVersion('ESV')">ESV</button>
+      <button class="version-btn active" data-version="ESV" onclick="setVersion('ESV')">ESV</button>
+      <button class="version-btn" data-version="KRV" onclick="setVersion('KRV')">개역개정</button>
       <span class="version-note" data-en="Your choice stays consistent across all three exercises below." data-ko="선택하신 번역본은 아래 세 가지 연습 전체에 동일하게 적용됩니다.">Your choice stays consistent across all three exercises below.</span>
     </div>
 
@@ -503,7 +504,8 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
       <div class="practice-verse-text verse-passage" data-ref="John 15:1-8" data-ko-ref="요한복음 15:1-8"
         data-kjv="&lt;p&gt;&lt;sup class='vn'&gt;1&lt;/sup&gt;I am the true vine, and my Father is the husbandman. &lt;sup class='vn'&gt;2&lt;/sup&gt;Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. &lt;sup class='vn'&gt;3&lt;/sup&gt;Now ye are clean through the word which I have spoken unto you. &lt;sup class='vn'&gt;4&lt;/sup&gt;Abide in me, and I in you. As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. &lt;sup class='vn'&gt;5&lt;/sup&gt;I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing. &lt;sup class='vn'&gt;6&lt;/sup&gt;If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned. &lt;sup class='vn'&gt;7&lt;/sup&gt;If ye abide in me, and my words abide in you, ye shall ask what ye will, and it shall be done unto you. &lt;sup class='vn'&gt;8&lt;/sup&gt;Herein is my Father glorified, that ye bear much fruit; so shall ye be my disciples.&lt;/p&gt;"
         data-esv="&lt;p&gt;&lt;sup class='vn'&gt;1&lt;/sup&gt;&ldquo;I am the true vine, and my Father is the vinedresser. &lt;sup class='vn'&gt;2&lt;/sup&gt;Every branch in me that does not bear fruit he takes away, and every branch that does bear fruit he prunes, that it may bear more fruit. &lt;sup class='vn'&gt;3&lt;/sup&gt;Already you are clean because of the word that I have spoken to you. &lt;sup class='vn'&gt;4&lt;/sup&gt;Abide in me, and I in you. As the branch cannot bear fruit by itself, unless it abides in the vine, neither can you, unless you abide in me. &lt;sup class='vn'&gt;5&lt;/sup&gt;I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing. &lt;sup class='vn'&gt;6&lt;/sup&gt;If anyone does not abide in me, he is thrown away like a branch and withers; and the branches are gathered, thrown into the fire, and burned. &lt;sup class='vn'&gt;7&lt;/sup&gt;If you abide in me, and my words abide in you, ask whatever you wish, and it will be done for you. &lt;sup class='vn'&gt;8&lt;/sup&gt;By this my Father is glorified, that you bear much fruit and so prove to be my disciples.&rdquo;&lt;/p&gt;"
-        data-niv="&lt;p&gt;&lt;sup class='vn'&gt;1&lt;/sup&gt;&ldquo;I am the true vine, and my Father is the gardener. &lt;sup class='vn'&gt;2&lt;/sup&gt;He cuts off every branch in me that bears no fruit, while every branch that does bear fruit he prunes so that it will be even more fruitful. &lt;sup class='vn'&gt;3&lt;/sup&gt;You are already clean because of the word I have spoken to you. &lt;sup class='vn'&gt;4&lt;/sup&gt;Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me. &lt;sup class='vn'&gt;5&lt;/sup&gt;&ldquo;I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. &lt;sup class='vn'&gt;6&lt;/sup&gt;If you do not remain in me, you are like a branch that is thrown away and withers; such branches are picked up, thrown into the fire and burned. &lt;sup class='vn'&gt;7&lt;/sup&gt;If you remain in me and my words remain in you, ask whatever you wish, and it will be done for you. &lt;sup class='vn'&gt;8&lt;/sup&gt;This is to my Father&#39;s glory, that you bear much fruit, showing yourselves to be my disciples.&rdquo;&lt;/p&gt;"><span class="verse-body"></span><cite class="verse-cite"></cite></div>
+        data-niv="&lt;p&gt;&lt;sup class='vn'&gt;1&lt;/sup&gt;&ldquo;I am the true vine, and my Father is the gardener. &lt;sup class='vn'&gt;2&lt;/sup&gt;He cuts off every branch in me that bears no fruit, while every branch that does bear fruit he prunes so that it will be even more fruitful. &lt;sup class='vn'&gt;3&lt;/sup&gt;You are already clean because of the word I have spoken to you. &lt;sup class='vn'&gt;4&lt;/sup&gt;Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me. &lt;sup class='vn'&gt;5&lt;/sup&gt;&ldquo;I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. &lt;sup class='vn'&gt;6&lt;/sup&gt;If you do not remain in me, you are like a branch that is thrown away and withers; such branches are picked up, thrown into the fire and burned. &lt;sup class='vn'&gt;7&lt;/sup&gt;If you remain in me and my words remain in you, ask whatever you wish, and it will be done for you. &lt;sup class='vn'&gt;8&lt;/sup&gt;This is to my Father&#39;s glory, that you bear much fruit, showing yourselves to be my disciples.&rdquo;&lt;/p&gt;"
+        data-krv="&lt;p&gt;&lt;sup class='vn'&gt;1&lt;/sup&gt;나는 참포도나무요 내 아버지는 농부라 &lt;sup class='vn'&gt;2&lt;/sup&gt;무릇 내게 붙어 있어 열매를 맺지 아니하는 가지는 아버지께서 그것을 제거해 버리시고 무릇 열매를 맺는 가지는 더 열매를 맺게 하려 하여 그것을 깨끗하게 하시느니라 &lt;sup class='vn'&gt;3&lt;/sup&gt;너희는 내가 일러준 말로 이미 깨끗하여졌으니 &lt;sup class='vn'&gt;4&lt;/sup&gt;내 안에 거하라 나도 너희 안에 거하리라 가지가 포도나무에 붙어 있지 아니하면 스스로 열매를 맺을 수 없음 같이 너희도 내 안에 있지 아니하면 그러하리라 &lt;sup class='vn'&gt;5&lt;/sup&gt;나는 포도나무요 너희는 가지라 그가 내 안에, 내가 그 안에 거하면 사람이 열매를 많이 맺나니 나를 떠나서는 너희가 아무 것도 할 수 없음이라 &lt;sup class='vn'&gt;6&lt;/sup&gt;사람이 내 안에 거하지 아니하면 가지처럼 밖에 버려져 마르나니 사람들이 그것을 모아다가 불에 던져 사르느니라 &lt;sup class='vn'&gt;7&lt;/sup&gt;너희가 내 안에 거하고 내 말이 너희 안에 거하면 무엇이든지 원하는 대로 구하라 그리하면 이루리라 &lt;sup class='vn'&gt;8&lt;/sup&gt;너희가 열매를 많이 맺으면 내 아버지께서 영광을 받으실 것이요 너희는 내 제자가 되리라&lt;/p&gt;"><span class="verse-body"></span><cite class="verse-cite"></cite></div>
 
       <div class="oia-step">
         <div class="oia-step-label" data-en="1. Observation" data-ko="1. 관찰">1. Observation</div>
@@ -535,7 +537,8 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
       <div class="practice-verse-text verse-passage" data-ref="Psalm 119:9-11" data-ko-ref="시편 119:9-11"
         data-kjv="&lt;p&gt;&lt;sup class='vn'&gt;9&lt;/sup&gt;Wherewithal shall a young man cleanse his way? by taking heed thereto according to thy word. &lt;sup class='vn'&gt;10&lt;/sup&gt;With my whole heart have I sought thee: O let me not wander from thy commandments. &lt;sup class='vn'&gt;11&lt;/sup&gt;Thy word have I hid in mine heart, that I might not sin against thee.&lt;/p&gt;"
         data-esv="&lt;p&gt;&lt;sup class='vn'&gt;9&lt;/sup&gt;How can a young man keep his way pure? By guarding it according to your word. &lt;sup class='vn'&gt;10&lt;/sup&gt;With my whole heart I seek you; let me not wander from your commandments! &lt;sup class='vn'&gt;11&lt;/sup&gt;I have stored up your word in my heart, that I might not sin against you.&lt;/p&gt;"
-        data-niv="&lt;p&gt;&lt;sup class='vn'&gt;9&lt;/sup&gt;How can a young person stay on the path of purity? By living according to your word. &lt;sup class='vn'&gt;10&lt;/sup&gt;I seek you with all my heart; do not let me stray from your commands. &lt;sup class='vn'&gt;11&lt;/sup&gt;I have hidden your word in my heart that I might not sin against you.&lt;/p&gt;"><span class="verse-body"></span><cite class="verse-cite"></cite></div>
+        data-niv="&lt;p&gt;&lt;sup class='vn'&gt;9&lt;/sup&gt;How can a young person stay on the path of purity? By living according to your word. &lt;sup class='vn'&gt;10&lt;/sup&gt;I seek you with all my heart; do not let me stray from your commands. &lt;sup class='vn'&gt;11&lt;/sup&gt;I have hidden your word in my heart that I might not sin against you.&lt;/p&gt;"
+        data-krv="&lt;p&gt;&lt;sup class='vn'&gt;9&lt;/sup&gt;청년이 무엇으로 그의 행실을 깨끗하게 하리이까 주의 말씀만 지킬 따름이니이다 &lt;sup class='vn'&gt;10&lt;/sup&gt;내가 전심으로 주를 찾았사오니 주의 계명에서 떠나지 말게 하소서 &lt;sup class='vn'&gt;11&lt;/sup&gt;내가 주께 범죄하지 아니하려 하여 주의 말씀을 내 마음에 두었나이다&lt;/p&gt;"><span class="verse-body"></span><cite class="verse-cite"></cite></div>
 
       <div class="mc-block" data-step="observation">
         <div class="mc-question" data-en="Observation — What repeated idea connects all three verses?" data-ko="관찰 — 세 구절을 모두 연결하는 반복된 개념은 무엇입니까?">Observation — What repeated idea connects all three verses?</div>
@@ -578,7 +581,8 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
       <div class="practice-verse-text verse-passage" data-ref="James 1:22-25" data-ko-ref="야고보서 1:22-25"
         data-kjv="&lt;p&gt;&lt;sup class='vn'&gt;22&lt;/sup&gt;But be ye doers of the word, and not hearers only, deceiving your own selves. &lt;sup class='vn'&gt;23&lt;/sup&gt;For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass: &lt;sup class='vn'&gt;24&lt;/sup&gt;For he beholdeth himself, and goeth his way, and straightway forgetteth what manner of man he was. &lt;sup class='vn'&gt;25&lt;/sup&gt;But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed.&lt;/p&gt;"
         data-esv="&lt;p&gt;&lt;sup class='vn'&gt;22&lt;/sup&gt;But be doers of the word, and not hearers only, deceiving yourselves. &lt;sup class='vn'&gt;23&lt;/sup&gt;For if anyone is a hearer of the word and not a doer, he is like a man who looks intently at his natural face in a mirror. &lt;sup class='vn'&gt;24&lt;/sup&gt;For he looks at himself and goes away and at once forgets what he was like. &lt;sup class='vn'&gt;25&lt;/sup&gt;But the one who looks into the perfect law, the law of liberty, and perseveres, being no hearer who forgets but a doer who acts, he will be blessed in his doing.&lt;/p&gt;"
-        data-niv="&lt;p&gt;&lt;sup class='vn'&gt;22&lt;/sup&gt;Do not merely listen to the word, and so deceive yourselves. Do what it says. &lt;sup class='vn'&gt;23&lt;/sup&gt;Anyone who listens to the word but does not do what it says is like someone who looks at his face in a mirror &lt;sup class='vn'&gt;24&lt;/sup&gt;and, after looking at himself, goes away and immediately forgets what he looks like. &lt;sup class='vn'&gt;25&lt;/sup&gt;But whoever looks intently into the perfect law that gives freedom, and continues in it&mdash;not forgetting what they have heard, but doing it&mdash;they will be blessed in what they do.&lt;/p&gt;"><span class="verse-body"></span><cite class="verse-cite"></cite></div>
+        data-niv="&lt;p&gt;&lt;sup class='vn'&gt;22&lt;/sup&gt;Do not merely listen to the word, and so deceive yourselves. Do what it says. &lt;sup class='vn'&gt;23&lt;/sup&gt;Anyone who listens to the word but does not do what it says is like someone who looks at his face in a mirror &lt;sup class='vn'&gt;24&lt;/sup&gt;and, after looking at himself, goes away and immediately forgets what he looks like. &lt;sup class='vn'&gt;25&lt;/sup&gt;But whoever looks intently into the perfect law that gives freedom, and continues in it&mdash;not forgetting what they have heard, but doing it&mdash;they will be blessed in what they do.&lt;/p&gt;"
+        data-krv="&lt;p&gt;&lt;sup class='vn'&gt;22&lt;/sup&gt;너희는 말씀을 행하는 자가 되고 듣기만 하여 자신을 속이는 자가 되지 말라 &lt;sup class='vn'&gt;23&lt;/sup&gt;누구든지 말씀을 듣고 행하지 아니하면 그는 거울로 자기의 생긴 얼굴을 보는 사람과 같아서 &lt;sup class='vn'&gt;24&lt;/sup&gt;제 자신을 보고 가서 그 모습이 어떠했는지를 곧 잊어버리거니와 &lt;sup class='vn'&gt;25&lt;/sup&gt;자유롭게 하는 온전한 율법을 들여다보고 있는 자는 듣고 잊어버리는 자가 아니요 실천하는 자니 이 사람은 그 행하는 일에 복을 받으리라&lt;/p&gt;"><span class="verse-body"></span><cite class="verse-cite"></cite></div>
 
       <div class="diy-step">
         <div class="oia-step-label" data-en="1. Observation — What do I see?" data-ko="1. 관찰 — 무엇이 보이는가?">1. Observation — What do I see?</div>
@@ -787,7 +791,7 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
     document.title = l === 'ko'
       ? '제자훈련 | 크로스컬처 커뮤니티'
       : 'Discipleship Training | CrossCulture Community';
-    if (typeof renderAllPassages === 'function') renderAllPassages();
+    if (typeof window.syncVersionToLang === 'function') window.syncVersionToLang(l);
   }
   window.applyLang = applyLang;
   document.getElementById('btn-en').addEventListener('click', function() { applyLang('en'); });
@@ -843,29 +847,17 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
   };
 
   // ---- BIBLE VERSION SELECTOR ----
-  var currentVersion = 'KJV';
+  // Default: ESV when page is in English, 개역개정 (KRV) when page is in Korean.
+  var currentVersion = (lang === 'ko') ? 'KRV' : 'ESV';
+  var userPickedVersion = false; // once the user picks, we stop auto-switching on language change
 
   function renderPassage(el) {
     var ref = el.getAttribute('data-ref');
     var body = el.querySelector('.verse-body');
     var cite = el.querySelector('.verse-cite');
 
-    // Korean mode: show the Korean reference with a link to the 개역개정 text.
-    if (lang === 'ko') {
-      var koRef = el.getAttribute('data-ko-ref') || ref;
-      body.textContent = '';
-      var link = document.createElement('a');
-      link.href = 'https://www.bskorea.or.kr/bible/korbibReadpage.php?version=GAE&book=' + encodeURIComponent(ref);
-      link.target = '_blank';
-      link.rel = 'noopener';
-      link.textContent = koRef + ' — 개역개정 본문 보기';
-      body.appendChild(link);
-      cite.textContent = '';
-      return;
-    }
-
-    // English mode — all three versions display inline from their data attributes.
-    var versionKey = 'data-' + currentVersion.toLowerCase(); // data-kjv / data-esv / data-niv
+    // All four versions display inline from their data attributes.
+    var versionKey = 'data-' + currentVersion.toLowerCase(); // data-kjv / data-esv / data-niv / data-krv
     var html = el.getAttribute(versionKey);
     if (html) {
       body.innerHTML = html;
@@ -875,6 +867,8 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
         cite.textContent = ref + ' (ESV® — The Holy Bible, English Standard Version®, © 2001 Crossway)';
       } else if (currentVersion === 'NIV') {
         cite.textContent = ref + ' (NIV® — The Holy Bible, New International Version®, © 1973, 1978, 1984, 2011 Biblica, Inc.)';
+      } else if (currentVersion === 'KRV') {
+        cite.textContent = (el.getAttribute('data-ko-ref') || ref) + ' (개역개정 — 대한성서공회)';
       }
       return;
     }
@@ -884,15 +878,29 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 6
     document.querySelectorAll('.verse-passage').forEach(renderPassage);
   }
 
+  function highlightVersionBtn() {
+    document.querySelectorAll('.version-btn').forEach(function(b) {
+      b.classList.toggle('active', b.getAttribute('data-version') === currentVersion);
+    });
+  }
+
   window.setVersion = function(v) {
     currentVersion = v;
-    document.querySelectorAll('.version-btn').forEach(function(b) {
-      b.classList.toggle('active', b.getAttribute('data-version') === v);
-    });
+    userPickedVersion = true;
+    highlightVersionBtn();
+    renderAllPassages();
+  };
+
+  // Called from applyLang: if the user hasn't manually chosen, follow the page language default.
+  window.syncVersionToLang = function(l) {
+    if (userPickedVersion) return;
+    currentVersion = (l === 'ko') ? 'KRV' : 'ESV';
+    highlightVersionBtn();
     renderAllPassages();
   };
 
   // Initial render
+  highlightVersionBtn();
   renderAllPassages();
 })();
 </script>
