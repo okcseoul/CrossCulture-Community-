@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://crossculture-community.com/sitemap.xml
