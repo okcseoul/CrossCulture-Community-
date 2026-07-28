@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SPTSXBF3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1SPTSXBF3T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Page Not Found | CrossCulture Community</title>
+<meta name="description" content="This page doesn't exist. It may have been moved or renamed.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A3C8F;
+    --navy-dark: #072d6a;
+    --gold: #C28615;
+    --gold-light: #d4a02a;
+    --cream: #fdf8f0;
+    --charcoal: #2c2c2c;
+    --charcoal-soft: #4a4a4a;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 48px;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid rgba(194,134,21,0.3);
+    transition: box-shadow 0.3s;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 600;
+    color: var(--navy); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo img { height: 64px; width: auto; }
+  nav ul { display: flex; gap: 24px; list-style: none; }
+  nav ul a {
+    font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--navy); text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav ul a:hover { color: var(--gold); }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .lang-toggle { display: flex; gap: 4px; }
+  .lang-btn {
+    background: transparent; border: 1px solid rgba(10,60,143,0.3);
+    color: var(--navy); padding: 4px 10px;
+    font-size: 0.72rem; cursor: pointer; border-radius: 2px;
+    font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--navy); border-color: var(--navy);
+    color: var(--white);
+  }
+  .btn-give {
+    background: var(--gold); color: var(--navy-dark) !important;
+    padding: 9px 20px; border-radius: 2px;
+    font-size: 0.8rem !important; font-weight: 600 !important;
+    letter-spacing: 0.06em; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-give:hover { background: var(--gold-light) !important; }
+
+  /* FOOTER LANG TOGGLE */
+  .footer-lang-toggle {
+    display: flex; gap: 4px; justify-content: center; margin-bottom: 16px;
+  }
+  .footer-lang-btn {
+    background: transparent; border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7); padding: 4px 12px;
+    font-size: 0.72rem; cursor: pointer; border-radius: 2px;
+    font-family: 'Source Sans 3', sans-serif; letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .footer-lang-btn.active, .footer-lang-btn:hover {
+    background: var(--gold); border-color: var(--gold);
+    color: var(--navy-dark);
+  }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--navy); transition: all 0.3s;
+  }
+  .mobile-menu {
+    display: none; position: fixed; top: 60px; left: 0; right: 0;
+    background: var(--navy-dark); z-index: 99; padding: 20px 0;
+    border-bottom: 2px solid var(--gold);
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu a {
+    display: block; padding: 12px 32px;
+    text-align: center; color: rgba(255,255,255,0.85); text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-menu .mobile-give {
+    margin: 12px 32px 4px;
+    background: var(--gold); color: var(--navy-dark) !important;
+    padding: 12px 20px; border-radius: 2px; text-align: center;
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 20px; }
+    nav ul, .nav-right .btn-give { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  /* NOT FOUND */
+  #not-found {
+    min-height: 70vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 160px 24px 100px;
+  }
+  .container { max-width: 640px; margin: 0 auto; }
+  .section-tag {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  #not-found h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3rem); font-weight: 600;
+    color: var(--navy); line-height: 1.25; margin-bottom: 20px;
+  }
+  #not-found .lead {
+    font-size: 1.05rem; color: var(--charcoal-soft);
+    line-height: 1.8; margin: 0 auto 40px;
+  }
+  .not-found-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .not-found-links a {
+    border: 1px solid rgba(10,60,143,0.3); color: var(--navy);
+    padding: 10px 20px; border-radius: 2px; text-decoration: none;
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em;
+    text-transform: uppercase; transition: all 0.2s;
+  }
+  .not-found-links a:hover { border-color: var(--gold); color: var(--gold); }
+  .not-found-links a.btn-home {
+    background: var(--gold); color: var(--navy-dark); border-color: var(--gold);
+  }
+  .not-found-links a.btn-home:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--navy-dark); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.55);
+    padding: 60px 48px 32px;
+  }
+  .footer-main {
+    display: grid; grid-template-columns: 180px 1fr; gap: 56px;
+    margin-bottom: 40px; padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .footer-brand img { height: 52px; width: auto; opacity: 0.92; }
+  .footer-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+  .footer-col-title {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  }
+  .footer-col a {
+    display: block; color: rgba(255,255,255,0.55); text-decoration: none;
+    font-size: 0.83rem; margin-bottom: 9px; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-size: 0.76rem; color: rgba(255,255,255,0.3);
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    footer { padding: 40px 20px 24px; overflow: hidden; }
+    .footer-main { display: block; }
+    .footer-brand { margin-bottom: 28px; }
+    .footer-nav { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .footer-bottom { flex-direction: column; gap: 6px; }
+    #not-found { padding: 140px 20px 80px; }
+  }
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="ccf_logo_300x300.png">
+<link rel="icon" type="image/png" sizes="192x192" href="ccf_logo_300x300.png">
+<link rel="apple-touch-icon" href="ccf_logo_300x300.png">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+  <ul>
+    <li><a href="museum.html" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a></li>
+    <li><a href="discipleship.html" data-en="Discipleship" data-ko="제자훈련">Discipleship</a></li>
+    <li><a href="why-korea.html" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a></li>
+    <li><a href="vision.html" data-en="Vision" data-ko="비전">Vision</a></li>
+    <li><a href="news.html" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en" data-lang="en">ENG</button>
+      <button class="lang-btn" id="btn-ko" data-lang="ko">한국어</button>
+    </div>
+    <a href="index.html#projects" class="btn-give" data-en="Give Now" data-ko="후원하기">Give Now</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="museum.html" onclick="closeMenu()" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+  <a href="discipleship.html" onclick="closeMenu()" data-en="Discipleship" data-ko="제자훈련">Discipleship</a>
+  <a href="why-korea.html" onclick="closeMenu()" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a>
+  <a href="vision.html" onclick="closeMenu()" data-en="Vision" data-ko="비전">Vision</a>
+  <a href="news.html" onclick="closeMenu()" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a>
+  <a href="index.html#projects" onclick="closeMenu()" class="mobile-give" data-en="Give Now →" data-ko="후원하기 →">Give Now →</a>
+</div>
+
+<!-- NOT FOUND -->
+<section id="not-found">
+  <div class="container reveal">
+    <div class="section-tag" data-en="404 ERROR" data-ko="404 오류">404 ERROR</div>
+    <h1 data-en="This page doesn't exist" data-ko="페이지를 찾을 수 없습니다">This page doesn't exist</h1>
+    <p class="lead" data-en="The page you're looking for may have been moved or renamed." data-ko="찾으시는 페이지가 이동되었거나 이름이 바뀌었을 수 있습니다.">The page you're looking for may have been moved or renamed.</p>
+    <div class="not-found-links">
+      <a href="museum.html" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+      <a href="discipleship.html" data-en="Discipleship" data-ko="제자훈련">Discipleship</a>
+      <a href="why-korea.html" data-en="Why Korea" data-ko="왜 한국인가">Why Korea</a>
+      <a href="vision.html" data-en="Vision" data-ko="비전">Vision</a>
+      <a href="news.html" data-en="News / Events" data-ko="뉴스 / 행사">News / Events</a>
+      <a href="index.html" class="btn-home" data-en="Back to Homepage" data-ko="홈으로 돌아가기">Back to Homepage</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html"><img src="ccf_logo_300x300.png" alt="CrossCulture Community"></a>
+      <div class="footer-lang-toggle" role="group" aria-label="Language / 언어">
+        <button class="footer-lang-btn active" id="footer-btn-en" onclick="applyLang('en')">ENG</button>
+        <button class="footer-lang-btn" id="footer-btn-ko" onclick="applyLang('ko')">한국어</button>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="About" data-ko="소개">About</div>
+        <a href="about.html" data-en="Founder" data-ko="창립자">Founder</a>
+        <a href="about.html" data-en="Our Story" data-ko="우리의 이야기">Our Story</a>
+        <a href="governance.html" data-en="Three-Step Journey" data-ko="세 단계의 여정">Three-Step Journey</a>
+        <a href="governance.html" data-en="Governance" data-ko="거버넌스">Governance</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Get Involved" data-ko="참여하기">Get Involved</div>
+        <a href="join.html" data-en="Become a Member" data-ko="회원 가입">Become a Member</a>
+        <a href="discipleship.html" data-en="Discipleship Training" data-ko="제자훈련">Discipleship Training</a>
+        <a href="index.html#projects" data-en="Give / Donate" data-ko="후원">Give / Donate</a>
+        <a href="index.html#artifacts" data-en="Donate an Artifact" data-ko="유물 기증">Donate an Artifact</a>
+        <a href="join.html" data-en="Corporate Partnership" data-ko="기업 파트너십">Corporate Partnership</a>
+        <a href="join.html" data-en="Volunteer" data-ko="자원봉사">Volunteer</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Connect" data-ko="연락">Connect</div>
+        <a href="mailto:billmajors@crossculture-community.com" data-en="Contact Us" data-ko="연락하기">Contact Us</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill's Blog" data-ko="빌의 블로그">Bill's Blog</a>
+        <a href="https://www.facebook.com/crossculturecf" target="_blank" data-en="Facebook" data-ko="페이스북">Facebook</a>
+        <a href="https://www.instagram.com/crossculturecf" target="_blank" data-en="Instagram" data-ko="인스타그램">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-en="Our Projects" data-ko="우리의 프로젝트">Our Projects</div>
+        <a href="https://www.museumofthebiblekorea.com" target="_blank" data-en="Museum of the Bible Korea" data-ko="대한민국 성경박물관">Museum of the Bible Korea</a>
+        <a href="news.html" data-en="Torah Presentations" data-ko="토라 발표">Torah Presentations</a>
+        <a href="news.html" data-en="Past Exhibitions" data-ko="과거 전시">Past Exhibitions</a>
+        <a href="https://www.billmajors.com" target="_blank" data-en="Bill Majors" data-ko="빌 메이저스">Bill Majors</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 <span data-en="CrossCulture Community Foundation" data-ko="크로스컬처 커뮤니티 파운데이션">CrossCulture Community Foundation</span></span>
+    <span>EIN: 84-2974290 · 501(c)(3)</span>
+    <span data-en="Korea 비법인단체 · 602-80-07169" data-ko="대한민국 비법인단체 · 고유번호 602-80-07169">Korea 비법인단체 · 602-80-07169</span>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var lang = 'en';
+
+  function applyLang(l) {
+    lang = l;
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-ko').classList.toggle('active', l === 'ko');
+    document.getElementById('footer-btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('footer-btn-ko').classList.toggle('active', l === 'ko');
+    var els = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var val = el.getAttribute('data-' + l);
+      if (!val) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = val;
+      } else {
+        el.innerHTML = val;
+      }
+    }
+    document.title = l === 'ko'
+      ? '페이지를 찾을 수 없습니다 | 크로스컬처 커뮤니티 재단'
+      : 'Page Not Found | CrossCulture Community Foundation';
+  }
+
+  window.applyLang = applyLang;
+
+  document.getElementById('btn-en').addEventListener('click', function() { applyLang('en'); });
+  document.getElementById('btn-ko').addEventListener('click', function() { applyLang('ko'); });
+
+  window.toggleMenu = function() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  };
+  window.closeMenu = function() {
+    document.getElementById('mobile-menu').classList.remove('open');
+  };
+
+  window.handleContact = function(e) {
+    e.preventDefault();
+    alert(lang === 'ko'
+      ? '감사합니다! 곧 연락 드리겠습니다.'
+      : 'Thank you! We will be in touch soon.');
+    e.target.reset();
+  };
+
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.3)' : 'none';
+  });
+
+  // Scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(function(el) { revealObserver.observe(el); });
+})();
+</script>
+
+</body>
+</html>
