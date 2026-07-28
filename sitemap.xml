@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://crossculture-community.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://crossculture-community.com/museum.html</loc><priority>0.9</priority></url>
-  <url><loc>https://crossculture-community.com/discipleship.html</loc><priority>0.9</priority></url>
-  <url><loc>https://crossculture-community.com/why-korea.html</loc><priority>0.8</priority></url>
-  <url><loc>https://crossculture-community.com/vision.html</loc><priority>0.8</priority></url>
-  <url><loc>https://crossculture-community.com/news.html</loc><priority>0.7</priority></url>
-  <url><loc>https://crossculture-community.com/newsletter-july-2026-en.html</loc><priority>0.7</priority></url>
-  <url><loc>https://crossculture-community.com/newsletter-july-2026-ko.html</loc><priority>0.7</priority></url>
-  <url><loc>https://crossculture-community.com/stories.html</loc><priority>0.7</priority></url>
-  <url><loc>https://crossculture-community.com/join.html</loc><priority>0.7</priority></url>
-  <url><loc>https://crossculture-community.com/membership.html</loc><priority>0.6</priority></url>
-  <url><loc>https://crossculture-community.com/governance.html</loc><priority>0.6</priority></url>
-  <url><loc>https://crossculture-community.com/about.html</loc><priority>0.7</priority></url>
-  <url><loc>https://crossculture-community.com/assembly.html</loc><priority>0.5</priority></url>
+  <url><loc>https://crossculture-community.com/museum</loc><priority>0.9</priority></url>
+  <url><loc>https://crossculture-community.com/discipleship</loc><priority>0.9</priority></url>
+  <url><loc>https://crossculture-community.com/why-korea</loc><priority>0.8</priority></url>
+  <url><loc>https://crossculture-community.com/vision</loc><priority>0.8</priority></url>
+  <url><loc>https://crossculture-community.com/news</loc><priority>0.7</priority></url>
+  <url><loc>https://crossculture-community.com/newsletter-july-2026-en</loc><priority>0.7</priority></url>
+  <url><loc>https://crossculture-community.com/newsletter-july-2026-ko</loc><priority>0.7</priority></url>
+  <url><loc>https://crossculture-community.com/stories</loc><priority>0.7</priority></url>
+  <url><loc>https://crossculture-community.com/join</loc><priority>0.7</priority></url>
+  <url><loc>https://crossculture-community.com/membership</loc><priority>0.6</priority></url>
+  <url><loc>https://crossculture-community.com/governance</loc><priority>0.6</priority></url>
+  <url><loc>https://crossculture-community.com/about</loc><priority>0.7</priority></url>
+  <url><loc>https://crossculture-community.com/assembly</loc><priority>0.5</priority></url>
 </urlset>
